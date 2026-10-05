@@ -46,6 +46,6 @@ The original bundled test target checks 10 cases covering construction, override
 - Root `plugin.json` is the portable identity; `.codex-plugin/plugin.json` is the Codex compatibility overlay; `.claude-plugin/plugin.json` is the Claude manifest. Identity/version/description must stay in sync.
 - All resources needed by this skill are contained in `skills/innodi`; no internal InnoSquad configuration or personal checkout is required.
 - No MCP server, hooks, credentials, or automatic project migration is included.
-- The new plugin's public license, repository, marketplace, and publication remain undecided. Adapted upstream patterns retain their [MIT notice](skills/innodi/THIRD_PARTY_NOTICES.md).
+- The pilot has a private review repository at `InnoSquadCorp/innosquad-agent-skills`. Its public license, distribution marketplace, and publication remain undecided. Adapted upstream patterns retain their [MIT notice](skills/innodi/THIRD_PARTY_NOTICES.md).
 
 Format references: [Codex skills](https://developers.openai.com/codex/skills), [OpenAI plugin packaging](https://developers.openai.com/plugins/build/plugins), [Claude plugin reference](https://code.claude.com/docs/en/plugins-reference).

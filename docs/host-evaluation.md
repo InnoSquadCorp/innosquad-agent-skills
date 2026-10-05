@@ -55,4 +55,10 @@
 - Claude 실제 선택·코드 생성·소비 빌드 평가.
 - 최초 계획의 전체 10종 × 양 언어 × 두 도구 반복 실행. 이번에는 8개 대표 사례를 혼합 언어로 한 번씩 실행했다.
 - 6.x→7.0 migration 실행, SwiftUI host/device 동작, 여러 라이브러리의 실제 통합 resolve.
-- 공개 배포·CI·라이선스 선택·원격 저장소 게시. 로컬 설치와 원격 배포는 구분한다.
+- 공개 배포·CI·라이선스 선택. 비공개 검토 저장소와 로컬 설치를 정식 배포와 구분한다.
+
+## PR 준비 시 재확인
+
+비공개 `InnoSquadCorp/innosquad-agent-skills`에서 이 파일럿을 검토한다. 스킬 형식, JSON/YAML, portable plugin schema, manifest identity/version, 로컬 문서 링크와 평가 합계를 새로 검사해 통과했다. Claude plugin manifest도 통과했으며 marketplace 검사에는 선택 사항인 description 누락 경고 1개가 남는다.
+
+번들 예제 파일의 SHA-256은 [소비 테스트 증거](consumer-evidence.json)와 일치한다. 이 PR 준비 단계에서는 Swift 테스트와 AI 평가를 다시 실행하지 않았으며 위 날짜의 실행 증거를 재사용한다. 스킬 내용과 소비 예제는 평가 이후 그대로 유지했다.
