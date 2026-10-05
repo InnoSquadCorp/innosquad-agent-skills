@@ -1,0 +1,12 @@
+{
+  "name": "innosquad-local",
+  "owner": {"name": "InnoSquad"},
+  "plugins": [
+    {
+      "name": "innosquad",
+      "source": "./",
+      "description": "InnoSquad Swift library skills. Local pilot: InnoDI 7.0.0.",
+      "version": "0.1.0-alpha.2"
+    }
+  ]
+}

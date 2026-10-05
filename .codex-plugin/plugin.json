@@ -1,0 +1,7 @@
+{
+  "name": "innosquad",
+  "version": "0.1.0-alpha.2",
+  "description": "InnoSquad Swift library skills. Local pilot: InnoDI 7.0.0.",
+  "author": {"name": "InnoSquad"},
+  "skills": "./skills/"
+}

@@ -1,0 +1,121 @@
+{
+  "date": "2026-10-05",
+  "status": "codex_passed_claude_auth_blocked",
+  "codex": {
+    "cli": "0.160.0 (app bundled)",
+    "configured_model": "gpt-6-astra",
+    "reasoning": "xhigh",
+    "cases": [
+      {
+        "case": "adoption-ko",
+        "language": "Korean",
+        "invocation": "automatic",
+        "ai_completed": true,
+        "installed_skill_read": true,
+        "validation": "passed",
+        "swift_tests": 6,
+        "plugin_version": "0.1.0-alpha.1"
+      },
+      {
+        "case": "dependency-conflict-ko",
+        "language": "Korean",
+        "invocation": "automatic",
+        "ai_completed": true,
+        "installed_skill_read": true,
+        "validation": "passed",
+        "swift_tests": 0,
+        "plugin_version": "0.1.0-alpha.1"
+      },
+      {
+        "case": "explicit-lifecycle-ko",
+        "language": "Korean",
+        "invocation": "explicit",
+        "ai_completed": true,
+        "installed_skill_read": true,
+        "validation": "passed",
+        "swift_tests": 11,
+        "plugin_version": "0.1.0-alpha.1"
+      },
+      {
+        "case": "implicit-prewarm-en",
+        "language": "English",
+        "invocation": "automatic",
+        "ai_completed": true,
+        "installed_skill_read": true,
+        "validation": "passed",
+        "swift_tests": 3,
+        "plugin_version": "0.1.0-alpha.1"
+      },
+      {
+        "case": "missing-plugin-ko",
+        "language": "Korean",
+        "invocation": "automatic",
+        "ai_completed": true,
+        "installed_skill_read": true,
+        "validation": "passed",
+        "swift_tests": 6,
+        "plugin_version": "0.1.0-alpha.1"
+      },
+      {
+        "case": "negative-swiftui-en",
+        "language": "English",
+        "invocation": "negative",
+        "ai_completed": true,
+        "installed_skill_read": false,
+        "validation": "passed",
+        "swift_tests": 0,
+        "plugin_version": "0.1.0-alpha.1"
+      },
+      {
+        "case": "optional-nil-en",
+        "language": "English",
+        "invocation": "automatic",
+        "ai_completed": true,
+        "installed_skill_read": true,
+        "validation": "passed",
+        "swift_tests": 2,
+        "plugin_version": "0.1.0-alpha.1"
+      },
+      {
+        "case": "reader-cancellation-ko",
+        "language": "Korean",
+        "invocation": "automatic",
+        "ai_completed": true,
+        "installed_skill_read": true,
+        "validation": "passed",
+        "swift_tests": 1,
+        "plugin_version": "0.1.0-alpha.1"
+      }
+    ],
+    "total_swift_tests": 29,
+    "parent_validation": "Swift 6.4 / Xcode 27; strict concurrency complete; warnings as errors; actual remote InnoDI 7.0.0 checkout 4783eee7f674f99a337768c107b7a5f640810c2a verified for each SwiftPM consumer"
+  },
+  "claude": {
+    "cli": "2.1.285",
+    "requested_model": "claude-opus-5-5",
+    "installation": "installed; runtime init lists innosquad:innodi",
+    "ai_execution": "blocked",
+    "error": "HTTP 401 OAuth access token is invalid",
+    "model_tokens_used": 0
+  },
+  "installed_version": "0.1.0-alpha.2",
+  "content_change": "Only skills/innodi/references/migration-diagnostics.md changed within skill content: corrected executable name to InnoDI-DependencyGraph and included diff arguments. Original fixture and SKILL.md unchanged.",
+  "limitations": [
+    "One run per case, mixed languages; not the full repeated bilingual release matrix",
+    "No no-plugin efficacy baseline",
+    "Claude model behavior not evaluated",
+    "No 6.x migration execution or SwiftUI device lifecycle validation"
+  ],
+  "alpha2_reference_smoke": {
+    "case": "graph-command-ko",
+    "plugin_version": "0.1.0-alpha.2",
+    "result": "passed",
+    "observations": [
+      "Reads installed alpha.2 migration reference",
+      "Names the actual public executable and correct diff/contract arguments",
+      "Reports exit code 5 and schema v6",
+      "Does not run the graph tool or modify files"
+    ],
+    "fixture_note": "The first prompt disallowed all commands, including the shell needed to read local references. It was excluded and clarified to allow read-only cat/sed; the model correctly respected the original restriction."
+  }
+}
