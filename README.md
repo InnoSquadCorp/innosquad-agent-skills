@@ -4,6 +4,14 @@ InnoDI **7.0.0**을 사용하는 AI 개발 스킬의 로컬 파일럿입니다. 
 
 The skill covers version-aware setup, containers, providers, overrides, typed prewarm, async ownership, and 6→7 migration guidance. It includes an exact-release Swift consumer and a reproducible validation helper. Read [validation.md](docs/validation.md) for what has actually been tested.
 
+## Source ownership and distribution
+
+**스킬 원본은 각 라이브러리 저장소에서 관리하고, 이 저장소는 Codex·Claude Code용 플러그인으로 묶어 배포합니다.** InnoDI의 원본 경로는 `InnoSquadCorp/InnoDI`의 `skills/innodi/`입니다. API 변경에 따른 지침·소비 예제 변경은 해당 라이브러리 PR에서 함께 검토합니다.
+
+This repository owns plugin manifests, marketplace catalogs, and host installation/selection evaluations. Its `skills/` directory contains distribution snapshots; edit the library source, then refresh the snapshot. [sources.lock.json](sources.lock.json) records the source commit and Git tree separately from the supported library release.
+
+The current InnoDI source is under PR review. Snapshot collection was performed explicitly and checked for exact equality; automated collection/publication is follow-up work. Read the [ownership and update policy](docs/source-ownership.md) before changing a bundled skill.
+
 ## Install and use locally
 
 From this package root, install from the included local marketplace:
@@ -46,6 +54,6 @@ The original bundled test target checks 10 cases covering construction, override
 - Root `plugin.json` is the portable identity; `.codex-plugin/plugin.json` is the Codex compatibility overlay; `.claude-plugin/plugin.json` is the Claude manifest. Identity/version/description must stay in sync.
 - All resources needed by this skill are contained in `skills/innodi`; no internal InnoSquad configuration or personal checkout is required.
 - No MCP server, hooks, credentials, or automatic project migration is included.
-- The pilot has a private review repository at `InnoSquadCorp/innosquad-agent-skills`. Its public license, distribution marketplace, and publication remain undecided. Adapted upstream patterns retain their [MIT notice](skills/innodi/THIRD_PARTY_NOTICES.md).
+- The pilot has a private review repository at `InnoSquadCorp/innosquad-agent-skills`. The InnoDI skill snapshot retains its [MIT notice](skills/innodi/THIRD_PARTY_NOTICES.md). A license for this repository's other original distribution material, a public marketplace, and publication remain undecided.
 
 Format references: [Codex skills](https://developers.openai.com/codex/skills), [OpenAI plugin packaging](https://developers.openai.com/plugins/build/plugins), [Claude plugin reference](https://code.claude.com/docs/en/plugins-reference).

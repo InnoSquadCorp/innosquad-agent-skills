@@ -5,7 +5,7 @@ The InnoDI guidance and consumer patterns are adapted from InnoSquadCorp/InnoDI 
 - [Source and documentation](https://github.com/InnoSquadCorp/InnoDI/tree/4783eee7f674f99a337768c107b7a5f640810c2a)
 - [Upstream license](https://github.com/InnoSquadCorp/InnoDI/blob/4783eee7f674f99a337768c107b7a5f640810c2a/LICENSE)
 
-The consumer downloads InnoDI and SwiftSyntax through SwiftPM; this bundle does not vendor their implementations. Each dependency retains its own license. The notice below applies to the adapted InnoDI material; a license for the new plugin's original material has not yet been selected for public distribution.
+The skill is distributed under the InnoDI repository's MIT license, reproduced below so that a standalone copy retains the notice. The consumer downloads InnoDI and SwiftSyntax through SwiftPM; this bundle does not vendor their implementations. Each dependency retains its own license. A separate distribution plugin may include additional material with its own license.
 
 ```text
 MIT License

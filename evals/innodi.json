@@ -70,10 +70,10 @@
     },
     {
       "id": "missing-validation-plugin",
-      "context": "A copy of assets/consumer with the plugin removed from its declaring target, actual compiler diagnostic available.",
-      "ko": "이 컨테이너가 빌드되지 않는 이유를 확인하고 고쳐줘.",
-      "en": "Find and fix why this container fails to build.",
-      "observe": ["Checks plugin attachment on the affected target", "Restores validation instead of validateDAG:false", "Consumer builds under the original concurrency and warning settings"]
+      "context": "A copy of assets/consumer with the plugin removed from its declaring target. This minimal consumer can still compile; assess required validation configuration rather than assuming a compiler failure.",
+      "ko": "이 컨테이너의 필수 DAG 검증 설정을 확인하고 빠진 구성이 있으면 고쳐줘.",
+      "en": "Check this container target for the required DAG validation configuration and fix any missing setup.",
+      "observe": ["Checks plugin attachment on the affected target", "Restores validation instead of validateDAG:false", "Does not invent a compiler failure", "Preserves release pins and verifies the consumer under its original concurrency and warning settings"]
     }
   ]
 }
