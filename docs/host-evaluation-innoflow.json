@@ -1,0 +1,266 @@
+{
+  "checked_on": "2026-10-07",
+  "plugin_version": "0.1.0-alpha.7",
+  "skill_source": {
+    "repository": "https://github.com/InnoSquadCorp/InnoFlow.git",
+    "path": "skills/innoflow",
+    "revision": "9dee939ea4e4b0d84609351e046bfc70dfc9d95e",
+    "git_tree": "51eab5f99de25af4574e6b9d54a01191da90b866",
+    "source_status": "pull_request",
+    "library": {
+      "version": "6.0.0",
+      "revision": "188c2732d26350cf01afadade3dac89a2b73b68f",
+      "supported_release_line": "6.0.x",
+      "supported_range": ">=6.0.0 <6.1.0",
+      "include_prereleases": false
+    },
+    "pull_request": "https://github.com/InnoSquadCorp/InnoFlow/pull/57"
+  },
+  "source_consumer": {
+    "status": "passed",
+    "started_at": "2026-10-07T03:03:55.564761+00:00",
+    "finished_at": "2026-10-07T03:04:12.801052+00:00",
+    "supported_range": ">=6.0.0 <6.1.0",
+    "include_prereleases": false,
+    "validation_scope": "exact_baseline",
+    "swift": "swift-driver version: 1.168.6 Apple Swift version 6.4 (swiftlang-6.4.0.34.1 clang-2100.3.34.1)\nTarget: arm64-apple-macosx27.0.0",
+    "xcode": "Xcode 27.0\nBuild version 27A266a",
+    "source_sha256": {
+      "Package.resolved": "6fedb205bfd8558083d099115e08a900efb11c24e17b85726765c1e11fcb13bb",
+      "Package.swift": "56bf6dd50530cbc50f69d35c7f6ebd963298b04d42d6efb416afa482e242b2a7",
+      "Sources/FlowSkillExample/CounterView.swift": "d3facd2a01cb806ac1f9260474b9e7e392544ba00174665a882244b760d477f9",
+      "Sources/FlowSkillExample/Features.swift": "de865bae739d65ea2ee3b700f1ca087c6456fc2213ff3d4a91bbd34250f34150",
+      "Tests/FlowSkillExampleTests/ConsumerTests.swift": "9d8d917051e9cf0f7770129ec1ffc00f0acbad9d2d0369954464836bf1fdcfdd"
+    },
+    "dependencies": {
+      "innoflow": {
+        "version": "6.0.0",
+        "revision": "188c2732d26350cf01afadade3dac89a2b73b68f",
+        "clean": true,
+        "prebuilt_selected": false
+      },
+      "swift-syntax": {
+        "version": "604.0.0",
+        "revision": "050f1a346fbbac0ca2cfb15a95274f7bd1cf0ccf",
+        "clean": true,
+        "prebuilt_selected": true
+      }
+    },
+    "swift_test_result": {
+      "tests": 11,
+      "suites": 1,
+      "failures": 0,
+      "strict_concurrency": "complete",
+      "warnings_as_errors": true
+    },
+    "command": "python3 skills/innoflow/scripts/validate_consumer.py --scratch-path /tmp/innoflow-skill-validation",
+    "baseline_tag": "6.0.0",
+    "baseline_revision": "188c2732d26350cf01afadade3dac89a2b73b68f",
+    "scope": "Exact tagged external consumer only; not local working-tree library tests, AI behavior, or release-preflight evidence."
+  },
+  "packaging": {
+    "plugin_version": "0.1.0-alpha.7",
+    "source_equality": {
+      "innodi": {
+        "files": 14,
+        "result": "passed",
+        "git_tree": "aa58cff138c95a3a5af4949a55a460ca253f0435"
+      },
+      "innonetwork": {
+        "files": 13,
+        "result": "passed",
+        "git_tree": "ff913925f61f60c89031cf9e4e140265793da354"
+      },
+      "innoflow": {
+        "files": 14,
+        "result": "passed",
+        "git_tree": "51eab5f99de25af4574e6b9d54a01191da90b866"
+      }
+    },
+    "cache_equality": {
+      "codex:innodi": {
+        "files": 14,
+        "result": "passed"
+      },
+      "claude:innodi": {
+        "files": 14,
+        "result": "passed"
+      },
+      "codex:innonetwork": {
+        "files": 13,
+        "result": "passed"
+      },
+      "claude:innonetwork": {
+        "files": 13,
+        "result": "passed"
+      },
+      "codex:innoflow": {
+        "files": 14,
+        "result": "passed"
+      },
+      "claude:innoflow": {
+        "files": 14,
+        "result": "passed"
+      }
+    },
+    "identity": "passed",
+    "portable_schema": "passed",
+    "relative_links": "passed"
+  },
+  "codex": {
+    "version": "codex-cli 0.160.1",
+    "configured_model": "gpt-6-astra",
+    "reasoning": "xhigh",
+    "cases": [
+      {
+        "case": "implicit-loading-ko",
+        "selection": "implicit",
+        "installed_flow_skill_read": true,
+        "result": "passed",
+        "response_sha256": "00264db3dde4c64b60e13e6be28d3250c2389cdad6af970e42aefd4d8a0de40d",
+        "independent_validation": {
+          "case": "implicit-loading-ko",
+          "status": "passed",
+          "exit_code": 0,
+          "tests": 3,
+          "suites": 1,
+          "dependencies": {
+            "innoflow": {
+              "version": "6.0.0",
+              "revision": "188c2732d26350cf01afadade3dac89a2b73b68f",
+              "clean": true,
+              "prebuilt_selected": false
+            },
+            "swift-syntax": {
+              "version": "604.0.0",
+              "revision": "050f1a346fbbac0ca2cfb15a95274f7bd1cf0ccf",
+              "clean": true,
+              "prebuilt_selected": true
+            }
+          },
+          "source_sha256": {
+            "Sources/FlowSkillExample/LoadFeature.swift": "777f046d3edf9c87027401294381592131913ddfa205beabae3d856c9ae0b1d5",
+            "Tests/FlowSkillExampleTests/LoadFeatureTests.swift": "4b8591226efb34ca7ef0cb6f9ba47c6c197b48037765b9d0bbce29a2d0b4ed88"
+          },
+          "manifest_and_lock_unchanged": true,
+          "manually_edited_after_generation": false,
+          "strict_concurrency": "complete",
+          "warnings_as_errors": true,
+          "actual_remote_graph_verified": true
+        }
+      },
+      {
+        "case": "explicit-lifetime-en",
+        "selection": "explicit",
+        "installed_flow_skill_read": true,
+        "result": "passed",
+        "response_sha256": "58ebdc9b9d33cb6ed904d55160977cdc9f30bc242cceaca937ff0a47ee21aa94",
+        "independent_validation": {
+          "case": "explicit-lifetime-en",
+          "status": "passed",
+          "exit_code": 0,
+          "tests": 4,
+          "suites": 1,
+          "dependencies": {
+            "innoflow": {
+              "version": "6.0.0",
+              "revision": "188c2732d26350cf01afadade3dac89a2b73b68f",
+              "clean": true,
+              "prebuilt_selected": false
+            },
+            "swift-syntax": {
+              "version": "604.0.0",
+              "revision": "050f1a346fbbac0ca2cfb15a95274f7bd1cf0ccf",
+              "clean": true,
+              "prebuilt_selected": true
+            }
+          },
+          "source_sha256": {
+            "Sources/FlowSkillExample/DelayedFeature.swift": "a41080a63343454bf4d9c53bcb4d1b6886e5c94d6f0fd1ea6e9c7a86d221a402",
+            "Tests/FlowSkillExampleTests/DelayedFeatureTests.swift": "7fee1ca13b036b728c5e4aa9afb4dd83d1704be8e5c0337cb1f83c9e500fe193"
+          },
+          "manifest_and_lock_unchanged": true,
+          "manually_edited_after_generation": false,
+          "strict_concurrency": "complete",
+          "warnings_as_errors": true,
+          "actual_remote_graph_verified": true
+        }
+      },
+      {
+        "case": "negative-format-en",
+        "selection": "negative",
+        "installed_flow_skill_read": false,
+        "result": "passed",
+        "response_sha256": "d404983680b48626232913643c2295d807c857dfb0c1796b0f836916ab11a51d",
+        "independent_validation": {
+          "case": "negative-format-en",
+          "status": "passed",
+          "exit_code": 0,
+          "tests": 4,
+          "suites": 0,
+          "dependencies": {
+            "innoflow": {
+              "version": "6.0.0",
+              "revision": "188c2732d26350cf01afadade3dac89a2b73b68f",
+              "clean": true,
+              "prebuilt_selected": false
+            },
+            "swift-syntax": {
+              "version": "604.0.0",
+              "revision": "050f1a346fbbac0ca2cfb15a95274f7bd1cf0ccf",
+              "clean": true,
+              "prebuilt_selected": true
+            }
+          },
+          "source_sha256": {
+            "Sources/FlowSkillExample/DisplayName.swift": "6b25f2a2fec0a0b5302f5030d2b3816dfe99cd85ef97278135b35c2bfcc8ef8f",
+            "Sources/FlowSkillExample/Placeholder.swift": "da0c9cc5074195d3382d93bf385eef9a2099e4987dfa7a88b75d6972f94f5726",
+            "Tests/FlowSkillExampleTests/DisplayNameTests.swift": "083ed09b60c130642ffa39e13dbeb2862878203d6b1ed70ec23b1024ffd90c26",
+            "Tests/FlowSkillExampleTests/PlaceholderTests.swift": "4eea316cd9e279de087c271b3d2af10bc42fa25ac2bebfac48bd0a3431de80aa"
+          },
+          "manifest_and_lock_unchanged": true,
+          "manually_edited_after_generation": false,
+          "strict_concurrency": "complete",
+          "warnings_as_errors": true,
+          "actual_remote_graph_verified": true
+        },
+        "new_formatter_tests": 3,
+        "retained_seed_tests": 1
+      },
+      {
+        "case": "patch-support-policy-ko",
+        "selection": "implicit",
+        "installed_flow_skill_read": true,
+        "result": "passed",
+        "response_sha256": "78ccbfc4bcc7fb442cf6e741445ce815ce791ebb436eb681754061e87abb6548",
+        "project_files_unchanged": true,
+        "external_lookup_or_build_performed": false,
+        "support_and_baseline_distinguished": true,
+        "claims_later_patch_published_or_tested": false
+      }
+    ],
+    "new_generated_tests": 10,
+    "flow_generated_tests": 7,
+    "retained_seed_tests": 1
+  },
+  "claude": {
+    "version": "2.1.285 (Claude Code)",
+    "installed_version": "0.1.0-alpha.7",
+    "behavior": "blocked",
+    "error": "HTTP 401 OAuth access token is invalid",
+    "model_tokens_used": 0,
+    "registered_skills": [
+      "innosquad:innodi",
+      "innosquad:innoflow",
+      "innosquad:innonetwork"
+    ],
+    "requested_model": "claude-opus-5-5"
+  },
+  "limitations": [
+    "Single attempt per case with mixed Korean and English; not a repeated bilingual matrix.",
+    "No no-plugin efficacy baseline or combined-library runtime consumer.",
+    "Claude registration is not AI selection or generation qualification.",
+    "No migration execution, SwiftUI device lifecycle, optional-child lifetime, scheduler, Inspector, alternate toolchain or later-patch qualification.",
+    "Local plugin pilot and Draft PRs only; no public plugin release or automated snapshot collection."
+  ]
+}

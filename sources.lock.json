@@ -32,6 +32,21 @@
         "supported_range": ">=6.1.0 <6.2.0",
         "include_prereleases": false
       }
+    },
+    "innoflow": {
+      "repository": "https://github.com/InnoSquadCorp/InnoFlow.git",
+      "path": "skills/innoflow",
+      "revision": "9dee939ea4e4b0d84609351e046bfc70dfc9d95e",
+      "git_tree": "51eab5f99de25af4574e6b9d54a01191da90b866",
+      "source_status": "pull_request",
+      "library": {
+        "version": "6.0.0",
+        "revision": "188c2732d26350cf01afadade3dac89a2b73b68f",
+        "supported_release_line": "6.0.x",
+        "supported_range": ">=6.0.0 <6.1.0",
+        "include_prereleases": false
+      },
+      "pull_request": "https://github.com/InnoSquadCorp/InnoFlow/pull/57"
     }
   }
 }

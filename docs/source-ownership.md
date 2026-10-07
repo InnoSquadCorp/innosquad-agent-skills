@@ -3,7 +3,7 @@
 The source of truth for each library skill lives in the library's repository.
 This repository collects reviewed snapshots and owns their distribution as
 Codex and Claude Code plugins. The decision applies to all six planned Inno
-library skills; InnoDI and InnoNetwork are implemented so far.
+library skills; InnoDI, InnoNetwork, and InnoFlow are implemented so far.
 
 ## Responsibilities
 
@@ -11,6 +11,7 @@ library skills; InnoDI and InnoNetwork are implemented so far.
 | --- | --- |
 | `InnoSquadCorp/InnoDI`, `skills/innodi/` | InnoDI skill, discovery metadata, 7.0.x guidance with 7.0.0 baseline references, support record, consumer fixture, validation helper and license notice |
 | `InnoSquadCorp/InnoNetwork`, `skills/innonetwork/` | InnoNetwork skill, discovery metadata, 6.1.x guidance with 6.1.0 baseline references, support record, consumer fixture, validation helper and license notice |
+| `InnoSquadCorp/InnoFlow`, `skills/innoflow/` | InnoFlow skill, discovery metadata, 6.0.x guidance with tagged 6.0.0 baseline, support record, consumer fixture, validation helper and license notice |
 | Other library repositories, when implemented | Their own skill and library-specific consumer validation |
 | This repository | Plugin manifests, catalogs, installation/update behavior, host selection and generation evaluations, future cross-library integration guidance |
 | This repository's `skills/` | Copies of exact source snapshots, refreshed together with the lock record; no independent edits |
@@ -83,3 +84,21 @@ The Network support declaration covers stable `>=6.1.0, <6.2.0`, while its exact
 consumer and evidence remain pinned to 6.1.0. Future stable patches are handled
 against the consumer's actual resolved version; they are not automatically added
 to the set of tested releases.
+
+## InnoFlow 6.0.x support
+
+[InnoFlow PR #57](https://github.com/InnoSquadCorp/InnoFlow/pull/57) owns the
+14-file Flow skill. Alpha.7 copies source `9dee939ea4e4b0d84609351e046bfc70dfc9d95e`,
+tree `51eab5f99de25af4574e6b9d54a01191da90b866`, with exact path/byte/mode equality.
+The source remains under PR review; it is not part of the existing library tag.
+
+Supported stable versions are `>=6.0.0, <6.1.0`; prereleases and 6.1+ need separate
+source review. The exact validated tag is 6.0.0 at
+`188c2732d26350cf01afadade3dac89a2b73b68f`. No corresponding GitHub Release page
+was found at the check. A later 6.0.x consumer keeps its patch and receives
+patch-specific checks; neither support range nor a tag alone proves its tests passed.
+
+Alpha.7 preserves the DI and Network source pins and runtime files. Fresh Flow
+installation and representative AI results are recorded in
+[the Flow host evaluation](host-evaluation-innoflow.md). These are local pilot
+updates; automatic snapshot collection and public plugin publication remain pending.

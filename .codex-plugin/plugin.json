@@ -1,7 +1,7 @@
 {
   "name": "innosquad",
-  "version": "0.1.0-alpha.6",
-  "description": "InnoSquad Swift library skills: InnoDI 7.0.x and InnoNetwork 6.1.x (validated baselines: 7.0.0 and 6.1.0).",
+  "version": "0.1.0-alpha.7",
+  "description": "InnoSquad Swift library skills: InnoDI 7.0.x, InnoNetwork 6.1.x, and InnoFlow 6.0.x, with exact validated baselines.",
   "author": {
     "name": "InnoSquad"
   },
