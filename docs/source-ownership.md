@@ -110,9 +110,11 @@ updates; automatic snapshot collection and public plugin publication remain pend
 ## InnoRouter planned 7.0.x support
 
 [InnoRouter PR #66](https://github.com/InnoSquadCorp/InnoRouter/pull/66) owns the
-14-file Router skill. Alpha.8 pins source `f790079eb7a6465bacf69946eac332e9df4028c3`,
+14-file Router skill. The PR merged on 2026-10-07. Alpha.8 pins merge commit
+`3ed5ea0d6b07c1b282182c6e5468dd3ed962c402`,
 tree `eac03752e4acf3b9329846f2cc6002a05d5a5718`, and copies every path, byte and mode.
-Its source remains under review.
+Its tree matches evaluated source `f790079eb7a6465bacf69946eac332e9df4028c3`
+exactly and is present in origin/main. Merged source does not establish a release.
 
 The user selected current main as the intended 7.0.0 API. The library baseline is
 unreleased `851c63f095e49b700c3a0aa8152a3521a39977e7`; the 7.0.0 tag was absent at
@@ -125,4 +127,5 @@ A later 7.0.x consumer keeps its patch and receives patch-specific validation.
 Alpha.8 preserves the DI, Network and Flow source pins and runtime files. Their
 historical behavioral reports remain dated evidence. Fresh Router installation
 and generation results are in [the Router host evaluation](host-evaluation-innorouter.md).
-No merge, library release, public plugin publication or automated collection is implied.
+The merged source is verified independently of the still-unreleased library baseline.
+No library release, public plugin publication or automated collection is implied.

@@ -9,9 +9,12 @@ generation request failed with OAuth 401 before model-token use.
 
 ## Source, planned support and exact candidate
 
-[InnoRouter PR #66](https://github.com/InnoSquadCorp/InnoRouter/pull/66) owns source
-`f790079eb7a6465bacf69946eac332e9df4028c3`, 14-file tree
-`eac03752e4acf3b9329846f2cc6002a05d5a5718`. The source remains under review.
+[InnoRouter PR #66](https://github.com/InnoSquadCorp/InnoRouter/pull/66) merged on 2026-10-07.
+The final snapshot pins merge commit `3ed5ea0d6b07c1b282182c6e5468dd3ed962c402`, 14-file tree
+`eac03752e4acf3b9329846f2cc6002a05d5a5718`. It exactly matches the evaluated source
+`f790079eb7a6465bacf69946eac332e9df4028c3`; runtime/tests/manifest/lock also have no
+diff between those commits. The merge was observed during final verification,
+not performed by this evaluation.
 The separate library baseline is **unreleased main**
 `851c63f095e49b700c3a0aa8152a3521a39977e7`, intended for 7.0.0. The 7.0.0 tag lookup
 returned 404 at the recorded check. Runtime version/changelog dates do not prove
@@ -102,4 +105,4 @@ reruns. These cases do not cover native UI/scene lifecycle, all migration paths,
 feature/split/Inspector integration, alternate toolchains, later patches or a
 combined-library runtime consumer. Library remote CI and release qualification
 are separate. No merge, tag/Release change, public marketplace publication or
-automatic snapshot collection was performed.
+automatic snapshot collection was performed by this evaluation.
