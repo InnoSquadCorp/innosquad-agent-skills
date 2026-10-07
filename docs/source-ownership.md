@@ -77,5 +77,5 @@ and 13-file runtime tree are pinned in the same lock. The central snapshot is
 copied explicitly and compared by path, bytes and mode; the InnoDI pin is unchanged.
 Local plugin `0.1.0-alpha.4` includes both skills. Installation and representative
 AI results are recorded in [the Network host evaluation](host-evaluation-innonetwork.md).
-The Network source remains a Draft PR; the DI snapshot/merge distinction above
+The Network source remains under PR review; the DI snapshot/merge distinction above
 is unchanged. No public plugin publication is implied.
