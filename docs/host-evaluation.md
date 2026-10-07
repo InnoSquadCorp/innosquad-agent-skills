@@ -1,5 +1,7 @@
 # 실제 설치·AI 평가 — 2026-10-05
 
+This is the historical alpha.1/alpha.2 report. The current DI source and alpha.6 checks are recorded in [the 7.0.1 update](host-evaluation-innodi-7.0.1.md).
+
 **Codex 대표 8개 사례 통과, 생성 코드 29개 테스트 통과. Claude Code는 설치·스킬 등록까지 확인했고 실제 AI 호출은 OAuth 401 오류로 중단됐다.** 두 도구의 코드 생성 평가가 모두 완료됐다는 의미는 아니다.
 
 ## 설치와 평가 환경
@@ -7,7 +9,7 @@
 | 항목 | 확인 결과 |
 |---|---|
 | 설치 ID | 두 도구 모두 `innosquad@innosquad-local`, 사용자 범위 설치 |
-| 현재 로컬 버전 | `0.1.0-alpha.2` |
+| 당시 로컬 버전 | `0.1.0-alpha.2` |
 | Codex | 앱 포함 CLI 0.160.0, 설정 모델 `gpt-6-astra`, reasoning `xhigh` |
 | Claude Code | 2.1.285, 시작 이벤트의 모델 `claude-opus-5-5` |
 | 모델에 제공한 자료 | 새 소비 프로젝트와 자연어 요청, 설치된 스킬. 이전 대화와 채점 기준은 제공하지 않음 |

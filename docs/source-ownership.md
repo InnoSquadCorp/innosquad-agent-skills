@@ -9,7 +9,7 @@ library skills; InnoDI and InnoNetwork are implemented so far.
 
 | Location | Maintains |
 | --- | --- |
-| `InnoSquadCorp/InnoDI`, `skills/innodi/` | InnoDI skill, discovery metadata, exact-version API references, support record, consumer fixture, validation helper and license notice |
+| `InnoSquadCorp/InnoDI`, `skills/innodi/` | InnoDI skill, discovery metadata, 7.0.x guidance with 7.0.0 baseline references, support record, consumer fixture, validation helper and license notice |
 | `InnoSquadCorp/InnoNetwork`, `skills/innonetwork/` | InnoNetwork skill, discovery metadata, 6.1.x guidance with 6.1.0 baseline references, support record, consumer fixture, validation helper and license notice |
 | Other library repositories, when implemented | Their own skill and library-specific consumer validation |
 | This repository | Plugin manifests, catalogs, installation/update behavior, host selection and generation evaluations, future cross-library integration guidance |
@@ -49,38 +49,35 @@ must agree with the copied
 5. Publish a plugin version only after the selected source is merged and its
    applicable checks are satisfied. Preserve earlier plugin versions and pins.
 
-## InnoDI migration history
+## InnoDI 7.0.1 source refresh
 
-The initial pilot was authored here. Its 14 runtime files have now been
-transferred to [InnoDI PR #54](https://github.com/InnoSquadCorp/InnoDI/pull/54)
-based on public 7.0.0. The redistribution notice
-was updated for InnoDI's MIT license; instructions, discovery metadata,
-references, script, and Swift fixture were preserved. The bundled
-copy still matches that exact source commit, recorded as `pull_request` in the lock.
-That status is not evidence that the source PR has merged or entered a release.
+The initial pilot was transferred to [InnoDI PR #54](https://github.com/InnoSquadCorp/InnoDI/pull/54),
+merged on 2026-10-06. Public [InnoDI 7.0.1](https://github.com/InnoSquadCorp/InnoDI/releases/tag/7.0.1)
+includes the canonical skill. The alpha.6 snapshot pins release commit
+`ce47cf4b207c3b8810b2a7d7d622a2f8ead3ed96` and the 14-file skill tree
+`aa58cff138c95a3a5af4949a55a460ca253f0435`. Its source status is `released`;
+the PR link remains provenance. All paths, bytes and modes match that release.
 
-The existing host evaluation reports remain here as historical evidence.
-InnoDI owns its fresh consumer evidence. Automatic collection, source-update
-PRs, and publication CI are **not implemented by this migration**; the initial
-snapshot refresh and equality checks were run explicitly. Public distribution remains pending.
+Stable `>=7.0.0, <7.1.0` is the supported range. The exact bundled consumer and
+`library.version/revision` remain the validated 7.0.0 baseline. Separate tests
+against actual 7.0.1 do not rewrite the canonical fixture or historical records.
+See [the alpha.6 host and consumer evidence](host-evaluation-innodi-7.0.1.md).
 
-On 2026-10-07, PR #54 was verified as merged on 2026-10-06 at
-`edcc754052d51063e19836aa75913e130cb309f1`. Its merged skill tree differs from
-the bundled tree. The DI lock still identifies the original validated PR
-snapshot; `pull_request` describes that input, not the current GitHub PR state.
-Reviewing the merged DI changes, refreshing that pin and its affected validation
-remain a separate update from this InnoNetwork addition.
+The prior alpha.5 snapshot pinned pre-merge source `ef23b1e`. That input and
+its earlier host results remain in Git history and dated reports. Automatic
+collection, source-update PRs, and publication CI are not implemented;
+this refresh was performed explicitly. Public plugin distribution remains pending.
 
 ## InnoNetwork 6.1.x support
 
 [InnoNetwork PR #148](https://github.com/InnoSquadCorp/InnoNetwork/pull/148)
 adds the library-owned skill on the published 6.1.0 baseline. Its source commit
 and 13-file runtime tree are pinned in the same lock. The central snapshot is
-copied explicitly and compared by path, bytes and mode; the InnoDI pin is unchanged.
-Local plugin `0.1.0-alpha.5` includes both skills. Installation and representative
+copied explicitly and compared by path, bytes and mode. Its alpha.5 source pin
+is unchanged in alpha.6, which includes both skills. Installation and representative
 AI results are recorded in [the Network host evaluation](host-evaluation-innonetwork.md).
-The Network source remains under PR review; the DI snapshot/merge distinction above
-is unchanged. No public plugin publication is implied.
+The Network source remains under PR review; the DI source is now a released snapshot.
+No public plugin publication is implied.
 
 The Network support declaration covers stable `>=6.1.0, <6.2.0`, while its exact
 consumer and evidence remain pinned to 6.1.0. Future stable patches are handled

@@ -4,14 +4,19 @@
     "innodi": {
       "repository": "https://github.com/InnoSquadCorp/InnoDI.git",
       "path": "skills/innodi",
-      "revision": "ef23b1e056064dc19e1685c3b91d36bd7e4db7d0",
-      "git_tree": "12f97d0d3edc8f187f8d0a23589f6a3199f17716",
-      "source_status": "pull_request",
+      "revision": "ce47cf4b207c3b8810b2a7d7d622a2f8ead3ed96",
+      "git_tree": "aa58cff138c95a3a5af4949a55a460ca253f0435",
+      "source_status": "released",
       "pull_request": "https://github.com/InnoSquadCorp/InnoDI/pull/54",
       "library": {
         "version": "7.0.0",
-        "revision": "4783eee7f674f99a337768c107b7a5f640810c2a"
-      }
+        "revision": "4783eee7f674f99a337768c107b7a5f640810c2a",
+        "supported_release_line": "7.0.x",
+        "supported_range": ">=7.0.0 <7.1.0",
+        "include_prereleases": false
+      },
+      "release_tag": "7.0.1",
+      "release_url": "https://github.com/InnoSquadCorp/InnoDI/releases/tag/7.0.1"
     },
     "innonetwork": {
       "repository": "https://github.com/InnoSquadCorp/InnoNetwork.git",

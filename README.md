@@ -1,10 +1,10 @@
 # InnoSquad Agent Skills — library-owned pilot
 
-InnoDI **7.0.0**과 InnoNetwork **6.1.x**(검증 기준 **6.1.0**)를 사용하는 AI 개발 스킬의 로컬 파일럿입니다. Codex와 Claude Code가 각 라이브러리의 스킬 본문을 공유합니다. 플러그인 버전 `0.1.0-alpha.5`는 로컬 식별자입니다.
+InnoDI **7.0.x**(검증 기준 **7.0.0**)와 InnoNetwork **6.1.x**(검증 기준 **6.1.0**)를 사용하는 AI 개발 스킬의 로컬 파일럿입니다. Codex와 Claude Code가 각 라이브러리의 스킬 본문을 공유합니다. 플러그인 버전 `0.1.0-alpha.6`는 로컬 식별자입니다.
 
 | Skill | Supported library | Validated baseline | Scope |
 | --- | --- | --- | --- |
-| [innodi](skills/innodi/SKILL.md) | InnoDI 7.0.0 | 7.0.0 | Container, provider, override, readiness and lifecycle |
+| [innodi](skills/innodi/SKILL.md) | InnoDI 7.0.x (stable) | 7.0.0 | Container, provider, override, readiness and lifecycle |
 | [innonetwork](skills/innonetwork/SKILL.md) | InnoNetwork 6.1.x (stable) | 6.1.0 | JSON and encoded requests, auth, retry, limits and operations |
 
 The InnoDI skill covers version-aware setup, containers, providers, overrides, typed prewarm, async ownership, and 6→7 migration guidance. It includes an exact-release Swift consumer and a reproducible validation helper. Read [validation.md](docs/validation.md) for what has actually been tested.
@@ -15,7 +15,7 @@ The InnoDI skill covers version-aware setup, containers, providers, overrides, t
 
 This repository owns plugin manifests, marketplace catalogs, and host installation/selection evaluations. Its `skills/` directory contains distribution snapshots; edit the library source, then refresh the snapshot. [sources.lock.json](sources.lock.json) records the source commit and Git tree separately from the supported library release.
 
-The InnoNetwork source is under PR review. InnoDI PR #54 has merged; this Network addition retains the previously validated DI snapshot, whose pin predates that merge. Snapshot collection was performed explicitly and checked for exact equality; automated collection/publication is follow-up work. Read the [ownership and update policy](docs/source-ownership.md) before changing a bundled skill.
+The InnoNetwork source is under PR review. The InnoDI snapshot comes from public release **7.0.1**, source commit `ce47cf4b207c3b8810b2a7d7d622a2f8ead3ed96`; its supported range is stable 7.0.x and its exact bundled fixture remains on 7.0.0. Snapshot collection was performed explicitly and checked for exact equality; automated collection/publication is follow-up work. Read the [ownership and update policy](docs/source-ownership.md) before changing a bundled skill.
 
 ## Install and use locally
 
@@ -36,9 +36,11 @@ claude plugin install innosquad@innosquad-local --scope user
 
 **Claude Code:** Start a new session and invoke `/innosquad:innodi` with the same task. For a development session without persistent installation, `claude --plugin-dir .` is also available.
 
-Historical InnoDI evidence: both user-scope installations were performed on 2026-10-05. Codex CLI 0.160.0 passed eight representative selection/generation cases; the generated consumers passed 29 Swift tests. Claude Code 2.1.285 registered the skill, but AI execution was blocked by an invalid OAuth token. See the [actual host evaluation](docs/host-evaluation.md); installation alone is not behavioral qualification. A public release is not included.
+Historical InnoDI evidence: both user-scope installations were performed on 2026-10-05. Codex CLI 0.160.0 passed eight representative selection/generation cases; the generated consumers passed 29 Swift tests. Claude Code 2.1.285 registered the skill, but AI execution was blocked by an invalid OAuth token. See the [actual host evaluation](docs/host-evaluation.md); installation alone is not behavioral qualification. A public plugin release is not included.
 
-For the newly added Network skill, invoke `$innosquad:innonetwork` in Codex or `/innosquad:innonetwork` in Claude Code. Its alpha.5 patch-support policy check and earlier alpha.3/alpha.4 generation results are recorded separately in [Network host evaluation](docs/host-evaluation-innonetwork.md); the earlier InnoDI results were not rerun.
+The [DI 7.0.1 snapshot update](docs/host-evaluation-innodi-7.0.1.md) records alpha.6 installation, current policy/generation checks, and separate 7.0.1 consumer evidence. The original 7.0.0 fixture pin and historical reports are preserved.
+
+For the Network skill, invoke `$innosquad:innonetwork` in Codex or `/innosquad:innonetwork` in Claude Code. Its alpha.5 patch-support policy check and earlier alpha.3/alpha.4 generation results are recorded separately in [Network host evaluation](docs/host-evaluation-innonetwork.md); those earlier Network generation results are reused in alpha.6.
 
 For standalone use, copy the complete `skills/<library>` directory to `.agents/skills/<library>` (Codex) or `.claude/skills/<library>` (Claude Code); preserve all supporting files and compare an existing destination before replacement. Standalone invocations are `$innodi` / `$innonetwork` or `/innodi` / `/innonetwork`.
 
@@ -54,6 +56,8 @@ claude plugin validate .claude-plugin/plugin.json
 ```
 
 The helper copies the fixture outside the package, resolves remote exact pins, checks the active graph and Git checkouts, and runs Swift tests with strict concurrency and warnings as errors. It retains logs and `evidence.json` under the chosen scratch directory. It requires network access on a cold cache and does not install either AI plugin. The Python helper uses only the standard library.
+
+InnoDI support covers stable `>=7.0.0, <7.1.0`. Its released skill source is 7.0.1; its exact fixture stays on 7.0.0. A separate copy of that fixture passed 10 tests against actual public 7.0.1. This is patch-specific evidence, not a claim that every 7.0.x patch or every consumer is tested.
 
 InnoNetwork support covers stable `>=6.1.0, <6.2.0`. The exact fixture stays on 6.1.0; another patch such as 6.1.1 keeps its resolved version and receives patch-specific source checks and consumer tests. A planned release is not recorded as published or validated.
 

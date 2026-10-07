@@ -1,5 +1,7 @@
 # InnoDI pilot validation — 2026-10-05
 
+The [7.0.1 snapshot update](host-evaluation-innodi-7.0.1.md) records the latest distribution and patch-specific validation.
+
 This records the initial creation pass. The later user-requested installation and AI evaluation are recorded in [host-evaluation.md](host-evaluation.md): both tools installed, Codex representative cases passed, Claude AI execution blocked by OAuth 401. Historical “not performed” statements below describe the initial pass.
 
 Local skill creation is complete for this first slice. This is not a public release or a claim of completed Codex/Claude behavioral qualification.

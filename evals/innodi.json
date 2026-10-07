@@ -1,8 +1,10 @@
 {
   "skill": "innodi",
   "baseline": "InnoDI 7.0.0",
+  "supported_range": ">=7.0.0 <7.1.0",
   "status": "partially_evaluated",
-  "latest_report": "../docs/host-evaluation.md",
+  "latest_report": "../docs/host-evaluation-innodi-7.0.1.md",
+  "historical_report": "../docs/host-evaluation.md",
   "protocol": "Run each language prompt in a fresh Codex and Claude Code session with only the installed plugin and stated consumer context. Do not supply the expected observations to the acting model. Capture host/model/plugin versions, selected skill, tool trace, diff, resolved graph, and consumer build/test result. Assess behavior, not matching phrases. The fixture tests validate library examples, not these AI behaviors.",
   "cases": [
     {
@@ -74,6 +76,28 @@
       "ko": "이 컨테이너의 필수 DAG 검증 설정을 확인하고 빠진 구성이 있으면 고쳐줘.",
       "en": "Check this container target for the required DAG validation configuration and fix any missing setup.",
       "observe": ["Checks plugin attachment on the affected target", "Restores validation instead of validateDAG:false", "Does not invent a compiler failure", "Preserves release pins and verifies the consumer under its original concurrency and warning settings"]
+    },
+    {
+      "id": "patch-support-policy-ko",
+      "context": "Swift consumer exact-pinned to public InnoDI 7.0.1; alpha.6 installed. Generation case also receives exact release notes and upstream manifest.",
+      "ko": "이 프로젝트는 InnoDI 7.0.1을 쓰고 있어. 현재 설치된 지침에서 이 버전을 지원하는지, 기록된 검증 기준과 실제 프로젝트 버전이 어떻게 다른지, 7.0.1 유지 시 어떤 검증이 필요한지 간단히 확인해 줘. 로컬 manifest/lock과 설치된 지침만 읽고 외부 조회, 빌드, 파일 수정은 하지 마. 직접 확인하고 다른 에이전트에게 위임하지 마.",
+      "observe": [
+        "Selects installed innodi automatically",
+        "Separates stable 7.0.x support from recorded 7.0.0 validation and actual 7.0.1 consumer",
+        "Keeps the actual patch and does not claim unperformed tests",
+        "Performs no edits, external lookup or build"
+      ]
+    },
+    {
+      "id": "implicit-patch-generation-ko",
+      "context": "Swift consumer exact-pinned to public InnoDI 7.0.1; alpha.6 installed. Generation case also receives exact release notes and upstream manifest.",
+      "ko": "InnoDI 7.0.1을 쓰는 이 Swift 패키지에 APIClient를 주입하는 간단한 컨테이너와 fake override 테스트를 만들어 줘. APIClient는 title() -> String을 제공하고 기본 구현은 live, 테스트 fake는 fake를 반환하면 돼. 실제 container/provider/override API를 써서 기본 구현과 fake 주입 결과를 검증해 줘. 기존 manifest/lock의 버전과 검증 플러그인은 유지해 줘. 현재 릴리스 메모와 manifest는 release-context에 있어. Sources와 Tests에 구현하고 최종 답변에 버전 판단 근거를 적어 줘. 이 평가에서는 코드 생성까지만 하고 빌드/테스트는 실행하지 마. 별도 평가자가 변경 없이 실행할 거야. 직접 작업하고 다른 에이전트에게 위임하지 마.",
+      "observe": [
+        "Selects installed innodi automatically",
+        "Keeps manifest and lock unchanged on 7.0.1",
+        "Uses typed container/provider/override APIs with DAG plugin",
+        "Generated default and fake override tests pass independently without manual edits"
+      ]
     }
   ]
 }
