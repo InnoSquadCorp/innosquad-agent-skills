@@ -10,7 +10,7 @@ owns its instructions, fixture and fresh 13-test consumer evidence.
 
 Both hosts were updated through their native plugin commands from alpha.2 to
 alpha.3, then alpha.4 after the JSON-header correction below. Earlier caches were
-preserved. The current local pilot is `innosquad@innosquad-local` **0.1.0-alpha.4**.
+preserved. The initial generation pilot was `innosquad@innosquad-local` **0.1.0-alpha.4**.
 
 | Check | Fresh result |
 | --- | --- |
@@ -75,3 +75,27 @@ skill tree. The previously validated DI snapshot is retained for this addition;
 its merged-source refresh remains a separate update. Automatic collection/publication is still unimplemented. Local
 installation, local test success, remote CI, source merge and public plugin
 publication are separate states; this work does not publish a public plugin.
+
+## Stable 6.1.x support policy — alpha.5
+
+The user requested stable **6.1.x** support ahead of the planned 6.1.1 release.
+Alpha.5 separates that range (`>=6.1.0, <6.2.0`, excluding prereleases) from the
+validated 6.1.0 baseline. The fixture, exact dependency pins, helper and runtime
+API examples are unchanged. The exact-release helper passed 13 tests again;
+docs contract sync and skill structure checks passed.
+
+Both hosts were updated through their native plugin commands, and runtime
+path/bytes/modes match the central snapshots. Manifest schema/identity and Claude
+plugin validation passed. A fresh Codex session implicitly selected the installed
+alpha.5 skill for the added `patch-support-policy-ko` case. It correctly stated
+that 6.1.1 is supported once stable and published, distinguished the tested 6.1.0
+baseline, required patch-specific source/release and consumer checks, and avoided
+a fixture-driven downgrade. Manifest/lock files stayed unchanged; there were no
+external queries, builds or file edits during this policy-only evaluation.
+
+This is fresh policy reasoning evidence. The previous alpha.3/alpha.4 code
+creation results above are reused, not rerun or relabeled as alpha.5 generation
+results. Claude behavior was not retried after its earlier authentication error.
+No 6.1.1 publication, build or runtime validation is claimed. The new source pin
+and support metadata are recorded in `sources.lock.json`; the JSON report retains
+the initial evidence and adds a separate `patch_support_update` record.

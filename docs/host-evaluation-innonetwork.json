@@ -115,5 +115,28 @@
     "both_host_runtime_snapshot_equality": "passed",
     "pinned_source_snapshot_equality": "passed"
   },
-  "scope": "Single representative attempts in isolated CLI sessions, mock transports. No public plugin publication."
+  "scope": "Single representative attempts in isolated CLI sessions, mock transports. No public plugin publication.",
+  "patch_support_update": {
+    "plugin_version": "0.1.0-alpha.5",
+    "case": "patch-support-policy-ko",
+    "supported_release_line": "6.1.x",
+    "supported_range": ">=6.1.0 <6.2.0",
+    "include_prereleases": false,
+    "validated_library_version": "6.1.0",
+    "source_revision": "4dfd88c2d2c6dd771994cdecc20a3b7e9f4318ac",
+    "codex_result": "passed",
+    "implicit_skill_read": true,
+    "correct_support_and_validation_distinction": true,
+    "consumer_downgrade_recommended": false,
+    "claims_6_1_1_published_or_tested": false,
+    "project_files_unchanged": true,
+    "external_lookup_or_build_performed": false,
+    "response_sha256": "218ed982eda06d36ff9ececdd32da026da28b3a02d2237d4b98adcbf9251b79d",
+    "both_hosts_installed_version": "0.1.0-alpha.5",
+    "runtime_cache_equality": "passed",
+    "baseline_consumer_tests": 13,
+    "docs_contract_sync": "passed",
+    "claude_behavior_retested": false,
+    "limitations": "Policy reasoning only; no generated-code or 6.1.1 runtime qualification. Earlier alpha.3/alpha.4 generation evidence is reused."
+  }
 }

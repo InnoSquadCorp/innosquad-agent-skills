@@ -10,7 +10,7 @@ library skills; InnoDI and InnoNetwork are implemented so far.
 | Location | Maintains |
 | --- | --- |
 | `InnoSquadCorp/InnoDI`, `skills/innodi/` | InnoDI skill, discovery metadata, exact-version API references, support record, consumer fixture, validation helper and license notice |
-| `InnoSquadCorp/InnoNetwork`, `skills/innonetwork/` | InnoNetwork skill, discovery metadata, 6.1.0 API references, support record, consumer fixture, validation helper and license notice |
+| `InnoSquadCorp/InnoNetwork`, `skills/innonetwork/` | InnoNetwork skill, discovery metadata, 6.1.x guidance with 6.1.0 baseline references, support record, consumer fixture, validation helper and license notice |
 | Other library repositories, when implemented | Their own skill and library-specific consumer validation |
 | This repository | Plugin manifests, catalogs, installation/update behavior, host selection and generation evaluations, future cross-library integration guidance |
 | This repository's `skills/` | Copies of exact source snapshots, refreshed together with the lock record; no independent edits |
@@ -23,13 +23,15 @@ skill's examples support unreleased APIs.
 ## Two independent versions
 
 The **skill source commit** identifies the instructions and assets to collect.
-The **supported library release/revision** identifies the API those assets
+The **validated library release/revision** identifies the API those assets
 were tested against. They need not be the same commit. An instruction fix can
 therefore be distributed without publishing a new Swift library release.
 
 [sources.lock.json](../sources.lock.json) records both, along with the source
 path and its Git tree identity. This file is a distribution record, not a
-second source for API support: its library fields must agree with the copied
+second source for API support: `library.version/revision` name the tested baseline;
+optional support-range fields declare intended stable versions. All library fields
+must agree with the copied
 `references/support.json`.
 
 ## Update process
@@ -69,13 +71,18 @@ snapshot; `pull_request` describes that input, not the current GitHub PR state.
 Reviewing the merged DI changes, refreshing that pin and its affected validation
 remain a separate update from this InnoNetwork addition.
 
-## InnoNetwork 6.1.0 addition
+## InnoNetwork 6.1.x support
 
 [InnoNetwork PR #148](https://github.com/InnoSquadCorp/InnoNetwork/pull/148)
 adds the library-owned skill on the published 6.1.0 baseline. Its source commit
 and 13-file runtime tree are pinned in the same lock. The central snapshot is
 copied explicitly and compared by path, bytes and mode; the InnoDI pin is unchanged.
-Local plugin `0.1.0-alpha.4` includes both skills. Installation and representative
+Local plugin `0.1.0-alpha.5` includes both skills. Installation and representative
 AI results are recorded in [the Network host evaluation](host-evaluation-innonetwork.md).
 The Network source remains under PR review; the DI snapshot/merge distinction above
 is unchanged. No public plugin publication is implied.
+
+The Network support declaration covers stable `>=6.1.0, <6.2.0`, while its exact
+consumer and evidence remain pinned to 6.1.0. Future stable patches are handled
+against the consumer's actual resolved version; they are not automatically added
+to the set of tested releases.

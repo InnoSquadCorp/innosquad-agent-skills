@@ -1,11 +1,11 @@
 # InnoSquad Agent Skills — library-owned pilot
 
-InnoDI **7.0.0**과 InnoNetwork **6.1.0**을 사용하는 AI 개발 스킬의 로컬 파일럿입니다. Codex와 Claude Code가 각 라이브러리의 스킬 본문을 공유합니다. 플러그인 버전 `0.1.0-alpha.4`는 로컬 식별자입니다.
+InnoDI **7.0.0**과 InnoNetwork **6.1.x**(검증 기준 **6.1.0**)를 사용하는 AI 개발 스킬의 로컬 파일럿입니다. Codex와 Claude Code가 각 라이브러리의 스킬 본문을 공유합니다. 플러그인 버전 `0.1.0-alpha.5`는 로컬 식별자입니다.
 
-| Skill | Supported library | Scope |
-| --- | --- | --- |
-| [innodi](skills/innodi/SKILL.md) | InnoDI 7.0.0 | Container, provider, override, readiness and lifecycle |
-| [innonetwork](skills/innonetwork/SKILL.md) | InnoNetwork 6.1.0 | JSON and encoded requests, auth, retry, limits and operations |
+| Skill | Supported library | Validated baseline | Scope |
+| --- | --- | --- | --- |
+| [innodi](skills/innodi/SKILL.md) | InnoDI 7.0.0 | 7.0.0 | Container, provider, override, readiness and lifecycle |
+| [innonetwork](skills/innonetwork/SKILL.md) | InnoNetwork 6.1.x (stable) | 6.1.0 | JSON and encoded requests, auth, retry, limits and operations |
 
 The InnoDI skill covers version-aware setup, containers, providers, overrides, typed prewarm, async ownership, and 6→7 migration guidance. It includes an exact-release Swift consumer and a reproducible validation helper. Read [validation.md](docs/validation.md) for what has actually been tested.
 
@@ -38,7 +38,7 @@ claude plugin install innosquad@innosquad-local --scope user
 
 Historical InnoDI evidence: both user-scope installations were performed on 2026-10-05. Codex CLI 0.160.0 passed eight representative selection/generation cases; the generated consumers passed 29 Swift tests. Claude Code 2.1.285 registered the skill, but AI execution was blocked by an invalid OAuth token. See the [actual host evaluation](docs/host-evaluation.md); installation alone is not behavioral qualification. A public release is not included.
 
-For the newly added Network skill, invoke `$innosquad:innonetwork` in Codex or `/innosquad:innonetwork` in Claude Code. Its alpha.4 installation and representative behavior results are recorded separately in [Network host evaluation](docs/host-evaluation-innonetwork.md); the earlier InnoDI results were not rerun.
+For the newly added Network skill, invoke `$innosquad:innonetwork` in Codex or `/innosquad:innonetwork` in Claude Code. Its alpha.5 patch-support policy check and earlier alpha.3/alpha.4 generation results are recorded separately in [Network host evaluation](docs/host-evaluation-innonetwork.md); the earlier InnoDI results were not rerun.
 
 For standalone use, copy the complete `skills/<library>` directory to `.agents/skills/<library>` (Codex) or `.claude/skills/<library>` (Claude Code); preserve all supporting files and compare an existing destination before replacement. Standalone invocations are `$innodi` / `$innonetwork` or `/innodi` / `/innonetwork`.
 
@@ -55,7 +55,9 @@ claude plugin validate .claude-plugin/plugin.json
 
 The helper copies the fixture outside the package, resolves remote exact pins, checks the active graph and Git checkouts, and runs Swift tests with strict concurrency and warnings as errors. It retains logs and `evidence.json` under the chosen scratch directory. It requires network access on a cold cache and does not install either AI plugin. The Python helper uses only the standard library.
 
-The InnoNetwork fixture passes 13 tests covering JSON macros, buffered encoding, retry byte reuse, auth preflight, codec failures, request/response budgets, no-content responses, operations and cancellation. It verifies the public 6.1.0 release and all six remote checkout pins, including SwiftSyntax 604. Its source-owned [validation record](https://github.com/InnoSquadCorp/InnoNetwork/blob/d6e65752eb60b00e765afccd53bb7ff63237c95b/skills/validation.md) is separate from AI host evidence. No combined DI/Network or companion consumer is qualified.
+InnoNetwork support covers stable `>=6.1.0, <6.2.0`. The exact fixture stays on 6.1.0; another patch such as 6.1.1 keeps its resolved version and receives patch-specific source checks and consumer tests. A planned release is not recorded as published or validated.
+
+The InnoNetwork fixture passes 13 tests covering JSON macros, buffered encoding, retry byte reuse, auth preflight, codec failures, request/response budgets, no-content responses, operations and cancellation. It verifies the public 6.1.0 release and all six remote checkout pins, including SwiftSyntax 604. Its source-owned [validation record](https://github.com/InnoSquadCorp/InnoNetwork/blob/4dfd88c2d2c6dd771994cdecc20a3b7e9f4318ac/skills/validation.md) is separate from AI host evidence. No combined DI/Network or companion consumer is qualified.
 
 The original InnoDI bundled test target checks 10 cases covering construction, overrides, prewarm, readiness, retry, reader cancellation, close, preflight failure, and a SwiftUI compile boundary. The host evaluation's 29 generated tests are separate evidence. Migration execution, SwiftUI host/device behavior, and Claude AI behavior remain unverified. The [evaluation cases](evals/innodi.json) retain the broader planned scope.
 

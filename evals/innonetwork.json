@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "supported_library": "InnoNetwork 6.1.0",
+  "supported_library": "InnoNetwork 6.1.x (stable)",
   "cases": [
     {
       "id": "implicit-json-ko",
@@ -38,6 +38,19 @@
         "Does not add InnoNetwork or networking dependencies",
         "Formatting tests pass"
       ]
+    },
+    {
+      "id": "patch-support-policy-ko",
+      "language": "ko",
+      "selection": "implicit",
+      "prompt": "InnoNetwork를 쓰는 앱이야. 6.1.1 정식 배포 뒤에 그 패치로 업데이트하려고 해. 지금 설치된 스킬이 그 버전을 지원 대상으로 보는지, 실제 검증 완료 버전은 무엇인지, 적용할 때 어떤 확인이 필요한지 정리해 줘. 아직 프로젝트 파일이나 의존성은 바꾸지 마.",
+      "acceptance": [
+        "Selects the installed Network skill",
+        "Identifies stable 6.1.x as scope and 6.1.0 as validated baseline",
+        "Does not claim planned 6.1.1 is published or tested",
+        "Keeps consumer patch rather than downgrading to fixture version",
+        "Checks release/source changes and consumer behavior before claiming patch validation"
+      ]
     }
   ],
   "execution_notes": "Results are in docs/host-evaluation-innonetwork.md. Generate in fresh sessions, then independently build the unchanged output with exact remote release pins. Do not infer runtime success from model self-reports.",
@@ -46,5 +59,6 @@
     "Optional products and companions",
     "Mixed InnoDI/InnoNetwork consumer",
     "Full bilingual cross-product matrix"
-  ]
+  ],
+  "validated_baseline": "6.1.0"
 }

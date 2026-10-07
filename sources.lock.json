@@ -16,13 +16,16 @@
     "innonetwork": {
       "repository": "https://github.com/InnoSquadCorp/InnoNetwork.git",
       "path": "skills/innonetwork",
-      "revision": "d6e65752eb60b00e765afccd53bb7ff63237c95b",
-      "git_tree": "aeb7860759a692e7092b1e4e12a7104e32f14365",
+      "revision": "4dfd88c2d2c6dd771994cdecc20a3b7e9f4318ac",
+      "git_tree": "ff913925f61f60c89031cf9e4e140265793da354",
       "source_status": "pull_request",
       "pull_request": "https://github.com/InnoSquadCorp/InnoNetwork/pull/148",
       "library": {
         "version": "6.1.0",
-        "revision": "79ff9f535a0a15ad8b52ce49cb5a4b1ea1dfec16"
+        "revision": "79ff9f535a0a15ad8b52ce49cb5a4b1ea1dfec16",
+        "supported_release_line": "6.1.x",
+        "supported_range": ">=6.1.0 <6.2.0",
+        "include_prereleases": false
       }
     }
   }
