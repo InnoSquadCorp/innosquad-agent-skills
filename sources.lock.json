@@ -47,6 +47,24 @@
         "include_prereleases": false
       },
       "pull_request": "https://github.com/InnoSquadCorp/InnoFlow/pull/57"
+    },
+    "innorouter": {
+      "repository": "https://github.com/InnoSquadCorp/InnoRouter.git",
+      "path": "skills/innorouter",
+      "revision": "f790079eb7a6465bacf69946eac332e9df4028c3",
+      "git_tree": "eac03752e4acf3b9329846f2cc6002a05d5a5718",
+      "source_status": "pull_request",
+      "pull_request": "https://github.com/InnoSquadCorp/InnoRouter/pull/66",
+      "library": {
+        "version": null,
+        "planned_version": "7.0.0",
+        "revision": "851c63f095e49b700c3a0aa8152a3521a39977e7",
+        "baseline_kind": "unreleased_main_commit",
+        "support_status": "planned_stable_line",
+        "supported_release_line": "7.0.x",
+        "supported_range": ">=7.0.0 <7.1.0",
+        "include_prereleases": false
+      }
     }
   }
 }

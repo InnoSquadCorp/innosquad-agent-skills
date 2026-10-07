@@ -1,0 +1,58 @@
+{
+  "skill": "innorouter",
+  "supported_range": ">=7.0.0 <7.1.0",
+  "baseline": "unreleased_main_commit",
+  "status": "partially_evaluated",
+  "cases": [
+    {
+      "id": "implicit-navigation-ko",
+      "context": "Fresh Swift 6.3 consumer pinned to unreleased InnoRouter main 851c63f and SwiftSyntax 604.0.0; alpha.8 installed; empty Sources/Tests.",
+      "prompt": "이 Swift 패키지는 InnoRouter의 7.0.0 예정 main 커밋을 쓰고 있어. 상품 상세(id: String)와 설정 화면을 오가는 간단한 SwiftUI 내비게이션을 만들어 줘. routerskill://router.example.com/products/42 딥링크로 상품을 열 수 있어야 하고 다른 호스트의 URL은 거부해야 해. Host와 버튼 View도 작성하고, 화면 push/pop의 상태와 revision 및 딥링크 허용/거부를 테스트해 줘. 현재 manifest와 lock은 유지해 줘. 코드만 생성하고 빌드·테스트는 하지 마. 별도 평가자가 수정 없이 실행할 거야. 다른 에이전트에게 위임하지 마.",
+      "observe": [
+        "Implicitly reads installed Router skill",
+        "Macro-first routes, host and environment actions",
+        "Origin allowlist and exhaustive navigation assertions",
+        "Generated code compiles and tests pass independently"
+      ]
+    },
+    {
+      "id": "explicit-transient-en",
+      "context": "Fresh exact-candidate consumer, alpha.8 installed; empty Sources/Tests.",
+      "prompt": "Use $innosquad:innorouter for this package pinned to the planned InnoRouter 7.0.0 main commit. Implement a typed confirmation dialog for deleting an item with Delete and Keep buttons. Keep must return false, and cancelling the caller must be a separate outcome. Add deterministic tests for both, plus a test that explicitly omitting transient UI from a snapshot leaves live state intact and does not restore a pending dialog. Keep the manifest and lock. Generate Sources and Tests only; do not build or run tests. An independent evaluator will run them without manual editing. Work directly; do not delegate.",
+      "observe": [
+        "Explicitly reads installed Router skill",
+        "Cancel-role value differs from caller cancellation",
+        "Subscribe before starting asynchronous presentation and avoid sleeps",
+        "Encode-only transient omission preserves live state",
+        "Unmodified generated consumer passes"
+      ],
+      "diagnostic_repair_prompts": [
+        "Use $innosquad:innorouter. This is the unchanged code generated for a typed delete confirmation against the exact unreleased Router candidate. An independent strict-concurrency compiler check failed in DeleteConfirmationTests.committedState(from:). Diagnostics for both #require(await events.next()) calls say: sending events risks causing data races; sending main actor-isolated events to a nonisolated callee risks causing data races between nonisolated and main actor-isolated uses. Fix the compiler errors while preserving the behavior assertions for Delete/Keep, caller cancellation, expired presentation handles and snapshot omission. Keep the manifest and lock unchanged. Edit source/tests only, do not build or run tests. An independent evaluator will run your changes without manual editing. Work directly; do not delegate.",
+        "Use $innosquad:innorouter. An independent run of this exact-candidate consumer now compiles, but one test fails. Delete/Keep and snapshot omission pass. In callerCancellationIsSeparateOutcome, receiveRejected expects mutation(expiredPresentation(handle.id, scope: .root)), while the actual event has revision 2, rootStack with no presentation and reason mutation(presentationIdentityMismatch(scope: /, expected: the captured presentation UUID, actual: nil)). Inspect the pinned implementation and correct the test contract while retaining the cancellation outcome, rejected stale callback, exhaustive events, state and revision assertions. Do not weaken or skip the assertions just to pass. Keep all other behavior, manifest and lock. Edit code only, do not build or run tests; an independent evaluator will execute it without manual changes. Do not delegate."
+      ]
+    },
+    {
+      "id": "negative-format-en",
+      "context": "Fresh exact-candidate consumer, alpha.8 installed; empty Sources/Tests.",
+      "prompt": "Add a Swift function that trims a display name and returns Guest for empty input. Add tests for whitespace and empty input. Keep the manifest and dependencies unchanged. Write code only; do not build or run tests. Work directly without delegation.",
+      "observe": [
+        "Does not select an Inno skill for unrelated formatting",
+        "Unchanged dependency pins",
+        "Generated utility tests pass"
+      ]
+    },
+    {
+      "id": "candidate-patch-policy-ko",
+      "context": "Fresh exact-candidate consumer, alpha.8 installed; empty Sources/Tests.",
+      "prompt": "이 프로젝트는 InnoRouter 7.0.0 예정 main 커밋을 고정해서 사용하고 있어. 설치된 지침의 현재 검증 기준과 7.0.x 지원 범위를 구분해 설명해 줘. 나중에 7.0.0 또는 7.0.1 안정 태그가 나오면 무엇을 확인해야 해? 로컬 manifest/lock과 설치 지침만 읽고 외부 조회·수정·빌드 없이 답해 줘. 다른 에이전트에게 위임하지 마.",
+      "observe": [
+        "Implicitly reads Router skill",
+        "Distinguishes unreleased exact commit from planned stable support",
+        "Does not claim stable tag exists or was tested",
+        "Requires real tag, diff, graph and consumer checks before release qualification"
+      ]
+    }
+  ],
+  "latest_report": "../docs/host-evaluation-innorouter.md",
+  "protocol": "Fresh sessions with installed alpha.8, exact candidate consumer and only the stated prompt; no prior conversation or grading criteria. Independent testing preserves generated files and validates the actual graph."
+}

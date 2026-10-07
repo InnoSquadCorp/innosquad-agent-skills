@@ -3,7 +3,7 @@
 The source of truth for each library skill lives in the library's repository.
 This repository collects reviewed snapshots and owns their distribution as
 Codex and Claude Code plugins. The decision applies to all six planned Inno
-library skills; InnoDI, InnoNetwork, and InnoFlow are implemented so far.
+library skills; InnoDI, InnoNetwork, InnoFlow, and InnoRouter are implemented so far.
 
 ## Responsibilities
 
@@ -12,14 +12,16 @@ library skills; InnoDI, InnoNetwork, and InnoFlow are implemented so far.
 | `InnoSquadCorp/InnoDI`, `skills/innodi/` | InnoDI skill, discovery metadata, 7.0.x guidance with 7.0.0 baseline references, support record, consumer fixture, validation helper and license notice |
 | `InnoSquadCorp/InnoNetwork`, `skills/innonetwork/` | InnoNetwork skill, discovery metadata, 6.1.x guidance with 6.1.0 baseline references, support record, consumer fixture, validation helper and license notice |
 | `InnoSquadCorp/InnoFlow`, `skills/innoflow/` | InnoFlow skill, discovery metadata, 6.0.x guidance with tagged 6.0.0 baseline, support record, consumer fixture, validation helper and license notice |
+| `InnoSquadCorp/InnoRouter`, `skills/innorouter/` | InnoRouter skill, discovery metadata, planned 7.0.x guidance with an exact unreleased-main baseline, consumer fixture, validation helper and license notice |
 | Other library repositories, when implemented | Their own skill and library-specific consumer validation |
 | This repository | Plugin manifests, catalogs, installation/update behavior, host selection and generation evaluations, future cross-library integration guidance |
 | This repository's `skills/` | Copies of exact source snapshots, refreshed together with the lock record; no independent edits |
 
 Changing a library API and its skill in the same PR makes their relationship
-reviewable. A supported-library record still names the exact public release
-and revision that was tested; presence in a library's `main` does not mean the
-skill's examples support unreleased APIs.
+reviewable. A supported-library record names the exact release/revision tested. When the user
+explicitly targets a planned release, pin an immutable unreleased commit and mark
+that status throughout. Presence in `main`, a runtime version string or release
+notes does not prove publication or qualify the eventual tag.
 
 ## Two independent versions
 
@@ -31,7 +33,9 @@ therefore be distributed without publishing a new Swift library release.
 [sources.lock.json](../sources.lock.json) records both, along with the source
 path and its Git tree identity. This file is a distribution record, not a
 second source for API support: `library.version/revision` name the tested baseline;
-optional support-range fields declare intended stable versions. All library fields
+optional support-range fields declare intended stable versions. For an unreleased
+baseline, `version` is null and `planned_version`, `baseline_kind`, and `support_status`
+make that boundary explicit. All library fields
 must agree with the copied
 `references/support.json`.
 
@@ -102,3 +106,23 @@ Alpha.7 preserves the DI and Network source pins and runtime files. Fresh Flow
 installation and representative AI results are recorded in
 [the Flow host evaluation](host-evaluation-innoflow.md). These are local pilot
 updates; automatic snapshot collection and public plugin publication remain pending.
+
+## InnoRouter planned 7.0.x support
+
+[InnoRouter PR #66](https://github.com/InnoSquadCorp/InnoRouter/pull/66) owns the
+14-file Router skill. Alpha.8 pins source `f790079eb7a6465bacf69946eac332e9df4028c3`,
+tree `eac03752e4acf3b9329846f2cc6002a05d5a5718`, and copies every path, byte and mode.
+Its source remains under review.
+
+The user selected current main as the intended 7.0.0 API. The library baseline is
+unreleased `851c63f095e49b700c3a0aa8152a3521a39977e7`; the 7.0.0 tag was absent at
+check. Planned stable support is `>=7.0.0 <7.1.0`, excluding prereleases. The
+fixture uses a remote revision requirement, not moving main or a nonexistent tag.
+When 7.0.0 ships, verify its actual commit, inspect differences and rerun the
+exact-tag consumer before updating the source record to a released baseline.
+A later 7.0.x consumer keeps its patch and receives patch-specific validation.
+
+Alpha.8 preserves the DI, Network and Flow source pins and runtime files. Their
+historical behavioral reports remain dated evidence. Fresh Router installation
+and generation results are in [the Router host evaluation](host-evaluation-innorouter.md).
+No merge, library release, public plugin publication or automated collection is implied.

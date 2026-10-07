@@ -1,0 +1,402 @@
+{
+  "checked_on": "2026-10-07",
+  "plugin_version": "0.1.0-alpha.8",
+  "skill_source": {
+    "repository": "https://github.com/InnoSquadCorp/InnoRouter.git",
+    "path": "skills/innorouter",
+    "revision": "f790079eb7a6465bacf69946eac332e9df4028c3",
+    "git_tree": "eac03752e4acf3b9329846f2cc6002a05d5a5718",
+    "source_status": "pull_request",
+    "pull_request": "https://github.com/InnoSquadCorp/InnoRouter/pull/66",
+    "library": {
+      "version": null,
+      "planned_version": "7.0.0",
+      "revision": "851c63f095e49b700c3a0aa8152a3521a39977e7",
+      "baseline_kind": "unreleased_main_commit",
+      "support_status": "planned_stable_line",
+      "supported_release_line": "7.0.x",
+      "supported_range": ">=7.0.0 <7.1.0",
+      "include_prereleases": false
+    }
+  },
+  "source_consumer": {
+    "status": "passed",
+    "started_at": "2026-10-07T07:33:15.878086+00:00",
+    "supported_range": ">=7.0.0 <7.1.0",
+    "include_prereleases": false,
+    "validation_scope": "unreleased_main_commit",
+    "swift": "swift-driver version: 1.168.6 Apple Swift version 6.4 (swiftlang-6.4.0.34.1 clang-2100.3.34.1)\nTarget: arm64-apple-macosx27.0.0",
+    "xcode": "Xcode 27.0\nBuild version 27A266a",
+    "source_sha256": {
+      "Package.resolved": "53683d27c1f9a974a378844feb0dddfbcf14b1a6dcd2e2b887a6af2718a4c428",
+      "Package.swift": "262bb4a8a5faa37e88f39f1c9d4e2ec814c3a62cfb2d3422316601256edadd60",
+      "Sources/RouterSkillExample/AppRoute.swift": "cd5fe272b779ae10fd3503880debfb0ba4de23f2934933c2b542041da006b8e2",
+      "Sources/RouterSkillExample/NavigationViews.swift": "849779c1b6c2d8d22f5720c389ddb46ae6448377cc3b83fc26e74b75831c3943",
+      "Tests/RouterSkillExampleTests/ConsumerTests.swift": "6b18e854f9dde8a589325ecd35f9a10bd4ed8a01e5b9064bfbad463f7d4e4ab8"
+    },
+    "dependencies": {
+      "innorouter": {
+        "version": null,
+        "revision": "851c63f095e49b700c3a0aa8152a3521a39977e7",
+        "clean": true,
+        "prebuilt_selected": false
+      },
+      "swift-syntax": {
+        "version": "604.0.0",
+        "revision": "050f1a346fbbac0ca2cfb15a95274f7bd1cf0ccf",
+        "clean": true,
+        "prebuilt_selected": true
+      }
+    },
+    "swift_test_result": {
+      "tests": 11,
+      "suites": 1,
+      "failures": 0,
+      "strict_concurrency": "complete",
+      "warnings_as_errors": true
+    },
+    "finished_at": "2026-10-07T07:33:53.709486+00:00",
+    "baseline_revision": "851c63f095e49b700c3a0aa8152a3521a39977e7",
+    "planned_version": "7.0.0",
+    "released_version": null,
+    "command": "python3 skills/innorouter/scripts/validate_consumer.py --scratch-path /tmp/innorouter-skill-validation"
+  },
+  "packaging": {
+    "plugin_version": "0.1.0-alpha.8",
+    "source_equality": {
+      "innodi": {
+        "files": 14,
+        "result": "passed",
+        "git_tree": "aa58cff138c95a3a5af4949a55a460ca253f0435"
+      },
+      "innonetwork": {
+        "files": 13,
+        "result": "passed",
+        "git_tree": "ff913925f61f60c89031cf9e4e140265793da354"
+      },
+      "innoflow": {
+        "files": 14,
+        "result": "passed",
+        "git_tree": "51eab5f99de25af4574e6b9d54a01191da90b866"
+      },
+      "innorouter": {
+        "files": 14,
+        "result": "passed",
+        "git_tree": "eac03752e4acf3b9329846f2cc6002a05d5a5718"
+      }
+    },
+    "cache_equality": {
+      "codex:innodi": {
+        "files": 14,
+        "result": "passed"
+      },
+      "claude:innodi": {
+        "files": 14,
+        "result": "passed"
+      },
+      "codex:innonetwork": {
+        "files": 13,
+        "result": "passed"
+      },
+      "claude:innonetwork": {
+        "files": 13,
+        "result": "passed"
+      },
+      "codex:innoflow": {
+        "files": 14,
+        "result": "passed"
+      },
+      "claude:innoflow": {
+        "files": 14,
+        "result": "passed"
+      },
+      "codex:innorouter": {
+        "files": 14,
+        "result": "passed"
+      },
+      "claude:innorouter": {
+        "files": 14,
+        "result": "passed"
+      }
+    },
+    "identity": "passed",
+    "portable_schema": "passed",
+    "relative_links": "passed"
+  },
+  "codex": {
+    "version": "codex-cli 0.160.1",
+    "cases": [
+      {
+        "case": "implicit-navigation-ko",
+        "selection": "implicit",
+        "attempts": [
+          {
+            "attempt": "implicit-navigation-ko",
+            "installed_router_skill_read": true,
+            "model_exit_code": 0,
+            "response_sha256": "7cac25d200160645adc33209e9d2927a09f818da873c612550079d00705ce42a",
+            "independent_validation": {
+              "case": "implicit-navigation-ko",
+              "status": "passed",
+              "exit_code": 0,
+              "tests": 7,
+              "suites": 1,
+              "dependencies": {
+                "innorouter": {
+                  "revision": "851c63f095e49b700c3a0aa8152a3521a39977e7",
+                  "clean": true,
+                  "prebuilt_selected": false
+                },
+                "swift-syntax": {
+                  "revision": "050f1a346fbbac0ca2cfb15a95274f7bd1cf0ccf",
+                  "version": "604.0.0",
+                  "clean": true,
+                  "prebuilt_selected": true
+                }
+              },
+              "source_sha256": {
+                "Sources/RouterSkillExample/AppRoute.swift": "486d32acc46090c3a260dd82a259e7cb92ebf2f141c825cfa8d9a5bc7a7321e4",
+                "Sources/RouterSkillExample/NavigationViews.swift": "31a32c72a71e2822f2e3b558f8c19037ca90ab0f736afe139057c8dc6dc26feb",
+                "Tests/RouterSkillExampleTests/NavigationTests.swift": "4db8cd944960f18087bec66d074f3d1d4f3bc5290e66d7c2204de760b9430d07"
+              },
+              "manifest_and_lock_unchanged": true,
+              "manually_edited_after_generation": false,
+              "strict_concurrency": "complete",
+              "warnings_as_errors": true,
+              "actual_remote_graph_verified": true
+            }
+          }
+        ],
+        "result": "passed",
+        "first_pass": true
+      },
+      {
+        "case": "explicit-transient-en",
+        "selection": "explicit",
+        "attempts": [
+          {
+            "attempt": "explicit-transient-en",
+            "installed_router_skill_read": true,
+            "model_exit_code": 0,
+            "response_sha256": "cc5c001d50e35f7595af3c65e1a89b388fd8ee95fcac59a83cd23b5f914b1307",
+            "independent_validation": {
+              "case": "explicit-transient-en",
+              "status": "failed",
+              "exit_code": 1,
+              "tests": null,
+              "suites": null,
+              "dependencies": {
+                "innorouter": {
+                  "revision": "851c63f095e49b700c3a0aa8152a3521a39977e7",
+                  "clean": true,
+                  "prebuilt_selected": false
+                },
+                "swift-syntax": {
+                  "revision": "050f1a346fbbac0ca2cfb15a95274f7bd1cf0ccf",
+                  "version": "604.0.0",
+                  "clean": true,
+                  "prebuilt_selected": true
+                }
+              },
+              "source_sha256": {
+                "Sources/RouterSkillExample/AppRoute.swift": "26af08ac6d416c8ac381cf9b86e8e39c7a9e958368b0d5dd6a0b2bf6a1d2a255",
+                "Sources/RouterSkillExample/DeleteConfirmation.swift": "ca1fa3bc0067f0c6bdd274976ee578f3ab655e8ee962b8fc0618547df6fce9d6",
+                "Sources/RouterSkillExample/DeleteItemRoot.swift": "dcd15ba2c952f162a53d6c39c221a535addb3a3e1e7bcfb71f0018d202ca6e66",
+                "Tests/RouterSkillExampleTests/DeleteConfirmationTests.swift": "a983f6793b2fc71d4424d775b1a233ad0d8e8ec7b11ab47cfd2eb942ff1bf150"
+              },
+              "manifest_and_lock_unchanged": true,
+              "manually_edited_after_generation": false,
+              "strict_concurrency": "complete",
+              "warnings_as_errors": true,
+              "actual_remote_graph_verified": true
+            },
+            "failure": "Generated inout AsyncStream iterator helper violated Swift 6 actor isolation."
+          },
+          {
+            "attempt": "explicit-transient-repair-en",
+            "installed_router_skill_read": true,
+            "model_exit_code": 0,
+            "response_sha256": "f6d14ca5bf1457154041849d88a8ec4e9a7ef54c1486127eea3007415810e964",
+            "independent_validation": {
+              "case": "explicit-transient-repair-en",
+              "status": "failed",
+              "exit_code": 1,
+              "tests": null,
+              "suites": null,
+              "dependencies": {
+                "innorouter": {
+                  "revision": "851c63f095e49b700c3a0aa8152a3521a39977e7",
+                  "clean": true,
+                  "prebuilt_selected": false
+                },
+                "swift-syntax": {
+                  "revision": "050f1a346fbbac0ca2cfb15a95274f7bd1cf0ccf",
+                  "version": "604.0.0",
+                  "clean": true,
+                  "prebuilt_selected": true
+                }
+              },
+              "source_sha256": {
+                "Sources/RouterSkillExample/AppRoute.swift": "26af08ac6d416c8ac381cf9b86e8e39c7a9e958368b0d5dd6a0b2bf6a1d2a255",
+                "Sources/RouterSkillExample/DeleteConfirmation.swift": "ca1fa3bc0067f0c6bdd274976ee578f3ab655e8ee962b8fc0618547df6fce9d6",
+                "Sources/RouterSkillExample/DeleteItemRoot.swift": "dcd15ba2c952f162a53d6c39c221a535addb3a3e1e7bcfb71f0018d202ca6e66",
+                "Tests/RouterSkillExampleTests/DeleteConfirmationTests.swift": "89c0378e80cea3bed547ed0f5ffe540f50e4a504b0e91750e131fb7d58443e9a"
+              },
+              "manifest_and_lock_unchanged": true,
+              "manually_edited_after_generation": false,
+              "strict_concurrency": "complete",
+              "warnings_as_errors": true,
+              "actual_remote_graph_verified": true
+            },
+            "failure": "Compile passed; one assertion expected expiredPresentation instead of the actual presentationIdentityMismatch after cancellation."
+          },
+          {
+            "attempt": "explicit-transient-repair2-en",
+            "installed_router_skill_read": true,
+            "model_exit_code": 0,
+            "response_sha256": "d2d90034e37bf6e8c25d2753d0164a0c4d5c11fe56aa6f3631a469656c90a8fc",
+            "independent_validation": {
+              "case": "explicit-transient-repair2-en",
+              "status": "passed",
+              "exit_code": 0,
+              "tests": 3,
+              "suites": 1,
+              "dependencies": {
+                "innorouter": {
+                  "revision": "851c63f095e49b700c3a0aa8152a3521a39977e7",
+                  "clean": true,
+                  "prebuilt_selected": false
+                },
+                "swift-syntax": {
+                  "revision": "050f1a346fbbac0ca2cfb15a95274f7bd1cf0ccf",
+                  "version": "604.0.0",
+                  "clean": true,
+                  "prebuilt_selected": true
+                }
+              },
+              "source_sha256": {
+                "Sources/RouterSkillExample/AppRoute.swift": "26af08ac6d416c8ac381cf9b86e8e39c7a9e958368b0d5dd6a0b2bf6a1d2a255",
+                "Sources/RouterSkillExample/DeleteConfirmation.swift": "ca1fa3bc0067f0c6bdd274976ee578f3ab655e8ee962b8fc0618547df6fce9d6",
+                "Sources/RouterSkillExample/DeleteItemRoot.swift": "dcd15ba2c952f162a53d6c39c221a535addb3a3e1e7bcfb71f0018d202ca6e66",
+                "Tests/RouterSkillExampleTests/DeleteConfirmationTests.swift": "4216292b274377c24d647ee739deec84884b402b7132031d205887ae8037da45"
+              },
+              "manifest_and_lock_unchanged": true,
+              "manually_edited_after_generation": false,
+              "strict_concurrency": "complete",
+              "warnings_as_errors": true,
+              "actual_remote_graph_verified": true
+            }
+          }
+        ],
+        "result": "passed_after_two_model_repairs",
+        "first_pass": false
+      },
+      {
+        "case": "negative-format-en",
+        "selection": "negative",
+        "attempts": [
+          {
+            "attempt": "negative-format-en",
+            "installed_router_skill_read": false,
+            "model_exit_code": 0,
+            "response_sha256": "bf249b0ba7bebd7ac065e7c5782b7cac0855d8a89d885233d8959f86c8df7861",
+            "independent_validation": {
+              "case": "negative-format-en",
+              "status": "passed",
+              "exit_code": 0,
+              "tests": 3,
+              "suites": 0,
+              "dependencies": {
+                "innorouter": {
+                  "revision": "851c63f095e49b700c3a0aa8152a3521a39977e7",
+                  "clean": true,
+                  "prebuilt_selected": false
+                },
+                "swift-syntax": {
+                  "revision": "050f1a346fbbac0ca2cfb15a95274f7bd1cf0ccf",
+                  "version": "604.0.0",
+                  "clean": true,
+                  "prebuilt_selected": true
+                }
+              },
+              "source_sha256": {
+                "Sources/RouterSkillExample/DisplayName.swift": "5653f709c474c747151a54b48d845e375519a724c1324c70c11425e2a302984b",
+                "Sources/RouterSkillExample/Placeholder.swift": "da0c9cc5074195d3382d93bf385eef9a2099e4987dfa7a88b75d6972f94f5726",
+                "Tests/RouterSkillExampleTests/DisplayNameTests.swift": "41dcd7f05da2340a961176bae1768d21a0c25795778118f3542da9c98d44281e",
+                "Tests/RouterSkillExampleTests/PlaceholderTests.swift": "13d5b7aa4e7877b30fc1e40f01957ea160353b72289bca4856daeb873a53faaf"
+              },
+              "manifest_and_lock_unchanged": true,
+              "manually_edited_after_generation": false,
+              "strict_concurrency": "complete",
+              "warnings_as_errors": true,
+              "actual_remote_graph_verified": true
+            }
+          }
+        ],
+        "result": "passed",
+        "first_pass": true,
+        "new_tests": 2,
+        "retained_seed_tests": 1
+      },
+      {
+        "case": "candidate-patch-policy-ko",
+        "selection": "implicit",
+        "attempts": [
+          {
+            "attempt": "candidate-patch-policy-ko",
+            "installed_router_skill_read": true,
+            "model_exit_code": 0,
+            "response_sha256": "fb36e4bcedc5dd4e149be0a42cc5390d07a291ab8ed488e8efc053639ad3e488"
+          }
+        ],
+        "result": "passed",
+        "first_pass": true,
+        "project_files_unchanged": true,
+        "external_lookup_or_build_performed": false,
+        "unreleased_baseline_and_planned_support_distinguished": true,
+        "claims_stable_tag_published_or_tested": false
+      }
+    ],
+    "model_override": null,
+    "configuration_at_final_check": {
+      "model": "gpt-6.1-sol",
+      "reasoning_effort": "xhigh"
+    },
+    "router_generated_tests": 10,
+    "new_formatter_tests": 2,
+    "retained_seed_tests": 1,
+    "first_pass_cases": 3,
+    "cases_after_diagnostic_repairs": 4
+  },
+  "claude": {
+    "version": "2.1.285",
+    "installed_version": "0.1.0-alpha.8",
+    "behavior": "blocked",
+    "error": "HTTP 401 OAuth access token is invalid",
+    "model_tokens_used": 0,
+    "registered_skills": [
+      "innosquad:innodi",
+      "innosquad:innoflow",
+      "innosquad:innonetwork",
+      "innosquad:innorouter"
+    ]
+  },
+  "limitations": [
+    "Unreleased main consumer evidence only; no 7.0.0 or later-patch release qualification.",
+    "Four representative initial cases, with two diagnostic-driven repairs of the transient case; no repeated bilingual matrix or no-plugin efficacy baseline.",
+    "Claude registration is not selection/generation qualification.",
+    "No native UI/scene lifecycle, full migration, alternate toolchain or combined-library runtime validation.",
+    "Local plugin installation and Draft PRs; no merge, tag, Release or public marketplace publication."
+  ],
+  "source_repository_gates": {
+    "revision": "f790079eb7a6465bacf69946eac332e9df4028c3",
+    "command": "./scripts/principle-gates.sh",
+    "status": "passed",
+    "exit_code": 0,
+    "log_sha256": "fc3fd5a0e50e3563ade2ef7a04616fb30d6a54ff5c7aad2a7213e75f8b871994",
+    "root_swift_tests": 1393,
+    "expected_known_issues": 1,
+    "known_issue_context": "RouterTestStore finish reports pending work; deliberately captured by withKnownIssue.",
+    "scope": "Full local default gates: Swift tests, DocC preview, public API, docs and snippets, example/external/generated consumers, source lint and diagnostic probes. Optional --platforms=all not run; remote CI and release qualification separate."
+  }
+}

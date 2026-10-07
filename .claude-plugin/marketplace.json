@@ -7,8 +7,8 @@
     {
       "name": "innosquad",
       "source": "./",
-      "description": "InnoSquad Swift library skills: InnoDI 7.0.x, InnoNetwork 6.1.x, and InnoFlow 6.0.x, with exact validated baselines.",
-      "version": "0.1.0-alpha.7"
+      "description": "InnoSquad Swift library skills: InnoDI 7.0.x, InnoNetwork 6.1.x, InnoFlow 6.0.x, and planned InnoRouter 7.0.x, with exact validation baselines.",
+      "version": "0.1.0-alpha.8"
     }
   ]
 }
