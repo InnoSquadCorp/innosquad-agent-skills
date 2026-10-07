@@ -12,6 +12,18 @@
         "version": "7.0.0",
         "revision": "4783eee7f674f99a337768c107b7a5f640810c2a"
       }
+    },
+    "innonetwork": {
+      "repository": "https://github.com/InnoSquadCorp/InnoNetwork.git",
+      "path": "skills/innonetwork",
+      "revision": "d6e65752eb60b00e765afccd53bb7ff63237c95b",
+      "git_tree": "aeb7860759a692e7092b1e4e12a7104e32f14365",
+      "source_status": "pull_request",
+      "pull_request": "https://github.com/InnoSquadCorp/InnoNetwork/pull/148",
+      "library": {
+        "version": "6.1.0",
+        "revision": "79ff9f535a0a15ad8b52ce49cb5a4b1ea1dfec16"
+      }
     }
   }
 }

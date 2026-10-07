@@ -1,0 +1,119 @@
+{
+  "checked_on": "2026-10-07",
+  "plugin_version": "0.1.0-alpha.4",
+  "library_version": "6.1.0",
+  "library_revision": "79ff9f535a0a15ad8b52ce49cb5a4b1ea1dfec16",
+  "skill_source": {
+    "repository": "https://github.com/InnoSquadCorp/InnoNetwork.git",
+    "path": "skills/innonetwork",
+    "revision": "d6e65752eb60b00e765afccd53bb7ff63237c95b",
+    "git_tree": "aeb7860759a692e7092b1e4e12a7104e32f14365",
+    "source_status": "pull_request",
+    "pull_request": "https://github.com/InnoSquadCorp/InnoNetwork/pull/148",
+    "library": {
+      "version": "6.1.0",
+      "revision": "79ff9f535a0a15ad8b52ce49cb5a4b1ea1dfec16"
+    }
+  },
+  "codex": {
+    "version": "0.160.1",
+    "model": "gpt-6-astra",
+    "reasoning": "xhigh",
+    "cases": [
+      {
+        "case": "implicit-json-ko",
+        "plugin_version": "0.1.0-alpha.3",
+        "selection": "implicit",
+        "skill_read": true,
+        "build": "passed",
+        "swift_test": "failed",
+        "test_count": 2,
+        "failed_tests": 1,
+        "reason": "Generated test expected bare application/json; actual header includes charset=UTF-8",
+        "source_hashes": {
+          "Sources/NetworkSkillExample/Endpoints.swift": "8a66155ccb52f9055a3354ea5118f8569ec329c98ce9b3878e45d21bdef07c08",
+          "Tests/NetworkSkillExampleTests/UserEndpointTests.swift": "bbfa67f75cef625748f5d89ed345f74eae7ed076a271ebbd5ddd54bfc5b48a70"
+        }
+      },
+      {
+        "case": "implicit-json-ko-alpha4",
+        "exit_code": 0,
+        "strict_concurrency": "complete",
+        "warnings_as_errors": true,
+        "tests": 2,
+        "suites": 1,
+        "source_hashes": {
+          "Sources/NetworkSkillExample/Label.swift": "9493130e3c7361098d2554c30a34b88d5e3353c9797946d9a9bd443c745b8839",
+          "Sources/NetworkSkillExample/Endpoints.swift": "3cf14cf88ed64031975fffbfd40564dee49bbf3b9e126b6544e6434b616f9a6d",
+          "Tests/NetworkSkillExampleTests/UserEndpointTests.swift": "0ccfacf97d600a984811d7fbf1e9574a5adee4332b1f1238c01dea45402b8921"
+        },
+        "manifest_and_lock_unchanged": true,
+        "checkout_shas_verified": true,
+        "plugin_version": "0.1.0-alpha.4",
+        "selection": "implicit",
+        "skill_read": true,
+        "swift_test": "passed",
+        "manually_edited_after_generation": false
+      },
+      {
+        "case": "explicit-encoded-en",
+        "exit_code": 0,
+        "strict_concurrency": "complete",
+        "warnings_as_errors": true,
+        "tests": 4,
+        "suites": 1,
+        "source_hashes": {
+          "Sources/NetworkSkillExample/UploadBytes.swift": "52eabfe542e3ab7fb626b4e8ee56118ef1b90f9ff41ea48cc0ddf0290e826300",
+          "Tests/NetworkSkillExampleTests/UploadBytesTests.swift": "87a40be885576dd40d9b7b4c22b799e8b2fa79afe80b916d18b423f87b5a0edf"
+        },
+        "manifest_and_lock_unchanged": true,
+        "checkout_shas_verified": true,
+        "plugin_version": "0.1.0-alpha.3",
+        "selection": "explicit",
+        "skill_read": true,
+        "swift_test": "passed",
+        "manually_edited_after_generation": false
+      },
+      {
+        "case": "negative-format-en",
+        "exit_code": 0,
+        "strict_concurrency": "complete",
+        "warnings_as_errors": true,
+        "tests": 2,
+        "suites": 0,
+        "source_hashes": {
+          "Sources/NetworkSkillExample/Label.swift": "77cb866780a36ff764118235c2dfa227dee0a776122615729d8c6bc12f8d2cc3",
+          "Tests/NetworkSkillExampleTests/LabelTests.swift": "62c16b06c7391e6416985bc9e967a49b049376bfbbae2cdb7e7ff4aa5f942e3f"
+        },
+        "manifest_and_lock_unchanged": true,
+        "checkout_shas_verified": false,
+        "plugin_version": "0.1.0-alpha.3",
+        "selection": "negative",
+        "skill_read": false,
+        "swift_test": "passed",
+        "manually_edited_after_generation": false
+      }
+    ]
+  },
+  "claude": {
+    "version": "2.1.285",
+    "installed_version": "0.1.0-alpha.4",
+    "registration_observed_version": "0.1.0-alpha.3",
+    "skills_registered": [
+      "innosquad:innodi",
+      "innosquad:innonetwork"
+    ],
+    "behavior": "blocked",
+    "error": "HTTP 401 OAuth access token is invalid",
+    "alpha4_behavior_retried": false
+  },
+  "packaging": {
+    "portable_schema": "passed",
+    "manifest_identity": "passed",
+    "claude_plugin_validation": "passed",
+    "claude_marketplace_validation": "passed_with_optional_description_warning",
+    "both_host_runtime_snapshot_equality": "passed",
+    "pinned_source_snapshot_equality": "passed"
+  },
+  "scope": "Single representative attempts in isolated CLI sessions, mock transports. No public plugin publication."
+}

@@ -3,13 +3,14 @@
 The source of truth for each library skill lives in the library's repository.
 This repository collects reviewed snapshots and owns their distribution as
 Codex and Claude Code plugins. The decision applies to all six planned Inno
-library skills; only InnoDI is implemented so far.
+library skills; InnoDI and InnoNetwork are implemented so far.
 
 ## Responsibilities
 
 | Location | Maintains |
 | --- | --- |
 | `InnoSquadCorp/InnoDI`, `skills/innodi/` | InnoDI skill, discovery metadata, exact-version API references, support record, consumer fixture, validation helper and license notice |
+| `InnoSquadCorp/InnoNetwork`, `skills/innonetwork/` | InnoNetwork skill, discovery metadata, 6.1.0 API references, support record, consumer fixture, validation helper and license notice |
 | Other library repositories, when implemented | Their own skill and library-specific consumer validation |
 | This repository | Plugin manifests, catalogs, installation/update behavior, host selection and generation evaluations, future cross-library integration guidance |
 | This repository's `skills/` | Copies of exact source snapshots, refreshed together with the lock record; no independent edits |
@@ -46,19 +47,35 @@ second source for API support: its library fields must agree with the copied
 5. Publish a plugin version only after the selected source is merged and its
    applicable checks are satisfied. Preserve earlier plugin versions and pins.
 
-## Current migration state
+## InnoDI migration history
 
 The initial pilot was authored here. Its 14 runtime files have now been
 transferred to [InnoDI PR #54](https://github.com/InnoSquadCorp/InnoDI/pull/54)
 based on public 7.0.0. The redistribution notice
 was updated for InnoDI's MIT license; instructions, discovery metadata,
-references, script, and Swift fixture were preserved. The current bundled
-copy matches that exact source commit, recorded as `pull_request` in the lock.
+references, script, and Swift fixture were preserved. The bundled
+copy still matches that exact source commit, recorded as `pull_request` in the lock.
 That status is not evidence that the source PR has merged or entered a release.
 
 The existing host evaluation reports remain here as historical evidence.
 InnoDI owns its fresh consumer evidence. Automatic collection, source-update
 PRs, and publication CI are **not implemented by this migration**; the initial
-snapshot refresh and equality checks were run explicitly. After the source PR
-merges, refresh the pin to the merged commit and change its status only after
-checking the actual remote state. Public distribution remains pending.
+snapshot refresh and equality checks were run explicitly. Public distribution remains pending.
+
+On 2026-10-07, PR #54 was verified as merged on 2026-10-06 at
+`edcc754052d51063e19836aa75913e130cb309f1`. Its merged skill tree differs from
+the bundled tree. The DI lock still identifies the original validated PR
+snapshot; `pull_request` describes that input, not the current GitHub PR state.
+Reviewing the merged DI changes, refreshing that pin and its affected validation
+remain a separate update from this InnoNetwork addition.
+
+## InnoNetwork 6.1.0 addition
+
+[InnoNetwork PR #148](https://github.com/InnoSquadCorp/InnoNetwork/pull/148)
+adds the library-owned skill on the published 6.1.0 baseline. Its source commit
+and 13-file runtime tree are pinned in the same lock. The central snapshot is
+copied explicitly and compared by path, bytes and mode; the InnoDI pin is unchanged.
+Local plugin `0.1.0-alpha.4` includes both skills. Installation and representative
+AI results are recorded in [the Network host evaluation](host-evaluation-innonetwork.md).
+The Network source remains a Draft PR; the DI snapshot/merge distinction above
+is unchanged. No public plugin publication is implied.

@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "supported_library": "InnoNetwork 6.1.0",
+  "cases": [
+    {
+      "id": "implicit-json-ko",
+      "language": "ko",
+      "selection": "implicit",
+      "prompt": "이 Swift 패키지는 InnoNetwork 6.1.0을 사용합니다. 사용자 조회 GET /users/{id}와 생성 POST /users를 구현해 주세요. 응답은 id:Int, name:String이고 생성 본문은 name:String입니다. 두 API는 공개 API라 인증이 필요 없습니다. 이름 있는 엔드포인트와 MockURLSession을 이용한 Swift Testing 테스트를 작성해서 path/method/JSON body와 응답 값을 확인해 주세요. 현재 manifest와 lock을 유지하고, 외부 네트워크 요청 없이 테스트할 수 있어야 합니다.",
+      "acceptance": [
+        "Reads installed innonetwork skill without explicit invocation",
+        "Preserves exact 6.1.0 manifest and lock",
+        "Named macro GET/POST endpoints",
+        "Public mock tests assert path/method/body/response",
+        "Independent strict build and tests pass"
+      ]
+    },
+    {
+      "id": "explicit-encoded-en",
+      "language": "en",
+      "selection": "explicit",
+      "prompt": "Use $innosquad:innonetwork. Implement a buffered POST /binary endpoint for this exact InnoNetwork 6.1.0 package. Its immutable Data payload is encoded lazily and its response is a Sendable receipt struct that does not conform to Codable. The endpoint is anonymous. Add Swift Testing coverage through public MockURLSession: one timed-out attempt followed by success retries with identical bytes and only one encoder invocation, using a stable Idempotency-Key and bounded retry; an encoder throwing URLError.timedOut is classified as invalid-payload encoding configuration failure and never reaches transport. Preserve the manifest and lock.",
+      "acceptance": [
+        "Reads installed innonetwork skill",
+        "Deferred immutable Data input and non-Codable output",
+        "Retries preserve bytes and encode once per invocation",
+        "Foreign encoder timeout becomes configuration failure before transport",
+        "Independent strict build and tests pass"
+      ]
+    },
+    {
+      "id": "negative-format-en",
+      "language": "en",
+      "selection": "negative",
+      "prompt": "Implement formatDisplayName(_ raw: String) -> String in Sources/NetworkSkillExample/Label.swift. Trim surrounding whitespace and return \"Guest\" when the result is empty. Add focused Swift Testing tests for those cases. This is a local string-formatting utility.",
+      "acceptance": [
+        "Does not read or invoke InnoNetwork skill",
+        "Does not add InnoNetwork or networking dependencies",
+        "Formatting tests pass"
+      ]
+    }
+  ],
+  "execution_notes": "Results are in docs/host-evaluation-innonetwork.md. Generate in fresh sessions, then independently build the unchanged output with exact remote release pins. Do not infer runtime success from model self-reports.",
+  "not_run": [
+    "6.0 to 6.1 migration execution",
+    "Optional products and companions",
+    "Mixed InnoDI/InnoNetwork consumer",
+    "Full bilingual cross-product matrix"
+  ]
+}

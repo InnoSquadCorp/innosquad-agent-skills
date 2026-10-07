@@ -1,7 +1,9 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "innosquad",
-  "version": "0.1.0-alpha.2",
-  "description": "InnoSquad Swift library skills. Local pilot: InnoDI 7.0.0.",
-  "author": {"name": "InnoSquad"}
+  "version": "0.1.0-alpha.4",
+  "description": "InnoSquad Swift library skills. Local pilot: InnoDI 7.0.0 and InnoNetwork 6.1.0.",
+  "author": {
+    "name": "InnoSquad"
+  }
 }
