@@ -2,8 +2,8 @@
 
 The source of truth for each library skill lives in the library's repository.
 This repository collects reviewed snapshots and owns their distribution as
-Codex and Claude Code plugins. The decision applies to all six planned Inno
-library skills; InnoDI, InnoNetwork, InnoFlow, InnoRouter, and InnoNetwork-Protobuf are implemented so far.
+Codex and Claude Code plugins. All six planned library skills now have library-owned sources: InnoDI,
+InnoNetwork, InnoFlow, InnoRouter, InnoNetwork-Protobuf and InnoNetwork-Stream.
 
 ## Responsibilities
 
@@ -14,7 +14,7 @@ library skills; InnoDI, InnoNetwork, InnoFlow, InnoRouter, and InnoNetwork-Proto
 | `InnoSquadCorp/InnoFlow`, `skills/innoflow/` | InnoFlow skill, discovery metadata, 6.0.x guidance with tagged 6.0.0 baseline, support record, consumer fixture, validation helper and license notice |
 | `InnoSquadCorp/InnoRouter`, `skills/innorouter/` | InnoRouter skill, discovery metadata, planned 7.0.x guidance with an exact unreleased-main baseline, consumer fixture, validation helper and license notice |
 | `InnoSquadCorp/InnoNetwork-Protobuf`, `skills/innonetwork-protobuf/` | Protobuf skill, discovery metadata, stable 6.1.x guidance with exact adapter/Core 6.1.1 baseline, consumer fixture, graph validator and license notice |
-| Other library repositories, when implemented | Their own skill and library-specific consumer validation |
+| `InnoSquadCorp/InnoNetwork-Stream`, `skills/innonetwork-stream/` | Stream skill, discovery metadata, planned stable 6.1.x guidance with exact unreleased main/Core 6.1.1 baseline, consumer, validator and notices |
 | This repository | Plugin manifests, catalogs, installation/update behavior, host selection and generation evaluations, future cross-library integration guidance |
 | This repository's `skills/` | Copies of exact source snapshots, refreshed together with the lock record; no independent edits |
 
@@ -157,3 +157,29 @@ Protobuf [host evaluation](host-evaluation-innonetwork-protobuf.md) is separate
 from their dated reports and the source-owned exact-tag consumer evidence.
 Snapshots are explicitly collected and compared; automated collection and
 public plugin distribution remain pending.
+
+## InnoNetwork-Stream planned 6.1.x support
+
+[Stream PR #9](https://github.com/InnoSquadCorp/InnoNetwork-Stream/pull/9) owns
+the 13-file runtime skill. The PR merged on 2026-10-09 (KST) during evaluation.
+Alpha.11 pins merge commit `81f945f751090aed7c696e4c453816e01df5dd93`, tree
+`e0265a81762cd94656c16f53b466faa93c3b1e36`. This exactly matches evaluated source
+`bc8b79ea7a96adc4185493115536fcedebbc23b6`; no instructions, code or fixture
+changed. Source merge is independent of library release qualification.
+
+The exact validated library baseline is unpublished main
+`bd50e877644ded1b739f66bdd8fb604908606e4b`, intended for 6.1.1; no Stream tag or
+GitHub Release was found at check. `version: null`, `planned_version: 6.1.1`,
+`unreleased_main_commit` and `planned_stable_line` preserve that boundary.
+Declared support is stable `>=6.1.0 <6.2.0`, excluding prereleases, not all 6.x.
+The fixture requires the immutable remote revision and exact published Core
+6.1.1 (`44e4ca28c50c03f817231a077c0f3bdfdbc859c8`). Support for Stream patches
+does not permit arbitrary Core upgrades. Verify actual tag/source differences
+and rerun a tagged consumer when Stream ships; preserve and check later patches
+against their selected manifest and public API.
+
+The [source validation](https://github.com/InnoSquadCorp/InnoNetwork-Stream/blob/bc8b79ea7a96adc4185493115536fcedebbc23b6/skills/validation.md)
+and [fresh host evaluation](host-evaluation-innonetwork-stream.md) separate
+consumer, installation and behavioral evidence. Alpha.11 preserves the other
+five runtime snapshots/pins and their historical reports. Snapshot collection
+is explicit; no automatic collection or public plugin publication is implied.

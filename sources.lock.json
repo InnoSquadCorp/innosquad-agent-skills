@@ -88,6 +88,30 @@
         "revision": "44e4ca28c50c03f817231a077c0f3bdfdbc859c8",
         "release_url": "https://github.com/InnoSquadCorp/InnoNetwork/releases/tag/6.1.1"
       }
+    },
+    "innonetwork-stream": {
+      "repository": "https://github.com/InnoSquadCorp/InnoNetwork-Stream.git",
+      "path": "skills/innonetwork-stream",
+      "revision": "81f945f751090aed7c696e4c453816e01df5dd93",
+      "git_tree": "e0265a81762cd94656c16f53b466faa93c3b1e36",
+      "source_status": "merged",
+      "pull_request": "https://github.com/InnoSquadCorp/InnoNetwork-Stream/pull/9",
+      "library": {
+        "version": null,
+        "planned_version": "6.1.1",
+        "revision": "bd50e877644ded1b739f66bdd8fb604908606e4b",
+        "baseline_kind": "unreleased_main_commit",
+        "supported_release_line": "6.1.x",
+        "supported_range": ">=6.1.0 <6.2.0",
+        "include_prereleases": false,
+        "support_status": "planned_stable_line"
+      },
+      "core_requirement": {
+        "version": "6.1.1",
+        "constraint": "exact",
+        "revision": "44e4ca28c50c03f817231a077c0f3bdfdbc859c8"
+      },
+      "merged_at": "2026-10-08T15:50:33Z"
     }
   }
 }

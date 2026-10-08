@@ -1,7 +1,7 @@
 {
   "name": "innosquad",
-  "version": "0.1.0-alpha.10",
-  "description": "InnoSquad Swift library skills: InnoDI 7.0.x, InnoNetwork and Protobuf 6.1.x, InnoFlow 6.0.x, and planned InnoRouter 7.0.x, with exact validation baselines.",
+  "version": "0.1.0-alpha.11",
+  "description": "InnoSquad Swift library skills: DI 7.0.x, Network/Protobuf 6.1.x, Flow 6.0.x, planned Router 7.0.x and Stream 6.1.x, with exact validation baselines.",
   "author": {
     "name": "InnoSquad"
   }
