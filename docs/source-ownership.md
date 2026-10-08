@@ -3,7 +3,7 @@
 The source of truth for each library skill lives in the library's repository.
 This repository collects reviewed snapshots and owns their distribution as
 Codex and Claude Code plugins. The decision applies to all six planned Inno
-library skills; InnoDI, InnoNetwork, InnoFlow, and InnoRouter are implemented so far.
+library skills; InnoDI, InnoNetwork, InnoFlow, InnoRouter, and InnoNetwork-Protobuf are implemented so far.
 
 ## Responsibilities
 
@@ -13,6 +13,7 @@ library skills; InnoDI, InnoNetwork, InnoFlow, and InnoRouter are implemented so
 | `InnoSquadCorp/InnoNetwork`, `skills/innonetwork/` | InnoNetwork skill, discovery metadata, 6.1.x guidance with 6.1.0 baseline references, support record, consumer fixture, validation helper and license notice |
 | `InnoSquadCorp/InnoFlow`, `skills/innoflow/` | InnoFlow skill, discovery metadata, 6.0.x guidance with tagged 6.0.0 baseline, support record, consumer fixture, validation helper and license notice |
 | `InnoSquadCorp/InnoRouter`, `skills/innorouter/` | InnoRouter skill, discovery metadata, planned 7.0.x guidance with an exact unreleased-main baseline, consumer fixture, validation helper and license notice |
+| `InnoSquadCorp/InnoNetwork-Protobuf`, `skills/innonetwork-protobuf/` | Protobuf skill, discovery metadata, stable 6.1.x guidance with exact adapter/Core 6.1.1 baseline, consumer fixture, graph validator and license notice |
 | Other library repositories, when implemented | Their own skill and library-specific consumer validation |
 | This repository | Plugin manifests, catalogs, installation/update behavior, host selection and generation evaluations, future cross-library integration guidance |
 | This repository's `skills/` | Copies of exact source snapshots, refreshed together with the lock record; no independent edits |
@@ -129,3 +130,30 @@ historical behavioral reports remain dated evidence. Fresh Router installation
 and generation results are in [the Router host evaluation](host-evaluation-innorouter.md).
 The merged source is verified independently of the still-unreleased library baseline.
 No library release, public plugin publication or automated collection is implied.
+
+## InnoNetwork-Protobuf 6.1.x support
+
+[Protobuf PR #7](https://github.com/InnoSquadCorp/InnoNetwork-Protobuf/pull/7) owns
+the 13-file `innonetwork-protobuf` runtime skill. Alpha.10 pins source
+`10721888976bea9d619cb66f2d2a57fd932a41f1`, tree
+`2f0958d5095a396b4c77ef191cd1938110dd2ad7`. The skill source is under PR review;
+it is not included in the existing 6.1.1 adapter tag.
+
+The independently validated library baseline is the annotated 6.1.1 tag at
+`5e5f8316c94358235c3997e70e5e97aadc11df3a`, which also matched origin/main when
+work began. Its manifest requires exact Core 6.1.1 at
+`44e4ca28c50c03f817231a077c0f3bdfdbc859c8`. The Core GitHub Release is published;
+no adapter GitHub Release page was found at check. Tag identity, release page,
+source-skill merge and public plugin publication are separate facts.
+
+Declared stable support is `>=6.1.0 <6.2.0`, excluding prereleases. No adapter
+6.1.0 tag was found; the range does not invent one or certify future patches.
+Retain the consumer's actual patch, inspect that adapter's Core constraint and
+relevant API changes, and test before qualifying another pair. Do not upgrade
+Core independently of the adapter's exact dependency requirement.
+
+Alpha.10 preserves all four earlier runtime snapshots and source pins. Fresh
+Protobuf [host evaluation](host-evaluation-innonetwork-protobuf.md) is separate
+from their dated reports and the source-owned exact-tag consumer evidence.
+Snapshots are explicitly collected and compared; automated collection and
+public plugin distribution remain pending.

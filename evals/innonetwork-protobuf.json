@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "supported_library": "InnoNetwork-Protobuf 6.1.x (stable)",
+  "validated_baseline": {
+    "adapter": "6.1.1",
+    "core": "6.1.1"
+  },
+  "cases": [
+    {
+      "id": "implicit-protobuf-ko",
+      "language": "ko",
+      "selection": "implicit",
+      "prompt": "이 Swift 패키지는 InnoNetwork-Protobuf 6.1.1과 InnoNetwork 6.1.1을 사용해. POST /echo/{id}는 Google_Protobuf_StringValue 본문을 보내고 같은 메시지를 반환해. GET /values/{id}는 locale 쿼리와 같은 응답을 쓰고, DELETE /values/{id}는 204/205의 본문 없는 성공 응답을 사용해. 세 API는 공개 API야. 이름 있는 엔드포인트와 공개 MockURLSession을 사용하는 Swift Testing 테스트를 만들어 줘. method/path/query, 바이너리 본문과 미디어 헤더, 반환값, DELETE의 잘못된 상태/본문 거부를 확인해. manifest와 lock은 유지하고 실제 서버 호출 없이 테스트할 수 있게 해줘.",
+      "acceptance": [
+        "Implicitly reads installed Protobuf skill",
+        "Macro-first named endpoints with generated messages",
+        "Keeps exact adapter/Core pins",
+        "Wire and negative no-content tests pass independently"
+      ]
+    },
+    {
+      "id": "explicit-codec-en",
+      "language": "en",
+      "selection": "explicit",
+      "prompt": "Use $innosquad:innonetwork-protobuf. This package pins adapter and Core 6.1.1. Implement a buffered anonymous POST /legacy-echo using Google_Protobuf_StringValue. The request uses the legacy protobuf media type, but the response accepts only the standard protobuf media type. Configure finite request and response byte budgets. Add public MockURLSession Swift Testing coverage for a timed-out attempt followed by success with bounded retry and a stable Idempotency-Key: both attempts must carry identical bytes and the codec observer must record one encoding. Also verify that a second invocation encodes again, an over-budget request never reaches transport, and an incompatible response Content-Type is rejected. Keep the manifest and lock unchanged.",
+      "acceptance": [
+        "Reads installed Protobuf skill",
+        "Independent directional media policy",
+        "Deferred protobuf serialization, bounded retry and once-per-invocation observer",
+        "Request budget prevents transport and media failure remains typed",
+        "Independent strict build/test pass"
+      ]
+    },
+    {
+      "id": "negative-json-en",
+      "language": "en",
+      "selection": "negative",
+      "prompt": "This Swift package uses InnoNetwork 6.1.1. Add a named anonymous GET /users/{id} endpoint whose JSON response contains id:Int and name:String. Add Swift Testing tests using public MockURLSession to check the method, path, and decoded values. Keep the current manifest and lock unchanged.",
+      "acceptance": [
+        "Chooses Core Network skill without reading Protobuf skill",
+        "Uses Core JSON macro and Codable response, no protobuf behavior",
+        "Independent strict build/test pass"
+      ]
+    },
+    {
+      "id": "patch-policy-ko",
+      "language": "ko",
+      "selection": "implicit",
+      "prompt": "InnoNetwork-Protobuf를 쓰는 앱이야. 설치된 스킬의 6.1.x 지원 범위와 실제 검증 버전을 설명해 줘. adapter 6.1.1은 유지하면서 Core만 나중에 6.1.2로 올려도 될까? adapter도 다음 6.1.x 패치로 올릴 때 무엇을 확인해야 하는지 알려줘. 프로젝트 파일은 수정하지 마.",
+      "acceptance": [
+        "Reads installed Protobuf skill",
+        "Distinguishes support range from exact tested adapter/Core 6.1.1 pair",
+        "Identifies exact Core 6.1.1 pin and does not permit arbitrary Core patch",
+        "Retains actual consumer patch with manifest/tag/source/consumer checks for future patches"
+      ]
+    }
+  ],
+  "execution_notes": "Fresh native installed sessions receive only prompt and exact consumer scaffold. Independently compile unchanged model output. Host failures, repair attempts and limitations are recorded separately."
+}

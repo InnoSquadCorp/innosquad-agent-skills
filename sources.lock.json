@@ -66,6 +66,28 @@
         "include_prereleases": false
       },
       "merged_at": "2026-10-07T07:39:54Z"
+    },
+    "innonetwork-protobuf": {
+      "repository": "https://github.com/InnoSquadCorp/InnoNetwork-Protobuf.git",
+      "path": "skills/innonetwork-protobuf",
+      "revision": "10721888976bea9d619cb66f2d2a57fd932a41f1",
+      "git_tree": "2f0958d5095a396b4c77ef191cd1938110dd2ad7",
+      "source_status": "pull_request",
+      "pull_request": "https://github.com/InnoSquadCorp/InnoNetwork-Protobuf/pull/7",
+      "library": {
+        "version": "6.1.1",
+        "revision": "5e5f8316c94358235c3997e70e5e97aadc11df3a",
+        "baseline_kind": "verified_release_tag",
+        "supported_release_line": "6.1.x",
+        "supported_range": ">=6.1.0 <6.2.0",
+        "include_prereleases": false
+      },
+      "core_requirement": {
+        "version": "6.1.1",
+        "constraint": "exact",
+        "revision": "44e4ca28c50c03f817231a077c0f3bdfdbc859c8",
+        "release_url": "https://github.com/InnoSquadCorp/InnoNetwork/releases/tag/6.1.1"
+      }
     }
   }
 }
