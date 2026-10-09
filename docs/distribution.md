@@ -20,7 +20,7 @@ git rev-parse HEAD
 python3 -B scripts/validate_bundle.py
 codex plugin marketplace add .
 codex plugin add innosquad@innosquad
-claude plugin marketplace add .
+claude plugin marketplace add "$PWD"
 claude plugin install innosquad@innosquad --scope user
 ```
 

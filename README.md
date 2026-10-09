@@ -75,8 +75,12 @@ Fresh release checks passed 11 Flow, 11 Router and 14 reissued-Protobuf consumer
 tests with strict concurrency and warnings as errors. See the
 [alpha.12 evidence](docs/release-candidate-alpha.12.md) and
 [consumer validation commands](docs/distribution.md#consumer-validation).
-Earlier host reports remain dated evidence. Installation alone does not qualify
-automatic selection or code generation; actual host results are recorded separately.
+Native alpha.12 installation passed on both hosts. Claude selected the expected
+skill for five library tasks, selected none for an unrelated task, and generated
+code passing 24 independent strict tests. Two fresh Codex policy checks passed.
+Stream's unchanged skill reuses the earlier alpha.11 Claude run (5 tests);
+earlier Codex generation reports remain dated evidence. See the report for
+self-corrections, harness limits and exact evaluated revisions.
 
 ## License
 

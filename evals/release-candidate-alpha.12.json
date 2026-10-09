@@ -1,0 +1,302 @@
+{
+  "plugin_version": "0.1.0-alpha.12",
+  "cases": [
+    {
+      "id": "di-override",
+      "host": "claude",
+      "selection": "implicit",
+      "prompt": "InnoDI 7.0.0을 사용하는 이 패키지에 동기 APIClient 의존성을 주입하는 간단한 컨테이너를 만들어줘. 실제 구현 대신 fake를 주입하는 override 테스트와, override 시 실제 factory가 호출되지 않는지 확인하는 Swift Testing 테스트를 추가해줘.",
+      "baseline_dependencies": [
+        {
+          "identity": "innodi",
+          "kind": "remoteSourceControl",
+          "location": "https://github.com/InnoSquadCorp/InnoDI.git",
+          "state": {
+            "revision": "4783eee7f674f99a337768c107b7a5f640810c2a",
+            "version": "7.0.0"
+          }
+        },
+        {
+          "identity": "swift-syntax",
+          "kind": "remoteSourceControl",
+          "location": "https://github.com/swiftlang/swift-syntax.git",
+          "state": {
+            "revision": "050f1a346fbbac0ca2cfb15a95274f7bd1cf0ccf",
+            "version": "604.0.0"
+          }
+        }
+      ]
+    },
+    {
+      "id": "network-json",
+      "host": "claude",
+      "selection": "implicit",
+      "prompt": "이 Swift 패키지는 InnoNetwork 6.1.0을 사용합니다. 사용자 조회 GET /users/{id}와 생성 POST /users를 구현해 주세요. 응답은 id:Int, name:String이고 생성 본문은 name:String입니다. 두 API는 공개 API라 인증이 필요 없습니다. 이름 있는 엔드포인트와 MockURLSession을 이용한 Swift Testing 테스트를 작성해서 path/method/JSON body와 응답 값을 확인해 주세요. 현재 manifest와 lock을 유지하고, 외부 네트워크 요청 없이 테스트할 수 있어야 합니다.",
+      "baseline_dependencies": [
+        {
+          "identity": "innonetwork",
+          "kind": "remoteSourceControl",
+          "location": "https://github.com/InnoSquadCorp/InnoNetwork.git",
+          "state": {
+            "revision": "79ff9f535a0a15ad8b52ce49cb5a4b1ea1dfec16",
+            "version": "6.1.0"
+          }
+        },
+        {
+          "identity": "swift-asn1",
+          "kind": "remoteSourceControl",
+          "location": "https://github.com/apple/swift-asn1.git",
+          "state": {
+            "revision": "3b6410f7dee09eb33cdd26260c5fd47fda19b0e2",
+            "version": "1.7.3"
+          }
+        },
+        {
+          "identity": "swift-crypto",
+          "kind": "remoteSourceControl",
+          "location": "https://github.com/apple/swift-crypto",
+          "state": {
+            "revision": "a9d1d5ab8951ada40cafff8c8e2b551dfde4f390",
+            "version": "5.0.0"
+          }
+        },
+        {
+          "identity": "swift-http-types",
+          "kind": "remoteSourceControl",
+          "location": "https://github.com/apple/swift-http-types",
+          "state": {
+            "revision": "bff4b6903cdc99dda49649dd52f46c11cfd3ed50",
+            "version": "1.8.0"
+          }
+        },
+        {
+          "identity": "swift-openapi-runtime",
+          "kind": "remoteSourceControl",
+          "location": "https://github.com/apple/swift-openapi-runtime",
+          "state": {
+            "revision": "50ad7976f18fec6c09466d2aebf7be3dc9476cfb",
+            "version": "1.13.0"
+          }
+        },
+        {
+          "identity": "swift-syntax",
+          "kind": "remoteSourceControl",
+          "location": "https://github.com/swiftlang/swift-syntax.git",
+          "state": {
+            "revision": "050f1a346fbbac0ca2cfb15a95274f7bd1cf0ccf",
+            "version": "604.0.0"
+          }
+        }
+      ]
+    },
+    {
+      "id": "flow-loading",
+      "host": "claude",
+      "selection": "implicit",
+      "prompt": "InnoFlow 6.0.0으로 숫자를 비동기 로딩하는 기능을 만들어줘. idle/loading/loaded/failed 상태를 PhaseMap으로 관리하고 성공 값을 보관하며 실패 후 재시도할 수 있게 해줘. async throwing 클로저를 주입하고 TestStore로 성공, 실패, 재시도를 각각 검증해줘.",
+      "baseline_dependencies": [
+        {
+          "identity": "innoflow",
+          "kind": "remoteSourceControl",
+          "location": "https://github.com/InnoSquadCorp/InnoFlow.git",
+          "state": {
+            "version": "6.0.0",
+            "revision": "188c2732d26350cf01afadade3dac89a2b73b68f"
+          }
+        },
+        {
+          "identity": "swift-syntax",
+          "kind": "remoteSourceControl",
+          "location": "https://github.com/swiftlang/swift-syntax.git",
+          "state": {
+            "version": "604.0.0",
+            "revision": "050f1a346fbbac0ca2cfb15a95274f7bd1cf0ccf"
+          }
+        }
+      ]
+    },
+    {
+      "id": "router-navigation",
+      "host": "claude",
+      "selection": "implicit",
+      "prompt": "이 패키지는 정식 InnoRouter 7.0.0을 사용해. 상품 상세(id: String)와 설정 화면을 오가는 간단한 SwiftUI 내비게이션을 만들어줘. routerskill://router.example.com/products/42 딥링크로 상품을 열고 다른 호스트는 거부해야 해. Host와 버튼 View를 작성하고 push/pop 상태와 revision, 딥링크 허용/거부를 Swift Testing으로 검증해줘.",
+      "baseline_dependencies": [
+        {
+          "identity": "innorouter",
+          "kind": "remoteSourceControl",
+          "location": "https://github.com/InnoSquadCorp/InnoRouter.git",
+          "state": {
+            "revision": "33b0da7639105cfa8e6f5acffa3badb91b5e0254",
+            "version": "7.0.0"
+          }
+        },
+        {
+          "identity": "swift-syntax",
+          "kind": "remoteSourceControl",
+          "location": "https://github.com/swiftlang/swift-syntax.git",
+          "state": {
+            "revision": "050f1a346fbbac0ca2cfb15a95274f7bd1cf0ccf",
+            "version": "604.0.0"
+          }
+        }
+      ]
+    },
+    {
+      "id": "protobuf-http",
+      "host": "claude",
+      "selection": "implicit",
+      "prompt": "이 Swift 패키지는 InnoNetwork-Protobuf 6.1.1과 InnoNetwork 6.1.1을 사용해. POST /echo/{id}는 Google_Protobuf_StringValue 본문을 보내고 같은 메시지를 반환해. GET /values/{id}는 locale 쿼리와 같은 응답을 쓰고, DELETE /values/{id}는 204/205의 본문 없는 성공 응답을 사용해. 세 API는 공개 API야. 이름 있는 엔드포인트와 공개 MockURLSession을 사용하는 Swift Testing 테스트를 만들어 줘. method/path/query, 바이너리 본문과 미디어 헤더, 반환값, DELETE의 잘못된 상태/본문 거부를 확인해. manifest와 lock은 유지하고 실제 서버 호출 없이 테스트할 수 있게 해줘.",
+      "baseline_dependencies": [
+        {
+          "identity": "innonetwork",
+          "kind": "remoteSourceControl",
+          "location": "https://github.com/InnoSquadCorp/InnoNetwork.git",
+          "state": {
+            "revision": "44e4ca28c50c03f817231a077c0f3bdfdbc859c8",
+            "version": "6.1.1"
+          }
+        },
+        {
+          "identity": "innonetwork-protobuf",
+          "kind": "remoteSourceControl",
+          "location": "https://github.com/InnoSquadCorp/InnoNetwork-Protobuf.git",
+          "state": {
+            "revision": "ba6ab8d6112d51efa69d92ac6739464bfc775aed",
+            "version": "6.1.1"
+          }
+        },
+        {
+          "identity": "swift-asn1",
+          "kind": "remoteSourceControl",
+          "location": "https://github.com/apple/swift-asn1.git",
+          "state": {
+            "revision": "3b6410f7dee09eb33cdd26260c5fd47fda19b0e2",
+            "version": "1.7.3"
+          }
+        },
+        {
+          "identity": "swift-crypto",
+          "kind": "remoteSourceControl",
+          "location": "https://github.com/apple/swift-crypto",
+          "state": {
+            "revision": "a9d1d5ab8951ada40cafff8c8e2b551dfde4f390",
+            "version": "5.0.0"
+          }
+        },
+        {
+          "identity": "swift-http-types",
+          "kind": "remoteSourceControl",
+          "location": "https://github.com/apple/swift-http-types",
+          "state": {
+            "revision": "bff4b6903cdc99dda49649dd52f46c11cfd3ed50",
+            "version": "1.8.0"
+          }
+        },
+        {
+          "identity": "swift-openapi-runtime",
+          "kind": "remoteSourceControl",
+          "location": "https://github.com/apple/swift-openapi-runtime",
+          "state": {
+            "revision": "50ad7976f18fec6c09466d2aebf7be3dc9476cfb",
+            "version": "1.13.0"
+          }
+        },
+        {
+          "identity": "swift-protobuf",
+          "kind": "remoteSourceControl",
+          "location": "https://github.com/apple/swift-protobuf.git",
+          "state": {
+            "revision": "55d7a1cc5666b85c13464aea1c4b4a90feccb4c8",
+            "version": "1.38.1"
+          }
+        },
+        {
+          "identity": "swift-syntax",
+          "kind": "remoteSourceControl",
+          "location": "https://github.com/swiftlang/swift-syntax.git",
+          "state": {
+            "revision": "050f1a346fbbac0ca2cfb15a95274f7bd1cf0ccf",
+            "version": "604.0.0"
+          }
+        }
+      ]
+    },
+    {
+      "id": "negative-string",
+      "host": "claude",
+      "selection": "negative",
+      "prompt": "Add formatDisplayName(_ raw: String) -> String. Trim surrounding whitespace; return \"Guest\" when the result is empty. Add focused Swift Testing tests. This is an in-memory string utility with no networking behavior.",
+      "baseline_dependencies": [
+        {
+          "identity": "innonetwork",
+          "kind": "remoteSourceControl",
+          "location": "https://github.com/InnoSquadCorp/InnoNetwork.git",
+          "state": {
+            "revision": "79ff9f535a0a15ad8b52ce49cb5a4b1ea1dfec16",
+            "version": "6.1.0"
+          }
+        },
+        {
+          "identity": "swift-asn1",
+          "kind": "remoteSourceControl",
+          "location": "https://github.com/apple/swift-asn1.git",
+          "state": {
+            "revision": "3b6410f7dee09eb33cdd26260c5fd47fda19b0e2",
+            "version": "1.7.3"
+          }
+        },
+        {
+          "identity": "swift-crypto",
+          "kind": "remoteSourceControl",
+          "location": "https://github.com/apple/swift-crypto",
+          "state": {
+            "revision": "a9d1d5ab8951ada40cafff8c8e2b551dfde4f390",
+            "version": "5.0.0"
+          }
+        },
+        {
+          "identity": "swift-http-types",
+          "kind": "remoteSourceControl",
+          "location": "https://github.com/apple/swift-http-types",
+          "state": {
+            "revision": "bff4b6903cdc99dda49649dd52f46c11cfd3ed50",
+            "version": "1.8.0"
+          }
+        },
+        {
+          "identity": "swift-openapi-runtime",
+          "kind": "remoteSourceControl",
+          "location": "https://github.com/apple/swift-openapi-runtime",
+          "state": {
+            "revision": "50ad7976f18fec6c09466d2aebf7be3dc9476cfb",
+            "version": "1.13.0"
+          }
+        },
+        {
+          "identity": "swift-syntax",
+          "kind": "remoteSourceControl",
+          "location": "https://github.com/swiftlang/swift-syntax.git",
+          "state": {
+            "revision": "050f1a346fbbac0ca2cfb15a95274f7bd1cf0ccf",
+            "version": "604.0.0"
+          }
+        }
+      ]
+    },
+    {
+      "id": "router-release-policy",
+      "host": "codex",
+      "selection": "implicit",
+      "prompt": "이 패키지는 정식 InnoRouter 7.0.0을 쓰고 있어. 설치된 스킬의 지원 패치 범위와 실제 검증 기준이 무엇인지, 7.0.1로 올릴 때 무엇을 확인해야 하는지 설명해줘. 패키지와 문서를 읽되 파일은 수정하지 마.",
+      "file_changes_allowed": false
+    },
+    {
+      "id": "protobuf-reissued-policy",
+      "host": "codex",
+      "selection": "implicit",
+      "prompt": "InnoNetwork-Protobuf 6.1.1 태그가 재발행됐다고 해. 이 앱의 lock과 설치된 스킬의 검증 기준은 어떻게 다른지 확인하고, 현재 태그를 다시 검증하는 방법과 Core를 별도로 6.1.2로 올릴 수 있는지 설명해줘. 파일은 수정하지 마.",
+      "file_changes_allowed": false
+    }
+  ],
+  "protocol": "Fresh installed-plugin sessions; isolated manifest/lock scaffolds; no expected answer or grading rubric sent to the host; independent strict testing without manual edits."
+}
