@@ -43,6 +43,18 @@ class PortableSkillsTests(unittest.TestCase):
         portable.install(ROOT, self.pins, self.project, "grok", dry_run=True)
         self.assertEqual(list(self.project.iterdir()), [])
 
+    def test_host_setup_guidance_does_not_overwrite_project_settings(self):
+        settings = self.project / ".gemini/settings.json"
+        settings.parent.mkdir()
+        settings.write_text('{"experimental":{"skills":false},"userSetting":"preserve"}\n')
+        original = settings.read_bytes()
+        preview = portable.install(ROOT, self.pins, self.project, "gemini", dry_run=True)
+        installed = portable.install(ROOT, self.pins, self.project, "gemini")
+        self.assertEqual(preview["host_guidance"], installed["host_guidance"])
+        self.assertTrue(installed["host_guidance"])
+        self.assertEqual(settings.read_bytes(), original)
+        self.assertTrue(portable.install(ROOT, self.pins, self.project, "copilot")["host_guidance"])
+
     def test_conflict_preflight_preserves_existing_and_other_skills(self):
         target = self.project / ".grok/skills/innorouter"
         target.mkdir(parents=True)

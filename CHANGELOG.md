@@ -1,0 +1,33 @@
+# Changelog
+
+## 1.0.0 — unreleased
+
+First stable-version packaging candidate for the six library-owned Inno skills.
+No v1.0.0 tag or release has been published by this preparation work.
+
+- Align portable, Codex, Claude and Claude marketplace versions at 1.0.0.
+- Document Gemini CLI 0.24.0's Agent Skills feature flag and discovery check.
+- Report Copilot's verified loading separately from its failed GPT-4.1 generation evaluation.
+- Include setup/qualification guidance in Gemini and Copilot installation results without changing user configuration.
+- Preserve the exact alpha.14 skill trees and library support ranges, including the six consumer JSON/diagnostic fixes.
+- Add deterministic plugin/reference packaging, provenance and SHA-256 checksums. Candidate mode is explicit; normal packaging rejects unmerged sources and uncommitted inputs.
+- Record fresh non-Grok host evaluation separately from reused alpha.12 evidence. Stream remains a preview based on an unreleased commit.
+
+Source merges, final immutable-commit CI, audience/visibility, and release publication
+are tracked in [the preparation checklist](docs/release-1.0.0.md).
+
+## 0.1.0-alpha.14
+
+Fixed stdout/stderr separation in all six consumer validators and added subprocess
+regression coverage. Five owning-library corrections remain in source PRs.
+See [the correction report](docs/consumer-output-fix-alpha.14.md).
+
+## 0.1.0-alpha.13
+
+Added portable project installation, Markdown/ZIP reference export and the Grok API
+request helper. See [the dated validation record](docs/portable-validation-alpha.13.json).
+
+## 0.1.0-alpha.12
+
+Refreshed release baselines and recorded native-host/consumer evaluations.
+See [the dated evaluation](docs/release-candidate-alpha.12.md).

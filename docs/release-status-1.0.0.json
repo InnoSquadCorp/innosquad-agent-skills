@@ -1,0 +1,146 @@
+{
+  "checked_on": "2026-10-10",
+  "timezone": "Asia/Seoul",
+  "preparation_base": "2a5b4fed66ba4750c89df09f9fd8e0d8878f31cf",
+  "central_pr": "https://github.com/InnoSquadCorp/innosquad-agent-skills/pull/1",
+  "central_visibility": "PRIVATE",
+  "publication_performed": false,
+  "sources": [
+    {
+      "headRefOid": "e3af97115a676120a81346f6a0acb6f11c6c33cf",
+      "isDraft": true,
+      "mergeCommit": null,
+      "mergedAt": null,
+      "state": "OPEN",
+      "url": "https://github.com/InnoSquadCorp/InnoDI/pull/59",
+      "skill": "innodi",
+      "library_tag": {
+        "version": "7.0.0",
+        "exit_code": 0,
+        "refs": [
+          "94329c7622cc970c7cdca67385a1f5c693f0d19f\trefs/tags/7.0.0",
+          "4783eee7f674f99a337768c107b7a5f640810c2a\trefs/tags/7.0.0^{}"
+        ]
+      },
+      "check_counts": {
+        "SUCCESS": 7,
+        "SKIPPED": 6,
+        "QUEUED": 11
+      },
+      "failing_checks": []
+    },
+    {
+      "headRefOid": "600467d957f47df99321204af866da1073d6b67c",
+      "isDraft": true,
+      "mergeCommit": null,
+      "mergedAt": null,
+      "state": "OPEN",
+      "url": "https://github.com/InnoSquadCorp/InnoNetwork/pull/153",
+      "skill": "innonetwork",
+      "library_tag": {
+        "version": "6.1.0",
+        "exit_code": 0,
+        "refs": [
+          "b4589582d5e9e2de30ad07357b32e30834b13f93\trefs/tags/6.1.0",
+          "79ff9f535a0a15ad8b52ce49cb5a4b1ea1dfec16\trefs/tags/6.1.0^{}"
+        ]
+      },
+      "check_counts": {
+        "SUCCESS": 6,
+        "SKIPPED": 5,
+        "QUEUED": 24,
+        "IN_PROGRESS": 1
+      },
+      "failing_checks": []
+    },
+    {
+      "headRefOid": "4de23f95ef02420acafb1238815e96a7835a00c1",
+      "isDraft": true,
+      "mergeCommit": null,
+      "mergedAt": null,
+      "state": "OPEN",
+      "url": "https://github.com/InnoSquadCorp/InnoFlow/pull/63",
+      "skill": "innoflow",
+      "library_tag": {
+        "version": "6.0.0",
+        "exit_code": 0,
+        "refs": [
+          "188c2732d26350cf01afadade3dac89a2b73b68f\trefs/tags/6.0.0"
+        ]
+      },
+      "check_counts": {
+        "SUCCESS": 5,
+        "SKIPPED": 5,
+        "QUEUED": 25,
+        "IN_PROGRESS": 1
+      },
+      "failing_checks": []
+    },
+    {
+      "headRefOid": "4c2eafa4361bf65a9fd283dca99167ddeffff140",
+      "isDraft": true,
+      "mergeCommit": null,
+      "mergedAt": null,
+      "state": "OPEN",
+      "url": "https://github.com/InnoSquadCorp/InnoRouter/pull/70",
+      "skill": "innorouter",
+      "library_tag": {
+        "version": "7.0.0",
+        "exit_code": 0,
+        "refs": [
+          "33b0da7639105cfa8e6f5acffa3badb91b5e0254\trefs/tags/7.0.0"
+        ]
+      },
+      "check_counts": {
+        "QUEUED": 25,
+        "SUCCESS": 8,
+        "SKIPPED": 9
+      },
+      "failing_checks": []
+    },
+    {
+      "headRefOid": "ab67a5b7b100af117d1d675a04ac289f1789a7a3",
+      "isDraft": false,
+      "mergeCommit": {
+        "oid": "06e091d79f93fd36bcccf04863ac994f0d51ebc8"
+      },
+      "mergedAt": "2026-10-09T11:19:42Z",
+      "state": "MERGED",
+      "url": "https://github.com/InnoSquadCorp/InnoNetwork-Protobuf/pull/9",
+      "skill": "innonetwork-protobuf",
+      "library_tag": {
+        "version": "6.1.1",
+        "exit_code": 0,
+        "refs": [
+          "eaea83c7f95f931b6e963c49ae10c7ef5f869438\trefs/tags/6.1.1",
+          "ba6ab8d6112d51efa69d92ac6739464bfc775aed\trefs/tags/6.1.1^{}"
+        ]
+      },
+      "check_counts": {
+        "SKIPPED": 8,
+        "SUCCESS": 15,
+        "PENDING": 1
+      },
+      "failing_checks": []
+    },
+    {
+      "headRefOid": "0fd0601be142f782a3a0b56305aabb261582652b",
+      "isDraft": true,
+      "mergeCommit": null,
+      "mergedAt": null,
+      "state": "OPEN",
+      "url": "https://github.com/InnoSquadCorp/InnoNetwork-Stream/pull/14",
+      "skill": "innonetwork-stream",
+      "library_tag": {
+        "version": "6.1.1",
+        "exit_code": 0,
+        "refs": []
+      },
+      "check_counts": {
+        "SUCCESS": 4,
+        "QUEUED": 10
+      },
+      "failing_checks": []
+    }
+  ]
+}

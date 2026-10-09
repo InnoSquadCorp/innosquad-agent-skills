@@ -1,117 +1,95 @@
 # InnoSquad Agent Skills
 
 InnoSquad Swift 라이브러리 6개의 스킬을 Codex·Claude Code 플러그인과
-Grok·Gemini CLI·Cursor·Copilot용 공통 스킬로 제공합니다.
-Grok 웹·앱용 Markdown 자료와 Grok API 호출 도구도 포함합니다.
-**0.1.0-alpha.14**는 배포 준비 후보이며 공개 배포는 아직 하지 않았습니다.
+다른 AI 도구용 공통 스킬로 제공합니다. **1.0.0 배포 준비 버전**이며,
+아직 1.0.0 태그·GitHub Release·공개 배포는 만들지 않았습니다.
 
-| Skill | Stable support | Exact consumer baseline |
+| Skill | Support | Exact consumer baseline |
 | --- | --- | --- |
-| [innodi](skills/innodi/SKILL.md) | 7.0.x | 7.0.0; validator fix in source PR |
-| [innonetwork](skills/innonetwork/SKILL.md) | 6.1.x | 6.1.0; validator fix in source PR |
-| [innoflow](skills/innoflow/SKILL.md) | 6.0.x | 6.0.0; validator fix in source PR |
+| [innodi](skills/innodi/SKILL.md) | 7.0.x | 7.0.0 |
+| [innonetwork](skills/innonetwork/SKILL.md) | 6.1.x | 6.1.0 |
+| [innoflow](skills/innoflow/SKILL.md) | 6.0.x | 6.0.0 |
 | [innorouter](skills/innorouter/SKILL.md) | 7.0.x | Published 7.0.0 (`33b0da7`) |
 | [innonetwork-protobuf](skills/innonetwork-protobuf/SKILL.md) | 6.1.x | Reissued 6.1.1 (`ba6ab8d`) + exact Core 6.1.1; historical fixture retained |
-| [innonetwork-stream](skills/innonetwork-stream/SKILL.md) | Planned 6.1.x | Unreleased `bd50e87`, intended for 6.1.1 + exact Core 6.1.1 |
+| [innonetwork-stream](skills/innonetwork-stream/SKILL.md) | **Preview: planned 6.1.x** | Unreleased `bd50e87`, intended for 6.1.1 + exact Core 6.1.1 |
 
-지원 범위는 해당 패치 라인 전체입니다. 6.1.x는 `>=6.1.0 <6.2.0`이며
-프리릴리스와 6.2 이상을 포함하지 않습니다. 지원 범위가 모든 패치의 테스트
-완료를 뜻하지는 않습니다. 프로젝트의 실제 해결 버전을 유지하고 검증합니다.
+지원 범위는 해당 패치 라인 전체입니다. 예를 들어 6.1.x는 `>=6.1.0 <6.2.0`이며
+프리릴리스와 6.2 이상은 포함하지 않습니다. 모든 패치를 테스트했다는 뜻은 아닙니다.
+프로젝트의 실제 해결 버전을 유지하고 해당 소비자를 검증합니다. Stream은 정식
+6.1.1 검증 완료 항목이 아닌 preview로 포함됩니다.
+
+## AI 도구별 검증 수준
+
+| 도구 | 제공 방식 | 확인된 수준 |
+| --- | --- | --- |
+| Codex | 네이티브 플러그인 / `.agents/skills` | 기존 플러그인 평가 + 최근 대표 DI 자동 선택·생성 테스트 통과 |
+| Claude Code | 네이티브 플러그인 / `.claude/skills` | 기존 생성 평가 통과. 최근 alpha.14 인식 확인, OAuth 만료로 새 생성 평가 중단 |
+| Gemini CLI | `.gemini/skills` | 0.24.0은 `experimental.skills=true` 필요. 6개 인식 확인, 생성 미검증 |
+| Cursor Agent | `.cursor/skills` | 설치·로더 확인. 인증 문제로 실제 선택·생성 미검증 |
+| GitHub Copilot | `.github/skills` | 6개 인식·명시 로딩 확인. **GPT-4.1 자동 선택·생성 평가 미통과** |
+| Grok CLI / 웹·앱 / API | 네이티브 폴더 / Markdown / API 도구 | 형식·로컬 검사만 완료, 실제 모델 동작 미검증 |
+| ChatGPT·Gemini 웹 등 | Markdown 첨부·붙여넣기 | 참고 자료 전달. 웹용 네이티브 플러그인 제공을 의미하지 않음 |
+
+스킬 인식, 자동 선택, 생성 코드 컴파일, 공개 배포는 별도로 검증합니다.
+[호스트별 설정·제한](docs/host-support.md)과 [최근 평가](docs/host-evaluation-non-grok.md)에
+버전, 대조군, 인증·모델 제한을 기록했습니다. 1.0.0 후보의 스킬 원본은 평가한
+alpha.14와 동일하며, 이전 검증을 새 실행 결과로 표시하지 않습니다.
 
 ## Install
 
-Both marketplaces are named **innosquad**. After this candidate merges into
-`main`, developers with repository access can install with:
+저장소는 현재 private이며 후보는 PR #1에 있습니다. 먼저
+[검토 브랜치 설치](docs/distribution.md#review-the-candidate)를 사용하세요.
+마켓플레이스는 두 도구 모두 `innosquad`, 플러그인 ID는 `innosquad@innosquad`입니다.
+정식 태그 설치는 **v1.0.0 게시 후** [배포 안내](docs/distribution.md)를 따릅니다.
+
+설치 후 새 세션에서 Codex는 `$innosquad:innorouter`, Claude Code는
+`/innosquad:innorouter`로 명시 호출할 수 있습니다. 관련 자연어 요청에 따른
+자동 선택은 호스트와 모델의 영향을 받습니다.
 
 ```bash
-codex plugin marketplace add InnoSquadCorp/innosquad-agent-skills --ref main
-codex plugin add innosquad@innosquad
-claude plugin marketplace add InnoSquadCorp/innosquad-agent-skills
-claude plugin install innosquad@innosquad --scope user
+python3 scripts/portable_skills.py install --host gemini --project /path/to/app
+python3 scripts/portable_skills.py install --host copilot --project /path/to/app
+python3 scripts/portable_skills.py export --output artifacts/portable-1.0.0-candidate
 ```
 
-The repository is currently private and `main` does not yet contain this candidate.
-Use the [review-branch instructions](docs/distribution.md) until merge. Git
-marketplace distribution is separate from an official plugin-directory listing.
-Start a fresh session after installation/update.
+`--host`는 `codex`, `claude`, `gemini`, `cursor`, `copilot`, `grok`, `agents`를
+지원합니다. 기존 파일이 다르면 덮어쓰지 않습니다. 설정·인증은 변경하지 않으며,
+Gemini와 Copilot의 설치 결과에 필요한 설정과 검증 한계를 안내합니다.
+네이티브 플러그인과 같은 스킬의 독립 설치를 중복으로 활성화하지 마세요.
 
-In Codex use `$innosquad:innorouter`; in Claude Code use `/innosquad:innorouter`.
-Replace the skill name with any entry above. Relevant natural-language requests
-can also select a skill automatically:
-
-> 이 프로젝트의 InnoRouter 버전을 확인하고, 제품 상세 화면으로 이동하는 타입 안전한 라우트와 테스트를 작성해줘.
-
-For standalone use, copy a complete `skills/<name>` into `.agents/skills/<name>`
-or `.claude/skills/<name>`, preserving notices and resources and comparing an
-existing destination before replacing it. Avoid duplicate standalone/plugin installs.
-
-## Grok and other AI tools
-
-```bash
-python3 scripts/portable_skills.py install --host grok --project /path/to/app
-python3 scripts/portable_skills.py export --output artifacts/portable-alpha.14
-```
-
-Use `--host gemini`, `cursor`, `copilot`, or `agents` for other coding agents.
-The export includes a native skills ZIP and one self-contained Markdown reference
-per library for chat attachment/paste. Grok API requests use
-`scripts/grok_request.py --skill innodi --model "$GROK_MODEL" --prompt-file task.txt`;
-`--dry-run` prints the request without a key or network call.
-See [host support and usage](docs/host-support.md) for paths and setup.
-New delivery adapters are locally tested; Grok live responses and other hosts'
-automatic selection have not yet been qualified. Existing host evidence stays dated.
+내보낸 ZIP은 네이티브 스킬 폴더이고, 라이브러리별 Markdown은 채팅용 참고 자료입니다.
+Grok API 도구는 `scripts/grok_request.py`; `--dry-run`으로 요청을 먼저 확인합니다.
+자세한 사용법은 [호스트 안내](docs/host-support.md)를 참조하세요.
 
 ## Source ownership
 
-**스킬 원본은 각 라이브러리 저장소에서 관리하며, 중앙 저장소는 검증한 원본을
-플러그인으로 묶습니다.** API 지침이나 예제 수정은 라이브러리 PR에서 먼저 합니다.
-중앙 저장소는 매니페스트, 배포, 설치 및 AI 호스트 평가를 담당합니다.
+**스킬 원본은 각 라이브러리 저장소가 관리하고, 중앙 저장소는 검증한 원본을 묶습니다.**
+[sources.lock.json](sources.lock.json)은 원본 커밋·트리와 라이브러리 검증 기준을
+따로 고정합니다. API 지침·예제 수정은 원본 PR에서 먼저 합니다.
+[원본 관리 정책](docs/source-ownership.md)을 참조하세요.
 
-[sources.lock.json](sources.lock.json) separately pins skill source commits/trees
-and tested library revisions. Runtime resources are self-contained; no
-cross-repository symlinks, MCP servers, hooks, credentials or automatic project
-migrations are included. Read [source ownership](docs/source-ownership.md).
+검증 스크립트의 stdout/stderr 혼합 오류는 6개 스냅샷 모두 수정되어 있습니다.
+[alpha.14 수정 보고서](docs/consumer-output-fix-alpha.14.md)의 원본 PR 5개는
+아직 병합 대기 중이며 Protobuf 수정은 병합됐습니다. **정식 패키지 생성은
+미병합 원본이 있으면 실패합니다.**
 
-The six consumer validators separate graph JSON from stderr diagnostics in
-alpha.14. Five source fixes await PR merge; Protobuf uses its already-merged fix.
-See [the correction report](docs/consumer-output-fix-alpha.14.md). Router's earlier
-merge-commit performance CI remains a separate condition. Stream retains its
-explicitly planned library baseline.
-
-## Validation
+## Validate and prepare 1.0.0
 
 ```bash
 python3 -B scripts/validate_bundle.py
 python3 -B -m unittest discover -s tests -v
 claude plugin validate .
 claude plugin validate .claude-plugin/plugin.json
+python3 -B scripts/build_release.py --candidate --output artifacts/1.0.0-candidate
 ```
 
-The bundle check verifies identity/version agreement, support records, portable
-links, source notices and exact Git tree equality including modes. CI runs those
-checks and rejection controls; it does not call AI models or run Swift.
-
-The alpha.12 release checks passed 11 Flow, 11 Router and 14 reissued-Protobuf consumer
-tests with strict concurrency and warnings as errors. See the
-[alpha.12 evidence](docs/release-candidate-alpha.12.md) and
-[consumer validation commands](docs/distribution.md#consumer-validation).
-Native alpha.12 installation passed on both hosts. Claude selected the expected
-skill for five library tasks, selected none for an unrelated task, and generated
-code passing 24 independent strict tests. Two fresh Codex policy checks passed.
-Stream's unchanged skill reuses the earlier alpha.11 Claude run (5 tests);
-earlier Codex generation reports remain dated evidence. See the report for
-self-corrections, harness limits and exact evaluated revisions.
-alpha.13 added portable delivery. alpha.14 updates all six consumer helpers and
-adds real subprocess stdout/stderr regression checks; instructions, discovery
-metadata, API fixtures and supported ranges remain unchanged. New source trees
-are pinned exactly, including modes. Installation/export/API tests run in the
-same CI. See [the alpha.14 correction report](docs/consumer-output-fix-alpha.14.md)
-for fresh checks and remaining source-merge/release conditions. Prior host runs
-are dated evidence, not fresh evaluation of the updated plugin.
+후보 패키지는 플러그인 ZIP, 채팅 참고 자료, 출처 정보, SHA-256 목록을 포함합니다.
+이 명령은 배포하지 않습니다. 병합·CI·공개 설정 등 남은 조건과 정식 패키지 생성
+절차는 [1.0.0 준비 문서](docs/release-1.0.0.md)에 정리했습니다.
+변경 내역은 [CHANGELOG](CHANGELOG.md)를 참조하세요.
 
 ## License
 
-Original distribution material is under [MIT](LICENSE). Each bundled skill retains
-its library's `THIRD_PARTY_NOTICES.md`, including existing years and attributions.
-Library release, source merge, plugin publication and directory approval are
-independent states.
+중앙 배포물은 [MIT](LICENSE)입니다. 각 스킬의 `THIRD_PARTY_NOTICES.md`와
+기존 저작권 표기를 보존합니다. Git 마켓플레이스 배포와 공식 디렉터리 등록은
+서로 별도입니다.

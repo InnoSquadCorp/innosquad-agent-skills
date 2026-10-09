@@ -1,22 +1,21 @@
 # Use the skills in other AI tools
 
-alpha.13 added project installation and chat/API reference packs. alpha.14 fixes
-consumer command diagnostics in all six skills; guidance and API fixtures are unchanged. A host adapter changes delivery,
-not supported library versions or qualification status. These standard-library
-tools require Python 3.9+.
+The 1.0.0 preparation candidate preserves alpha.14 skill trees and library support
+ranges. Host delivery and model qualification are separate. The installer and
+packaging tools use Python 3.9+ and do not change host settings or authentication.
 
 ## Delivery paths
 
 | Host | Delivery | Selection | Qualification |
 | --- | --- | --- | --- |
-| Codex | Existing plugin or `.agents/skills/` | Native | Reused alpha.12 host evidence, unchanged guidance; helpers updated in alpha.14 |
-| Claude Code | Existing plugin or `.claude/skills/` | Native | Reused alpha.12 host evidence, unchanged guidance; helpers updated in alpha.14 |
+| Codex | Existing plugin or `.agents/skills/` | Native | Dated alpha.12 native evidence; fresh alpha.14 standalone DI selection and 4 tests passed |
+| Claude Code | Existing plugin or `.claude/skills/` | Native | Dated alpha.12 generation passed; fresh alpha.14 catalog recognized, OAuth expired |
 | Grok Build / CLI | `.grok/skills/` or Claude-compatible plugin | Native | Official format and local copy checks; CLI unavailable here |
 | Grok web/app | Per-library Markdown attached or pasted | User chooses context | Export checked; live upload/model behavior unverified |
 | Grok API | Selected context sent to xAI Responses | Explicit `--skill` | Offline request/response tests; no live key available |
-| Gemini CLI | `.gemini/skills/` or `.agents/skills/` | Native on a skills-capable version | Local file installation checked |
-| Cursor Agent | `.cursor/skills/` or `.agents/skills/` | Native | Local file installation checked |
-| GitHub Copilot | `.github/skills/` or `.agents/skills/` | Native on a skills-capable version | Local file installation checked |
+| Gemini CLI | `.gemini/skills/` or `.agents/skills/` | Version-dependent feature flag | 0.24.0 discovered all six with the flag enabled; generation blocked by sign-in |
+| Cursor Agent | `.cursor/skills/` or `.agents/skills/` | Native loader present | Files/installed loader checked; actual discovery and generation blocked by authentication |
+| GitHub Copilot | `.github/skills/` or `.agents/skills/` | Native catalog and explicit invocation | Six discovered; CLI 1.0.11 + GPT-4.1 implicit selection and generated-code evaluation failed |
 | Other text assistants, including ChatGPT/Gemini chat | Markdown attached or pasted | User chooses context | Text delivery, not a native plugin claim |
 
 Paths follow official [Grok](https://docs.x.ai/build/features/skills-plugins-marketplaces),
@@ -48,10 +47,42 @@ explicit invocation such as `/innodi`. Automatic selection depends on the host
 and task. Use a skills-capable host version; file-copy success alone does not prove
 discovery. Avoid duplicate standalone/plugin copies of the same skill.
 
+## Gemini CLI setup
+
+On the evaluated **0.24.0** installation, Agent Skills is experimental and disabled
+by default. Merge this field into the project's existing `.gemini/settings.json`;
+preserve all other keys:
+
+```json
+{"experimental":{"skills":true}}
+```
+
+Restart Gemini and run `gemini skills list`. All six Inno skills were discovered
+with this setting. The installer returns this guidance but never writes settings.
+Check the requirements of your installed version; newer versions may differ.
+Finish Gemini's sign-in before testing a request. The recorded probe stopped at
+OAuth sign-in, so discovery does not establish model behavior.
+
+## Copilot usage and current limit
+
+In CLI **1.0.11**, use `/skills` to verify the six project entries. An explicit
+request such as “Use the innodi skill, inspect my Package.resolved, then implement
+the override and tests” successfully invoked `skill innodi` and read references.
+
+**GPT-4.1 is not generation-qualified by this evaluation.** It skipped the skill
+on the implicit request and generated an incompatible runtime registration API.
+Explicit activation loaded the correct material but still generated a container
+inside a test function, which failed compilation. Both were read-only, first-answer
+probes; a full build-and-repair agent loop was not evaluated. Compile generated
+code in the consumer and do not infer correctness from successful activation.
+The installed model menu also listed models that the server rejected. Verify an
+actual request before treating a model as available; the installer does not select
+or change your model. See [the recorded evaluation](host-evaluation-non-grok.md).
+
 ## Grok web/app and other chats
 
 ```bash
-python3 scripts/portable_skills.py export --output artifacts/portable-alpha.14
+python3 scripts/portable_skills.py export --output artifacts/portable-1.0.0-candidate
 ```
 
 This creates `START_HERE.md`, a catalog, six per-library Markdown files,
@@ -105,17 +136,13 @@ for every target host, repeat installs, collision/symlink refusal, deterministic
 selected-only exports, notices, dry runs, API request/response parsing and failure
 behavior. CI does not call remote models or billable APIs.
 
-Grok runtime behavior is unverified: the CLI is unavailable and `XAI_API_KEY` is
-absent here. Other hosts' actual selection/generation is separate from the local
-installation tests. Existing alpha.12 evidence remains dated.
-One Copilot CLI 1.0.11 read-only probe stopped before model use because its
-configured `gpt-5-mini` model was rejected by the server (HTTP 400, unsupported
-model); it is not a passed skill-selection case. Gemini CLI 0.24.0 and Cursor
-Agent 2026.01.02 were inventoried but not used for fresh model evaluation.
-See [portable validation evidence](portable-validation-alpha.13.json).
+Grok runtime behavior remains unverified: no CLI or live API execution was
+available in the recorded review. The latest non-Grok evidence is in the
+[host evaluation](host-evaluation-non-grok.md); older
+[alpha.12](release-candidate-alpha.12.md) and [portable checks](portable-validation-alpha.13.json)
+remain dated records. Authentication-blocked hosts need a new successful request
+before their qualification status can change.
 
-The graph-output defect is fixed in all six alpha.14 snapshots; see the
-[correction report](consumer-output-fix-alpha.14.md). Five owning-library PRs
-still await merge. Router's earlier merge CI performance failure and Stream's
-unpublished 6.1.1 baseline remain separate release conditions. Public publication and official
-directory submission are separate actions.
+All six validator fixes are preserved. The [1.0.0 preparation checklist](release-1.0.0.md)
+tracks source merges, exact-commit checks, Stream's preview status and publication.
+The helper correction details remain in the [alpha.14 report](consumer-output-fix-alpha.14.md).

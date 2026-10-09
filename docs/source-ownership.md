@@ -12,7 +12,7 @@ from the `library` baseline/support declaration. A skill-source fix does not
 require changing the tested library version. All library fields agree with the
 copied support record; the validator understands DI's original range/channel schema.
 
-| Skill | alpha.14 source selection | API evidence |
+| Skill | 1.0.0 preparation source selection (unchanged from alpha.14) | API evidence |
 | --- | --- | --- |
 | DI | Graph-output fix, [PR #59](https://github.com/InnoSquadCorp/InnoDI/pull/59) pending | Exact 7.0.0 fixture |
 | Network | Graph-output fix, [PR #153](https://github.com/InnoSquadCorp/InnoNetwork/pull/153) pending | Exact 6.1.0 fixture |
@@ -37,8 +37,9 @@ only the isolated adapter revision, verifies the official tag before/after
 execution and checks all eight remote dependencies. Never call the old fixture
 validation of the reissued tag or independently upgrade exact Core 6.1.1.
 
-Stream has no published tag at the 2026-10-09 check. A plugin alpha can explicitly
-include that planned baseline; this does not qualify a released Stream 6.1.1.
+Stream has no 6.1.1 tag at the 2026-10-10 check. The 1.0.0 plugin preparation
+includes that baseline explicitly as preview; it does not qualify a released
+Stream 6.1.1. See the [preparation checklist](release-1.0.0.md).
 
 ## Refresh and publish
 

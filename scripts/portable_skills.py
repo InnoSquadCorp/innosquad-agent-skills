@@ -22,6 +22,16 @@ HOST_PATHS = {
     "gemini": ".gemini/skills", "cursor": ".cursor/skills",
     "copilot": ".github/skills",
 }
+HOST_GUIDANCE = {
+    "gemini": [
+        "Gemini CLI 0.24.0 requires experimental.skills=true in project settings; merge that key into existing .gemini/settings.json, then restart and run gemini skills list. Check the requirement for your installed version.",
+        "The installer does not change settings or authentication. Six skills were discovered with the flag enabled; model generation remains unverified because sign-in was required.",
+    ],
+    "copilot": [
+        "Check /skills after installation. Copilot CLI 1.0.11 discovered all six skills and loaded innodi on explicit request.",
+        "GPT-4.1 failed the representative implicit-selection and generated-code evaluation; explicit skill loading also produced code that failed compilation. This host/model is not generation-qualified. Validate generated code in the consumer.",
+    ],
+}
 CHAT_GUIDANCE = """Use only the library references relevant to the user's task.
 First establish the project's actual resolved library version and revision.
 Keep its dependency choices; a bundled exact baseline is not a downgrade target.
@@ -100,8 +110,10 @@ def install(root, pins, project, host, dry_run=False):
             status = "install"
         plan.append({"skill": name, "destination": str(target), "status": status,
                      "git_tree": pin["git_tree"]})
+    result = {"dry_run": dry_run, "host": host, "skills": plan,
+              "host_guidance": HOST_GUIDANCE.get(host, [])}
     if dry_run:
-        return {"dry_run": True, "host": host, "skills": plan}
+        return result
     base.mkdir(parents=True, exist_ok=True)
     # Prepare every copy before publishing any; existing different skills are never replaced.
     with tempfile.TemporaryDirectory(prefix=".innosquad-stage-", dir=base) as scratch:
@@ -119,7 +131,7 @@ def install(root, pins, project, host, dry_run=False):
                     raise ValueError(f"Destination changed during install: {target}")
                 (staged / item["skill"]).rename(target)
                 item["status"] = "installed"
-    return {"dry_run": False, "host": host, "skills": plan}
+    return result
 
 
 def export_pack(root, pins, output):

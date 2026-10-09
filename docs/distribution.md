@@ -28,9 +28,29 @@ claude plugin install innosquad@innosquad --scope user
 
 Record the fetched commit. Codex can fetch an immutable Git source directly with
 `codex plugin marketplace add InnoSquadCorp/innosquad-agent-skills --ref COMMIT_SHA`.
-For release installation, replace the branch with a published tag that actually
-exists. Once merged, the README's `main` commands become the normal install path.
-Start a fresh host session after installation/update.
+For release installation, use the immutable tag procedure below only once that
+tag exists. Start a fresh host session after installation/update.
+
+## Install v1.0.0 after publication
+
+The following tag does **not** exist as part of preparation. After the reviewed
+release is actually published:
+
+```bash
+git clone --branch v1.0.0 --single-branch https://github.com/InnoSquadCorp/innosquad-agent-skills.git innosquad-agent-skills-1.0.0
+cd innosquad-agent-skills-1.0.0
+git rev-parse HEAD
+python3 -B scripts/validate_bundle.py --require-merged
+codex plugin marketplace add .
+codex plugin add innosquad@innosquad
+claude plugin marketplace add "$PWD"
+claude plugin install innosquad@innosquad --scope user
+```
+
+Compare the fetched commit to the release's recorded commit. An extracted native
+plugin ZIP can also be validated/installed from its `innosquad/` directory. It
+contains both marketplace catalogs; `references/innosquad-skills.zip` instead
+contains standalone skills and is not the full plugin.
 
 ## Move from the local pilot
 
@@ -77,13 +97,20 @@ alter authentication. Registration, actual selection and generation are separate
 
 ## Publication handoff
 
-The alpha.14 graph-output correction is implemented and locally validated.
-Merge its five owning-library PRs, refresh their source status/commit pins, and
-compare the resulting skill trees. Protobuf already uses its merged correction.
-Resolve Router's earlier merge-commit performance CI failure separately. `--require-merged` checks recorded merged statuses, not live CI. Finish the
-central PR, choose a plugin tag and verify installation at the immutable revision
-before publication.
-Visibility changes, merges, tags and release creation remain explicit actions.
+Use the [1.0.0 preparation checklist](release-1.0.0.md) and draft
+[release notes](release-notes-1.0.0.md). Five canonical helper-fix PRs still await
+merge. Refresh their actual merged commit/tree pins and verify required upstream
+checks before the final package. `--require-merged` checks recorded statuses,
+not live remote CI. Candidate packaging deliberately remains available for review:
+
+```bash
+python3 -B scripts/build_release.py --candidate --output artifacts/1.0.0-candidate
+```
+
+After source merges, final commit and clean-worktree validation, omit `--candidate`
+to build the merged-source package. Neither command publishes. Repository
+visibility, merges, immutable tag, GitHub release and directory submission remain
+separate publication actions with their own evidence.
 
 An OpenAI directory submission is a separate review with additional presentation
 requirements: [submission guide](https://developers.openai.com/plugins/deploy/submission).
