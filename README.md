@@ -3,13 +3,13 @@
 InnoSquad Swift 라이브러리 6개의 스킬을 Codex·Claude Code 플러그인과
 Grok·Gemini CLI·Cursor·Copilot용 공통 스킬로 제공합니다.
 Grok 웹·앱용 Markdown 자료와 Grok API 호출 도구도 포함합니다.
-**0.1.0-alpha.13**는 배포 준비 후보이며 공개 배포는 아직 하지 않았습니다.
+**0.1.0-alpha.14**는 배포 준비 후보이며 공개 배포는 아직 하지 않았습니다.
 
 | Skill | Stable support | Exact consumer baseline |
 | --- | --- | --- |
-| [innodi](skills/innodi/SKILL.md) | 7.0.x | 7.0.0; source snapshot from 7.0.1 |
-| [innonetwork](skills/innonetwork/SKILL.md) | 6.1.x | 6.1.0; source snapshot from 6.1.1 |
-| [innoflow](skills/innoflow/SKILL.md) | 6.0.x | 6.0.0; source snapshot from 6.0.2 |
+| [innodi](skills/innodi/SKILL.md) | 7.0.x | 7.0.0; validator fix in source PR |
+| [innonetwork](skills/innonetwork/SKILL.md) | 6.1.x | 6.1.0; validator fix in source PR |
+| [innoflow](skills/innoflow/SKILL.md) | 6.0.x | 6.0.0; validator fix in source PR |
 | [innorouter](skills/innorouter/SKILL.md) | 7.0.x | Published 7.0.0 (`33b0da7`) |
 | [innonetwork-protobuf](skills/innonetwork-protobuf/SKILL.md) | 6.1.x | Reissued 6.1.1 (`ba6ab8d`) + exact Core 6.1.1; historical fixture retained |
 | [innonetwork-stream](skills/innonetwork-stream/SKILL.md) | Planned 6.1.x | Unreleased `bd50e87`, intended for 6.1.1 + exact Core 6.1.1 |
@@ -49,7 +49,7 @@ existing destination before replacing it. Avoid duplicate standalone/plugin inst
 
 ```bash
 python3 scripts/portable_skills.py install --host grok --project /path/to/app
-python3 scripts/portable_skills.py export --output artifacts/portable-alpha.13
+python3 scripts/portable_skills.py export --output artifacts/portable-alpha.14
 ```
 
 Use `--host gemini`, `cursor`, `copilot`, or `agents` for other coding agents.
@@ -72,9 +72,11 @@ and tested library revisions. Runtime resources are self-contained; no
 cross-repository symlinks, MCP servers, hooks, credentials or automatic project
 migrations are included. Read [source ownership](docs/source-ownership.md).
 
-Router's baseline update merged in [source PR #69](https://github.com/InnoSquadCorp/InnoRouter/pull/69);
-the lock now pins its identical merge tree. The merge commit's performance CI
-still needs resolution. Stream remains an explicitly planned library baseline.
+The six consumer validators separate graph JSON from stderr diagnostics in
+alpha.14. Five source fixes await PR merge; Protobuf uses its already-merged fix.
+See [the correction report](docs/consumer-output-fix-alpha.14.md). Router's earlier
+merge-commit performance CI remains a separate condition. Stream retains its
+explicitly planned library baseline.
 
 ## Validation
 
@@ -89,7 +91,7 @@ The bundle check verifies identity/version agreement, support records, portable
 links, source notices and exact Git tree equality including modes. CI runs those
 checks and rejection controls; it does not call AI models or run Swift.
 
-Fresh release checks passed 11 Flow, 11 Router and 14 reissued-Protobuf consumer
+The alpha.12 release checks passed 11 Flow, 11 Router and 14 reissued-Protobuf consumer
 tests with strict concurrency and warnings as errors. See the
 [alpha.12 evidence](docs/release-candidate-alpha.12.md) and
 [consumer validation commands](docs/distribution.md#consumer-validation).
@@ -99,9 +101,13 @@ code passing 24 independent strict tests. Two fresh Codex policy checks passed.
 Stream's unchanged skill reuses the earlier alpha.11 Claude run (5 tests);
 earlier Codex generation reports remain dated evidence. See the report for
 self-corrections, harness limits and exact evaluated revisions.
-alpha.13 adds portable delivery without changing those six skill trees. New
-installation/export/API contract tests run in the same CI. Known helper and
-upstream CI issues are listed in [host support](docs/host-support.md#validation-and-outstanding-release-work).
+alpha.13 added portable delivery. alpha.14 updates all six consumer helpers and
+adds real subprocess stdout/stderr regression checks; instructions, discovery
+metadata, API fixtures and supported ranges remain unchanged. New source trees
+are pinned exactly, including modes. Installation/export/API tests run in the
+same CI. See [the alpha.14 correction report](docs/consumer-output-fix-alpha.14.md)
+for fresh checks and remaining source-merge/release conditions. Prior host runs
+are dated evidence, not fresh evaluation of the updated plugin.
 
 ## License
 

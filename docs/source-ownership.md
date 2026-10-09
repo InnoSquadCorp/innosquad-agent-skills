@@ -12,19 +12,22 @@ from the `library` baseline/support declaration. A skill-source fix does not
 require changing the tested library version. All library fields agree with the
 copied support record; the validator understands DI's original range/channel schema.
 
-| Skill | alpha.13 source selection | API evidence |
+| Skill | alpha.14 source selection | API evidence |
 | --- | --- | --- |
-| DI | Published 7.0.1 `ce47cf4` | Exact 7.0.0 fixture; earlier separate 7.0.1 check retained |
-| Network | Published 6.1.1 `44e4ca2`, unchanged runtime tree | Exact 6.1.0 fixture |
-| Flow | Published 6.0.2 `1176de1`, includes bounded validator | Exact 6.0.0 fixture rerun |
-| Router | Merged [PR #69](https://github.com/InnoSquadCorp/InnoRouter/pull/69), `8da363a`, unchanged skill tree | Published 7.0.0 `33b0da7`, alpha.12 exact-tag consumer |
-| Protobuf | Reissued 6.1.1 `ba6ab8d` | Fresh reissued-tag consumer; withdrawn-tag fixture retained as historical |
-| Stream | Merged PR #9 `81f945f`, unchanged skill tree | Unreleased `bd50e87`, planned 6.1.1, exact Core 6.1.1 |
+| DI | Graph-output fix, [PR #59](https://github.com/InnoSquadCorp/InnoDI/pull/59) pending | Exact 7.0.0 fixture |
+| Network | Graph-output fix, [PR #153](https://github.com/InnoSquadCorp/InnoNetwork/pull/153) pending | Exact 6.1.0 fixture |
+| Flow | Graph-output fix, [PR #63](https://github.com/InnoSquadCorp/InnoFlow/pull/63) pending; bounded runner preserved | Exact 6.0.0 fixture |
+| Router | Graph-output fix, [PR #70](https://github.com/InnoSquadCorp/InnoRouter/pull/70) pending | Published 7.0.0 `33b0da7` |
+| Protobuf | Merged [PR #9](https://github.com/InnoSquadCorp/InnoNetwork-Protobuf/pull/9), `06e091d` | Reissued 6.1.1 consumer; historical fixture retained |
+| Stream | Graph-output fix, [PR #14](https://github.com/InnoSquadCorp/InnoNetwork-Stream/pull/14) pending | Unreleased `bd50e87`, planned 6.1.1, exact Core 6.1.1 |
 
-The Network, Flow, Protobuf and Router source PRs all merged. Router PR #69 is
-distinct from original PR #66; its merge tree equals the evaluated snapshot,
-but its merge-commit performance CI failed. `source_status: released` means the skill is in the
-recorded source release; it does not qualify every supported patch.
+The fix changes consumer helpers only inside each skill snapshot. Source tests
+and maintainer documentation live outside the distributed skill. Instructions,
+discovery metadata, examples, API support ranges and exact dependency pins are
+unchanged. See the [correction report](consumer-output-fix-alpha.14.md) for source
+PRs and fresh validation. Five pins are explicitly `pull_request` until merged;
+`--require-merged` must reject them. The Protobuf helper fix is merged but not in
+the recorded 6.1.1 release, so its source status is `merged`, not `released`.
 
 The original Protobuf 6.1.1 tag pointed to `5e5f831`. Upstream withdrew it and
 published `ba6ab8d` with annotated tag object
@@ -57,4 +60,5 @@ Collection is explicit. CI validates package consistency but does not collect
 snapshots, call AI hosts or publish releases automatically. Earlier snapshots
 and reports remain in Git history and dated `host-evaluation-*` files. Historical
 failures are not overwritten by newer passes. Read the
-[alpha.12 report](release-candidate-alpha.12.md) for current evidence.
+[alpha.14 report](consumer-output-fix-alpha.14.md) for the latest helper checks;
+[alpha.12](release-candidate-alpha.12.md) retains the dated host evaluation.

@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "innosquad",
-  "version": "0.1.0-alpha.13",
+  "version": "0.1.0-alpha.14",
   "description": "Swift library skills for InnoDI 7.0.x, InnoNetwork/Protobuf 6.1.x, InnoFlow 6.0.x, InnoRouter 7.0.x and planned InnoNetwork-Stream 6.1.x.",
   "author": {
     "name": "InnoSquad"

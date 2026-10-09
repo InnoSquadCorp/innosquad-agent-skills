@@ -4,10 +4,9 @@
     "innodi": {
       "repository": "https://github.com/InnoSquadCorp/InnoDI.git",
       "path": "skills/innodi",
-      "revision": "ce47cf4b207c3b8810b2a7d7d622a2f8ead3ed96",
-      "git_tree": "aa58cff138c95a3a5af4949a55a460ca253f0435",
-      "source_status": "released",
-      "pull_request": "https://github.com/InnoSquadCorp/InnoDI/pull/54",
+      "revision": "e3af97115a676120a81346f6a0acb6f11c6c33cf",
+      "git_tree": "358bab55a293c1ec5d456c42a911a86fcbc90c03",
+      "source_status": "pull_request",
       "library": {
         "version": "7.0.0",
         "revision": "4783eee7f674f99a337768c107b7a5f640810c2a",
@@ -15,16 +14,14 @@
         "supported_range": ">=7.0.0 <7.1.0",
         "include_prereleases": false
       },
-      "release_tag": "7.0.1",
-      "release_url": "https://github.com/InnoSquadCorp/InnoDI/releases/tag/7.0.1"
+      "pull_request": "https://github.com/InnoSquadCorp/InnoDI/pull/59"
     },
     "innonetwork": {
       "repository": "https://github.com/InnoSquadCorp/InnoNetwork.git",
       "path": "skills/innonetwork",
-      "revision": "44e4ca28c50c03f817231a077c0f3bdfdbc859c8",
-      "git_tree": "ff913925f61f60c89031cf9e4e140265793da354",
-      "source_status": "released",
-      "pull_request": "https://github.com/InnoSquadCorp/InnoNetwork/pull/148",
+      "revision": "600467d957f47df99321204af866da1073d6b67c",
+      "git_tree": "62d335ebee98f7a60ba77c45c5b84e157253ff85",
+      "source_status": "pull_request",
       "library": {
         "version": "6.1.0",
         "revision": "79ff9f535a0a15ad8b52ce49cb5a4b1ea1dfec16",
@@ -32,15 +29,14 @@
         "supported_range": ">=6.1.0 <6.2.0",
         "include_prereleases": false
       },
-      "release_tag": "6.1.1",
-      "release_url": "https://github.com/InnoSquadCorp/InnoNetwork/releases/tag/6.1.1"
+      "pull_request": "https://github.com/InnoSquadCorp/InnoNetwork/pull/153"
     },
     "innoflow": {
       "repository": "https://github.com/InnoSquadCorp/InnoFlow.git",
       "path": "skills/innoflow",
-      "revision": "1176de1e4783b638c03a9334f43cc49378957148",
-      "git_tree": "3617870248fa33f756952226ca89a7ba4df780e5",
-      "source_status": "released",
+      "revision": "4de23f95ef02420acafb1238815e96a7835a00c1",
+      "git_tree": "b0b67fb3d9a46d500f3014bc0e4788f0898296c6",
+      "source_status": "pull_request",
       "library": {
         "version": "6.0.0",
         "revision": "188c2732d26350cf01afadade3dac89a2b73b68f",
@@ -48,17 +44,14 @@
         "supported_range": ">=6.0.0 <6.1.0",
         "include_prereleases": false
       },
-      "pull_request": "https://github.com/InnoSquadCorp/InnoFlow/pull/57",
-      "release_tag": "6.0.2",
-      "release_url": "https://github.com/InnoSquadCorp/InnoFlow/releases/tag/6.0.2"
+      "pull_request": "https://github.com/InnoSquadCorp/InnoFlow/pull/63"
     },
     "innorouter": {
       "repository": "https://github.com/InnoSquadCorp/InnoRouter.git",
       "path": "skills/innorouter",
-      "revision": "8da363ad4abfb8f7f5117f54acfbaf9ff78f9640",
-      "git_tree": "acbfa035aa42dcd054ee620423746c53dda19d7b",
-      "source_status": "merged",
-      "pull_request": "https://github.com/InnoSquadCorp/InnoRouter/pull/69",
+      "revision": "4c2eafa4361bf65a9fd283dca99167ddeffff140",
+      "git_tree": "4bb00f546e42d88f2e57cc3ec920cddce9ea7113",
+      "source_status": "pull_request",
       "library": {
         "version": "7.0.0",
         "revision": "33b0da7639105cfa8e6f5acffa3badb91b5e0254",
@@ -68,15 +61,15 @@
         "supported_range": ">=7.0.0 <7.1.0",
         "include_prereleases": false
       },
-      "merged_at": "2026-10-09T11:19:23Z"
+      "pull_request": "https://github.com/InnoSquadCorp/InnoRouter/pull/70"
     },
     "innonetwork-protobuf": {
       "repository": "https://github.com/InnoSquadCorp/InnoNetwork-Protobuf.git",
       "path": "skills/innonetwork-protobuf",
-      "revision": "ba6ab8d6112d51efa69d92ac6739464bfc775aed",
-      "git_tree": "257742e6ecb340b3994b53e6863967070d4a30c1",
-      "source_status": "released",
-      "pull_request": "https://github.com/InnoSquadCorp/InnoNetwork-Protobuf/pull/7",
+      "revision": "06e091d79f93fd36bcccf04863ac994f0d51ebc8",
+      "git_tree": "0227141a34dd3bbc8da5b4918dd63632ffe1402a",
+      "source_status": "merged",
+      "pull_request": "https://github.com/InnoSquadCorp/InnoNetwork-Protobuf/pull/9",
       "library": {
         "version": "6.1.1",
         "revision": "5e5f8316c94358235c3997e70e5e97aadc11df3a",
@@ -91,16 +84,14 @@
         "revision": "44e4ca28c50c03f817231a077c0f3bdfdbc859c8",
         "release_url": "https://github.com/InnoSquadCorp/InnoNetwork/releases/tag/6.1.1"
       },
-      "release_tag": "6.1.1",
-      "release_url": "https://github.com/InnoSquadCorp/InnoNetwork-Protobuf/releases/tag/6.1.1"
+      "merged_at": "2026-10-09T11:19:42Z"
     },
     "innonetwork-stream": {
       "repository": "https://github.com/InnoSquadCorp/InnoNetwork-Stream.git",
       "path": "skills/innonetwork-stream",
-      "revision": "81f945f751090aed7c696e4c453816e01df5dd93",
-      "git_tree": "e0265a81762cd94656c16f53b466faa93c3b1e36",
-      "source_status": "merged",
-      "pull_request": "https://github.com/InnoSquadCorp/InnoNetwork-Stream/pull/9",
+      "revision": "0fd0601be142f782a3a0b56305aabb261582652b",
+      "git_tree": "c5c69a024d13caac4b4f7d38cb86eff0e5a6a244",
+      "source_status": "pull_request",
       "library": {
         "version": null,
         "planned_version": "6.1.1",
@@ -116,7 +107,7 @@
         "constraint": "exact",
         "revision": "44e4ca28c50c03f817231a077c0f3bdfdbc859c8"
       },
-      "merged_at": "2026-10-08T15:50:33Z"
+      "pull_request": "https://github.com/InnoSquadCorp/InnoNetwork-Stream/pull/14"
     }
   }
 }

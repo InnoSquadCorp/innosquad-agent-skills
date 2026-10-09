@@ -77,9 +77,10 @@ alter authentication. Registration, actual selection and generation are separate
 
 ## Publication handoff
 
-Router's source update has merged and its unchanged skill tree is pinned. Resolve
-its merge-commit performance CI failure and the known consumer-helper graph-output
-issue. `--require-merged` checks recorded merged statuses, not live CI. Finish the
+The alpha.14 graph-output correction is implemented and locally validated.
+Merge its five owning-library PRs, refresh their source status/commit pins, and
+compare the resulting skill trees. Protobuf already uses its merged correction.
+Resolve Router's earlier merge-commit performance CI failure separately. `--require-merged` checks recorded merged statuses, not live CI. Finish the
 central PR, choose a plugin tag and verify installation at the immutable revision
 before publication.
 Visibility changes, merges, tags and release creation remain explicit actions.

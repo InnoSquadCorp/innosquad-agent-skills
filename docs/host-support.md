@@ -1,7 +1,7 @@
 # Use the skills in other AI tools
 
-alpha.13 adds project installation and chat/API reference packs. The six library
-skill directories remain identical to alpha.12. A host adapter changes delivery,
+alpha.13 added project installation and chat/API reference packs. alpha.14 fixes
+consumer command diagnostics in all six skills; guidance and API fixtures are unchanged. A host adapter changes delivery,
 not supported library versions or qualification status. These standard-library
 tools require Python 3.9+.
 
@@ -9,8 +9,8 @@ tools require Python 3.9+.
 
 | Host | Delivery | Selection | Qualification |
 | --- | --- | --- | --- |
-| Codex | Existing plugin or `.agents/skills/` | Native | Reused alpha.12 host evidence, unchanged skills |
-| Claude Code | Existing plugin or `.claude/skills/` | Native | Reused alpha.12 host evidence, unchanged skills |
+| Codex | Existing plugin or `.agents/skills/` | Native | Reused alpha.12 host evidence, unchanged guidance; helpers updated in alpha.14 |
+| Claude Code | Existing plugin or `.claude/skills/` | Native | Reused alpha.12 host evidence, unchanged guidance; helpers updated in alpha.14 |
 | Grok Build / CLI | `.grok/skills/` or Claude-compatible plugin | Native | Official format and local copy checks; CLI unavailable here |
 | Grok web/app | Per-library Markdown attached or pasted | User chooses context | Export checked; live upload/model behavior unverified |
 | Grok API | Selected context sent to xAI Responses | Explicit `--skill` | Offline request/response tests; no live key available |
@@ -51,7 +51,7 @@ discovery. Avoid duplicate standalone/plugin copies of the same skill.
 ## Grok web/app and other chats
 
 ```bash
-python3 scripts/portable_skills.py export --output artifacts/portable-alpha.13
+python3 scripts/portable_skills.py export --output artifacts/portable-alpha.14
 ```
 
 This creates `START_HERE.md`, a catalog, six per-library Markdown files,
@@ -114,8 +114,8 @@ model); it is not a passed skill-selection case. Gemini CLI 0.24.0 and Cursor
 Agent 2026.01.02 were inventoried but not used for fresh model evaluation.
 See [portable validation evidence](portable-validation-alpha.13.json).
 
-Known release follow-ups remain: all six bundled Swift consumer helpers can mix
-stderr warnings into graph JSON (Protobuf's upstream fix awaits snapshot refresh),
-Router merge CI has a performance failure, and Stream 6.1.1 remains untagged.
-Portable delivery does not resolve those issues. Public publication and official
+The graph-output defect is fixed in all six alpha.14 snapshots; see the
+[correction report](consumer-output-fix-alpha.14.md). Five owning-library PRs
+still await merge. Router's earlier merge CI performance failure and Stream's
+unpublished 6.1.1 baseline remain separate release conditions. Public publication and official
 directory submission are separate actions.
