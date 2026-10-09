@@ -12,5 +12,5 @@ jobs:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
       - name: Validate manifests, source trees and support records
         run: python3 -B scripts/validate_bundle.py
-      - name: Check rejection controls
+      - name: Check packaging and host adapter contracts
         run: python3 -B -m unittest discover -s tests -v

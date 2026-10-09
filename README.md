@@ -1,7 +1,9 @@
 # InnoSquad Agent Skills
 
-InnoSquad Swift 라이브러리 6개의 스킬을 Codex와 Claude Code 플러그인으로 제공합니다.
-**0.1.0-alpha.12**는 배포 준비 후보이며 공개 배포는 아직 하지 않았습니다.
+InnoSquad Swift 라이브러리 6개의 스킬을 Codex·Claude Code 플러그인과
+Grok·Gemini CLI·Cursor·Copilot용 공통 스킬로 제공합니다.
+Grok 웹·앱용 Markdown 자료와 Grok API 호출 도구도 포함합니다.
+**0.1.0-alpha.13**는 배포 준비 후보이며 공개 배포는 아직 하지 않았습니다.
 
 | Skill | Stable support | Exact consumer baseline |
 | --- | --- | --- |
@@ -43,6 +45,22 @@ For standalone use, copy a complete `skills/<name>` into `.agents/skills/<name>`
 or `.claude/skills/<name>`, preserving notices and resources and comparing an
 existing destination before replacing it. Avoid duplicate standalone/plugin installs.
 
+## Grok and other AI tools
+
+```bash
+python3 scripts/portable_skills.py install --host grok --project /path/to/app
+python3 scripts/portable_skills.py export --output artifacts/portable-alpha.13
+```
+
+Use `--host gemini`, `cursor`, `copilot`, or `agents` for other coding agents.
+The export includes a native skills ZIP and one self-contained Markdown reference
+per library for chat attachment/paste. Grok API requests use
+`scripts/grok_request.py --skill innodi --model "$GROK_MODEL" --prompt-file task.txt`;
+`--dry-run` prints the request without a key or network call.
+See [host support and usage](docs/host-support.md) for paths and setup.
+New delivery adapters are locally tested; Grok live responses and other hosts'
+automatic selection have not yet been qualified. Existing host evidence stays dated.
+
 ## Source ownership
 
 **스킬 원본은 각 라이브러리 저장소에서 관리하며, 중앙 저장소는 검증한 원본을
@@ -54,9 +72,9 @@ and tested library revisions. Runtime resources are self-contained; no
 cross-repository symlinks, MCP servers, hooks, credentials or automatic project
 migrations are included. Read [source ownership](docs/source-ownership.md).
 
-Router's published-library baseline update is under [source PR #69](https://github.com/InnoSquadCorp/InnoRouter/pull/69).
-The library is released, but that new skill source must merge before plugin
-publication. Stream remains an explicitly planned library baseline.
+Router's baseline update merged in [source PR #69](https://github.com/InnoSquadCorp/InnoRouter/pull/69);
+the lock now pins its identical merge tree. The merge commit's performance CI
+still needs resolution. Stream remains an explicitly planned library baseline.
 
 ## Validation
 
@@ -81,6 +99,9 @@ code passing 24 independent strict tests. Two fresh Codex policy checks passed.
 Stream's unchanged skill reuses the earlier alpha.11 Claude run (5 tests);
 earlier Codex generation reports remain dated evidence. See the report for
 self-corrections, harness limits and exact evaluated revisions.
+alpha.13 adds portable delivery without changing those six skill trees. New
+installation/export/API contract tests run in the same CI. Known helper and
+upstream CI issues are listed in [host support](docs/host-support.md#validation-and-outstanding-release-work).
 
 ## License
 

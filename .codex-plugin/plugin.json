@@ -1,6 +1,6 @@
 {
   "name": "innosquad",
-  "version": "0.1.0-alpha.12",
+  "version": "0.1.0-alpha.13",
   "description": "Swift library skills for InnoDI 7.0.x, InnoNetwork/Protobuf 6.1.x, InnoFlow 6.0.x, InnoRouter 7.0.x and planned InnoNetwork-Stream 6.1.x.",
   "author": {
     "name": "InnoSquad"

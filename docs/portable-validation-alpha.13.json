@@ -1,0 +1,94 @@
+{
+  "date": "2026-10-10",
+  "plugin_version": "0.1.0-alpha.13",
+  "baseline_commit": "93978f8a218cb8b137367f9ddfdaacff61425d79",
+  "runtime_skill_changes": false,
+  "source_skill_trees": {
+    "innodi": "aa58cff138c95a3a5af4949a55a460ca253f0435",
+    "innonetwork": "ff913925f61f60c89031cf9e4e140265793da354",
+    "innoflow": "3617870248fa33f756952226ca89a7ba4df780e5",
+    "innorouter": "acbfa035aa42dcd054ee620423746c53dda19d7b",
+    "innonetwork-protobuf": "257742e6ecb340b3994b53e6863967070d4a30c1",
+    "innonetwork-stream": "e0265a81762cd94656c16f53b466faa93c3b1e36"
+  },
+  "router_source_merge": {
+    "revision": "8da363ad4abfb8f7f5117f54acfbaf9ff78f9640",
+    "tree_unchanged": true,
+    "remote_performance_ci": "failed; unresolved, separate from package tests"
+  },
+  "local_validation": {
+    "bundle_with_require_merged": "passed",
+    "claude_marketplace": "passed",
+    "claude_manifest": "passed",
+    "python_tests": 19,
+    "host_path_installation_checks": [
+      "agents",
+      "codex",
+      "claude",
+      "grok",
+      "gemini",
+      "cursor",
+      "copilot"
+    ],
+    "file_byte_and_mode_equality": true,
+    "repeat_install_idempotence": true,
+    "conflict_and_symlink_refusal": true,
+    "deterministic_selected_export": true,
+    "zip_notices_and_resources_preserved": true,
+    "api_dry_run_without_key": "passed",
+    "api_missing_key_without_network": "passed",
+    "mocked_responses": "passed",
+    "failure_controls": [
+      "HTTP 401",
+      "HTTP 429",
+      "timeout",
+      "connection error",
+      "redirect refusal",
+      "malformed response",
+      "incomplete response",
+      "empty output",
+      "oversized output",
+      "invalid key",
+      "invalid timeout"
+    ]
+  },
+  "export_checksums": {
+    "START_HERE.md": "5b3497777fc37eeaa23d1eb6f70d4bbf0857e94c306a515c088d75ecfa6a723c",
+    "catalog.json": "632135bd6ac65af1e4ce710476e1994e53c77fdb3edc8eb646f9823111fc8556",
+    "innodi.md": "0238d45391f746f245e6021bcad252e91915a8ef1bb5f15128f2ce9fa6f164b8",
+    "innoflow.md": "05d0b57be14e610b16900dd7fe32a3f7f791e1a7653529199dab70a9f7db19f2",
+    "innonetwork-protobuf.md": "ece4cc4cf567e18eb8b502b59b6d42bad17e4474cd6dd60ddadcee166a6dbcdf",
+    "innonetwork-stream.md": "28181b580c4aef3f92781021d4ddfa516826f6ae27f726f49518955623f3dfda",
+    "innonetwork.md": "887954a45849b69276955fda26d58a9c7ac525aac2841a8153c014454ad8d0bc",
+    "innorouter.md": "eb80c5e387c9853a8cec915dfaea78a0b13f88680b65b50301c8e593a7c4d219",
+    "innosquad-skills.zip": "5db0c51aea6b1dcb1a5961f8ffddf5c02a06dc200b7f78c67acd56e13961e105"
+  },
+  "live_host_status": {
+    "grok_cli": "not run; not installed",
+    "grok_web_app": "not run; Markdown attachment/paste is the supported delivery path, no native plugin claim",
+    "grok_api": "not run; XAI_API_KEY absent",
+    "gemini_cli": {
+      "version": "0.24.0",
+      "model_run": false
+    },
+    "cursor_agent": {
+      "version": "2026.01.02-80e4d9b",
+      "model_run": false
+    },
+    "copilot": {
+      "version": "1.0.11",
+      "status": "blocked before model use",
+      "configured_model": "gpt-5-mini",
+      "error": "HTTP 400: The requested model is not supported",
+      "selection_qualified": false,
+      "files_modified": 0
+    }
+  },
+  "evidence_reuse": "Codex/Claude alpha.12 evaluation retained for unchanged six skill trees; no fresh generation/Swift consumer runs claimed.",
+  "remaining_release_conditions": [
+    "Refresh/fix graph stdout-stderr separation in owning library consumer validators.",
+    "Resolve Router merge-commit performance CI failure.",
+    "Stream 6.1.1 is still a planned untagged baseline.",
+    "Central PR merge, public visibility/tag/release and directory submission are not performed."
+  ]
+}

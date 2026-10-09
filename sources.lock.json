@@ -55,9 +55,9 @@
     "innorouter": {
       "repository": "https://github.com/InnoSquadCorp/InnoRouter.git",
       "path": "skills/innorouter",
-      "revision": "aa6f9ddb41ffb290a506dc33068eb8afc3b63cdc",
+      "revision": "8da363ad4abfb8f7f5117f54acfbaf9ff78f9640",
       "git_tree": "acbfa035aa42dcd054ee620423746c53dda19d7b",
-      "source_status": "pull_request",
+      "source_status": "merged",
       "pull_request": "https://github.com/InnoSquadCorp/InnoRouter/pull/69",
       "library": {
         "version": "7.0.0",
@@ -67,7 +67,8 @@
         "supported_release_line": "7.0.x",
         "supported_range": ">=7.0.0 <7.1.0",
         "include_prereleases": false
-      }
+      },
+      "merged_at": "2026-10-09T11:19:23Z"
     },
     "innonetwork-protobuf": {
       "repository": "https://github.com/InnoSquadCorp/InnoNetwork-Protobuf.git",

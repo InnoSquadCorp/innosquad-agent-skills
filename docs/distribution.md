@@ -8,6 +8,8 @@ and [Claude marketplaces](https://code.claude.com/docs/en/plugin-marketplaces).
 
 The repository is currently private. Review-branch access is not public
 publication; a Git marketplace is separate from an official-directory listing.
+For Grok CLI, Grok web/app/API, Gemini CLI, Cursor and Copilot, use the additional
+[host delivery paths](host-support.md), sharing the original library skill folders.
 
 ## Review the candidate
 
@@ -75,9 +77,11 @@ alter authentication. Registration, actual selection and generation are separate
 
 ## Publication handoff
 
-Merge Router's source update, verify its actual merge tree and CI, refresh the
-central lock, and pass `--require-merged`. Finish the central PR, choose a plugin
-tag and verify installation at the immutable revision before publication.
+Router's source update has merged and its unchanged skill tree is pinned. Resolve
+its merge-commit performance CI failure and the known consumer-helper graph-output
+issue. `--require-merged` checks recorded merged statuses, not live CI. Finish the
+central PR, choose a plugin tag and verify installation at the immutable revision
+before publication.
 Visibility changes, merges, tags and release creation remain explicit actions.
 
 An OpenAI directory submission is a separate review with additional presentation
