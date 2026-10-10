@@ -2,8 +2,9 @@
 
 The source branches advanced while this follow-up started. Their existing fixes
 were reviewed and fast-forwarded without rewriting other work. The initial checks below
-recorded a pending merge candidate; the 2026-10-11 update at the end records
-the later Flow merge. Router remains pending.
+recorded a pending merge candidate; the 2026-10-11 updates at the end record
+both completed source merges. All six central source pins now reference actual
+merge commits. The earlier pending states below are historical observations.
 
 ## Canonical changes
 
@@ -25,7 +26,7 @@ the later Flow merge. Router remains pending.
   Its 18 successful checks, merge timestamp and unchanged skill tree were read
   live; the central source record now uses that actual merge commit.
 
-## Fresh checks
+## Initial checks — 2026-10-10
 
 - Flow principle-gate selftests and CI-efficiency negative controls passed.
   Nine Flow and four Router consumer-validator regression tests passed.
@@ -92,3 +93,35 @@ visionOS regression. It is the only remaining `pull_request` source pin, so the
 normal merged-source package gate still rejects the candidate. All six skill
 contents are unchanged by this merge-record update; earlier consumer and host
 results remain dated evidence rather than newly executed tests.
+
+## Router merged — 2026-10-11 KST
+
+Router's reviewed head `b82dc6aa7e4d96de24d7607e93e0218c17ffe587` passed all
+24 required checks and all selected real validation before the head-matched
+normal squash merge. The [platform run](https://github.com/InnoSquadCorp/InnoRouter/actions/runs/38048869485)
+and [aggregate CI](https://github.com/InnoSquadCorp/InnoRouter/actions/runs/38048869587)
+both completed successfully. No gate, assertion or timeout was relaxed.
+
+The [visionOS job](https://github.com/InnoSquadCorp/InnoRouter/actions/runs/38048869485/job/114203791917)
+passed 13 platform tests without failures, skips or expected failures. Separately,
+its native-scene logs and [artifact 11678600920](https://github.com/InnoSquadCorp/InnoRouter/actions/runs/38048869485/artifacts/11678600920)
+prove the previous appearance-only waiter failed at
+`FAIL Deferred closure removed canonical space` after `NATIVE_FAULT_REPAIR`.
+The corrected waiter then passed each injected allow/reject/cancel scenario;
+each normal native allow/reject/cancel scenario also passed. All six corrected
+runtime logs contain their exact PASS marker and no FAIL line. This is simulator
+evidence, separate from physical-device qualification.
+
+PR #70 merged at `2026-10-10T19:17:32Z` to
+`333ba033987a368ebbcbc91ab50ee5721699830e`. Its skill tree remains
+`4bb00f546e42d88f2e57cc3ec920cddce9ea7113`. The central lock now records
+that merge commit and timestamp. All six canonical directories were compared
+against their actual merge commits through Git trees and every file's path,
+blob bytes and executable mode; no bundled skill content changed.
+
+The final central validation covers the bundle, merged-source gate, 30 tests,
+both Claude formats and clean-commit package extraction/checksums. Consumer and
+host evaluations above are reused dated evidence, not new executions for this
+metadata-only update. Source merges and package validation do not publish the
+plugin: central PR #1, a public tag/Release and audience/visibility remain
+separate actions.

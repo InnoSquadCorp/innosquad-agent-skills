@@ -1,8 +1,8 @@
 {
   "checked_on": "2026-10-11",
-  "checked_at": "2026-10-10T18:18:35.552904+00:00",
+  "checked_at": "2026-10-10T19:18:09.698385+00:00",
   "timezone": "Asia/Seoul",
-  "preparation_base": "279fc94d4bf38bbf2184eaa4f53126e87e553bb7",
+  "preparation_base": "10f9e9f82a250d2544484b452a0e31dc46dbf016",
   "central_pr": "https://github.com/InnoSquadCorp/innosquad-agent-skills/pull/1",
   "central_visibility": "PRIVATE",
   "publication_performed": false,
@@ -36,7 +36,7 @@
         ],
         "exit_code": 0
       },
-      "checked_at": "2026-10-10T18:18:35.552904+00:00"
+      "checked_at": "2026-10-10T19:18:09.698385+00:00"
     },
     {
       "headRefOid": "600467d957f47df99321204af866da1073d6b67c",
@@ -67,7 +67,7 @@
         ],
         "exit_code": 0
       },
-      "checked_at": "2026-10-10T18:18:35.552904+00:00"
+      "checked_at": "2026-10-10T19:18:09.698385+00:00"
     },
     {
       "headRefOid": "f696e36ca50930c00520831ca1d6f09f44f685bd",
@@ -98,22 +98,22 @@
         ],
         "exit_code": 0
       },
-      "checked_at": "2026-10-10T18:18:35.552904+00:00"
+      "checked_at": "2026-10-10T19:18:09.698385+00:00"
     },
     {
       "headRefOid": "b82dc6aa7e4d96de24d7607e93e0218c17ffe587",
       "isDraft": false,
-      "mergeCommit": null,
-      "mergeStateStatus": "BLOCKED",
-      "mergedAt": null,
-      "state": "OPEN",
+      "mergeCommit": {
+        "oid": "333ba033987a368ebbcbc91ab50ee5721699830e"
+      },
+      "mergeStateStatus": "UNKNOWN",
+      "mergedAt": "2026-10-10T19:17:32Z",
+      "state": "MERGED",
       "url": "https://github.com/InnoSquadCorp/InnoRouter/pull/70",
       "skill": "innorouter",
       "check_counts": {
-        "IN_PROGRESS": 5,
-        "SUCCESS": 22,
-        "QUEUED": 8,
-        "SKIPPED": 10
+        "SKIPPED": 13,
+        "SUCCESS": 39
       },
       "failing_checks": [],
       "latest_release": {
@@ -128,7 +128,7 @@
         ],
         "exit_code": 0
       },
-      "checked_at": "2026-10-10T18:18:35.552904+00:00"
+      "checked_at": "2026-10-10T19:18:09.698385+00:00"
     },
     {
       "headRefOid": "ab67a5b7b100af117d1d675a04ac289f1789a7a3",
@@ -160,7 +160,7 @@
         ],
         "exit_code": 0
       },
-      "checked_at": "2026-10-10T18:18:35.552904+00:00"
+      "checked_at": "2026-10-10T19:18:09.698385+00:00"
     },
     {
       "headRefOid": "7fa66060374b16fba37a1486b1b4cdcdd2d441dd",
@@ -191,7 +191,7 @@
         ],
         "exit_code": 0
       },
-      "checked_at": "2026-10-10T18:18:35.552904+00:00"
+      "checked_at": "2026-10-10T19:18:09.698385+00:00"
     }
   ],
   "release_tag_metadata_checked_at": "2026-10-10T00:03:35.956690+00:00"

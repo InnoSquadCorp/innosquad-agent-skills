@@ -17,7 +17,7 @@ copied support record; the validator understands DI's original range/channel sch
 | DI | Graph-output fix independently merged at `74a57b8`, [PR #59](https://github.com/InnoSquadCorp/InnoDI/pull/59); unchanged skill tree verified | Exact 7.0.0 fixture |
 | Network | Graph-output fix merged, [PR #153](https://github.com/InnoSquadCorp/InnoNetwork/pull/153), `d5213fb` | Exact 6.1.0 fixture |
 | Flow | Published API baseline/tag checkout and structured failure diagnostics merged at `6b7c632`, [PR #63](https://github.com/InnoSquadCorp/InnoFlow/pull/63); exact-head CI passed | Published 6.0.2 `1176de1`; support remains 6.0.x |
-| Router | Native visionOS canonical-recovery probe and graph-output fix at `b82dc6a`, [PR #70](https://github.com/InnoSquadCorp/InnoRouter/pull/70) pending | Published 7.0.0 `33b0da7` |
+| Router | Native visionOS canonical-recovery probe and graph-output fix merged at `333ba03`, [PR #70](https://github.com/InnoSquadCorp/InnoRouter/pull/70); exact-head CI and native failure/pass controls verified | Published 7.0.0 `33b0da7`; unchanged skill tree |
 | Protobuf | Merged [PR #9](https://github.com/InnoSquadCorp/InnoNetwork-Protobuf/pull/9), `06e091d` | Reissued 6.1.1 consumer; historical fixture retained |
 | Stream | Graph-output fix and released baseline merged at `7fb61ac`, [PR #14](https://github.com/InnoSquadCorp/InnoNetwork-Stream/pull/14) | Published 6.1.1 `2af03b2`, exact Core 6.1.1 |
 
@@ -26,8 +26,8 @@ This refresh additionally updates Stream instructions, metadata, exact fixture
 pins and release-tag guards from its canonical source. Support ranges are unchanged.
 Source tests and maintainer documentation remain outside the distributed skill.
 See the [latest Flow/Router follow-up](flow-router-followup-2026-10-10.md) and
-[earlier refresh report](release-refresh-2026-10-10.md). Only Router remains
-`pull_request`; `--require-merged` must reject that input. The Protobuf helper fix is merged but not in
+[earlier refresh report](release-refresh-2026-10-10.md). All six source pins are
+`merged`; `--require-merged` passes after the actual merge and tree checks. The Protobuf helper fix is merged but not in
 the recorded 6.1.1 release, so its source status is `merged`, not `released`.
 
 The original Protobuf 6.1.1 tag pointed to `5e5f831`. Upstream withdrew it and

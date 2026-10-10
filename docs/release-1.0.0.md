@@ -51,9 +51,9 @@ Current upstream status was read on **2026-10-11 KST**; see
 
 | Condition | Current preparation state | Completion evidence |
 | --- | --- | --- |
-| Canonical source corrections | DI #59, Network #153, Flow #63, Protobuf #9 and Stream #14 are merged; Router #70 awaits remaining platform CI/merge | Owning-library merge/required checks and full skill-tree comparison; update lock to the actual merged revision |
+| Canonical source corrections | All six source PRs are merged; Flow #63 at `6b7c632` and Router #70 at `333ba03` passed exact-head required and selected CI before merge | Actual merge pins and all six canonical directories verified by paths, blob bytes and executable modes; `--require-merged` passes |
 | Bundle integrity | Version 1.0.0; Flow and Stream refreshed from canonical sources; other four trees unchanged | Bundle tests and source-tree equality on final commit |
-| Central PR / CI | PR #1 is the preparation vehicle | Final commit pushed, remote SHA equality, required checks passed, reviewed merge |
+| Central PR / CI | PR #1 remains the preparation vehicle; the Flow/Router follow-up updates its source pins without publishing | Final commit pushed, remote SHA equality, required checks passed, reviewed merge |
 | Host claims | Evidence and limitations documented | Preserve dates/models/versions; only promote a blocked or failed host after a successful new evaluation |
 | Stream | Published 6.1.1 `2af03b2`; 13 exact-release consumer tests passed | Canonical PR #14 passed its checks and merged at `7fb61ac`; merge-tree equality verified separately from release-consumer proof |
 | Protobuf | Reissued 6.1.1 tag `ba6ab8d`, tag object `eaea83c…`; historical fixture retained | User confirmed no previous installs and accepts keeping 6.1.1; preserve release-mode checks and historical fixture identity |

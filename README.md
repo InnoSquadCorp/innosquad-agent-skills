@@ -69,9 +69,9 @@ Grok API 도구는 `scripts/grok_request.py`; `--dry-run`으로 요청을 먼저
 [원본 관리 정책](docs/source-ownership.md)을 참조하세요.
 
 검증 스크립트의 stdout/stderr 혼합 오류는 6개 스냅샷 모두 수정되어 있습니다.
-DI·Network·Flow·Protobuf·Stream 원본 수정은 병합됐습니다. Router는
-[원본 PR의 필수 CI와 병합](docs/flow-router-followup-2026-10-10.md)을 확인 중입니다. **정식 패키지 생성은
-미병합 원본이 있으면 실패합니다.**
+6개 원본 수정은 모두 병합됐고, 실제 병합 커밋과 전체 스킬 트리를 대조했습니다.
+[Flow·Router CI와 병합 기록](docs/flow-router-followup-2026-10-10.md)을 참조하세요.
+`--require-merged` 검사는 통과합니다. **1.0.0 태그·Release는 아직 발행하지 않았습니다.**
 
 ## Validate and prepare 1.0.0
 
