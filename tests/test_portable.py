@@ -109,6 +109,40 @@ class PortableSkillsTests(unittest.TestCase):
         with zipfile.ZipFile(target / "innosquad-skills.zip") as archive:
             self.assertFalse(any(n.startswith("skills/innorouter/") for n in archive.namelist()))
 
+    def test_released_stream_guidance_agrees_across_delivery_paths(self):
+        name = "innonetwork-stream"
+        support = json.loads((ROOT / "skills" / name / "references/support.json").read_text())
+        self.assertEqual(support["support_status"], "stable_line")
+        target = self.project / "released-stream"
+        portable.export_pack(ROOT, portable.selection(ROOT, [name]), target)
+        context = (target / (name + ".md")).read_text()
+        api_context = grok.payload(ROOT, [name], "offline-test", "Use Stream")["input"][0]["content"]
+        for text in [context, api_context]:
+            self.assertIn(support["revision"], text)
+            self.assertIn('"version": "' + support["version"] + '"', text)
+            self.assertIn('"support_status": "stable_line"', text)
+        surfaces = [context, api_context, (target / "START_HERE.md").read_text()]
+        for path in ["plugin.json", ".codex-plugin/plugin.json", ".claude-plugin/plugin.json"]:
+            surfaces.append(json.loads((ROOT / path).read_text())["description"])
+        surfaces.append(json.loads((ROOT / ".claude-plugin/marketplace.json").read_text())["plugins"][0]["description"])
+        for text in surfaces:
+            for stale in ["Stream remains a planned baseline", "planned InnoNetwork-Stream", "planned stable"]:
+                self.assertNotIn(stale, text)
+        # A library-neutral introduction must not inject Stream policy into DI requests.
+        self.assertNotIn("Stream", portable.CHAT_GUIDANCE)
+
+    def test_stream_evaluation_uses_the_published_consumer_baseline(self):
+        support = json.loads((ROOT / "skills/innonetwork-stream/references/support.json").read_text())
+        evaluation = json.loads((ROOT / "evals/innonetwork-stream.json").read_text())
+        baseline = evaluation["validated_baseline"]
+        self.assertEqual(baseline["stream_revision"], support["revision"])
+        self.assertEqual(baseline["stream_version"], support["version"])
+        self.assertEqual(baseline["core"], support["core_requirement"]["version"])
+        self.assertNotIn("planned_version", baseline)
+        current_prompts = json.dumps(evaluation, ensure_ascii=False)
+        self.assertNotIn("planned stable", current_prompts)
+        self.assertNotIn("배포 예정", current_prompts)
+
 
 class GrokRequestTests(unittest.TestCase):
     def setUp(self):

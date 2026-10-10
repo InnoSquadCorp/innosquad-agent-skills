@@ -35,7 +35,8 @@ HOST_GUIDANCE = {
 CHAT_GUIDANCE = """Use only the library references relevant to the user's task.
 First establish the project's actual resolved library version and revision.
 Keep its dependency choices; a bundled exact baseline is not a downgrade target.
-Support ranges do not prove every patch was tested. Stream remains a planned baseline.
+Support ranges do not prove every patch was tested. Read release status and the exact
+validated baseline from each selected skill's support record below.
 The file sections below preserve the original library-owned instructions and resources.
 Relative paths inside a file refer to other named sections of the same skill.
 In a chat or text-only API, scripts and examples are reference text, not executed tools.

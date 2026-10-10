@@ -62,6 +62,15 @@ controls. Both Claude marketplace/plugin manifests validated. All six snapshots
 match their canonical commit trees. `--require-merged` correctly rejects pending
 sources; no status was relabeled to bypass that gate.
 
+The subsequent packaging-guidance correction removes leftover planned/preview
+claims from the plugin descriptions, chat/API introduction and current Stream
+evaluation definition. The introduction now delegates version status to each
+selected skill's support record. The alpha.11 prompts are archived unchanged,
+and their historical evaluation report links to that archive. Two regression
+tests failed against the earlier guidance and passed after correction; the full
+suite now has **30 passing tests**. This correction does not change the six skill
+trees or claim a new live-model evaluation.
+
 ## Protobuf version decision
 
 The user confirmed there were no previous installations and accepts keeping the

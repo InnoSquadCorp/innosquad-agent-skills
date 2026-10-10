@@ -42,7 +42,7 @@ without a model override (configured `gpt-6.1-sol` / `xhigh`). Session-only
 configuration disabled unrelated tools/plugins, memory and personal/system
 skills; all six Inno skills remained available. The model received only each
 prompt and an empty exact-manifest/lock consumer, not grading criteria, prior
-conversation or intended answers. [Prompts and acceptance](../evals/innonetwork-stream.json).
+conversation or intended answers. [Prompts and acceptance](../evals/archive/innonetwork-stream-alpha.11.json).
 
 | Case | Observed behavior | Independent final result |
 | --- | --- | --- |

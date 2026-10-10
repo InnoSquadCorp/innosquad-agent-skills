@@ -7,7 +7,7 @@
     {
       "name": "innosquad",
       "source": "./",
-      "description": "Swift library skills for InnoDI 7.0.x, InnoNetwork/Protobuf 6.1.x, InnoFlow 6.0.x, InnoRouter 7.0.x and planned InnoNetwork-Stream 6.1.x.",
+      "description": "Swift library skills for InnoDI 7.0.x, InnoNetwork/Protobuf 6.1.x, InnoFlow 6.0.x, InnoRouter 7.0.x and InnoNetwork-Stream 6.1.x.",
       "version": "1.0.0"
     }
   ],

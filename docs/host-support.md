@@ -1,14 +1,16 @@
 # Use the skills in other AI tools
 
-The 1.0.0 preparation candidate preserves alpha.14 skill trees and library support
-ranges. Host delivery and model qualification are separate. The installer and
-packaging tools use Python 3.9+ and do not change host settings or authentication.
+The 1.0.0 preparation candidate preserves the library support ranges and includes
+Stream guidance for published 6.1.1 with exact Core 6.1.1. The other five skill
+trees are unchanged from alpha.14. Host delivery and model qualification are
+separate. The installer and packaging tools use Python 3.9+ and do not change
+host settings or authentication.
 
 ## Delivery paths
 
 | Host | Delivery | Selection | Qualification |
 | --- | --- | --- | --- |
-| Codex | Existing plugin or `.agents/skills/` | Native | Dated alpha.12 native evidence; fresh alpha.14 standalone DI selection and 4 tests passed |
+| Codex | Existing plugin or `.agents/skills/` | Native | Dated alpha.12 native evidence; alpha.14 standalone DI selection and 4 tests passed; released Stream selection and generated helper compilation passed |
 | Claude Code | Existing plugin or `.claude/skills/` | Native | Dated alpha.12 generation passed; fresh alpha.14 catalog recognized, OAuth expired |
 | Grok Build / CLI | `.grok/skills/` or Claude-compatible plugin | Native | Official format and local copy checks; CLI unavailable here |
 | Grok web/app | Per-library Markdown attached or pasted | User chooses context | Export checked; live upload/model behavior unverified |
@@ -144,5 +146,6 @@ remain dated records. Authentication-blocked hosts need a new successful request
 before their qualification status can change.
 
 All six validator fixes are preserved. The [1.0.0 preparation checklist](release-1.0.0.md)
-tracks source merges, exact-commit checks, Stream's preview status and publication.
+tracks source merges, exact-commit checks, Stream's published 6.1.1 baseline and
+plugin publication.
 The helper correction details remain in the [alpha.14 report](consumer-output-fix-alpha.14.md).
