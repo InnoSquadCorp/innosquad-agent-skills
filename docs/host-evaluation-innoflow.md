@@ -48,7 +48,7 @@ remote pins, graph/workspace/checkouts, source hashes, and unchanged manifest/lo
 were checked. All builds used Xcode 27 / Swift 6.4 with strict concurrency complete
 and warnings as errors. There are **7 generated Flow behavior tests**, plus
 **3 new unrelated formatter tests**; the original placeholder is not counted as
-a generated test. Prompts and expected observations are in [evals/innoflow.json](../evals/innoflow.json).
+a generated test. Prompts and expected observations are in [archived alpha.7 prompts](../evals/archive/innoflow-alpha.7.json).
 
 Claude Code 2.1.285 installed alpha.7 and startup listed `innosquad:innodi`,
 `innosquad:innonetwork`, and `innosquad:innoflow`. The fresh generation attempt

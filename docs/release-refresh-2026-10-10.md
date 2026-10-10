@@ -1,5 +1,8 @@
 # Published-library refresh — 2026-10-10 KST
 
+This is the earlier refresh record. For the subsequent Flow 6.0.2 snapshot,
+Router probe correction and Stream merge, see the [follow-up](flow-router-followup-2026-10-10.md).
+
 This refresh starts from central `d0b32c0` and preserves the library-owned skill
 policy and patch support lines. Public tag identities remain unchanged. It does
 not publish plugin 1.0.0. See [source/check snapshot](release-status-1.0.0.json).

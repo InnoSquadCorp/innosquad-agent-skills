@@ -16,16 +16,17 @@ copied support record; the validator understands DI's original range/channel sch
 | --- | --- | --- |
 | DI | Graph-output fix, [PR #59](https://github.com/InnoSquadCorp/InnoDI/pull/59) pending | Exact 7.0.0 fixture |
 | Network | Graph-output fix merged, [PR #153](https://github.com/InnoSquadCorp/InnoNetwork/pull/153), `d5213fb` | Exact 6.1.0 fixture |
-| Flow | Graph-output fix and 6.0.2 publication metadata, [PR #63](https://github.com/InnoSquadCorp/InnoFlow/pull/63) pending; bounded runner preserved | Exact 6.0.0 fixture |
-| Router | Graph-output fix, [PR #70](https://github.com/InnoSquadCorp/InnoRouter/pull/70) pending | Published 7.0.0 `33b0da7` |
+| Flow | Published API baseline/tag checkout and structured failure diagnostics at `f696e36`, [PR #63](https://github.com/InnoSquadCorp/InnoFlow/pull/63) pending | Published 6.0.2 `1176de1`; support remains 6.0.x |
+| Router | Native visionOS canonical-recovery probe and graph-output fix at `b82dc6a`, [PR #70](https://github.com/InnoSquadCorp/InnoRouter/pull/70) pending | Published 7.0.0 `33b0da7` |
 | Protobuf | Merged [PR #9](https://github.com/InnoSquadCorp/InnoNetwork-Protobuf/pull/9), `06e091d` | Reissued 6.1.1 consumer; historical fixture retained |
-| Stream | Graph-output fix and released baseline, [PR #14](https://github.com/InnoSquadCorp/InnoNetwork-Stream/pull/14) pending | Published 6.1.1 `2af03b2`, exact Core 6.1.1 |
+| Stream | Graph-output fix and released baseline merged at `7fb61ac`, [PR #14](https://github.com/InnoSquadCorp/InnoNetwork-Stream/pull/14) | Published 6.1.1 `2af03b2`, exact Core 6.1.1 |
 
 The alpha.14 fix separated JSON output and warnings in all six consumer helpers.
 This refresh additionally updates Stream instructions, metadata, exact fixture
 pins and release-tag guards from its canonical source. Support ranges are unchanged.
 Source tests and maintainer documentation remain outside the distributed skill.
-See the [refresh report](release-refresh-2026-10-10.md). Four pins remain
+See the [latest Flow/Router follow-up](flow-router-followup-2026-10-10.md) and
+[earlier refresh report](release-refresh-2026-10-10.md). Three pins remain
 `pull_request`; `--require-merged` must reject them. The Protobuf helper fix is merged but not in
 the recorded 6.1.1 release, so its source status is `merged`, not `released`.
 

@@ -8,7 +8,9 @@ by the packaging tools.
 ## What is included
 
 - Six independently versioned library skill snapshots. Stream now validates
-  published 6.1.1 with a fresh representative Codex portable-skill evaluation; the five other skill trees remain unchanged from alpha.14.
+  published 6.1.1 with a fresh representative Codex portable-skill evaluation.
+  Flow now uses its canonical published 6.0.2 fixture and updated diagnostics;
+  its supported range remains 6.0.x. The other four trees remain unchanged from alpha.14.
 - Codex and Claude native manifests/catalogs; portable installation for Gemini,
   Cursor, Copilot, Grok and common Agent Skills directories.
 - Gemini 0.24.0 setup guidance and accurate host qualification levels. Copilot's
@@ -44,15 +46,16 @@ itself. No packaging mode calls a remote model, merges, tags, uploads or publish
 ## Publication conditions
 
 Current upstream status was read on **2026-10-10 KST**; see
-[the recorded snapshot](release-status-1.0.0.json). Recheck at the final commit.
+[the recorded snapshot](release-status-1.0.0.json) and
+[Flow/Router follow-up](flow-router-followup-2026-10-10.md). Recheck at the final commit.
 
 | Condition | Current preparation state | Completion evidence |
 | --- | --- | --- |
-| Canonical source corrections | Network #153 and Protobuf #9 are merged; DI #59, Flow #63, Router #70 and Stream #14 await required checks/merge | Owning-library merge/required checks and full skill-tree comparison; update lock to the actual merged revision |
-| Bundle integrity | Version 1.0.0; five trees unchanged, Stream refreshed from canonical source | Bundle tests and source-tree equality on final commit |
+| Canonical source corrections | Network #153, Protobuf #9 and Stream #14 are merged; DI #59, Flow #63 and Router #70 await required checks/merge | Owning-library merge/required checks and full skill-tree comparison; update lock to the actual merged revision |
+| Bundle integrity | Version 1.0.0; Flow and Stream refreshed from canonical sources; other four trees unchanged | Bundle tests and source-tree equality on final commit |
 | Central PR / CI | PR #1 is the preparation vehicle | Final commit pushed, remote SHA equality, required checks passed, reviewed merge |
 | Host claims | Evidence and limitations documented | Preserve dates/models/versions; only promote a blocked or failed host after a successful new evaluation |
-| Stream | Published 6.1.1 `2af03b2`; 13 exact-release consumer tests passed | Canonical PR #14 required CI/merge remains separate from local release-consumer proof |
+| Stream | Published 6.1.1 `2af03b2`; 13 exact-release consumer tests passed | Canonical PR #14 passed its checks and merged at `7fb61ac`; merge-tree equality verified separately from release-consumer proof |
 | Protobuf | Reissued 6.1.1 tag `ba6ab8d`, tag object `eaea83c…`; historical fixture retained | User confirmed no previous installs and accepts keeping 6.1.1; preserve release-mode checks and historical fixture identity |
 | Audience | Central repository is private | Confirm access for the intended audience; a public launch requires the corresponding explicit visibility/publication action |
 | Final install | Candidate can be installed from an extracted package/local catalog | Clean install from the immutable final commit/tag, all six trees equal to the lock, no stale duplicate plugin entries |

@@ -35,12 +35,12 @@
     "innoflow": {
       "repository": "https://github.com/InnoSquadCorp/InnoFlow.git",
       "path": "skills/innoflow",
-      "revision": "c0d7197e8380f3355133c4ea56cf1da6c7da29bb",
-      "git_tree": "b0b67fb3d9a46d500f3014bc0e4788f0898296c6",
+      "revision": "f696e36ca50930c00520831ca1d6f09f44f685bd",
+      "git_tree": "491a78f01d6e6540182d6ad8e2ee7ff0a43f9e6d",
       "source_status": "pull_request",
       "library": {
-        "version": "6.0.0",
-        "revision": "188c2732d26350cf01afadade3dac89a2b73b68f",
+        "version": "6.0.2",
+        "revision": "1176de1e4783b638c03a9334f43cc49378957148",
         "supported_release_line": "6.0.x",
         "supported_range": ">=6.0.0 <6.1.0",
         "include_prereleases": false
@@ -50,7 +50,7 @@
     "innorouter": {
       "repository": "https://github.com/InnoSquadCorp/InnoRouter.git",
       "path": "skills/innorouter",
-      "revision": "4c2eafa4361bf65a9fd283dca99167ddeffff140",
+      "revision": "b82dc6aa7e4d96de24d7607e93e0218c17ffe587",
       "git_tree": "4bb00f546e42d88f2e57cc3ec920cddce9ea7113",
       "source_status": "pull_request",
       "library": {
@@ -90,9 +90,9 @@
     "innonetwork-stream": {
       "repository": "https://github.com/InnoSquadCorp/InnoNetwork-Stream.git",
       "path": "skills/innonetwork-stream",
-      "revision": "7fa66060374b16fba37a1486b1b4cdcdd2d441dd",
+      "revision": "7fb61ac2843c5742368cd4e640588b4c61b476c0",
       "git_tree": "5ca11c0593e46c67b22903a734577aeb8be88835",
-      "source_status": "pull_request",
+      "source_status": "merged",
       "library": {
         "version": "6.1.1",
         "revision": "2af03b24cfc8f11442a3b9ba2fd8adcfe58d8116",
@@ -107,7 +107,8 @@
         "constraint": "exact",
         "revision": "44e4ca28c50c03f817231a077c0f3bdfdbc859c8"
       },
-      "pull_request": "https://github.com/InnoSquadCorp/InnoNetwork-Stream/pull/14"
+      "pull_request": "https://github.com/InnoSquadCorp/InnoNetwork-Stream/pull/14",
+      "merged_at": "2026-10-10T09:22:33Z"
     }
   }
 }

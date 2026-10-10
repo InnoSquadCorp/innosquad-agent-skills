@@ -6,6 +6,7 @@ First stable-version packaging candidate for the six library-owned Inno skills.
 No v1.0.0 tag or release has been published by this preparation work.
 
 - Align portable, Codex, Claude and Claude marketplace versions at 1.0.0.
+- Refresh Flow from its canonical exact 6.0.2 fixture and preserve 6.0.x support; track Flow CI baseline and Router native-scene probe corrections on their source PRs.
 - Align Stream plugin descriptions, chat/API guidance and current evaluation prompts with published 6.1.1; retain the original alpha.11 prompts as historical evidence.
 - Document Gemini CLI 0.24.0's Agent Skills feature flag and discovery check.
 - Report Copilot's verified loading separately from its failed GPT-4.1 generation evaluation.

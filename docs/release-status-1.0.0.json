@@ -1,15 +1,15 @@
 {
   "checked_on": "2026-10-10",
-  "checked_at": "2026-10-10T00:03:35.956690+00:00",
+  "checked_at": "2026-10-10T11:41:38.182041+00:00",
   "timezone": "Asia/Seoul",
-  "preparation_base": "d0b32c0c1c10bdb71e5263417e27861ff5bbd0fe",
+  "preparation_base": "e6cbe2aff7ab1c4fb3350879a7f776dd8dc89631",
   "central_pr": "https://github.com/InnoSquadCorp/innosquad-agent-skills/pull/1",
   "central_visibility": "PRIVATE",
   "publication_performed": false,
   "sources": [
     {
-      "headRefOid": "ae4eef4fa01d6a73d4b0ec44fa9b639addebbc4e",
-      "isDraft": true,
+      "headRefOid": "ded4b54cd1b80a473bd9c4cd1f2babdb13c346e4",
+      "isDraft": false,
       "mergeCommit": null,
       "mergeStateStatus": "BLOCKED",
       "mergedAt": null,
@@ -17,74 +17,12 @@
       "url": "https://github.com/InnoSquadCorp/InnoDI/pull/59",
       "skill": "innodi",
       "check_counts": {
-        "CANCELLED": 11,
-        "SUCCESS": 25,
-        "SKIPPED": 13,
-        "IN_PROGRESS": 1,
-        "FAILURE": 1
+        "SUCCESS": 15,
+        "SKIPPED": 6,
+        "QUEUED": 3,
+        "IN_PROGRESS": 1
       },
-      "failing_checks": [
-        {
-          "name": "Dependabot Merge Ready",
-          "conclusion": "CANCELLED",
-          "detailsUrl": "https://github.com/InnoSquadCorp/InnoDI/actions/runs/37968755345/job/113949679423"
-        },
-        {
-          "name": "CI and public operations policy",
-          "conclusion": "CANCELLED",
-          "detailsUrl": "https://github.com/InnoSquadCorp/InnoDI/actions/runs/37968758511/job/113949758888"
-        },
-        {
-          "name": "Documentation contracts",
-          "conclusion": "CANCELLED",
-          "detailsUrl": "https://github.com/InnoSquadCorp/InnoDI/actions/runs/37968758511/job/113949759930"
-        },
-        {
-          "name": "remote-consumer / Exact-SHA macro and plugin consumer",
-          "conclusion": "CANCELLED",
-          "detailsUrl": "https://github.com/InnoSquadCorp/InnoDI/actions/runs/37968758511/job/113949759527"
-        },
-        {
-          "name": "Exhaustive release contracts",
-          "conclusion": "CANCELLED",
-          "detailsUrl": "https://github.com/InnoSquadCorp/InnoDI/actions/runs/37968758511/job/113949759021"
-        },
-        {
-          "name": "Exhaustive consumer contracts (Xcode 26.6)",
-          "conclusion": "CANCELLED",
-          "detailsUrl": "https://github.com/InnoSquadCorp/InnoDI/actions/runs/37968758511/job/113949760133"
-        },
-        {
-          "name": "Thread and address sanitizers (Xcode 26.6)",
-          "conclusion": "CANCELLED",
-          "detailsUrl": "https://github.com/InnoSquadCorp/InnoDI/actions/runs/37968758511/job/113949760211"
-        },
-        {
-          "name": "Swift 6.2 compatibility",
-          "conclusion": "CANCELLED",
-          "detailsUrl": "https://github.com/InnoSquadCorp/InnoDI/actions/runs/37968758511/job/113949759994"
-        },
-        {
-          "name": "Xcode 27 compatibility preview",
-          "conclusion": "CANCELLED",
-          "detailsUrl": "https://github.com/InnoSquadCorp/InnoDI/actions/runs/37968758511/job/113949759153"
-        },
-        {
-          "name": "Apple platform builds (Xcode 26.6)",
-          "conclusion": "CANCELLED",
-          "detailsUrl": "https://github.com/InnoSquadCorp/InnoDI/actions/runs/37968758511/job/113949760484"
-        },
-        {
-          "name": "path-identity",
-          "conclusion": "CANCELLED",
-          "detailsUrl": "https://github.com/InnoSquadCorp/InnoDI/actions/runs/37968758511/job/113949760448"
-        },
-        {
-          "name": "CI Required",
-          "conclusion": "FAILURE",
-          "detailsUrl": "https://github.com/InnoSquadCorp/InnoDI/actions/runs/37968758511/job/114045710927"
-        }
-      ],
+      "failing_checks": [],
       "latest_release": {
         "publishedAt": "2026-10-06T22:25:54Z",
         "tagName": "7.0.1",
@@ -97,7 +35,8 @@
           "ce47cf4b207c3b8810b2a7d7d622a2f8ead3ed96\trefs/tags/7.0.1^{}"
         ],
         "exit_code": 0
-      }
+      },
+      "checked_at": "2026-10-10T11:41:38.182041+00:00"
     },
     {
       "headRefOid": "600467d957f47df99321204af866da1073d6b67c",
@@ -127,10 +66,11 @@
           "44e4ca28c50c03f817231a077c0f3bdfdbc859c8\trefs/tags/6.1.1^{}"
         ],
         "exit_code": 0
-      }
+      },
+      "checked_at": "2026-10-10T11:41:38.182041+00:00"
     },
     {
-      "headRefOid": "c0d7197e8380f3355133c4ea56cf1da6c7da29bb",
+      "headRefOid": "f696e36ca50930c00520831ca1d6f09f44f685bd",
       "isDraft": false,
       "mergeCommit": null,
       "mergeStateStatus": "BLOCKED",
@@ -139,20 +79,12 @@
       "url": "https://github.com/InnoSquadCorp/InnoFlow/pull/63",
       "skill": "innoflow",
       "check_counts": {
-        "CANCELLED": 1,
-        "SKIPPED": 38,
-        "SUCCESS": 9,
-        "QUEUED": 26,
-        "IN_PROGRESS": 1,
-        "PENDING": 1
+        "SKIPPED": 28,
+        "SUCCESS": 15,
+        "QUEUED": 20,
+        "IN_PROGRESS": 1
       },
-      "failing_checks": [
-        {
-          "name": "Dependabot Merge Ready",
-          "conclusion": "CANCELLED",
-          "detailsUrl": "https://github.com/InnoSquadCorp/InnoFlow/actions/runs/38007161740/job/114078485666"
-        }
-      ],
+      "failing_checks": [],
       "latest_release": {
         "publishedAt": "2026-10-08T20:30:16Z",
         "tagName": "6.0.2",
@@ -165,11 +97,12 @@
           "1176de1e4783b638c03a9334f43cc49378957148\trefs/tags/6.0.2^{}"
         ],
         "exit_code": 0
-      }
+      },
+      "checked_at": "2026-10-10T11:41:38.182041+00:00"
     },
     {
-      "headRefOid": "4c2eafa4361bf65a9fd283dca99167ddeffff140",
-      "isDraft": true,
+      "headRefOid": "b82dc6aa7e4d96de24d7607e93e0218c17ffe587",
+      "isDraft": false,
       "mergeCommit": null,
       "mergeStateStatus": "BLOCKED",
       "mergedAt": null,
@@ -177,18 +110,11 @@
       "url": "https://github.com/InnoSquadCorp/InnoRouter/pull/70",
       "skill": "innorouter",
       "check_counts": {
-        "SUCCESS": 32,
-        "SKIPPED": 10,
-        "IN_PROGRESS": 1,
-        "FAILURE": 1
+        "QUEUED": 25,
+        "SUCCESS": 8,
+        "SKIPPED": 9
       },
-      "failing_checks": [
-        {
-          "name": "CI Required",
-          "conclusion": "FAILURE",
-          "detailsUrl": "https://github.com/InnoSquadCorp/InnoRouter/actions/runs/37958003497/job/114003312791"
-        }
-      ],
+      "failing_checks": [],
       "latest_release": {
         "publishedAt": "2026-10-08T05:31:05Z",
         "tagName": "7.0.0",
@@ -200,7 +126,8 @@
           "33b0da7639105cfa8e6f5acffa3badb91b5e0254\trefs/tags/7.0.0"
         ],
         "exit_code": 0
-      }
+      },
+      "checked_at": "2026-10-10T11:41:38.182041+00:00"
     },
     {
       "headRefOid": "ab67a5b7b100af117d1d675a04ac289f1789a7a3",
@@ -231,21 +158,23 @@
           "ba6ab8d6112d51efa69d92ac6739464bfc775aed\trefs/tags/6.1.1^{}"
         ],
         "exit_code": 0
-      }
+      },
+      "checked_at": "2026-10-10T11:41:38.182041+00:00"
     },
     {
       "headRefOid": "7fa66060374b16fba37a1486b1b4cdcdd2d441dd",
       "isDraft": false,
-      "mergeCommit": null,
-      "mergeStateStatus": "BLOCKED",
-      "mergedAt": null,
-      "state": "OPEN",
+      "mergeCommit": {
+        "oid": "7fb61ac2843c5742368cd4e640588b4c61b476c0"
+      },
+      "mergeStateStatus": "UNKNOWN",
+      "mergedAt": "2026-10-10T09:22:33Z",
+      "state": "MERGED",
       "url": "https://github.com/InnoSquadCorp/InnoNetwork-Stream/pull/14",
       "skill": "innonetwork-stream",
       "check_counts": {
-        "SUCCESS": 3,
-        "QUEUED": 10,
-        "PENDING": 1
+        "SKIPPED": 16,
+        "SUCCESS": 18
       },
       "failing_checks": [],
       "latest_release": {
@@ -260,7 +189,9 @@
           "2af03b24cfc8f11442a3b9ba2fd8adcfe58d8116\trefs/tags/6.1.1^{}"
         ],
         "exit_code": 0
-      }
+      },
+      "checked_at": "2026-10-10T11:41:38.182041+00:00"
     }
-  ]
+  ],
+  "release_tag_metadata_checked_at": "2026-10-10T00:03:35.956690+00:00"
 }

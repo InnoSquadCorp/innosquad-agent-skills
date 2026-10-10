@@ -8,7 +8,7 @@ InnoSquad Swift 라이브러리 6개의 스킬을 Codex·Claude Code 플러그�
 | --- | --- | --- |
 | [innodi](skills/innodi/SKILL.md) | 7.0.x | 7.0.0 |
 | [innonetwork](skills/innonetwork/SKILL.md) | 6.1.x | 6.1.0 |
-| [innoflow](skills/innoflow/SKILL.md) | 6.0.x | 6.0.0 |
+| [innoflow](skills/innoflow/SKILL.md) | 6.0.x | Published 6.0.2 (`1176de1`) |
 | [innorouter](skills/innorouter/SKILL.md) | 7.0.x | Published 7.0.0 (`33b0da7`) |
 | [innonetwork-protobuf](skills/innonetwork-protobuf/SKILL.md) | 6.1.x | Reissued 6.1.1 (`ba6ab8d`) + exact Core 6.1.1; historical fixture retained |
 | [innonetwork-stream](skills/innonetwork-stream/SKILL.md) | 6.1.x | Published 6.1.1 (`2af03b2`) + exact Core 6.1.1 |
@@ -69,8 +69,8 @@ Grok API 도구는 `scripts/grok_request.py`; `--dry-run`으로 요청을 먼저
 [원본 관리 정책](docs/source-ownership.md)을 참조하세요.
 
 검증 스크립트의 stdout/stderr 혼합 오류는 6개 스냅샷 모두 수정되어 있습니다.
-Network·Protobuf 원본 수정은 병합됐습니다. DI·Flow·Router·Stream은
-[원본 PR의 필수 CI와 병합](docs/release-refresh-2026-10-10.md)을 확인 중입니다. **정식 패키지 생성은
+Network·Protobuf·Stream 원본 수정은 병합됐습니다. DI·Flow·Router는
+[원본 PR의 필수 CI와 병합](docs/flow-router-followup-2026-10-10.md)을 확인 중입니다. **정식 패키지 생성은
 미병합 원본이 있으면 실패합니다.**
 
 ## Validate and prepare 1.0.0
