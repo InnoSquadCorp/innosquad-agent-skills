@@ -7,15 +7,16 @@ by the packaging tools.
 
 ## What is included
 
-- Six unchanged, independently versioned library skill snapshots from alpha.14.
+- Six independently versioned library skill snapshots. Stream now validates
+  published 6.1.1 with a fresh representative Codex portable-skill evaluation; the five other skill trees remain unchanged from alpha.14.
 - Codex and Claude native manifests/catalogs; portable installation for Gemini,
   Cursor, Copilot, Grok and common Agent Skills directories.
 - Gemini 0.24.0 setup guidance and accurate host qualification levels. Copilot's
   GPT-4.1 evaluation is recorded as failed, not silently promoted to supported.
 - Deterministic native plugin ZIP, per-library Markdown/native skill reference
   pack, immutable skill-source records and SHA-256 checksums.
-- Stream is explicitly **preview**, based on an unreleased commit intended for
-  6.1.1. Package version 1.0.0 does not make Stream 6.1.1 a published library.
+- Stream supports stable 6.1.x and validates published 6.1.1 at `2af03b2`,
+  including remote tag checks and 13 passing exact-release consumer tests.
 
 ## Local preparation
 
@@ -47,12 +48,12 @@ Current upstream status was read on **2026-10-10 KST**; see
 
 | Condition | Current preparation state | Completion evidence |
 | --- | --- | --- |
-| Canonical source corrections | DI #59, Network #153, Flow #63, Router #70, Stream #14 are open Draft PRs with CI still pending; Protobuf #9 is merged | Owning-library merge/required checks and full skill-tree comparison; update lock to the actual merged revision |
-| Bundle integrity | Version 1.0.0; six source trees unchanged | Bundle tests and source-tree equality on final commit |
+| Canonical source corrections | Network #153 and Protobuf #9 are merged; DI #59, Flow #63, Router #70 and Stream #14 await required checks/merge | Owning-library merge/required checks and full skill-tree comparison; update lock to the actual merged revision |
+| Bundle integrity | Version 1.0.0; five trees unchanged, Stream refreshed from canonical source | Bundle tests and source-tree equality on final commit |
 | Central PR / CI | PR #1 is the preparation vehicle | Final commit pushed, remote SHA equality, required checks passed, reviewed merge |
 | Host claims | Evidence and limitations documented | Preserve dates/models/versions; only promote a blocked or failed host after a successful new evaluation |
-| Stream | No 6.1.1 tag found | Keep preview labeling; to advertise stable Stream 6.1.1, verify the actual tag and rerun its exact-release consumer in the owning repository first |
-| Protobuf | Reissued 6.1.1 tag `ba6ab8d`, tag object `eaea83c…`; historical fixture retained | Use release-mode validator; do not relabel the revoked fixture as the current release |
+| Stream | Published 6.1.1 `2af03b2`; 13 exact-release consumer tests passed | Canonical PR #14 required CI/merge remains separate from local release-consumer proof |
+| Protobuf | Reissued 6.1.1 tag `ba6ab8d`, tag object `eaea83c…`; historical fixture retained | User confirmed no previous installs and accepts keeping 6.1.1; preserve release-mode checks and historical fixture identity |
 | Audience | Central repository is private | Confirm access for the intended audience; a public launch requires the corresponding explicit visibility/publication action |
 | Final install | Candidate can be installed from an extracted package/local catalog | Clean install from the immutable final commit/tag, all six trees equal to the lock, no stale duplicate plugin entries |
 | Publication | No v1.0.0 tag/release yet | Tag points to the reviewed merged commit; uploaded checksums match; fresh remote installation verified |

@@ -11,18 +11,18 @@ InnoSquad Swift 라이브러리 6개의 스킬을 Codex·Claude Code 플러그�
 | [innoflow](skills/innoflow/SKILL.md) | 6.0.x | 6.0.0 |
 | [innorouter](skills/innorouter/SKILL.md) | 7.0.x | Published 7.0.0 (`33b0da7`) |
 | [innonetwork-protobuf](skills/innonetwork-protobuf/SKILL.md) | 6.1.x | Reissued 6.1.1 (`ba6ab8d`) + exact Core 6.1.1; historical fixture retained |
-| [innonetwork-stream](skills/innonetwork-stream/SKILL.md) | **Preview: planned 6.1.x** | Unreleased `bd50e87`, intended for 6.1.1 + exact Core 6.1.1 |
+| [innonetwork-stream](skills/innonetwork-stream/SKILL.md) | 6.1.x | Published 6.1.1 (`2af03b2`) + exact Core 6.1.1 |
 
 지원 범위는 해당 패치 라인 전체입니다. 예를 들어 6.1.x는 `>=6.1.0 <6.2.0`이며
 프리릴리스와 6.2 이상은 포함하지 않습니다. 모든 패치를 테스트했다는 뜻은 아닙니다.
 프로젝트의 실제 해결 버전을 유지하고 해당 소비자를 검증합니다. Stream은 정식
-6.1.1 검증 완료 항목이 아닌 preview로 포함됩니다.
+6.1.1 태그를 확인하고 소비자 테스트 13개를 다시 통과했습니다.
 
 ## AI 도구별 검증 수준
 
 | 도구 | 제공 방식 | 확인된 수준 |
 | --- | --- | --- |
-| Codex | 네이티브 플러그인 / `.agents/skills` | 기존 플러그인 평가 + 최근 대표 DI 자동 선택·생성 테스트 통과 |
+| Codex | 네이티브 플러그인 / `.agents/skills` | 기존 플러그인 평가 + 대표 DI·Stream 자동 선택·생성·컴파일 확인 |
 | Claude Code | 네이티브 플러그인 / `.claude/skills` | 기존 생성 평가 통과. 최근 alpha.14 인식 확인, OAuth 만료로 새 생성 평가 중단 |
 | Gemini CLI | `.gemini/skills` | 0.24.0은 `experimental.skills=true` 필요. 6개 인식 확인, 생성 미검증 |
 | Cursor Agent | `.cursor/skills` | 설치·로더 확인. 인증 문제로 실제 선택·생성 미검증 |
@@ -32,8 +32,8 @@ InnoSquad Swift 라이브러리 6개의 스킬을 Codex·Claude Code 플러그�
 
 스킬 인식, 자동 선택, 생성 코드 컴파일, 공개 배포는 별도로 검증합니다.
 [호스트별 설정·제한](docs/host-support.md)과 [최근 평가](docs/host-evaluation-non-grok.md)에
-버전, 대조군, 인증·모델 제한을 기록했습니다. 1.0.0 후보의 스킬 원본은 평가한
-alpha.14와 동일하며, 이전 검증을 새 실행 결과로 표시하지 않습니다.
+버전, 대조군, 인증·모델 제한을 기록했습니다. Stream 정식 태그 갱신은
+[배포 후 보완 기록](docs/release-refresh-2026-10-10.md)에 분리하며, 이전 호스트 평가를 새 실행으로 표시하지 않습니다.
 
 ## Install
 
@@ -69,8 +69,8 @@ Grok API 도구는 `scripts/grok_request.py`; `--dry-run`으로 요청을 먼저
 [원본 관리 정책](docs/source-ownership.md)을 참조하세요.
 
 검증 스크립트의 stdout/stderr 혼합 오류는 6개 스냅샷 모두 수정되어 있습니다.
-[alpha.14 수정 보고서](docs/consumer-output-fix-alpha.14.md)의 원본 PR 5개는
-아직 병합 대기 중이며 Protobuf 수정은 병합됐습니다. **정식 패키지 생성은
+Network·Protobuf 원본 수정은 병합됐습니다. DI·Flow·Router·Stream은
+[원본 PR의 필수 CI와 병합](docs/release-refresh-2026-10-10.md)을 확인 중입니다. **정식 패키지 생성은
 미병합 원본이 있으면 실패합니다.**
 
 ## Validate and prepare 1.0.0

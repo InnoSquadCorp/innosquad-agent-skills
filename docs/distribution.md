@@ -98,8 +98,8 @@ alter authentication. Registration, actual selection and generation are separate
 ## Publication handoff
 
 Use the [1.0.0 preparation checklist](release-1.0.0.md) and draft
-[release notes](release-notes-1.0.0.md). Five canonical helper-fix PRs still await
-merge. Refresh their actual merged commit/tree pins and verify required upstream
+[release notes](release-notes-1.0.0.md). Four canonical correction PRs still await
+required checks/merge; Network and Protobuf corrections are merged. Refresh their actual merged commit/tree pins and verify required upstream
 checks before the final package. `--require-merged` checks recorded statuses,
 not live remote CI. Candidate packaging deliberately remains available for review:
 

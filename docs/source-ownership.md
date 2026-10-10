@@ -12,21 +12,21 @@ from the `library` baseline/support declaration. A skill-source fix does not
 require changing the tested library version. All library fields agree with the
 copied support record; the validator understands DI's original range/channel schema.
 
-| Skill | 1.0.0 preparation source selection (unchanged from alpha.14) | API evidence |
+| Skill | 1.0.0 preparation source selection (2026-10-10 refresh) | API evidence |
 | --- | --- | --- |
 | DI | Graph-output fix, [PR #59](https://github.com/InnoSquadCorp/InnoDI/pull/59) pending | Exact 7.0.0 fixture |
-| Network | Graph-output fix, [PR #153](https://github.com/InnoSquadCorp/InnoNetwork/pull/153) pending | Exact 6.1.0 fixture |
-| Flow | Graph-output fix, [PR #63](https://github.com/InnoSquadCorp/InnoFlow/pull/63) pending; bounded runner preserved | Exact 6.0.0 fixture |
+| Network | Graph-output fix merged, [PR #153](https://github.com/InnoSquadCorp/InnoNetwork/pull/153), `d5213fb` | Exact 6.1.0 fixture |
+| Flow | Graph-output fix and 6.0.2 publication metadata, [PR #63](https://github.com/InnoSquadCorp/InnoFlow/pull/63) pending; bounded runner preserved | Exact 6.0.0 fixture |
 | Router | Graph-output fix, [PR #70](https://github.com/InnoSquadCorp/InnoRouter/pull/70) pending | Published 7.0.0 `33b0da7` |
 | Protobuf | Merged [PR #9](https://github.com/InnoSquadCorp/InnoNetwork-Protobuf/pull/9), `06e091d` | Reissued 6.1.1 consumer; historical fixture retained |
-| Stream | Graph-output fix, [PR #14](https://github.com/InnoSquadCorp/InnoNetwork-Stream/pull/14) pending | Unreleased `bd50e87`, planned 6.1.1, exact Core 6.1.1 |
+| Stream | Graph-output fix and released baseline, [PR #14](https://github.com/InnoSquadCorp/InnoNetwork-Stream/pull/14) pending | Published 6.1.1 `2af03b2`, exact Core 6.1.1 |
 
-The fix changes consumer helpers only inside each skill snapshot. Source tests
-and maintainer documentation live outside the distributed skill. Instructions,
-discovery metadata, examples, API support ranges and exact dependency pins are
-unchanged. See the [correction report](consumer-output-fix-alpha.14.md) for source
-PRs and fresh validation. Five pins are explicitly `pull_request` until merged;
-`--require-merged` must reject them. The Protobuf helper fix is merged but not in
+The alpha.14 fix separated JSON output and warnings in all six consumer helpers.
+This refresh additionally updates Stream instructions, metadata, exact fixture
+pins and release-tag guards from its canonical source. Support ranges are unchanged.
+Source tests and maintainer documentation remain outside the distributed skill.
+See the [refresh report](release-refresh-2026-10-10.md). Four pins remain
+`pull_request`; `--require-merged` must reject them. The Protobuf helper fix is merged but not in
 the recorded 6.1.1 release, so its source status is `merged`, not `released`.
 
 The original Protobuf 6.1.1 tag pointed to `5e5f831`. Upstream withdrew it and
@@ -37,9 +37,11 @@ only the isolated adapter revision, verifies the official tag before/after
 execution and checks all eight remote dependencies. Never call the old fixture
 validation of the reissued tag or independently upgrade exact Core 6.1.1.
 
-Stream has no 6.1.1 tag at the 2026-10-10 check. The 1.0.0 plugin preparation
-includes that baseline explicitly as preview; it does not qualify a released
-Stream 6.1.1. See the [preparation checklist](release-1.0.0.md).
+Stream 6.1.1 was published at `2af03b2`. The refreshed consumer passed 13 tests
+and verified the annotated tag before/after execution on 2026-10-10 KST. This
+does not replace source PR CI, device or host behavior evidence. The user accepts
+keeping Protobuf 6.1.1 because no earlier installations were made; no tag is
+moved or patch release created by this refresh. See the [preparation checklist](release-1.0.0.md).
 
 ## Refresh and publish
 
@@ -61,5 +63,5 @@ Collection is explicit. CI validates package consistency but does not collect
 snapshots, call AI hosts or publish releases automatically. Earlier snapshots
 and reports remain in Git history and dated `host-evaluation-*` files. Historical
 failures are not overwritten by newer passes. Read the
-[alpha.14 report](consumer-output-fix-alpha.14.md) for the latest helper checks;
+[refresh report](release-refresh-2026-10-10.md) for the latest source/consumer checks;
 [alpha.12](release-candidate-alpha.12.md) retains the dated host evaluation.

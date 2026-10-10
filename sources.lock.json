@@ -4,7 +4,7 @@
     "innodi": {
       "repository": "https://github.com/InnoSquadCorp/InnoDI.git",
       "path": "skills/innodi",
-      "revision": "e3af97115a676120a81346f6a0acb6f11c6c33cf",
+      "revision": "ae4eef4fa01d6a73d4b0ec44fa9b639addebbc4e",
       "git_tree": "358bab55a293c1ec5d456c42a911a86fcbc90c03",
       "source_status": "pull_request",
       "library": {
@@ -19,9 +19,9 @@
     "innonetwork": {
       "repository": "https://github.com/InnoSquadCorp/InnoNetwork.git",
       "path": "skills/innonetwork",
-      "revision": "600467d957f47df99321204af866da1073d6b67c",
+      "revision": "d5213fb375b4e45a9f789116e326aebb7fa22ff4",
       "git_tree": "62d335ebee98f7a60ba77c45c5b84e157253ff85",
-      "source_status": "pull_request",
+      "source_status": "merged",
       "library": {
         "version": "6.1.0",
         "revision": "79ff9f535a0a15ad8b52ce49cb5a4b1ea1dfec16",
@@ -29,12 +29,13 @@
         "supported_range": ">=6.1.0 <6.2.0",
         "include_prereleases": false
       },
-      "pull_request": "https://github.com/InnoSquadCorp/InnoNetwork/pull/153"
+      "pull_request": "https://github.com/InnoSquadCorp/InnoNetwork/pull/153",
+      "merged_at": "2026-10-09T23:59:13Z"
     },
     "innoflow": {
       "repository": "https://github.com/InnoSquadCorp/InnoFlow.git",
       "path": "skills/innoflow",
-      "revision": "4de23f95ef02420acafb1238815e96a7835a00c1",
+      "revision": "c0d7197e8380f3355133c4ea56cf1da6c7da29bb",
       "git_tree": "b0b67fb3d9a46d500f3014bc0e4788f0898296c6",
       "source_status": "pull_request",
       "library": {
@@ -89,18 +90,17 @@
     "innonetwork-stream": {
       "repository": "https://github.com/InnoSquadCorp/InnoNetwork-Stream.git",
       "path": "skills/innonetwork-stream",
-      "revision": "0fd0601be142f782a3a0b56305aabb261582652b",
-      "git_tree": "c5c69a024d13caac4b4f7d38cb86eff0e5a6a244",
+      "revision": "7fa66060374b16fba37a1486b1b4cdcdd2d441dd",
+      "git_tree": "5ca11c0593e46c67b22903a734577aeb8be88835",
       "source_status": "pull_request",
       "library": {
-        "version": null,
-        "planned_version": "6.1.1",
-        "revision": "bd50e877644ded1b739f66bdd8fb604908606e4b",
-        "baseline_kind": "unreleased_main_commit",
+        "version": "6.1.1",
+        "revision": "2af03b24cfc8f11442a3b9ba2fd8adcfe58d8116",
+        "baseline_kind": "verified_release_tag",
+        "support_status": "stable_line",
         "supported_release_line": "6.1.x",
         "supported_range": ">=6.1.0 <6.2.0",
-        "include_prereleases": false,
-        "support_status": "planned_stable_line"
+        "include_prereleases": false
       },
       "core_requirement": {
         "version": "6.1.1",

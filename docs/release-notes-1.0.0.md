@@ -7,8 +7,8 @@ for Gemini CLI, Cursor, GitHub Copilot, Grok and text-based assistants.
 
 - InnoDI 7.0.x, InnoNetwork 6.1.x, InnoFlow 6.0.x, InnoRouter 7.0.x and
   InnoNetwork-Protobuf 6.1.x. Exact tested baselines are recorded in each skill.
-- InnoNetwork-Stream is a **preview** for planned 6.1.x; its recorded baseline is
-  an unreleased commit, not a published 6.1.1 tag.
+- InnoNetwork-Stream supports stable 6.1.x with a verified published 6.1.1
+  consumer and exact Core 6.1.1. Other patches require their own consumer checks.
 - Complete instructions, references, consumer examples, validation scripts and
   original notices. Library choices and existing project configuration are preserved.
 - Consumer validators keep JSON output separate from SwiftPM warning diagnostics.

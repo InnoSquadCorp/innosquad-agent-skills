@@ -1,9 +1,10 @@
 # Non-Grok host evaluation — 2026-10-10
 
 Evaluated distribution: **0.1.0-alpha.14**, commit
-`2a5b4fed66ba4750c89df09f9fd8e0d8878f31cf`. The 1.0.0 preparation keeps these exact
-six skill trees. These are reused behavioral results for that unchanged content,
-not new 1.0.0 model runs. See [machine-readable evidence](host-evaluation-non-grok.json).
+`2a5b4fed66ba4750c89df09f9fd8e0d8878f31cf`. These are dated behavioral results
+for the six alpha.14 skill trees, not new 1.0.0 model runs. The later Stream
+release refresh changes its guidance and is tracked separately in
+[the refresh report](release-refresh-2026-10-10.md). See [machine-readable evidence](host-evaluation-non-grok.json).
 
 Five hosts received all six skill directories. **30/30** copies matched the
 original file inventory, bytes and executable modes. Seven portable-packaging
