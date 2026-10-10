@@ -45,13 +45,13 @@ itself. No packaging mode calls a remote model, merges, tags, uploads or publish
 
 ## Publication conditions
 
-Current upstream status was read on **2026-10-10 KST**; see
+Current upstream status was read on **2026-10-11 KST**; see
 [the recorded snapshot](release-status-1.0.0.json) and
 [Flow/Router follow-up](flow-router-followup-2026-10-10.md). Recheck at the final commit.
 
 | Condition | Current preparation state | Completion evidence |
 | --- | --- | --- |
-| Canonical source corrections | Network #153, Protobuf #9 and Stream #14 are merged; DI #59, Flow #63 and Router #70 await required checks/merge | Owning-library merge/required checks and full skill-tree comparison; update lock to the actual merged revision |
+| Canonical source corrections | DI #59, Network #153, Flow #63, Protobuf #9 and Stream #14 are merged; Router #70 awaits remaining platform CI/merge | Owning-library merge/required checks and full skill-tree comparison; update lock to the actual merged revision |
 | Bundle integrity | Version 1.0.0; Flow and Stream refreshed from canonical sources; other four trees unchanged | Bundle tests and source-tree equality on final commit |
 | Central PR / CI | PR #1 is the preparation vehicle | Final commit pushed, remote SHA equality, required checks passed, reviewed merge |
 | Host claims | Evidence and limitations documented | Preserve dates/models/versions; only promote a blocked or failed host after a successful new evaluation |

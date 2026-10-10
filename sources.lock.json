@@ -4,9 +4,9 @@
     "innodi": {
       "repository": "https://github.com/InnoSquadCorp/InnoDI.git",
       "path": "skills/innodi",
-      "revision": "ae4eef4fa01d6a73d4b0ec44fa9b639addebbc4e",
+      "revision": "74a57b83664e431b45aa56f53286adeac86ccfb2",
       "git_tree": "358bab55a293c1ec5d456c42a911a86fcbc90c03",
-      "source_status": "pull_request",
+      "source_status": "merged",
       "library": {
         "version": "7.0.0",
         "revision": "4783eee7f674f99a337768c107b7a5f640810c2a",
@@ -14,7 +14,8 @@
         "supported_range": ">=7.0.0 <7.1.0",
         "include_prereleases": false
       },
-      "pull_request": "https://github.com/InnoSquadCorp/InnoDI/pull/59"
+      "pull_request": "https://github.com/InnoSquadCorp/InnoDI/pull/59",
+      "merged_at": "2026-10-10T13:37:47Z"
     },
     "innonetwork": {
       "repository": "https://github.com/InnoSquadCorp/InnoNetwork.git",
@@ -35,9 +36,9 @@
     "innoflow": {
       "repository": "https://github.com/InnoSquadCorp/InnoFlow.git",
       "path": "skills/innoflow",
-      "revision": "f696e36ca50930c00520831ca1d6f09f44f685bd",
+      "revision": "6b7c632500526cd87ab76e1d845d1b082327703e",
       "git_tree": "491a78f01d6e6540182d6ad8e2ee7ff0a43f9e6d",
-      "source_status": "pull_request",
+      "source_status": "merged",
       "library": {
         "version": "6.0.2",
         "revision": "1176de1e4783b638c03a9334f43cc49378957148",
@@ -45,7 +46,8 @@
         "supported_range": ">=6.0.0 <6.1.0",
         "include_prereleases": false
       },
-      "pull_request": "https://github.com/InnoSquadCorp/InnoFlow/pull/63"
+      "pull_request": "https://github.com/InnoSquadCorp/InnoFlow/pull/63",
+      "merged_at": "2026-10-10T18:17:52Z"
     },
     "innorouter": {
       "repository": "https://github.com/InnoSquadCorp/InnoRouter.git",

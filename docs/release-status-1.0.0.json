@@ -1,8 +1,8 @@
 {
-  "checked_on": "2026-10-10",
-  "checked_at": "2026-10-10T11:41:38.182041+00:00",
+  "checked_on": "2026-10-11",
+  "checked_at": "2026-10-10T18:18:35.552904+00:00",
   "timezone": "Asia/Seoul",
-  "preparation_base": "e6cbe2aff7ab1c4fb3350879a7f776dd8dc89631",
+  "preparation_base": "279fc94d4bf38bbf2184eaa4f53126e87e553bb7",
   "central_pr": "https://github.com/InnoSquadCorp/innosquad-agent-skills/pull/1",
   "central_visibility": "PRIVATE",
   "publication_performed": false,
@@ -10,17 +10,17 @@
     {
       "headRefOid": "ded4b54cd1b80a473bd9c4cd1f2babdb13c346e4",
       "isDraft": false,
-      "mergeCommit": null,
-      "mergeStateStatus": "BLOCKED",
-      "mergedAt": null,
-      "state": "OPEN",
+      "mergeCommit": {
+        "oid": "74a57b83664e431b45aa56f53286adeac86ccfb2"
+      },
+      "mergeStateStatus": "UNKNOWN",
+      "mergedAt": "2026-10-10T13:37:47Z",
+      "state": "MERGED",
       "url": "https://github.com/InnoSquadCorp/InnoDI/pull/59",
       "skill": "innodi",
       "check_counts": {
-        "SUCCESS": 15,
-        "SKIPPED": 6,
-        "QUEUED": 3,
-        "IN_PROGRESS": 1
+        "SKIPPED": 13,
+        "SUCCESS": 22
       },
       "failing_checks": [],
       "latest_release": {
@@ -36,7 +36,7 @@
         ],
         "exit_code": 0
       },
-      "checked_at": "2026-10-10T11:41:38.182041+00:00"
+      "checked_at": "2026-10-10T18:18:35.552904+00:00"
     },
     {
       "headRefOid": "600467d957f47df99321204af866da1073d6b67c",
@@ -67,22 +67,22 @@
         ],
         "exit_code": 0
       },
-      "checked_at": "2026-10-10T11:41:38.182041+00:00"
+      "checked_at": "2026-10-10T18:18:35.552904+00:00"
     },
     {
       "headRefOid": "f696e36ca50930c00520831ca1d6f09f44f685bd",
       "isDraft": false,
-      "mergeCommit": null,
-      "mergeStateStatus": "BLOCKED",
-      "mergedAt": null,
-      "state": "OPEN",
+      "mergeCommit": {
+        "oid": "6b7c632500526cd87ab76e1d845d1b082327703e"
+      },
+      "mergeStateStatus": "UNKNOWN",
+      "mergedAt": "2026-10-10T18:17:52Z",
+      "state": "MERGED",
       "url": "https://github.com/InnoSquadCorp/InnoFlow/pull/63",
       "skill": "innoflow",
       "check_counts": {
-        "SKIPPED": 28,
-        "SUCCESS": 15,
-        "QUEUED": 20,
-        "IN_PROGRESS": 1
+        "SKIPPED": 33,
+        "SUCCESS": 40
       },
       "failing_checks": [],
       "latest_release": {
@@ -98,7 +98,7 @@
         ],
         "exit_code": 0
       },
-      "checked_at": "2026-10-10T11:41:38.182041+00:00"
+      "checked_at": "2026-10-10T18:18:35.552904+00:00"
     },
     {
       "headRefOid": "b82dc6aa7e4d96de24d7607e93e0218c17ffe587",
@@ -110,9 +110,10 @@
       "url": "https://github.com/InnoSquadCorp/InnoRouter/pull/70",
       "skill": "innorouter",
       "check_counts": {
-        "QUEUED": 25,
-        "SUCCESS": 8,
-        "SKIPPED": 9
+        "IN_PROGRESS": 5,
+        "SUCCESS": 22,
+        "QUEUED": 8,
+        "SKIPPED": 10
       },
       "failing_checks": [],
       "latest_release": {
@@ -127,7 +128,7 @@
         ],
         "exit_code": 0
       },
-      "checked_at": "2026-10-10T11:41:38.182041+00:00"
+      "checked_at": "2026-10-10T18:18:35.552904+00:00"
     },
     {
       "headRefOid": "ab67a5b7b100af117d1d675a04ac289f1789a7a3",
@@ -159,7 +160,7 @@
         ],
         "exit_code": 0
       },
-      "checked_at": "2026-10-10T11:41:38.182041+00:00"
+      "checked_at": "2026-10-10T18:18:35.552904+00:00"
     },
     {
       "headRefOid": "7fa66060374b16fba37a1486b1b4cdcdd2d441dd",
@@ -190,7 +191,7 @@
         ],
         "exit_code": 0
       },
-      "checked_at": "2026-10-10T11:41:38.182041+00:00"
+      "checked_at": "2026-10-10T18:18:35.552904+00:00"
     }
   ],
   "release_tag_metadata_checked_at": "2026-10-10T00:03:35.956690+00:00"
