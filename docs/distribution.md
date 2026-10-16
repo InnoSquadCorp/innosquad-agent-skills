@@ -65,9 +65,13 @@ the user's full configuration or remove unrelated marketplaces.
 
 ## Consumer validation
 
-Run Flow and Router's `skills/<name>/scripts/validate_consumer.py` with separate
-external scratch directories. Router's updated fixture requires exact 7.0.0.
-Protobuf's reviewed reissued release is checked with:
+The [six-consumer CI](consumer-ci.md) resolves, builds and tests every unchanged
+library-owned fixture on the explicit Xcode 27.0 / Swift 6.4 / macOS 27 runner.
+Each consumer uses a fresh external scratch directory and preserves toolchain,
+exact dependency identities and failure artifacts. Missing prerequisites fail;
+Python mock tests and bundle checks do not stand in for these Swift results.
+Router's fixture requires exact 7.0.0. Protobuf's reviewed reissued release uses
+the existing release mode:
 
 ```bash
 python3 skills/innonetwork-protobuf/scripts/validate_consumer.py \
@@ -98,16 +102,18 @@ alter authentication. Registration, actual selection and generation are separate
 ## Publication handoff
 
 Use the [1.0.0 preparation checklist](release-1.0.0.md) and draft
-[release notes](release-notes-1.0.0.md). Four canonical correction PRs still await
-required checks/merge; Network and Protobuf corrections are merged. Refresh their actual merged commit/tree pins and verify required upstream
-checks before the final package. `--require-merged` checks recorded statuses,
-not live remote CI. Candidate packaging deliberately remains available for review:
+[release notes](release-notes-1.0.0.md). All six canonical correction PRs are
+merged, as recorded in the [source status snapshot](release-status-1.0.0.json)
+and current `sources.lock.json`. Their exact merge pins agree; the central PR
+and 1.0.0 publication remain pending. Recheck upstream status, source-tree
+equality and final central CI before packaging. `--require-merged` checks
+recorded statuses, not live remote CI. Candidate packaging remains available:
 
 ```bash
 python3 -B scripts/build_release.py --candidate --output artifacts/1.0.0-candidate
 ```
 
-After source merges, final commit and clean-worktree validation, omit `--candidate`
+After source verification, final commit and clean-worktree validation, omit `--candidate`
 to build the merged-source package. Neither command publishes. Repository
 visibility, merges, immutable tag, GitHub release and directory submission remain
 separate publication actions with their own evidence.

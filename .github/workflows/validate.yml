@@ -27,3 +27,28 @@ jobs:
               raise SystemExit('Tag does not match the plugin manifest version')
           PY
           python3 -B scripts/build_release.py --output "$RUNNER_TEMP/innosquad-release"
+  consumers:
+    name: Swift consumer (${{ matrix.skill }})
+    # PRs exercise all six; branch pushes keep the existing bundle check.
+    if: github.event_name == 'pull_request' || github.ref == 'refs/heads/main' || startsWith(github.ref, 'refs/tags/')
+    # This hosted image runs macOS 27; no fallback to macos-latest or a user's Mac.
+    runs-on: xcode-27
+    timeout-minutes: 75
+    strategy:
+      fail-fast: false
+      matrix:
+        skill: [innodi, innoflow, innorouter, innonetwork, innonetwork-protobuf, innonetwork-stream]
+    env:
+      DEVELOPER_DIR: /Applications/Xcode_27.0.app/Contents/Developer
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+      - name: Resolve, build and test the exact remote consumer
+        run: python3 -B scripts/validate_consumer_ci.py --skill "${{ matrix.skill }}" --scratch-path "$RUNNER_TEMP/consumer-${{ matrix.skill }}"
+      - name: Preserve toolchain, exact pins and failure evidence
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: consumer-${{ matrix.skill }}-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/consumer-${{ matrix.skill }}/artifacts/
+          if-no-files-found: error
+          retention-days: 14

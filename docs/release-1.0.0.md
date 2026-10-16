@@ -53,6 +53,7 @@ Current upstream status was read on **2026-10-11 KST**; see
 | --- | --- | --- |
 | Canonical source corrections | All six source PRs are merged; Flow #63 at `6b7c632` and Router #70 at `333ba03` passed exact-head required and selected CI before merge | Actual merge pins and all six canonical directories verified by paths, blob bytes and executable modes; `--require-merged` passes |
 | Bundle integrity | Version 1.0.0; Flow and Stream refreshed from canonical sources; other four trees unchanged | Bundle tests and source-tree equality on final commit |
+| Central Swift consumers | Six independent exact consumers on the explicit Xcode 27.0 / Swift 6.4 / macOS 27 runner; Protobuf uses its reviewed reissued release mode | All six jobs pass at the final commit; [toolchain, resolved pins and failure artifacts](consumer-ci.md) retained separately from bundle/mock tests |
 | Central PR / CI | PR #1 remains the preparation vehicle; the Flow/Router follow-up updates its source pins without publishing | Final commit pushed, remote SHA equality, required checks passed, reviewed merge |
 | Host claims | Evidence and limitations documented | Preserve dates/models/versions; only promote a blocked or failed host after a successful new evaluation |
 | Stream | Published 6.1.1 `2af03b2`; 13 exact-release consumer tests passed | Canonical PR #14 passed its checks and merged at `7fb61ac`; merge-tree equality verified separately from release-consumer proof |
@@ -66,7 +67,7 @@ are limitations, not tests to mark green because files copied successfully.
 The earlier dated native-host evidence remains separate. Grok live model behavior
 and official-directory approval are not part of the confirmed 1.0.0 claims.
 
-## Build the final package after source merges
+## Build the final package after source verification
 
 After verifying the source PRs and refreshing exact merge pins/tree identities,
 commit the final package changes and use a clean worktree:

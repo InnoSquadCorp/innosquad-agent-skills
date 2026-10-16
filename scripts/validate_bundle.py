@@ -4,7 +4,7 @@
 import argparse
 import hashlib
 import json
-from pathlib import Path
+from pathlib import Path, PurePosixPath
 import re
 import stat
 import sys
@@ -37,6 +37,29 @@ def tree_id(directory):
     return git_object("tree", b"".join(value for _, value in sorted(entries))).hex()
 
 
+def codex_skills_path(root, value, inventory):
+    """Bind Codex discovery to the same portable skill inventory we package."""
+    require(isinstance(value, str) and bool(value.strip()),
+            "Codex skills path must be a nonempty string")
+    require(value == value.strip() and "\\" not in value and "\0" not in value,
+            "Codex skills path must be portable")
+    relative = PurePosixPath(value)
+    require(not relative.is_absolute() and not re.match(r"^[A-Za-z]:", value),
+            "Codex skills path must be relative")
+    require(".." not in relative.parts, "Codex skills path must not escape the plugin")
+    path = root
+    for part in relative.parts:
+        path = path / part
+        require(not path.is_symlink(), "Codex skills path must not contain a symlink")
+    require(path.is_dir(), "Codex skills path must name an existing directory")
+    require(path.resolve() == (root / "skills").resolve(),
+            "Codex skills path must select the shared skills directory")
+    require(set(inventory) == {p.name for p in path.iterdir() if p.is_dir()}
+            and all(p.is_dir() and not p.is_symlink() for p in path.iterdir()),
+            "Codex skill inventory mismatch")
+    return path
+
+
 def validate(root, require_merged=False):
     def read(path):
         return json.loads((root / path).read_text())
@@ -57,7 +80,7 @@ def validate(root, require_merged=False):
     for key in ["version", "description"]:
         require(catalogs[1]["plugins"][0][key] == manifest[key], f"Claude marketplace mismatch: {key}")
     lock = read("sources.lock.json")["skills"]
-    require(set(lock) == {p.name for p in (root / "skills").iterdir()}, "Skill inventory mismatch")
+    codex_skills_path(root, manifests[1].get("skills"), lock)
     for name, pin in lock.items():
         require(pin["path"] == "skills/" + name, f"Unexpected source path: {name}")
         skill = root / pin["path"]

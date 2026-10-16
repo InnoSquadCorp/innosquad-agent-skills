@@ -26,6 +26,71 @@ class DistributionChecks(unittest.TestCase):
     def tearDown(self):
         self.tmp.cleanup()
 
+    def set_codex_skills(self, value):
+        path = self.root / ".codex-plugin/plugin.json"
+        data = json.loads(path.read_text())
+        data["skills"] = value
+        path.write_text(json.dumps(data))
+
+    def test_missing_codex_skills_path_is_rejected(self):
+        path = self.root / ".codex-plugin/plugin.json"
+        data = json.loads(path.read_text())
+        del data["skills"]
+        path.write_text(json.dumps(data))
+        with self.assertRaisesRegex(ValueError, "Codex skills path"):
+            bundle.validate(self.root)
+
+    def test_invalid_codex_skills_path_values_are_rejected(self):
+        for value in [None, False, 1, [], ["./skills/"], {}, "", " ", "\t"]:
+            with self.subTest(value=value):
+                self.set_codex_skills(value)
+                with self.assertRaisesRegex(ValueError, "Codex skills path"):
+                    bundle.validate(self.root)
+
+    def test_absolute_escaping_and_nonportable_codex_paths_are_rejected(self):
+        for value in [str(self.root / "skills"), "/skills", "../skills",
+                      "./skills/../skills", "C:/skills", r"skills\innodi",
+                      "./skills/\0", " ./skills/"]:
+            with self.subTest(value=value):
+                self.set_codex_skills(value)
+                with self.assertRaisesRegex(ValueError, "Codex skills path"):
+                    bundle.validate(self.root)
+
+    def test_nonexistent_file_and_wrong_inventory_paths_are_rejected(self):
+        (self.root / "empty").mkdir()
+        shutil.copytree(self.root / "skills/innodi", self.root / "partial/innodi")
+        for value in ["./missing/", "./LICENSE", ".", "./empty/", "./partial/"]:
+            with self.subTest(value=value):
+                self.set_codex_skills(value)
+                with self.assertRaisesRegex(ValueError, "Codex skills path"):
+                    bundle.validate(self.root)
+
+    def test_codex_path_symlinks_inside_and_outside_plugin_are_rejected(self):
+        for name, target in [("inside", self.root / "skills"), ("outside", ROOT / "skills")]:
+            (self.root / name).symlink_to(target, target_is_directory=True)
+            for value in [f"./{name}/", f"./{name}/innodi"]:
+                with self.subTest(value=value):
+                    self.set_codex_skills(value)
+                    with self.assertRaisesRegex(ValueError, "Codex skills path.*symlink"):
+                        bundle.validate(self.root)
+
+    def test_shared_skills_directory_cannot_be_a_symlink(self):
+        (self.root / "skills").rename(self.root / "original-skills")
+        (self.root / "skills").symlink_to(self.root / "original-skills", target_is_directory=True)
+        with self.assertRaisesRegex(ValueError, "Codex skills path.*symlink"):
+            bundle.validate(self.root)
+
+    def test_codex_inventory_drift_is_rejected(self):
+        shutil.rmtree(self.root / "skills/innodi")
+        with self.assertRaisesRegex(ValueError, "Codex skill inventory mismatch"):
+            bundle.validate(self.root)
+
+    def test_portable_codex_path_spellings_select_the_shared_inventory(self):
+        for value in ["./skills/", "skills", "skills/"]:
+            with self.subTest(value=value):
+                self.set_codex_skills(value)
+                self.assertEqual(bundle.validate(self.root)["skills"], 6)
+
     def test_snapshot_control(self):
         self.assertEqual(bundle.validate(self.root)["skills"], 6)
 

@@ -88,6 +88,10 @@ python3 -B scripts/build_release.py --candidate --output artifacts/1.0.0-candida
 절차는 [1.0.0 준비 문서](docs/release-1.0.0.md)에 정리했습니다.
 변경 내역은 [CHANGELOG](CHANGELOG.md)를 참조하세요.
 
+PR의 [Swift 소비자 CI](docs/consumer-ci.md)는 명시한 Xcode 27.0·Swift 6.4·macOS 27
+러너에서 스킬 6개의 의존성 해결·빌드·테스트를 각각 실행합니다. 실제 의존성 커밋과
+성공·실패 로그를 보존하며, 호스트의 스킬 선택·생성 평가와는 별도입니다.
+
 ## License
 
 중앙 배포물은 [MIT](LICENSE)입니다. 각 스킬의 `THIRD_PARTY_NOTICES.md`와
