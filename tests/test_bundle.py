@@ -94,6 +94,34 @@ class DistributionChecks(unittest.TestCase):
     def test_snapshot_control(self):
         self.assertEqual(bundle.validate(self.root)["skills"], 6)
 
+    def test_released_router_source_keeps_its_upstream_baseline_and_provenance(self):
+        lock = json.loads((self.root / "sources.lock.json").read_text())["skills"]["innorouter"]
+        support = json.loads((self.root / "skills/innorouter/references/support.json").read_text())
+        self.assertEqual(lock["source_status"], "released")
+        self.assertEqual(lock["source_release"]["revision"], lock["revision"])
+        self.assertEqual(lock["source_release"]["tag"], "7.0.1")
+        self.assertEqual(lock["library"]["version"], support["version"])
+        self.assertEqual(support["version"], "7.0.0")
+        self.assertEqual(support["swift_syntax_requirement"], ">=603.0.2 <605.0.0")
+        self.assertEqual(lock["previous_source"]["source_status"], "merged")
+
+    def test_released_source_provenance_must_match_the_source_pin(self):
+        path = self.root / "sources.lock.json"
+        original = json.loads(path.read_text())
+        for mutation in ("missing", "type", "revision", "url"):
+            with self.subTest(mutation=mutation):
+                data = json.loads(json.dumps(original))
+                pin = data["skills"]["innorouter"]
+                if mutation == "missing":
+                    del pin["source_release"]
+                elif mutation == "type":
+                    pin["source_release"] = []
+                else:
+                    pin["source_release"][mutation] = "wrong"
+                path.write_text(json.dumps(data))
+                with self.assertRaisesRegex(ValueError, "Released source provenance mismatch"):
+                    bundle.validate(self.root)
+
     def test_instruction_tampering_is_rejected(self):
         p = self.root / "skills/innodi/SKILL.md"
         p.write_text(p.read_text() + "\nUnreviewed instruction.\n")

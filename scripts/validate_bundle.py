@@ -87,6 +87,13 @@ def validate(root, require_merged=False):
         require(tree_id(skill) == pin["git_tree"], f"Snapshot differs from source tree: {name}")
         require(re.fullmatch(r"[0-9a-f]{40}", pin["revision"]), f"Source is not immutable: {name}")
         require(pin["source_status"] in {"released", "merged", "pull_request"}, f"Unknown source status: {name}")
+        if pin["source_status"] == "released":
+            release = pin.get("source_release", {})
+            require(isinstance(release, dict), f"Released source provenance mismatch: {name}")
+            require(release.get("revision") == pin["revision"]
+                    and isinstance(release.get("tag"), str) and bool(release["tag"])
+                    and release.get("url") == pin["repository"].removesuffix(".git") + "/releases/tag/" + release["tag"],
+                    f"Released source provenance mismatch: {name}")
         if require_merged:
             require(pin["source_status"] in {"released", "merged"}, f"Source still awaits merge: {name}")
         support = read(pin["path"] + "/references/support.json")

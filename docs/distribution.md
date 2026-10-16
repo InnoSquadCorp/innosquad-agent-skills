@@ -13,7 +13,7 @@ For Grok CLI, Grok web/app/API, Gemini CLI, Cursor and Copilot, use the addition
 
 ## Review the candidate
 
-Until the central PR merges, clone its branch and install the local catalog:
+For development or review builds, clone the PR branch and install the local catalog:
 
 ```bash
 git clone --branch codex/innodi-skill-pilot https://github.com/InnoSquadCorp/innosquad-agent-skills.git
@@ -33,8 +33,8 @@ tag exists. Start a fresh host session after installation/update.
 
 ## Install v1.0.0 after publication
 
-The following tag does **not** exist as part of preparation. After the reviewed
-release is actually published:
+Use this procedure only after the reviewed [v1.0.0 Release](https://github.com/InnoSquadCorp/innosquad-agent-skills/releases/tag/v1.0.0)
+is published and its immutable tag/commit and checksums are verified:
 
 ```bash
 git clone --branch v1.0.0 --single-branch https://github.com/InnoSquadCorp/innosquad-agent-skills.git innosquad-agent-skills-1.0.0
@@ -70,7 +70,9 @@ library-owned fixture on the explicit Xcode 27.0 / Swift 6.4 / macOS 27 runner.
 Each consumer uses a fresh external scratch directory and preserves toolchain,
 exact dependency identities and failure artifacts. Missing prerequisites fail;
 Python mock tests and bundle checks do not stand in for these Swift results.
-Router's fixture requires exact 7.0.0. Protobuf's reviewed reissued release uses
+Router's upstream fixture retains exact 7.0.0; the central `router-7.0.1` case
+separately verifies published 7.0.1 with isolated inputs and tag checks.
+Protobuf's reviewed reissued release uses
 the existing release mode:
 
 ```bash
@@ -104,8 +106,10 @@ alter authentication. Registration, actual selection and generation are separate
 Use the [1.0.0 preparation checklist](release-1.0.0.md) and draft
 [release notes](release-notes-1.0.0.md). All six canonical correction PRs are
 merged, as recorded in the [source status snapshot](release-status-1.0.0.json)
-and current `sources.lock.json`. Their exact merge pins agree; the central PR
-and 1.0.0 publication remain pending. Recheck upstream status, source-tree
+and current `sources.lock.json`. Router's skill source has subsequently advanced
+to the immutable published 7.0.1 commit, with its 7.0.0 baseline preserved.
+The exact source pins agree. Complete the central PR and initial private
+release procedure separately. Recheck upstream status, source-tree
 equality and final central CI before packaging. `--require-merged` checks
 recorded statuses, not live remote CI. Candidate packaging remains available:
 

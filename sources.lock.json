@@ -52,9 +52,6 @@
     "innorouter": {
       "repository": "https://github.com/InnoSquadCorp/InnoRouter.git",
       "path": "skills/innorouter",
-      "revision": "333ba033987a368ebbcbc91ab50ee5721699830e",
-      "git_tree": "4bb00f546e42d88f2e57cc3ec920cddce9ea7113",
-      "source_status": "merged",
       "library": {
         "version": "7.0.0",
         "revision": "33b0da7639105cfa8e6f5acffa3badb91b5e0254",
@@ -64,8 +61,23 @@
         "supported_range": ">=7.0.0 <7.1.0",
         "include_prereleases": false
       },
-      "pull_request": "https://github.com/InnoSquadCorp/InnoRouter/pull/70",
-      "merged_at": "2026-10-10T19:17:32Z"
+      "previous_source": {
+        "revision": "333ba033987a368ebbcbc91ab50ee5721699830e",
+        "git_tree": "4bb00f546e42d88f2e57cc3ec920cddce9ea7113",
+        "source_status": "merged",
+        "pull_request": "https://github.com/InnoSquadCorp/InnoRouter/pull/70",
+        "merged_at": "2026-10-10T19:17:32Z"
+      },
+      "revision": "482587bcac8347857fd521ff38f169c010f48b83",
+      "git_tree": "645baccc66df3d8e7989787e875f7063939b6444",
+      "source_status": "released",
+      "source_release": {
+        "tag": "7.0.1",
+        "revision": "482587bcac8347857fd521ff38f169c010f48b83",
+        "url": "https://github.com/InnoSquadCorp/InnoRouter/releases/tag/7.0.1",
+        "published_at": "2026-10-16T05:10:20Z",
+        "tag_kind": "lightweight"
+      }
     },
     "innonetwork-protobuf": {
       "repository": "https://github.com/InnoSquadCorp/InnoNetwork-Protobuf.git",

@@ -6,6 +6,7 @@ First stable-version packaging candidate for the six library-owned Inno skills.
 No v1.0.0 tag or release has been published by this preparation work.
 
 - Align portable, Codex, Claude and Claude marketplace versions at 1.0.0.
+- Sync the Router skill from released 7.0.1 at `482587b`; preserve upstream 7.0.0 fixtures and add a central-owned isolated exact-7.0.1 consumer case with original/adjusted input evidence.
 - Refresh Flow from its canonical exact 6.0.2 fixture and preserve 6.0.x support; pin the merged Flow CI baseline correction and Router native-scene probe correction after their exact-head CI passed.
 - Align Stream plugin descriptions, chat/API guidance and current evaluation prompts with published 6.1.1; retain the original alpha.11 prompts as historical evidence.
 - Document Gemini CLI 0.24.0's Agent Skills feature flag and discovery check.

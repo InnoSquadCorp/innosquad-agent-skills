@@ -27,9 +27,17 @@ jobs:
               raise SystemExit('Tag does not match the plugin manifest version')
           PY
           python3 -B scripts/build_release.py --output "$RUNNER_TEMP/innosquad-release"
+      - name: Preserve tagged merged-source package
+        if: startsWith(github.ref, 'refs/tags/')
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: package-${{ github.ref_name }}-${{ github.run_id }}
+          path: ${{ runner.temp }}/innosquad-release/
+          if-no-files-found: error
+          retention-days: 14
   consumers:
-    name: Swift consumer (${{ matrix.skill }})
-    # PRs exercise all six; branch pushes keep the existing bundle check.
+    name: Swift consumer (${{ matrix.label }})
+    # Preserve all six baseline cases and add the isolated Router patch case.
     if: github.event_name == 'pull_request' || github.ref == 'refs/heads/main' || startsWith(github.ref, 'refs/tags/')
     # This hosted image runs macOS 27; no fallback to macos-latest or a user's Mac.
     runs-on: xcode-27
@@ -37,18 +45,25 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        skill: [innodi, innoflow, innorouter, innonetwork, innonetwork-protobuf, innonetwork-stream]
+        include:
+          - {skill: innodi, label: innodi, verification: baseline}
+          - {skill: innoflow, label: innoflow, verification: baseline}
+          - {skill: innorouter, label: innorouter, verification: baseline}
+          - {skill: innonetwork, label: innonetwork, verification: baseline}
+          - {skill: innonetwork-protobuf, label: innonetwork-protobuf, verification: baseline}
+          - {skill: innonetwork-stream, label: innonetwork-stream, verification: baseline}
+          - {skill: innorouter, label: innorouter-7.0.1, verification: router-7.0.1}
     env:
       DEVELOPER_DIR: /Applications/Xcode_27.0.app/Contents/Developer
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
       - name: Resolve, build and test the exact remote consumer
-        run: python3 -B scripts/validate_consumer_ci.py --skill "${{ matrix.skill }}" --scratch-path "$RUNNER_TEMP/consumer-${{ matrix.skill }}"
+        run: python3 -B scripts/validate_consumer_ci.py --skill "${{ matrix.skill }}" --case "${{ matrix.verification }}" --scratch-path "$RUNNER_TEMP/consumer-${{ matrix.label }}"
       - name: Preserve toolchain, exact pins and failure evidence
         if: always()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         with:
-          name: consumer-${{ matrix.skill }}-${{ github.run_id }}-${{ github.run_attempt }}
-          path: ${{ runner.temp }}/consumer-${{ matrix.skill }}/artifacts/
+          name: consumer-${{ matrix.label }}-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/consumer-${{ matrix.label }}/artifacts/
           if-no-files-found: error
           retention-days: 14

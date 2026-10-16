@@ -14,6 +14,7 @@ import subprocess
 import sys
 
 from validate_bundle import require, validate
+import router_release_case
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -36,8 +37,9 @@ def expected_dependencies(support, skill):
     return expected
 
 
-def consumer_command(root, skill, scratch):
-    argv = [sys.executable, "-B", str(root / "skills" / skill / "scripts/validate_consumer.py"),
+def consumer_command(root, skill, scratch, skill_path=None):
+    skill_path = skill_path or root / "skills" / skill
+    argv = [sys.executable, "-B", str(skill_path / "scripts/validate_consumer.py"),
             "--scratch-path", str(scratch)]
     if skill == "innonetwork-protobuf":
         argv += ["--release-tag", PROTOBUF_RELEASE["tag"],
@@ -57,7 +59,7 @@ def check_toolchain(host, developer_dir, versions):
     require(re.match(r"27(?:\.|$)", versions["sdk"]), "Consumer CI requires the macOS 27 SDK")
 
 
-def check_consumer_evidence(evidence, expected, skill):
+def check_consumer_evidence(evidence, expected, skill, case="baseline"):
     require(evidence["status"] == "passed", "Library consumer did not pass")
     require(set(evidence["dependencies"]) == set(expected), "Consumer dependency inventory changed")
     for identity, baseline in expected.items():
@@ -72,6 +74,10 @@ def check_consumer_evidence(evidence, expected, skill):
     if skill == "innonetwork-protobuf":
         require(evidence.get("release_identity") == PROTOBUF_RELEASE,
                 "Protobuf release identity was not verified")
+    if case == router_release_case.CASE:
+        identity = evidence.get("release_identity", {})
+        require(all(identity.get(key) == router_release_case.RELEASE[key] for key in ("tag", "revision")),
+                "Isolated Router release identity was not verified")
 
 
 def collect_artifacts(scratch, artifacts):
@@ -91,14 +97,15 @@ def collect_artifacts(scratch, artifacts):
         shutil.copy2(state, artifacts / state.name)
 
 
-def run_consumer(root, skill, scratch):
+def run_consumer(root, skill, scratch, case="baseline"):
     root, scratch = root.resolve(), scratch.resolve()
     require(not scratch.is_relative_to(root), "Scratch must be outside the repository")
     require(not scratch.exists(), "Use a fresh scratch directory for each consumer")
     artifacts = scratch / "artifacts"
     artifacts.mkdir(parents=True)
     swiftpm = scratch / "swiftpm"
-    report = {"status": "failed", "skill": skill, "started_at": datetime.now(timezone.utc).isoformat(),
+    report = {"status": "failed", "skill": skill, "case": case,
+              "started_at": datetime.now(timezone.utc).isoformat(),
               "commands": [], "host_validation": "not_run", "publication_performed": False,
               "runner": {key: os.environ.get(key) for key in
                          ("RUNNER_OS", "RUNNER_ARCH", "ImageOS", "ImageVersion", "GITHUB_SHA", "GITHUB_RUN_ID")}}
@@ -126,8 +133,20 @@ def run_consumer(root, skill, scratch):
         validate(root, require_merged=True)
         lock = json.loads((root / "sources.lock.json").read_text())
         require(skill in lock["skills"], "Unknown skill")
+        require(case == "baseline" or (case == router_release_case.CASE and skill == "innorouter"),
+                "Unsupported consumer case")
         report["source_pin"] = lock["skills"][skill]
-        support_path = root / "skills" / skill / "references/support.json"
+        source_skill = skill_path = root / "skills" / skill
+        support_path = skill_path / "references/support.json"
+        shutil.copy2(support_path, artifacts / "original-support.json")
+        provenance = None
+        if case == router_release_case.CASE:
+            require(report["source_pin"]["revision"] == router_release_case.RELEASE["revision"],
+                    "Isolated Router source pin differs from reviewed release")
+            skill_path = scratch / "qualified-skill"
+            provenance = router_release_case.prepare(source_skill, skill_path, artifacts)
+            report["input_provenance"] = provenance
+            support_path = skill_path / "references/support.json"
         shutil.copy2(support_path, artifacts / "support.json")
         shutil.copy2(root / "sources.lock.json", artifacts / "sources.lock.json")
         expected = expected_dependencies(json.loads(support_path.read_text()), skill)
@@ -140,14 +159,22 @@ def run_consumer(root, skill, scratch):
                            ("sdk", ["xcrun", "--sdk", "macosx", "--show-sdk-version"])]:
             versions[name] = command(name, argv, timeout=60)
         check_toolchain(sys.platform, os.environ.get("DEVELOPER_DIR"), versions)
-        output = command("consumer", consumer_command(root, skill, swiftpm))
+        if provenance:
+            release = router_release_case.RELEASE
+            tag_ref = "refs/tags/" + release["tag"]
+            def release_tag(label):
+                return router_release_case.check_tag(command(label, [
+                    "git", "ls-remote", release["repository"], tag_ref, tag_ref + "^{}"], 60))
+            release_refs = release_tag("router-release-tag-before")
+            report["release_identity"] = {**release, "refs": release_refs}
+        output = command("consumer", consumer_command(root, skill, swiftpm, skill_path))
         result = json.loads(output)
         require(result["status"] == "passed", "Library consumer reported failure")
         evidence_path = Path(result["evidence"]).resolve()
         require(evidence_path.is_relative_to(swiftpm / "skill-runs"),
                 "Consumer evidence escaped the scratch directory")
         evidence = json.loads(evidence_path.read_text())
-        check_consumer_evidence(evidence, expected, skill)
+        check_consumer_evidence(evidence, expected, skill, case)
         package = evidence_path.parent / "consumer"
         # swift test already compiles; also keep an explicit build result.
         command("swift-build", ["swift", "build", "--package-path", package,
@@ -179,6 +206,10 @@ def run_consumer(root, skill, scratch):
         require(summaries and sum(int(n) for n, _ in summaries) > 0, "No passing Swift tests recorded")
         report.update(status="passed", dependencies=evidence["dependencies"],
                       tests=sum(int(n) for n, _ in summaries))
+        if provenance:
+            require(release_tag("router-release-tag-after") == release_refs,
+                    "Router release tag changed during isolated validation")
+            router_release_case.check_unchanged(source_skill, skill_path, provenance)
         validate(root, require_merged=True)
     except (OSError, ValueError, KeyError, TypeError) as error:
         report.update(status="failed", error=str(error))
@@ -192,10 +223,11 @@ def run_consumer(root, skill, scratch):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--skill", required=True)
+    parser.add_argument("--case", choices=["baseline", router_release_case.CASE], default="baseline")
     parser.add_argument("--scratch-path", type=Path, required=True)
     args = parser.parse_args()
     try:
-        report = run_consumer(ROOT, args.skill, args.scratch_path)
+        report = run_consumer(ROOT, args.skill, args.scratch_path, args.case)
         print(json.dumps(report, indent=2))
         return 0 if report["status"] == "passed" else 1
     except (OSError, ValueError) as error:

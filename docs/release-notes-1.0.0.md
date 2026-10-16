@@ -12,6 +12,8 @@ for Gemini CLI, Cursor, GitHub Copilot, Grok and text-based assistants.
 - Complete instructions, references, consumer examples, validation scripts and
   original notices. Library choices and existing project configuration are preserved.
 - Consumer validators keep JSON output separate from SwiftPM warning diagnostics.
+- Router's skill source is released 7.0.1. The original 7.0.0 fixtures remain intact,
+  with a separate central-owned exact-7.0.1 tag/resolve/build/test case.
 - Deterministic plugin/reference archives, source provenance and SHA-256 checksums.
 
 Model support is evidence-based: Codex has a passing representative DI evaluation;

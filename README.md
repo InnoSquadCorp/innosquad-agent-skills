@@ -1,15 +1,16 @@
 # InnoSquad Agent Skills
 
 InnoSquad Swift 라이브러리 6개의 스킬을 Codex·Claude Code 플러그인과
-다른 AI 도구용 공통 스킬로 제공합니다. **1.0.0 배포 준비 버전**이며,
-아직 1.0.0 태그·GitHub Release·공개 배포는 만들지 않았습니다.
+다른 AI 도구용 공통 스킬로 제공합니다. **1.0.0 패키지**의 게시 상태와 설치 자산은
+[릴리스 페이지](https://github.com/InnoSquadCorp/innosquad-agent-skills/releases/tag/v1.0.0)에서
+확인하세요. 저장소와 배포 대상은 기존 비공개 범위를 유지합니다.
 
 | Skill | Support | Exact consumer baseline |
 | --- | --- | --- |
 | [innodi](skills/innodi/SKILL.md) | 7.0.x | 7.0.0 |
 | [innonetwork](skills/innonetwork/SKILL.md) | 6.1.x | 6.1.0 |
 | [innoflow](skills/innoflow/SKILL.md) | 6.0.x | Published 6.0.2 (`1176de1`) |
-| [innorouter](skills/innorouter/SKILL.md) | 7.0.x | Published 7.0.0 (`33b0da7`) |
+| [innorouter](skills/innorouter/SKILL.md) | 7.0.x | Upstream 7.0.0 (`33b0da7`) baseline + isolated central 7.0.1 (`482587b`) verification |
 | [innonetwork-protobuf](skills/innonetwork-protobuf/SKILL.md) | 6.1.x | Reissued 6.1.1 (`ba6ab8d`) + exact Core 6.1.1; historical fixture retained |
 | [innonetwork-stream](skills/innonetwork-stream/SKILL.md) | 6.1.x | Published 6.1.1 (`2af03b2`) + exact Core 6.1.1 |
 
@@ -37,8 +38,8 @@ InnoSquad Swift 라이브러리 6개의 스킬을 Codex·Claude Code 플러그�
 
 ## Install
 
-저장소는 현재 private이며 후보는 PR #1에 있습니다. 먼저
-[검토 브랜치 설치](docs/distribution.md#review-the-candidate)를 사용하세요.
+기존 접근 권한으로 비공개 저장소를 사용하세요. 개발·리뷰 빌드는
+[검토 브랜치 설치](docs/distribution.md#review-the-candidate)를 사용합니다.
 마켓플레이스는 두 도구 모두 `innosquad`, 플러그인 ID는 `innosquad@innosquad`입니다.
 정식 태그 설치는 **v1.0.0 게시 후** [배포 안내](docs/distribution.md)를 따릅니다.
 
@@ -71,7 +72,7 @@ Grok API 도구는 `scripts/grok_request.py`; `--dry-run`으로 요청을 먼저
 검증 스크립트의 stdout/stderr 혼합 오류는 6개 스냅샷 모두 수정되어 있습니다.
 6개 원본 수정은 모두 병합됐고, 실제 병합 커밋과 전체 스킬 트리를 대조했습니다.
 [Flow·Router CI와 병합 기록](docs/flow-router-followup-2026-10-10.md)을 참조하세요.
-`--require-merged` 검사는 통과합니다. **1.0.0 태그·Release는 아직 발행하지 않았습니다.**
+`--require-merged`는 원본 상태와 트리를 검사하며, 실제 태그·Release 게시 확인은 별도입니다.
 
 ## Validate and prepare 1.0.0
 
@@ -91,6 +92,8 @@ python3 -B scripts/build_release.py --candidate --output artifacts/1.0.0-candida
 PR의 [Swift 소비자 CI](docs/consumer-ci.md)는 명시한 Xcode 27.0·Swift 6.4·macOS 27
 러너에서 스킬 6개의 의존성 해결·빌드·테스트를 각각 실행합니다. 실제 의존성 커밋과
 성공·실패 로그를 보존하며, 호스트의 스킬 선택·생성 평가와는 별도입니다.
+기존 6개 케이스에 [Router 7.0.1 격리 검증](docs/router-7.0.1-refresh-2026-10-16.md)을
+추가하며, 라이브러리 원본의 7.0.0 예제는 그대로 유지합니다.
 
 ## License
 
