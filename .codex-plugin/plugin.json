@@ -1,0 +1,11 @@
+{
+  "name": "innosquad",
+  "version": "1.0.0",
+  "description": "Swift library skills for InnoDI 7.0.x, InnoNetwork/Protobuf 6.1.x, InnoFlow 6.0.x, InnoRouter 7.0.x and InnoNetwork-Stream 6.1.x.",
+  "author": {
+    "name": "InnoSquad"
+  },
+  "skills": "./skills/",
+  "license": "MIT",
+  "repository": "https://github.com/InnoSquadCorp/innosquad-agent-skills"
+}

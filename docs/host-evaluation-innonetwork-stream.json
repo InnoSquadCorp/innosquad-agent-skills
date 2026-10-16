@@ -1,0 +1,389 @@
+{
+  "schema_version": 1,
+  "checked_on": "2026-10-09",
+  "plugin_version": "0.1.0-alpha.11",
+  "source": {
+    "repository": "https://github.com/InnoSquadCorp/InnoNetwork-Stream.git",
+    "path": "skills/innonetwork-stream",
+    "revision": "81f945f751090aed7c696e4c453816e01df5dd93",
+    "git_tree": "e0265a81762cd94656c16f53b466faa93c3b1e36",
+    "source_status": "merged",
+    "pull_request": "https://github.com/InnoSquadCorp/InnoNetwork-Stream/pull/9",
+    "library": {
+      "version": null,
+      "planned_version": "6.1.1",
+      "revision": "bd50e877644ded1b739f66bdd8fb604908606e4b",
+      "baseline_kind": "unreleased_main_commit",
+      "supported_release_line": "6.1.x",
+      "supported_range": ">=6.1.0 <6.2.0",
+      "include_prereleases": false,
+      "support_status": "planned_stable_line"
+    },
+    "core_requirement": {
+      "version": "6.1.1",
+      "constraint": "exact",
+      "revision": "44e4ca28c50c03f817231a077c0f3bdfdbc859c8"
+    },
+    "merged_at": "2026-10-08T15:50:33Z"
+  },
+  "packaging": {
+    "plugin_version": "0.1.0-alpha.11",
+    "source_equality": {
+      "innodi": {
+        "files": 14,
+        "result": "passed",
+        "git_tree": "aa58cff138c95a3a5af4949a55a460ca253f0435"
+      },
+      "innonetwork": {
+        "files": 13,
+        "result": "passed",
+        "git_tree": "ff913925f61f60c89031cf9e4e140265793da354"
+      },
+      "innoflow": {
+        "files": 14,
+        "result": "passed",
+        "git_tree": "51eab5f99de25af4574e6b9d54a01191da90b866"
+      },
+      "innorouter": {
+        "files": 14,
+        "result": "passed",
+        "git_tree": "eac03752e4acf3b9329846f2cc6002a05d5a5718"
+      },
+      "innonetwork-protobuf": {
+        "files": 13,
+        "result": "passed",
+        "git_tree": "2f0958d5095a396b4c77ef191cd1938110dd2ad7"
+      },
+      "innonetwork-stream": {
+        "files": 13,
+        "result": "passed",
+        "git_tree": "e0265a81762cd94656c16f53b466faa93c3b1e36"
+      }
+    },
+    "cache_equality": {
+      "codex:innodi": {
+        "files": 14,
+        "result": "passed"
+      },
+      "claude:innodi": {
+        "files": 14,
+        "result": "passed"
+      },
+      "codex:innonetwork": {
+        "files": 13,
+        "result": "passed"
+      },
+      "claude:innonetwork": {
+        "files": 13,
+        "result": "passed"
+      },
+      "codex:innoflow": {
+        "files": 14,
+        "result": "passed"
+      },
+      "claude:innoflow": {
+        "files": 14,
+        "result": "passed"
+      },
+      "codex:innorouter": {
+        "files": 14,
+        "result": "passed"
+      },
+      "claude:innorouter": {
+        "files": 14,
+        "result": "passed"
+      },
+      "codex:innonetwork-protobuf": {
+        "files": 13,
+        "result": "passed"
+      },
+      "claude:innonetwork-protobuf": {
+        "files": 13,
+        "result": "passed"
+      },
+      "codex:innonetwork-stream": {
+        "files": 13,
+        "result": "passed"
+      },
+      "claude:innonetwork-stream": {
+        "files": 13,
+        "result": "passed"
+      }
+    },
+    "identity": "passed",
+    "portable_schema": "passed",
+    "relative_links": "passed"
+  },
+  "source_consumer": {
+    "tests": 13,
+    "strict_concurrency": "complete",
+    "warnings_as_errors": true,
+    "remote_pins": 7,
+    "record": "https://github.com/InnoSquadCorp/InnoNetwork-Stream/blob/bc8b79ea7a96adc4185493115536fcedebbc23b6/skills/validation.md"
+  },
+  "codex": {
+    "version": "0.162.0-alpha.2",
+    "installation": "passed",
+    "executable": "desktop-bundled CLI",
+    "model_override": false,
+    "cases": [
+      {
+        "case": "implicit-offline-ko",
+        "selection": "implicit",
+        "installed_skills_read": [
+          "innonetwork-stream"
+        ],
+        "model_exit_code": 0,
+        "answer_sha256": "668581e8164390c3f9e974827dfca8d753a64502fa3cba191382572fa49c79bd",
+        "independent_validation": {
+          "case": "implicit-offline-ko",
+          "status": "passed",
+          "exit_code": 0,
+          "tests": 10,
+          "suites": 1,
+          "dependencies": {
+            "innonetwork": {
+              "revision": "44e4ca28c50c03f817231a077c0f3bdfdbc859c8",
+              "version": "6.1.1",
+              "clean": true,
+              "prebuilt_selected": false
+            },
+            "innonetwork-stream": {
+              "revision": "bd50e877644ded1b739f66bdd8fb604908606e4b",
+              "clean": true,
+              "prebuilt_selected": false
+            },
+            "swift-asn1": {
+              "revision": "3b6410f7dee09eb33cdd26260c5fd47fda19b0e2",
+              "version": "1.7.3",
+              "clean": true,
+              "prebuilt_selected": false
+            },
+            "swift-crypto": {
+              "revision": "a9d1d5ab8951ada40cafff8c8e2b551dfde4f390",
+              "version": "5.0.0",
+              "clean": true,
+              "prebuilt_selected": false
+            },
+            "swift-http-types": {
+              "revision": "bff4b6903cdc99dda49649dd52f46c11cfd3ed50",
+              "version": "1.8.0",
+              "clean": true,
+              "prebuilt_selected": false
+            },
+            "swift-openapi-runtime": {
+              "revision": "50ad7976f18fec6c09466d2aebf7be3dc9476cfb",
+              "version": "1.13.0",
+              "clean": true,
+              "prebuilt_selected": false
+            },
+            "swift-syntax": {
+              "revision": "050f1a346fbbac0ca2cfb15a95274f7bd1cf0ccf",
+              "version": "604.0.0",
+              "clean": true,
+              "prebuilt_selected": true
+            }
+          },
+          "source_sha256": {
+            "Sources/StreamSkillExample/OfflineMovie.swift": "a9e652f96b1d4eed3c645b7edc84246e99016530949f277650dfa4d8a5ad857f",
+            "Tests/StreamSkillExampleTests/OfflineMovieTests.swift": "5d756e508c5a8873b645d93d22d67a7a3366ba1c566619e35e8c3301d1141bc5",
+            "Tests/StreamSkillExampleTests/MockHLS.swift": "43b6a09cd06de8da2c59ff1c03c3be30ed8cdcab8157a7bd3df6dcb2455410e4"
+          },
+          "manifest_and_lock_unchanged": true,
+          "manually_edited_after_generation": false,
+          "strict_concurrency": "complete",
+          "warnings_as_errors": true,
+          "actual_remote_graph_verified": true
+        },
+        "result": "passed"
+      },
+      {
+        "case": "explicit-live-native-en",
+        "selection": "explicit",
+        "installed_skills_read": [
+          "innonetwork-stream"
+        ],
+        "model_exit_code": 0,
+        "answer_sha256": "bda17bab7f72d5e6e495978d9d4493cd61852f8e392029141cb75d9c7c759a9d",
+        "independent_validation": {
+          "case": "explicit-live-native-en",
+          "status": "passed",
+          "exit_code": 0,
+          "tests": 8,
+          "suites": 1,
+          "dependencies": {
+            "innonetwork": {
+              "revision": "44e4ca28c50c03f817231a077c0f3bdfdbc859c8",
+              "version": "6.1.1",
+              "clean": true,
+              "prebuilt_selected": false
+            },
+            "innonetwork-stream": {
+              "revision": "bd50e877644ded1b739f66bdd8fb604908606e4b",
+              "clean": true,
+              "prebuilt_selected": false
+            },
+            "swift-asn1": {
+              "revision": "3b6410f7dee09eb33cdd26260c5fd47fda19b0e2",
+              "version": "1.7.3",
+              "clean": true,
+              "prebuilt_selected": false
+            },
+            "swift-crypto": {
+              "revision": "a9d1d5ab8951ada40cafff8c8e2b551dfde4f390",
+              "version": "5.0.0",
+              "clean": true,
+              "prebuilt_selected": false
+            },
+            "swift-http-types": {
+              "revision": "bff4b6903cdc99dda49649dd52f46c11cfd3ed50",
+              "version": "1.8.0",
+              "clean": true,
+              "prebuilt_selected": false
+            },
+            "swift-openapi-runtime": {
+              "revision": "50ad7976f18fec6c09466d2aebf7be3dc9476cfb",
+              "version": "1.13.0",
+              "clean": true,
+              "prebuilt_selected": false
+            },
+            "swift-syntax": {
+              "revision": "050f1a346fbbac0ca2cfb15a95274f7bd1cf0ccf",
+              "version": "604.0.0",
+              "clean": true,
+              "prebuilt_selected": true
+            }
+          },
+          "source_sha256": {
+            "Sources/StreamSkillExample/Workflows.swift": "b046a4d436ce3266ff2c0ac3c6529a9d66604abeb39f8e9e6e6a4ed6c657592c",
+            "Tests/StreamSkillExampleTests/WorkflowTests.swift": "4b55fbcd4d6a3f3300a39adcb7fe8ea52a3a8eaf6348abc58dc09f724e7241ad"
+          },
+          "manifest_and_lock_unchanged": true,
+          "manually_edited_after_generation": false,
+          "strict_concurrency": "complete",
+          "warnings_as_errors": true,
+          "actual_remote_graph_verified": true
+        },
+        "result": "passed"
+      },
+      {
+        "case": "negative-asyncstream-en",
+        "selection": "negative",
+        "installed_skills_read": [],
+        "model_exit_code": 0,
+        "answer_sha256": "bee6c8826a2b9dfabf5fa0917ff36db61571bdb90038d5423f9909f0fad26336",
+        "independent_validation": {
+          "case": "negative-asyncstream-en",
+          "status": "passed",
+          "exit_code": 0,
+          "tests": 7,
+          "suites": 1,
+          "dependencies": {
+            "innonetwork": {
+              "revision": "44e4ca28c50c03f817231a077c0f3bdfdbc859c8",
+              "version": "6.1.1",
+              "clean": true,
+              "prebuilt_selected": false
+            },
+            "innonetwork-stream": {
+              "revision": "bd50e877644ded1b739f66bdd8fb604908606e4b",
+              "clean": true,
+              "prebuilt_selected": false
+            },
+            "swift-asn1": {
+              "revision": "3b6410f7dee09eb33cdd26260c5fd47fda19b0e2",
+              "version": "1.7.3",
+              "clean": true,
+              "prebuilt_selected": false
+            },
+            "swift-crypto": {
+              "revision": "a9d1d5ab8951ada40cafff8c8e2b551dfde4f390",
+              "version": "5.0.0",
+              "clean": true,
+              "prebuilt_selected": false
+            },
+            "swift-http-types": {
+              "revision": "bff4b6903cdc99dda49649dd52f46c11cfd3ed50",
+              "version": "1.8.0",
+              "clean": true,
+              "prebuilt_selected": false
+            },
+            "swift-openapi-runtime": {
+              "revision": "50ad7976f18fec6c09466d2aebf7be3dc9476cfb",
+              "version": "1.13.0",
+              "clean": true,
+              "prebuilt_selected": false
+            },
+            "swift-syntax": {
+              "revision": "050f1a346fbbac0ca2cfb15a95274f7bd1cf0ccf",
+              "version": "604.0.0",
+              "clean": true,
+              "prebuilt_selected": true
+            }
+          },
+          "source_sha256": {
+            "Sources/StreamSkillExample/AsyncStreamCollection.swift": "16d33fcb38feb861b9a1d41511d75c65ebee51e056c112589661fa0ea3e4ca46",
+            "Tests/StreamSkillExampleTests/AsyncStreamCollectionTests.swift": "476c7153b454a1c63be1ac8a7224b5fa2ea2322758639998e98a83584a3a403f"
+          },
+          "manifest_and_lock_unchanged": true,
+          "manually_edited_after_generation": false,
+          "strict_concurrency": "complete",
+          "warnings_as_errors": true,
+          "actual_remote_graph_verified": true
+        },
+        "result": "passed"
+      },
+      {
+        "case": "patch-policy-ko",
+        "selection": "implicit",
+        "installed_skills_read": [
+          "innonetwork-stream"
+        ],
+        "model_exit_code": 0,
+        "answer_sha256": "f4706babf880a709feb8f33b3249db84a590028a9e1fc663d5161f0f12024c9e",
+        "project_unchanged": true,
+        "result": "passed"
+      }
+    ],
+    "generated_tests": 25,
+    "evaluator_repair_sessions": 0,
+    "manually_edited_generated_code": false,
+    "implicit_case_iteration": [
+      "Initial generated fixture used unsupported DISCONTINUITY; model corrected supported input and added rejection control. An isolated evaluator snapshot independently reproduced rejection without editing the model workspace.",
+      "Sandbox important-usage disk capacity query returned zero while an unsandboxed control returned positive capacity. Model preserved production default capacity policy and injected a test-only workflow with capacity checking disabled.",
+      "Reopened package comparison corrected to persisted fields instead of whole transient receipt equality. Final generated output is separately validated without evaluator edits."
+    ],
+    "generic_case_environment": "Host full-graph cache/fetch blocked; model tested a dependency-free copy. Evaluator independently passed unchanged generated code with the full exact remote graph."
+  },
+  "claude": {
+    "version": "2.1.285",
+    "installation": "passed",
+    "registered_skills": [
+      "innosquad:innodi",
+      "innosquad:innoflow",
+      "innosquad:innonetwork",
+      "innosquad:innonetwork-protobuf",
+      "innosquad:innonetwork-stream",
+      "innosquad:innorouter"
+    ],
+    "generation": "blocked_before_model_use",
+    "http_status": 401,
+    "reason": "OAuth access token is invalid",
+    "input_tokens": 0,
+    "output_tokens": 0
+  },
+  "boundaries": [
+    "Representative fresh cases; no repeated full bilingual matrix or no-plugin efficacy comparison.",
+    "Earlier five runtime snapshots and source pins unchanged; their historical behavioral evidence is not rerun.",
+    "No new device/FairPlay/native background/audio delivery or full library release-matrix qualification.",
+    "Generated tests use URLProtocol mocks; the offline case separates test-only disk policy from production defaults.",
+    "Source CI, source merge, eventual tag and public plugin publication are distinct. No merge, tag or public release performed."
+  ],
+  "evaluated_source_revision": "bc8b79ea7a96adc4185493115536fcedebbc23b6",
+  "merged_source_tree_identical": true,
+  "source_ci_at_check": {
+    "revision": "81f945f751090aed7c696e4c453816e01df5dd93",
+    "status": "queued",
+    "url": "https://github.com/InnoSquadCorp/InnoNetwork-Stream/actions/runs/37804053326"
+  }
+}

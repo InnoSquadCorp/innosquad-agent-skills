@@ -1,0 +1,420 @@
+{
+  "date": "2026-10-09",
+  "plugin_version": "0.1.0-alpha.12",
+  "evaluated_distribution_commit": "626a3024fa6318e14e1ea437a55ed9208a94bbe8",
+  "installation": {
+    "plugin_id": "innosquad@innosquad",
+    "codex": "Native marketplace fetched immutable Git revision; native plugin add succeeded.",
+    "claude": "Native marketplace added from a separate GitHub clone at the same revision; native user installation succeeded.",
+    "six_source_central_installed_skill_trees_match": true,
+    "old_local_identity_disabled": true
+  },
+  "host_versions": {
+    "codex": "0.162.0-alpha.2",
+    "claude": "2.1.286",
+    "claude_model": "claude-opus-5-5"
+  },
+  "method": {
+    "isolated_workspaces": true,
+    "seed": "Manifest, exact lock and empty source/test files; no answer or evaluation rubric supplied.",
+    "manual_edits_or_followup_repair_prompts": false,
+    "raw_traces": "Retained locally outside the repository; sanitized source hashes and graph identities below.",
+    "host_permissions": "Scoped installed references and per-case Swift cache; read/write/build/test tools without blanket permission bypass.",
+    "independent_verification": "Generated file hashes and original manifest/lock preserved; actual graph, workspace state and checkout revisions verified before and after strict Swift tests."
+  },
+  "claude_cases": [
+    {
+      "id": "di-override",
+      "selection": "implicit",
+      "expected_skill": "innodi",
+      "observed_skill_invocations": [
+        "innosquad:innodi"
+      ],
+      "selection_passed": true,
+      "independent_validation": {
+        "case": "di-override",
+        "status": "passed",
+        "exit_code": 0,
+        "tests": 3,
+        "suites": 1,
+        "dependencies": {
+          "innodi": {
+            "revision": "4783eee7f674f99a337768c107b7a5f640810c2a",
+            "version": "7.0.0",
+            "clean": true,
+            "prebuilt_selected": false
+          },
+          "swift-syntax": {
+            "revision": "050f1a346fbbac0ca2cfb15a95274f7bd1cf0ccf",
+            "version": "604.0.0",
+            "clean": true,
+            "prebuilt_selected": true
+          }
+        },
+        "source_sha256": {
+          "Sources/InnoDISkillExample/Generated.swift": "3222912b7a1400805dd5ac3efd48af4c414defc17a95c60f20ef11a27f567b6d",
+          "Tests/InnoDISkillExampleTests/Generated.swift": "8038cbfaaf51df7180c94a363814889535f92ef39bccd7e4c675ccc9532c823b"
+        },
+        "manifest_and_lock_unchanged": true,
+        "manually_edited_after_generation": false,
+        "strict_concurrency": "complete",
+        "warnings_as_errors": true,
+        "actual_remote_graph_verified": true
+      },
+      "harness_permission_denials": 2,
+      "skill_tree": "aa58cff138c95a3a5af4949a55a460ca253f0435"
+    },
+    {
+      "id": "network-json",
+      "selection": "implicit",
+      "expected_skill": "innonetwork",
+      "observed_skill_invocations": [
+        "innosquad:innonetwork"
+      ],
+      "selection_passed": true,
+      "independent_validation": {
+        "case": "network-json",
+        "status": "passed",
+        "exit_code": 0,
+        "tests": 2,
+        "suites": 1,
+        "dependencies": {
+          "innonetwork": {
+            "revision": "79ff9f535a0a15ad8b52ce49cb5a4b1ea1dfec16",
+            "version": "6.1.0",
+            "clean": true,
+            "prebuilt_selected": false
+          },
+          "swift-asn1": {
+            "revision": "3b6410f7dee09eb33cdd26260c5fd47fda19b0e2",
+            "version": "1.7.3",
+            "clean": true,
+            "prebuilt_selected": false
+          },
+          "swift-crypto": {
+            "revision": "a9d1d5ab8951ada40cafff8c8e2b551dfde4f390",
+            "version": "5.0.0",
+            "clean": true,
+            "prebuilt_selected": false
+          },
+          "swift-http-types": {
+            "revision": "bff4b6903cdc99dda49649dd52f46c11cfd3ed50",
+            "version": "1.8.0",
+            "clean": true,
+            "prebuilt_selected": false
+          },
+          "swift-openapi-runtime": {
+            "revision": "50ad7976f18fec6c09466d2aebf7be3dc9476cfb",
+            "version": "1.13.0",
+            "clean": true,
+            "prebuilt_selected": false
+          },
+          "swift-syntax": {
+            "revision": "050f1a346fbbac0ca2cfb15a95274f7bd1cf0ccf",
+            "version": "604.0.0",
+            "clean": true,
+            "prebuilt_selected": true
+          }
+        },
+        "source_sha256": {
+          "Sources/NetworkSkillExample/UserEndpoints.swift": "2e520d85dc78bfaf66604e704f13e52895c2b6262df716651599e6091d738d81",
+          "Sources/NetworkSkillExample/Generated.swift": "dda9b75f64b106eb544de201f599122d75abc483c5b156bba6c05c0f956dbc3c",
+          "Tests/NetworkSkillExampleTests/UserEndpointsTests.swift": "47b52873955a2ec1ed26141f01b42db2ed1ca2a59f61e14df729de97793309bc",
+          "Tests/NetworkSkillExampleTests/Generated.swift": "dbaf9baeb1ee95a92b3d3b11c0781f70044af56090de929723fc1be47a1dbe7a"
+        },
+        "manifest_and_lock_unchanged": true,
+        "manually_edited_after_generation": false,
+        "strict_concurrency": "complete",
+        "warnings_as_errors": true,
+        "actual_remote_graph_verified": true
+      },
+      "harness_permission_denials": 2,
+      "skill_tree": "ff913925f61f60c89031cf9e4e140265793da354"
+    },
+    {
+      "id": "flow-loading",
+      "selection": "implicit",
+      "expected_skill": "innoflow",
+      "observed_skill_invocations": [
+        "innosquad:innoflow"
+      ],
+      "selection_passed": true,
+      "independent_validation": {
+        "case": "flow-loading",
+        "status": "passed",
+        "exit_code": 0,
+        "tests": 5,
+        "suites": 1,
+        "dependencies": {
+          "innoflow": {
+            "version": "6.0.0",
+            "revision": "188c2732d26350cf01afadade3dac89a2b73b68f",
+            "clean": true,
+            "prebuilt_selected": false
+          },
+          "swift-syntax": {
+            "version": "604.0.0",
+            "revision": "050f1a346fbbac0ca2cfb15a95274f7bd1cf0ccf",
+            "clean": true,
+            "prebuilt_selected": true
+          }
+        },
+        "source_sha256": {
+          "Sources/FlowSkillExample/Generated.swift": "072ee0dd8f9c2640da3ae043d1908b908e9d7c7286800e4a1bf65ab8d696395b",
+          "Tests/FlowSkillExampleTests/Generated.swift": "35da221097b0884ab4f971f72def5cbebeec9d6f107e25dac42b8a23a54bcf95"
+        },
+        "manifest_and_lock_unchanged": true,
+        "manually_edited_after_generation": false,
+        "strict_concurrency": "complete",
+        "warnings_as_errors": true,
+        "actual_remote_graph_verified": true
+      },
+      "harness_permission_denials": 1,
+      "skill_tree": "3617870248fa33f756952226ca89a7ba4df780e5"
+    },
+    {
+      "id": "router-navigation",
+      "selection": "implicit",
+      "expected_skill": "innorouter",
+      "observed_skill_invocations": [
+        "innosquad:innorouter"
+      ],
+      "selection_passed": true,
+      "independent_validation": {
+        "case": "router-navigation",
+        "status": "passed",
+        "exit_code": 0,
+        "tests": 4,
+        "suites": 1,
+        "dependencies": {
+          "innorouter": {
+            "revision": "33b0da7639105cfa8e6f5acffa3badb91b5e0254",
+            "version": "7.0.0",
+            "clean": true,
+            "prebuilt_selected": false
+          },
+          "swift-syntax": {
+            "revision": "050f1a346fbbac0ca2cfb15a95274f7bd1cf0ccf",
+            "version": "604.0.0",
+            "clean": true,
+            "prebuilt_selected": true
+          }
+        },
+        "source_sha256": {
+          "Sources/RouterSkillExample/AppRoute.swift": "df236373f0c8cf1afb8e7a752fb1322a95ae4b6f4b03043ac317956b7a97f872",
+          "Sources/RouterSkillExample/Generated.swift": "dda9b75f64b106eb544de201f599122d75abc483c5b156bba6c05c0f956dbc3c",
+          "Sources/RouterSkillExample/NavigationViews.swift": "80ef83f689147330f59d0a6fd9b103b3bb8e27d92291effbf4a7bfd8d0b848fc",
+          "Tests/RouterSkillExampleTests/Generated.swift": "dbaf9baeb1ee95a92b3d3b11c0781f70044af56090de929723fc1be47a1dbe7a",
+          "Tests/RouterSkillExampleTests/NavigationTests.swift": "3f61ff5cbcd372dbf6504426fbf2cdca7d7b3067522eebfdb3bbc00393701b09"
+        },
+        "manifest_and_lock_unchanged": true,
+        "manually_edited_after_generation": false,
+        "strict_concurrency": "complete",
+        "warnings_as_errors": true,
+        "actual_remote_graph_verified": true
+      },
+      "harness_permission_denials": 3,
+      "skill_tree": "acbfa035aa42dcd054ee620423746c53dda19d7b"
+    },
+    {
+      "id": "protobuf-http",
+      "selection": "implicit",
+      "expected_skill": "innonetwork-protobuf",
+      "observed_skill_invocations": [
+        "innosquad:innonetwork-protobuf"
+      ],
+      "selection_passed": true,
+      "independent_validation": {
+        "case": "protobuf-http",
+        "status": "passed",
+        "exit_code": 0,
+        "tests": 6,
+        "suites": 1,
+        "dependencies": {
+          "innonetwork": {
+            "revision": "44e4ca28c50c03f817231a077c0f3bdfdbc859c8",
+            "version": "6.1.1",
+            "clean": true,
+            "prebuilt_selected": false
+          },
+          "innonetwork-protobuf": {
+            "revision": "ba6ab8d6112d51efa69d92ac6739464bfc775aed",
+            "version": "6.1.1",
+            "clean": true,
+            "prebuilt_selected": false
+          },
+          "swift-asn1": {
+            "revision": "3b6410f7dee09eb33cdd26260c5fd47fda19b0e2",
+            "version": "1.7.3",
+            "clean": true,
+            "prebuilt_selected": false
+          },
+          "swift-crypto": {
+            "revision": "a9d1d5ab8951ada40cafff8c8e2b551dfde4f390",
+            "version": "5.0.0",
+            "clean": true,
+            "prebuilt_selected": false
+          },
+          "swift-http-types": {
+            "revision": "bff4b6903cdc99dda49649dd52f46c11cfd3ed50",
+            "version": "1.8.0",
+            "clean": true,
+            "prebuilt_selected": false
+          },
+          "swift-openapi-runtime": {
+            "revision": "50ad7976f18fec6c09466d2aebf7be3dc9476cfb",
+            "version": "1.13.0",
+            "clean": true,
+            "prebuilt_selected": false
+          },
+          "swift-protobuf": {
+            "revision": "55d7a1cc5666b85c13464aea1c4b4a90feccb4c8",
+            "version": "1.38.1",
+            "clean": true,
+            "prebuilt_selected": false
+          },
+          "swift-syntax": {
+            "revision": "050f1a346fbbac0ca2cfb15a95274f7bd1cf0ccf",
+            "version": "604.0.0",
+            "clean": true,
+            "prebuilt_selected": true
+          }
+        },
+        "source_sha256": {
+          "Sources/ProtobufSkillExample/Endpoints.swift": "43f4b94d9d12e96055f3fca4e64e8e430255e712aad7937dee245f8271166d39",
+          "Sources/ProtobufSkillExample/Generated.swift": "dda9b75f64b106eb544de201f599122d75abc483c5b156bba6c05c0f956dbc3c",
+          "Tests/ProtobufSkillExampleTests/EndpointTests.swift": "0f82e9b8b4968de936986e1796b2fa75f7af009530cd58bbc5912a28c1b9052a",
+          "Tests/ProtobufSkillExampleTests/Generated.swift": "dbaf9baeb1ee95a92b3d3b11c0781f70044af56090de929723fc1be47a1dbe7a"
+        },
+        "manifest_and_lock_unchanged": true,
+        "manually_edited_after_generation": false,
+        "strict_concurrency": "complete",
+        "warnings_as_errors": true,
+        "actual_remote_graph_verified": true
+      },
+      "harness_permission_denials": 3,
+      "skill_tree": "257742e6ecb340b3994b53e6863967070d4a30c1",
+      "model_self_corrections": [
+        "First test compile failed from nested Swift Testing #require expansion; the model split the expressions and reran successfully within the same session. No evaluator repair or follow-up prompt."
+      ]
+    },
+    {
+      "id": "negative-string",
+      "selection": "implicit",
+      "expected_skill": null,
+      "observed_skill_invocations": [],
+      "selection_passed": true,
+      "independent_validation": {
+        "case": "negative-string",
+        "status": "passed",
+        "exit_code": 0,
+        "tests": 4,
+        "suites": 1,
+        "dependencies": {
+          "innonetwork": {
+            "revision": "79ff9f535a0a15ad8b52ce49cb5a4b1ea1dfec16",
+            "version": "6.1.0",
+            "clean": true,
+            "prebuilt_selected": false
+          },
+          "swift-asn1": {
+            "revision": "3b6410f7dee09eb33cdd26260c5fd47fda19b0e2",
+            "version": "1.7.3",
+            "clean": true,
+            "prebuilt_selected": false
+          },
+          "swift-crypto": {
+            "revision": "a9d1d5ab8951ada40cafff8c8e2b551dfde4f390",
+            "version": "5.0.0",
+            "clean": true,
+            "prebuilt_selected": false
+          },
+          "swift-http-types": {
+            "revision": "bff4b6903cdc99dda49649dd52f46c11cfd3ed50",
+            "version": "1.8.0",
+            "clean": true,
+            "prebuilt_selected": false
+          },
+          "swift-openapi-runtime": {
+            "revision": "50ad7976f18fec6c09466d2aebf7be3dc9476cfb",
+            "version": "1.13.0",
+            "clean": true,
+            "prebuilt_selected": false
+          },
+          "swift-syntax": {
+            "revision": "050f1a346fbbac0ca2cfb15a95274f7bd1cf0ccf",
+            "version": "604.0.0",
+            "clean": true,
+            "prebuilt_selected": true
+          }
+        },
+        "source_sha256": {
+          "Sources/NetworkSkillExample/Generated.swift": "b3a46b98f6d1a58b752f557f9a85f35a6f3b126c95afcf4698a6ddc590850b2d",
+          "Tests/NetworkSkillExampleTests/Generated.swift": "3936c121a691f5b9339fec814bbdf599aefa61993633444f0168ba7dab022cc6"
+        },
+        "manifest_and_lock_unchanged": true,
+        "manually_edited_after_generation": false,
+        "strict_concurrency": "complete",
+        "warnings_as_errors": true,
+        "actual_remote_graph_verified": true
+      },
+      "harness_permission_denials": 1,
+      "inno_skill_file_reads": 0
+    }
+  ],
+  "fresh_claude_generated_tests": 24,
+  "fresh_claude_positive_selections": 5,
+  "fresh_claude_negative_selection_controls": 1,
+  "codex_policy_cases": [
+    {
+      "id": "router-release-policy",
+      "selection": "implicit",
+      "observed_installed_skill": "innorouter",
+      "skill_tree": "acbfa035aa42dcd054ee620423746c53dda19d7b",
+      "status": "passed",
+      "assessment": "manual review of final answer and tool trace",
+      "criteria": [
+        "Recognized published 7.0.0 and stable 7.0.x, excluding prereleases.",
+        "Distinguished the exact fixture from future patch qualification.",
+        "Preserved workspace and did not claim a fresh Swift run."
+      ],
+      "workspace_unchanged": true
+    },
+    {
+      "id": "protobuf-reissued-policy",
+      "selection": "implicit",
+      "observed_installed_skill": "innonetwork-protobuf",
+      "skill_tree": "257742e6ecb340b3994b53e6863967070d4a30c1",
+      "status": "passed",
+      "assessment": "manual review of final answer and tool trace",
+      "criteria": [
+        "Detected current adapter revision versus revoked historical fixture.",
+        "Required reviewed commit and annotated tag object for release-mode validation.",
+        "Kept exact Core 6.1.1 and distinguished a future Core 6.1.2 combination.",
+        "Explicitly reported unavailable network verification and no new test execution."
+      ],
+      "workspace_unchanged": true
+    }
+  ],
+  "reused_evidence": {
+    "stream": {
+      "date": "2026-10-09",
+      "plugin_version": "0.1.0-alpha.11",
+      "skill_tree": "e0265a81762cd94656c16f53b466faa93c3b1e36",
+      "tree_unchanged_in_alpha12": true,
+      "implicit_selection": "passed",
+      "independent_strict_tests": 5,
+      "parameterized_invalid_settings": 13,
+      "live_media_exercised": false
+    },
+    "earlier_codex_generation": "Dated per-library reports retained; these are not fresh alpha.12 generation runs."
+  },
+  "limitations": [
+    "One implicit case per library is a smoke evaluation, not broad model reliability measurement.",
+    "The Stream generated-consumer result is reused alpha.11 evidence for an unchanged runtime tree.",
+    "Codex cases assess updated version guidance, not fresh code generation for all six libraries.",
+    "Some model-issued compound read/git/build commands exceeded harness permissions; independent verification covered final sources and actual graph.",
+    "Codex policy sessions could not complete external network verification and reported that limitation.",
+    "Mock requests and macOS compilation do not qualify live servers, HLS media, device navigation or every supported patch."
+  ]
+}

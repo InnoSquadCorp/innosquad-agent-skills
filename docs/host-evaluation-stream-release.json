@@ -1,0 +1,99 @@
+{
+  "checked_on": "2026-10-10",
+  "host": "Codex CLI",
+  "host_version": "0.162.0-alpha.17.2",
+  "installation": "isolated project .agents/skills (all six)",
+  "source_revision": "7fa66060374b16fba37a1486b1b4cdcdd2d441dd",
+  "skill_tree": "5ca11c0593e46c67b22903a734577aeb8be88835",
+  "model_override": null,
+  "selection": "implicit_stream_skill_read",
+  "task": "Published version policy and offline receipt playback entry URL",
+  "files_read": [
+    "SKILL.md",
+    "references/support.json",
+    "references/compatibility.md",
+    "references/parsing-downloads.md",
+    "assets/consumer/Package.swift"
+  ],
+  "generated_source_manually_repaired": false,
+  "generated_source_sha256": "2ea9b6e4b837b4e3a2d5d0d8e155b374332845776fcb5552f6a6ffe03cc4798c",
+  "answer_sha256": "f68f3262e2e9938336d8cc5093ca25c0e0c04f773ecc39f7e18a50ed37f94161",
+  "events_sha256": "d479beb6dd0b45d742fc612a2908126c4c5083bffae2caaacfe0da51b6cc479c",
+  "independent_validation": {
+    "status": "passed",
+    "release_identity": {
+      "tag": "6.1.1",
+      "revision": "2af03b24cfc8f11442a3b9ba2fd8adcfe58d8116",
+      "refs": {
+        "refs/tags/6.1.1": "c8b74e3fd2f009276b47a5f4c4cee885e0c871bc",
+        "refs/tags/6.1.1^{}": "2af03b24cfc8f11442a3b9ba2fd8adcfe58d8116"
+      }
+    },
+    "dependencies": {
+      "innonetwork": {
+        "version": "6.1.1",
+        "revision": "44e4ca28c50c03f817231a077c0f3bdfdbc859c8",
+        "clean": true,
+        "prebuilt_selected": false
+      },
+      "innonetwork-stream": {
+        "version": "6.1.1",
+        "revision": "2af03b24cfc8f11442a3b9ba2fd8adcfe58d8116",
+        "clean": true,
+        "prebuilt_selected": false
+      },
+      "swift-asn1": {
+        "version": "1.7.3",
+        "revision": "3b6410f7dee09eb33cdd26260c5fd47fda19b0e2",
+        "clean": true,
+        "prebuilt_selected": false
+      },
+      "swift-crypto": {
+        "version": "5.0.0",
+        "revision": "a9d1d5ab8951ada40cafff8c8e2b551dfde4f390",
+        "clean": true,
+        "prebuilt_selected": false
+      },
+      "swift-http-types": {
+        "version": "1.8.0",
+        "revision": "bff4b6903cdc99dda49649dd52f46c11cfd3ed50",
+        "clean": true,
+        "prebuilt_selected": false
+      },
+      "swift-openapi-runtime": {
+        "version": "1.13.0",
+        "revision": "50ad7976f18fec6c09466d2aebf7be3dc9476cfb",
+        "clean": true,
+        "prebuilt_selected": false
+      },
+      "swift-syntax": {
+        "version": "604.0.0",
+        "revision": "050f1a346fbbac0ca2cfb15a95274f7bd1cf0ccf",
+        "clean": true,
+        "prebuilt_selected": true
+      }
+    },
+    "source_sha256": {
+      "Package.resolved": "47e6cf6a0a7897fc085e0f103447142b7e449d420ae595944d1e398b0823a91f",
+      "Package.swift": "d7f9042929e96c794dfbd00f0516ed865db8a7b7c1ae4fcd2c28c61cc7e8b704",
+      "Sources/StreamSkillExample/GeneratedPlaybackURL.swift": "2ea9b6e4b837b4e3a2d5d0d8e155b374332845776fcb5552f6a6ffe03cc4798c",
+      "Sources/StreamSkillExample/Workflows.swift": "d0e40009b83cc66db81b3b7ba7b03e47b6debf6ab161c61aa530ff6224963979",
+      "Tests/StreamSkillExampleTests/ConsumerTests.swift": "941af07d940838135943b79894a766ab6044c38451faed51353c625e332b5dd1"
+    },
+    "swift_test_result": {
+      "tests": 13,
+      "suites": 1,
+      "failures": 0,
+      "strict_concurrency": "complete",
+      "warnings_as_errors": true
+    },
+    "started_at": "2026-10-10T00:04:09.547325+00:00",
+    "finished_at": "2026-10-10T00:04:50.307499+00:00"
+  },
+  "boundaries": [
+    "Representative selection/version/code-generation check, not complete behavioral matrix",
+    "Generated helper compiled with the 13 unchanged authored fixture tests; no additional generated test count",
+    "No live playback/device/service test",
+    "No fresh Claude/Gemini/Cursor/Copilot/Grok generation evaluation"
+  ]
+}

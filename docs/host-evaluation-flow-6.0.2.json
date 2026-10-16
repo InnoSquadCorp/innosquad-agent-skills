@@ -1,0 +1,66 @@
+{
+  "checked_on": "2026-10-10",
+  "host": "Codex CLI",
+  "host_version": "0.162.0-alpha.17.2",
+  "installation": "isolated project .agents/skills (all six)",
+  "source_revision": "f696e36ca50930c00520831ca1d6f09f44f685bd",
+  "skill_tree": "491a78f01d6e6540182d6ad8e2ee7ff0a43f9e6d",
+  "model_override": null,
+  "selection": "implicit_flow_skill_read",
+  "task": "Read-only support line, exact baseline and future patch verification policy",
+  "prompt": "이 Swift 패키지에서 InnoFlow로 비동기 로딩 기능을 구현하려고 해. 먼저 설치된 지침과 현재 manifest/lock을 읽고, 지원되는 패치 범위와 실제 검증된 버전·커밋을 구분해 설명해 줘. 6.0.3으로 바꿀 때 확인할 것도 알려줘. 코드 변경이나 빌드, 외부 조회는 하지 마. 다른 에이전트에게 위임하지 마.",
+  "observed": {
+    "supported_range": ">=6.0.0 <6.1.0",
+    "include_prereleases": false,
+    "baseline": "6.0.2",
+    "revision": "1176de1e4783b638c03a9334f43cc49378957148",
+    "future_6_0_3_not_claimed_verified": true,
+    "consumer_and_installed_skill_unchanged": true
+  },
+  "answer_sha256": "8d82f93d72c00f913f541884ad7a232f5876e3bfdf1c16805eb99648f8486d22",
+  "events_sha256": "3b5e334ab11e5167944427c831e65d011b0db2fd9a05bc9676360466fe1ed761",
+  "independent_authored_fixture_validation": {
+    "status": "passed",
+    "dependencies": {
+      "innoflow": {
+        "version": "6.0.2",
+        "revision": "1176de1e4783b638c03a9334f43cc49378957148",
+        "clean": true,
+        "prebuilt_selected": false
+      },
+      "swift-syntax": {
+        "version": "604.0.0",
+        "revision": "050f1a346fbbac0ca2cfb15a95274f7bd1cf0ccf",
+        "clean": true,
+        "prebuilt_selected": true
+      }
+    },
+    "source_sha256": {
+      "Package.resolved": "fe5606a3b7cafb0abfa9a291a8178a0b3d2db616184596225578cf38fd03bc8b",
+      "Package.swift": "805e0fd894546a7edcb1465421690db0d4e4170da3b7592f162aa1dd03239984",
+      "Sources/FlowSkillExample/CounterView.swift": "d3facd2a01cb806ac1f9260474b9e7e392544ba00174665a882244b760d477f9",
+      "Sources/FlowSkillExample/Features.swift": "de865bae739d65ea2ee3b700f1ca087c6456fc2213ff3d4a91bbd34250f34150",
+      "Tests/FlowSkillExampleTests/ConsumerTests.swift": "9d8d917051e9cf0f7770129ec1ffc00f0acbad9d2d0369954464836bf1fdcfdd"
+    },
+    "swift_test_result": {
+      "tests": 11,
+      "suites": 1,
+      "failures": 0,
+      "strict_concurrency": "complete",
+      "warnings_as_errors": true
+    },
+    "started_at": "2026-10-10T11:40:51.138457+00:00",
+    "finished_at": "2026-10-10T11:41:04.665819+00:00"
+  },
+  "prior_attempt": {
+    "host_version": "0.142.5",
+    "status": "failed_before_model_response",
+    "reason": "PATH CLI rejected configured gpt-6.1-sol model for ChatGPT authentication; retry used the same bundled CLI as the earlier evaluation"
+  },
+  "boundaries": [
+    "Read-only selection and version-policy check; no new code-generation evaluation",
+    "Eleven tests belong to the authored fixture, not AI-generated tests",
+    "No new native-plugin, other-host, Simulator/device or full release-matrix qualification",
+    "Flow and Router source CI/merge remains pending"
+  ]
+}

@@ -1,0 +1,117 @@
+{
+  "schema_version": 1,
+  "evaluated_on": "2026-10-10",
+  "timezone": "Asia/Seoul",
+  "evaluated_plugin_version": "0.1.0-alpha.14",
+  "evaluated_commit": "2a5b4fed66ba4750c89df09f9fd8e0d8878f31cf",
+  "reuse_for": "1.0.0 preparation: identical skill trees; not new host runs",
+  "skill_trees": {
+    "innodi": "358bab55a293c1ec5d456c42a911a86fcbc90c03",
+    "innonetwork": "62d335ebee98f7a60ba77c45c5b84e157253ff85",
+    "innoflow": "b0b67fb3d9a46d500f3014bc0e4788f0898296c6",
+    "innorouter": "4bb00f546e42d88f2e57cc3ec920cddce9ea7113",
+    "innonetwork-protobuf": "0227141a34dd3bbc8da5b4918dd63632ffe1402a",
+    "innonetwork-stream": "c5c69a024d13caac4b4f7d38cb86eff0e5a6a244"
+  },
+  "delivery": {
+    "copies": 30,
+    "matching_copies": 30,
+    "portable_tests": 7
+  },
+  "cases": [
+    {
+      "host": "codex",
+      "case": "positive",
+      "selected_skill": "innodi",
+      "build_exit_code": 0,
+      "tests_passed": 2,
+      "source_sha256": {
+        "Sources/InnoDISkillExample/Example.swift": "4ea866a5d803fa5c0b5eadd866198c341a14eaf3ffe8c4ab5a2340f62cd83755",
+        "Tests/InnoDISkillExampleTests/ExampleTests.swift": "195adbe2aff0f3c77f84772731eab41300ef59de0c534100f5ef3342f57135a2"
+      },
+      "swift_testing": true,
+      "manifest_and_lock_unchanged": true
+    },
+    {
+      "host": "codex",
+      "case": "negative",
+      "selected_skill": null,
+      "build_exit_code": 0,
+      "tests_passed": 2,
+      "source_sha256": {
+        "Tests/SlugTests/SlugTests.swift": "9afd872f91f1b5841166047d4fb7f466354b57fae5cb2c340d483dbfe0ebdb77"
+      },
+      "swift_testing": true
+    },
+    {
+      "host": "copilot",
+      "case": "positive",
+      "selected_skill": null,
+      "build_exit_code": 1,
+      "tests_passed": 0,
+      "source_sha256": {
+        "Sources/InnoDISkillExample/Example.swift": "dc5788955f12e7dafe94a8f7e85f850403932ba3503e3c912186a55e975df7f4",
+        "Tests/InnoDISkillExampleTests/ExampleTests.swift": "5ad92d0f8ac147b50f3adf2055850b7ddb800118d3f14cf847cbda08df4581de"
+      },
+      "swift_testing": false,
+      "model": "gpt-4.1",
+      "manifest_and_lock_unchanged": true
+    },
+    {
+      "host": "copilot",
+      "case": "explicit-control",
+      "selected_skill": "innodi",
+      "build_exit_code": 1,
+      "tests_passed": 0,
+      "source_sha256": {
+        "Sources/InnoDISkillExample/Example.swift": "545dd944353e4014fd34925610d360746b4065f88aceace42e807b568979940a",
+        "Tests/InnoDISkillExampleTests/ExampleTests.swift": "f4d29f19f4ab32fa2ad7f97ceedd3336a190626ad8156811a3b4786c1ed8ef31"
+      },
+      "swift_testing": true,
+      "model": "gpt-4.1",
+      "manifest_and_lock_unchanged": true
+    },
+    {
+      "host": "copilot",
+      "case": "negative",
+      "selected_skill": null,
+      "build_exit_code": 0,
+      "tests_passed": 2,
+      "source_sha256": {
+        "Tests/SlugTests/SlugTests.swift": "b18d4be66262a218c17754726bdb02a96e8ec24c17f06e530b4d6533ce8cdb92"
+      },
+      "swift_testing": false,
+      "model": "gpt-4.1"
+    }
+  ],
+  "blocked_hosts": {
+    "claude": {
+      "version": "2.1.286",
+      "plugin_version": "0.1.0-alpha.14",
+      "namespaced_skills_recognized": 6,
+      "reason": "OAuth session expired and could not be refreshed"
+    },
+    "gemini": {
+      "version": "0.24.0",
+      "skills_recognized": 6,
+      "required_setting": {
+        "experimental": {
+          "skills": true
+        }
+      },
+      "reason": "OAuth sign-in required before model output"
+    },
+    "cursor": {
+      "version": "2026.01.02-80e4d9b",
+      "installed_loader_support": true,
+      "runtime_discovery_verified": false,
+      "reason": "Authentication required"
+    }
+  },
+  "limits": [
+    "Representative DI only, not every host/library/patch",
+    "Read-only first-answer generation; no autonomous build/repair loop",
+    "No global plugin replacement",
+    "Web upload and live service/device behavior unverified"
+  ]
+}

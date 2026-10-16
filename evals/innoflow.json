@@ -1,0 +1,55 @@
+{
+  "skill": "innoflow",
+  "supported_range": ">=6.0.0 <6.1.0",
+  "baseline": "InnoFlow 6.0.2 published tag",
+  "status": "selection_verified_generation_not_reevaluated",
+  "protocol": "Fresh session per case with installed plugin and only the stated consumer context. Do not give intended answers or grading criteria to the acting model. Record skill reads, generated diffs, actual remote graph and test results; installation and model behavior are separate.",
+  "cases": [
+    {
+      "id": "implicit-loading-ko",
+      "context": "Disposable Swift 6.3 manifest with exact remote InnoFlow 6.0.2 and SwiftSyntax 604.0.0 lock; current 1.0.0 candidate installed; empty source/test placeholders.",
+      "prompt": "이 Swift 패키지는 InnoFlow 6.0.2를 쓰고 있어. 숫자를 비동기로 불러오는 기능을 만들어 줘. idle/loading/loaded/failed 상태를 PhaseMap으로 관리하고, 로딩 성공 시 값을 보관하고 실패 후 다시 시도할 수 있어야 해. 네트워크는 직접 호출하지 말고 async throwing 클로저를 주입해 줘. TestStore로 성공·실패·재시도를 각각 검증해 줘. manifest와 lock의 버전은 유지하고 Sources/Tests를 수정해 줘. 이 평가는 코드 생성까지만 하고 빌드·테스트는 실행하지 마. 별도 평가자가 생성 코드를 수정 없이 실행할 거야. 직접 작업하고 다른 에이전트에게 위임하지 마.",
+      "observe": [
+        "Reads installed Flow skill implicitly",
+        "Uses macro-first three-generic reducer and PhaseMap ownership",
+        "Injects dependencies and uses exhaustive TestStore success/failure/retry tests",
+        "Keeps exact pins and independently compiles/runs without manual correction"
+      ]
+    },
+    {
+      "id": "explicit-lifetime-en",
+      "context": "Disposable Swift 6.3 manifest with exact remote InnoFlow 6.0.2 and SwiftSyntax 604.0.0 lock; current 1.0.0 candidate installed; empty source/test placeholders.",
+      "prompt": "Use $innosquad:innoflow for this InnoFlow 6.0.2 Swift package. Implement a small feature that can start two independent delayed actions, record each completed ID in state, and emit a typed openDetail(Int) output when an item is selected. Write deterministic tests proving that cancelling the first dispatch preserves the second and that capturing output receives a synchronous selection event. Keep the existing manifest and lock. Write Sources and Tests, but do not build or run tests: an independent evaluator will run the generated code without editing it. Work directly; do not delegate.",
+      "observe": [
+        "Reads installed Flow skill explicitly",
+        "Cancels only the owned dispatch with a surviving sibling control",
+        "Captures synchronous typed output before enqueue",
+        "Uses registration-aware manual time and independently passes generated tests"
+      ]
+    },
+    {
+      "id": "negative-format-en",
+      "context": "Disposable Swift 6.3 manifest with exact remote InnoFlow 6.0.2 and SwiftSyntax 604.0.0 lock; current 1.0.0 candidate installed; empty source/test placeholders.",
+      "prompt": "Add a small Swift function that trims a display name and returns Guest when the result is empty. Add tests for surrounding whitespace and empty input. Keep dependencies and the manifest unchanged. Generate code only; do not build or run tests. Work directly; do not delegate.",
+      "observe": [
+        "Does not select an Inno skill for unrelated formatting",
+        "Keeps dependencies unchanged",
+        "Generated formatter tests pass independently"
+      ]
+    },
+    {
+      "id": "patch-support-policy-ko",
+      "context": "Disposable Swift 6.3 manifest with exact remote InnoFlow 6.0.2 and SwiftSyntax 604.0.0 lock; current 1.0.0 candidate installed; empty source/test placeholders.",
+      "prompt": "현재 이 프로젝트는 InnoFlow 6.0.2를 사용해. 향후 6.0.3 안정 태그가 나오면 그 버전으로 바꾸려고 해. 지금 설치된 지침의 지원 범위와 실제 검증 기준을 구분하고, 업데이트할 때 무엇을 확인해야 하는지 설명해 줘. 로컬 manifest/lock과 설치 지침만 읽고 외부 조회·파일 수정·빌드 없이 답해 줘. 직접 확인하고 다른 에이전트에게 위임하지 마.",
+      "observe": [
+        "Reads installed Flow skill implicitly",
+        "Separates stable 6.0.x support and tagged 6.0.2 validation",
+        "Does not claim 6.0.3 exists or has passed tests",
+        "Preserves consumer patch and requests actual tag/manifest/test checks"
+      ]
+    }
+  ],
+  "historical_report": "../docs/host-evaluation-innoflow.md",
+  "historical_evaluation_definition": "archive/innoflow-alpha.7.json",
+  "latest_selection_report": "../docs/host-evaluation-flow-6.0.2.json"
+}

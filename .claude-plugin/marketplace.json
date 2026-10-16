@@ -1,0 +1,17 @@
+{
+  "name": "innosquad",
+  "owner": {
+    "name": "InnoSquad"
+  },
+  "plugins": [
+    {
+      "name": "innosquad",
+      "source": "./",
+      "description": "Swift library skills for InnoDI 7.0.x, InnoNetwork/Protobuf 6.1.x, InnoFlow 6.0.x, InnoRouter 7.0.x and InnoNetwork-Stream 6.1.x.",
+      "version": "1.0.0"
+    }
+  ],
+  "metadata": {
+    "description": "Version-aware InnoSquad Swift library skills for Codex and Claude Code."
+  }
+}

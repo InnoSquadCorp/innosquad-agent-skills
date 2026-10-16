@@ -1,0 +1,198 @@
+{
+  "checked_on": "2026-10-11",
+  "checked_at": "2026-10-10T19:18:09.698385+00:00",
+  "timezone": "Asia/Seoul",
+  "preparation_base": "10f9e9f82a250d2544484b452a0e31dc46dbf016",
+  "central_pr": "https://github.com/InnoSquadCorp/innosquad-agent-skills/pull/1",
+  "central_visibility": "PRIVATE",
+  "publication_performed": false,
+  "sources": [
+    {
+      "headRefOid": "ded4b54cd1b80a473bd9c4cd1f2babdb13c346e4",
+      "isDraft": false,
+      "mergeCommit": {
+        "oid": "74a57b83664e431b45aa56f53286adeac86ccfb2"
+      },
+      "mergeStateStatus": "UNKNOWN",
+      "mergedAt": "2026-10-10T13:37:47Z",
+      "state": "MERGED",
+      "url": "https://github.com/InnoSquadCorp/InnoDI/pull/59",
+      "skill": "innodi",
+      "check_counts": {
+        "SKIPPED": 13,
+        "SUCCESS": 22
+      },
+      "failing_checks": [],
+      "latest_release": {
+        "publishedAt": "2026-10-06T22:25:54Z",
+        "tagName": "7.0.1",
+        "url": "https://github.com/InnoSquadCorp/InnoDI/releases/tag/7.0.1"
+      },
+      "library_tag": {
+        "version": "7.0.1",
+        "refs": [
+          "a9ac978a3d483e6eee21f0fa5de525bf389af352\trefs/tags/7.0.1",
+          "ce47cf4b207c3b8810b2a7d7d622a2f8ead3ed96\trefs/tags/7.0.1^{}"
+        ],
+        "exit_code": 0
+      },
+      "checked_at": "2026-10-10T19:18:09.698385+00:00"
+    },
+    {
+      "headRefOid": "600467d957f47df99321204af866da1073d6b67c",
+      "isDraft": false,
+      "mergeCommit": {
+        "oid": "d5213fb375b4e45a9f789116e326aebb7fa22ff4"
+      },
+      "mergeStateStatus": "UNKNOWN",
+      "mergedAt": "2026-10-09T23:59:13Z",
+      "state": "MERGED",
+      "url": "https://github.com/InnoSquadCorp/InnoNetwork/pull/153",
+      "skill": "innonetwork",
+      "check_counts": {
+        "SKIPPED": 42,
+        "SUCCESS": 44
+      },
+      "failing_checks": [],
+      "latest_release": {
+        "publishedAt": "2026-10-07T21:55:40Z",
+        "tagName": "6.1.1",
+        "url": "https://github.com/InnoSquadCorp/InnoNetwork/releases/tag/6.1.1"
+      },
+      "library_tag": {
+        "version": "6.1.1",
+        "refs": [
+          "07c576536201dddc833708780749893c1eba0afe\trefs/tags/6.1.1",
+          "44e4ca28c50c03f817231a077c0f3bdfdbc859c8\trefs/tags/6.1.1^{}"
+        ],
+        "exit_code": 0
+      },
+      "checked_at": "2026-10-10T19:18:09.698385+00:00"
+    },
+    {
+      "headRefOid": "f696e36ca50930c00520831ca1d6f09f44f685bd",
+      "isDraft": false,
+      "mergeCommit": {
+        "oid": "6b7c632500526cd87ab76e1d845d1b082327703e"
+      },
+      "mergeStateStatus": "UNKNOWN",
+      "mergedAt": "2026-10-10T18:17:52Z",
+      "state": "MERGED",
+      "url": "https://github.com/InnoSquadCorp/InnoFlow/pull/63",
+      "skill": "innoflow",
+      "check_counts": {
+        "SKIPPED": 33,
+        "SUCCESS": 40
+      },
+      "failing_checks": [],
+      "latest_release": {
+        "publishedAt": "2026-10-08T20:30:16Z",
+        "tagName": "6.0.2",
+        "url": "https://github.com/InnoSquadCorp/InnoFlow/releases/tag/6.0.2"
+      },
+      "library_tag": {
+        "version": "6.0.2",
+        "refs": [
+          "60b85f6cd50884b5de0e34f28fd6291540d195f2\trefs/tags/6.0.2",
+          "1176de1e4783b638c03a9334f43cc49378957148\trefs/tags/6.0.2^{}"
+        ],
+        "exit_code": 0
+      },
+      "checked_at": "2026-10-10T19:18:09.698385+00:00"
+    },
+    {
+      "headRefOid": "b82dc6aa7e4d96de24d7607e93e0218c17ffe587",
+      "isDraft": false,
+      "mergeCommit": {
+        "oid": "333ba033987a368ebbcbc91ab50ee5721699830e"
+      },
+      "mergeStateStatus": "UNKNOWN",
+      "mergedAt": "2026-10-10T19:17:32Z",
+      "state": "MERGED",
+      "url": "https://github.com/InnoSquadCorp/InnoRouter/pull/70",
+      "skill": "innorouter",
+      "check_counts": {
+        "SKIPPED": 13,
+        "SUCCESS": 39
+      },
+      "failing_checks": [],
+      "latest_release": {
+        "publishedAt": "2026-10-08T05:31:05Z",
+        "tagName": "7.0.0",
+        "url": "https://github.com/InnoSquadCorp/InnoRouter/releases/tag/7.0.0"
+      },
+      "library_tag": {
+        "version": "7.0.0",
+        "refs": [
+          "33b0da7639105cfa8e6f5acffa3badb91b5e0254\trefs/tags/7.0.0"
+        ],
+        "exit_code": 0
+      },
+      "checked_at": "2026-10-10T19:18:09.698385+00:00"
+    },
+    {
+      "headRefOid": "ab67a5b7b100af117d1d675a04ac289f1789a7a3",
+      "isDraft": false,
+      "mergeCommit": {
+        "oid": "06e091d79f93fd36bcccf04863ac994f0d51ebc8"
+      },
+      "mergeStateStatus": "UNKNOWN",
+      "mergedAt": "2026-10-09T11:19:42Z",
+      "state": "MERGED",
+      "url": "https://github.com/InnoSquadCorp/InnoNetwork-Protobuf/pull/9",
+      "skill": "innonetwork-protobuf",
+      "check_counts": {
+        "SKIPPED": 8,
+        "SUCCESS": 15,
+        "PENDING": 1
+      },
+      "failing_checks": [],
+      "latest_release": {
+        "publishedAt": "2026-10-08T19:04:29Z",
+        "tagName": "6.1.1",
+        "url": "https://github.com/InnoSquadCorp/InnoNetwork-Protobuf/releases/tag/6.1.1"
+      },
+      "library_tag": {
+        "version": "6.1.1",
+        "refs": [
+          "eaea83c7f95f931b6e963c49ae10c7ef5f869438\trefs/tags/6.1.1",
+          "ba6ab8d6112d51efa69d92ac6739464bfc775aed\trefs/tags/6.1.1^{}"
+        ],
+        "exit_code": 0
+      },
+      "checked_at": "2026-10-10T19:18:09.698385+00:00"
+    },
+    {
+      "headRefOid": "7fa66060374b16fba37a1486b1b4cdcdd2d441dd",
+      "isDraft": false,
+      "mergeCommit": {
+        "oid": "7fb61ac2843c5742368cd4e640588b4c61b476c0"
+      },
+      "mergeStateStatus": "UNKNOWN",
+      "mergedAt": "2026-10-10T09:22:33Z",
+      "state": "MERGED",
+      "url": "https://github.com/InnoSquadCorp/InnoNetwork-Stream/pull/14",
+      "skill": "innonetwork-stream",
+      "check_counts": {
+        "SKIPPED": 16,
+        "SUCCESS": 18
+      },
+      "failing_checks": [],
+      "latest_release": {
+        "publishedAt": "2026-10-09T22:54:23Z",
+        "tagName": "6.1.1",
+        "url": "https://github.com/InnoSquadCorp/InnoNetwork-Stream/releases/tag/6.1.1"
+      },
+      "library_tag": {
+        "version": "6.1.1",
+        "refs": [
+          "c8b74e3fd2f009276b47a5f4c4cee885e0c871bc\trefs/tags/6.1.1",
+          "2af03b24cfc8f11442a3b9ba2fd8adcfe58d8116\trefs/tags/6.1.1^{}"
+        ],
+        "exit_code": 0
+      },
+      "checked_at": "2026-10-10T19:18:09.698385+00:00"
+    }
+  ],
+  "release_tag_metadata_checked_at": "2026-10-10T00:03:35.956690+00:00"
+}

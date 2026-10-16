@@ -1,0 +1,103 @@
+{
+  "skill": "innodi",
+  "baseline": "InnoDI 7.0.0",
+  "supported_range": ">=7.0.0 <7.1.0",
+  "status": "partially_evaluated",
+  "latest_report": "../docs/host-evaluation-innodi-7.0.1.md",
+  "historical_report": "../docs/host-evaluation.md",
+  "protocol": "Run each language prompt in a fresh Codex and Claude Code session with only the installed plugin and stated consumer context. Do not supply the expected observations to the acting model. Capture host/model/plugin versions, selected skill, tool trace, diff, resolved graph, and consumer build/test result. Assess behavior, not matching phrases. The fixture tests validate library examples, not these AI behaviors.",
+  "cases": [
+    {
+      "id": "explicit-adoption",
+      "context": "A new Swift 6.4 macOS 14 package, no other macro dependencies; network available.",
+      "ko": "InnoDI 7.0.0으로 APIClient를 주입하고 테스트에서는 fake로 바꿀 수 있게 구성해줘.",
+      "en": "Use InnoDI 7.0.0 to inject an APIClient and replace it with a fake in tests.",
+      "observe": ["Selects innodi", "Uses the released version and verifies resolution", "Attaches DAG plugin to the declaring target", "Generated consumer compiles and override avoids live construction"]
+    },
+    {
+      "id": "implicit-existing-consumer",
+      "context": "Use a copy of assets/consumer with its exact lock file. AppServices.label already counts factory calls.",
+      "ko": "이 컨테이너의 label을 미리 준비하되 빈 prewarm 호출은 아무것도 만들지 않는지 테스트를 추가해줘.",
+      "en": "Add a test that prewarms this container's label but proves an empty prewarm call constructs nothing.",
+      "observe": ["Recognizes existing InnoDI without library name in prompt", "Uses nonthrowing typed selections", "Checks factory count and shared copy behavior"]
+    },
+    {
+      "id": "negative-unrelated-library",
+      "context": "A SwiftUI project explicitly using Factory, without InnoDI or migration request.",
+      "ko": "Factory는 그대로 두고 이 화면의 버튼 간격만 조정해줘.",
+      "en": "Keep Factory as it is and only adjust this screen's button spacing.",
+      "observe": ["Does not introduce InnoDI or convert dependency injection", "Changes only the requested UI spacing"]
+    },
+    {
+      "id": "preserve-older-version",
+      "context": "Consumer pinned to InnoDI 6.0.0, exact source available.",
+      "ko": "버전은 유지하면서 이 테스트의 서비스 override를 수정해줘.",
+      "en": "Fix the service override in this test while keeping the dependency version unchanged.",
+      "observe": ["Reads actual 6.0 source", "Does not use 7.0-only APIs or upgrade the lock file", "Builds against the existing version"]
+    },
+    {
+      "id": "owned-readiness-retry",
+      "context": "Use assets/consumer SessionLoader with failFirst enabled.",
+      "ko": "세션 준비 실패를 보여주고 사용자가 재시도할 때 한 번만 다시 준비하도록 만들어줘. 화면 종료 때 정리해줘.",
+      "en": "Show session preparation failure, retry once when the user requests it, and clean up when the feature ends.",
+      "observe": ["Does not treat makeOwned as readiness", "Checks preparation or uses requireReady", "Explicit retry is bounded", "Closes on the real feature lifecycle boundary"]
+    },
+    {
+      "id": "reader-cancellation",
+      "context": "Use the gated SessionLoader and a shared on-demand session in assets/consumer.",
+      "ko": "한 대기자가 취소돼도 다른 대기자가 같은 세션 결과를 받는지 검증해줘.",
+      "en": "Verify that cancelling one reader lets another reader receive the same shared session result.",
+      "observe": ["Uses deterministic synchronization instead of arbitrary sleeps", "Does not cancel or retry the provider when only a reader cancels", "One factory attempt supplies the remaining reader"]
+    },
+    {
+      "id": "optional-nil-override",
+      "context": "AppServices.label is String? with a counted live factory, as in assets/consumer.",
+      "ko": "테스트에서 label을 명시적으로 nil로 바꾸고 live factory가 호출되지 않는지 확인해줘.",
+      "en": "Override label with an explicit nil in the test and prove the live factory never runs.",
+      "observe": ["Uses set(_:to:) for explicit nil", "Distinguishes nil payload from unset/default", "Checks returned nil and zero live calls"]
+    },
+    {
+      "id": "migration-scope",
+      "context": "A 6.0.0 consumer with named parent paths, throwing key-path prewarm, and an InnoDISwiftUI import; preserve an unrelated dirty file.",
+      "ko": "7.0으로 올려줘. 마이그레이터가 하지 못하는 부분도 구분해서 수정해줘.",
+      "en": "Upgrade to 7.0 and distinguish the changes the migrator cannot perform automatically.",
+      "observe": ["Runs check before scoped write", "Manually handles typed prewarm and deployment/Observation changes where present", "Does not guess module trust or adopt ownership indiscriminately", "Preserves unrelated dirty work", "Builds the changed consumer"]
+    },
+    {
+      "id": "dependency-conflict",
+      "context": "A package pinned to InnoFlow 5.1.1 whose manifest requires SwiftSyntax below 604.0.0.",
+      "ko": "이 앱에 InnoDI 7.0.0을 추가할 수 있는지 확인해줘. 기존 버전은 유지해줘.",
+      "en": "Check whether this app can add InnoDI 7.0.0 while keeping existing dependency versions.",
+      "observe": ["Identifies disjoint SwiftSyntax requirements from actual manifests", "Does not silently downgrade or override sources", "Does not claim Xcode upgrade resolves version constraints", "Reports incompatibility and concrete options"]
+    },
+    {
+      "id": "missing-validation-plugin",
+      "context": "A copy of assets/consumer with the plugin removed from its declaring target. This minimal consumer can still compile; assess required validation configuration rather than assuming a compiler failure.",
+      "ko": "이 컨테이너의 필수 DAG 검증 설정을 확인하고 빠진 구성이 있으면 고쳐줘.",
+      "en": "Check this container target for the required DAG validation configuration and fix any missing setup.",
+      "observe": ["Checks plugin attachment on the affected target", "Restores validation instead of validateDAG:false", "Does not invent a compiler failure", "Preserves release pins and verifies the consumer under its original concurrency and warning settings"]
+    },
+    {
+      "id": "patch-support-policy-ko",
+      "context": "Swift consumer exact-pinned to public InnoDI 7.0.1; alpha.6 installed. Generation case also receives exact release notes and upstream manifest.",
+      "ko": "이 프로젝트는 InnoDI 7.0.1을 쓰고 있어. 현재 설치된 지침에서 이 버전을 지원하는지, 기록된 검증 기준과 실제 프로젝트 버전이 어떻게 다른지, 7.0.1 유지 시 어떤 검증이 필요한지 간단히 확인해 줘. 로컬 manifest/lock과 설치된 지침만 읽고 외부 조회, 빌드, 파일 수정은 하지 마. 직접 확인하고 다른 에이전트에게 위임하지 마.",
+      "observe": [
+        "Selects installed innodi automatically",
+        "Separates stable 7.0.x support from recorded 7.0.0 validation and actual 7.0.1 consumer",
+        "Keeps the actual patch and does not claim unperformed tests",
+        "Performs no edits, external lookup or build"
+      ]
+    },
+    {
+      "id": "implicit-patch-generation-ko",
+      "context": "Swift consumer exact-pinned to public InnoDI 7.0.1; alpha.6 installed. Generation case also receives exact release notes and upstream manifest.",
+      "ko": "InnoDI 7.0.1을 쓰는 이 Swift 패키지에 APIClient를 주입하는 간단한 컨테이너와 fake override 테스트를 만들어 줘. APIClient는 title() -> String을 제공하고 기본 구현은 live, 테스트 fake는 fake를 반환하면 돼. 실제 container/provider/override API를 써서 기본 구현과 fake 주입 결과를 검증해 줘. 기존 manifest/lock의 버전과 검증 플러그인은 유지해 줘. 현재 릴리스 메모와 manifest는 release-context에 있어. Sources와 Tests에 구현하고 최종 답변에 버전 판단 근거를 적어 줘. 이 평가에서는 코드 생성까지만 하고 빌드/테스트는 실행하지 마. 별도 평가자가 변경 없이 실행할 거야. 직접 작업하고 다른 에이전트에게 위임하지 마.",
+      "observe": [
+        "Selects installed innodi automatically",
+        "Keeps manifest and lock unchanged on 7.0.1",
+        "Uses typed container/provider/override APIs with DAG plugin",
+        "Generated default and fake override tests pass independently without manual edits"
+      ]
+    }
+  ]
+}

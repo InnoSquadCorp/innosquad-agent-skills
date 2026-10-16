@@ -1,0 +1,201 @@
+{
+  "checked_on": "2026-10-07",
+  "plugin_version": "0.1.0-alpha.6",
+  "skill_source": {
+    "repository": "https://github.com/InnoSquadCorp/InnoDI.git",
+    "path": "skills/innodi",
+    "revision": "ce47cf4b207c3b8810b2a7d7d622a2f8ead3ed96",
+    "git_tree": "aa58cff138c95a3a5af4949a55a460ca253f0435",
+    "source_status": "released",
+    "pull_request": "https://github.com/InnoSquadCorp/InnoDI/pull/54",
+    "library": {
+      "version": "7.0.0",
+      "revision": "4783eee7f674f99a337768c107b7a5f640810c2a",
+      "supported_release_line": "7.0.x",
+      "supported_range": ">=7.0.0 <7.1.0",
+      "include_prereleases": false
+    },
+    "release_tag": "7.0.1",
+    "release_url": "https://github.com/InnoSquadCorp/InnoDI/releases/tag/7.0.1"
+  },
+  "consumer_validation": {
+    "provenance": "Fresh runs in the immediately preceding 2026-10-07 review; identical released skill/fixture reused for this packaging update.",
+    "baseline": {
+      "status": "passed",
+      "started_at": "2026-10-07T01:20:10.167935+00:00",
+      "finished_at": "2026-10-07T01:20:57.362865+00:00",
+      "supported_version_range": ">=7.0.0 <7.1.0",
+      "supported_release_channel": "stable",
+      "validation_scope": "exact_baseline",
+      "swift": "swift-driver version: 1.168.6 Apple Swift version 6.4 (swiftlang-6.4.0.34.1 clang-2100.3.34.1)\nTarget: arm64-apple-macosx27.0.0",
+      "xcode": "Xcode 27.0\nBuild version 27A266a",
+      "source_sha256": {
+        "Package.resolved": "cb426db9f8cacf7994e772d355cccee4a1b331c704d7d04ec00546206533f017",
+        "Package.swift": "f595b5227db9d44196831cece5811d19926b3c288622a193f5bb053cae6c4eae",
+        "Sources/InnoDISkillExample/Services.swift": "65fb32535be1ed8d3c4abc1aac6d62edadc1fdcaf198b8105b64c3a25893c602",
+        "Sources/InnoDISkillExample/SwiftUIBoundary.swift": "d97287e6b5c8b610f9ebe8de5a766ba81f9d364634b38d1634a60f05a7559872",
+        "Tests/InnoDISkillExampleTests/ConsumerTests.swift": "dc677b090e69d008c0983caab8c7cc2220285faa9f3b0159c2e58b55aaca91ab"
+      },
+      "dependencies": {
+        "innodi": {
+          "version": "7.0.0",
+          "revision": "4783eee7f674f99a337768c107b7a5f640810c2a",
+          "clean": true
+        },
+        "swift-syntax": {
+          "version": "604.0.0",
+          "revision": "050f1a346fbbac0ca2cfb15a95274f7bd1cf0ccf",
+          "clean": true
+        }
+      },
+      "tests": 10,
+      "suites": 1,
+      "strict_concurrency": "complete",
+      "warnings_as_errors": true
+    },
+    "published_patch": {
+      "library_version": "7.0.1",
+      "release_revision": "ce47cf4b207c3b8810b2a7d7d622a2f8ead3ed96",
+      "scope": "Isolated copy of released skill consumer; only manifest/lock retargeted; source and tests unchanged",
+      "dependencies": {
+        "innodi": {
+          "revision": "ce47cf4b207c3b8810b2a7d7d622a2f8ead3ed96",
+          "version": "7.0.1",
+          "clean": true,
+          "repository": "https://github.com/InnoSquadCorp/InnoDI.git"
+        },
+        "swift-syntax": {
+          "revision": "050f1a346fbbac0ca2cfb15a95274f7bd1cf0ccf",
+          "version": "604.0.0",
+          "clean": true,
+          "repository": "https://github.com/swiftlang/swift-syntax.git"
+        }
+      },
+      "status": "passed",
+      "exit_code": 0,
+      "tests": 10,
+      "suites": 1,
+      "strict_concurrency": "complete",
+      "warnings_as_errors": true,
+      "source_and_test_bytes_match_baseline": true,
+      "source_sha256": {
+        "Package.resolved": "2ee70aa9ea3cb3249850dcd835daa4e7187d0c483f0076e7d131a35f1c8e6de9",
+        "Package.swift": "1b085c29adc95d6fb83bd4e35b45793c87c2fe604ddc31f8cb40931d14f0145b",
+        "Sources/InnoDISkillExample/Services.swift": "65fb32535be1ed8d3c4abc1aac6d62edadc1fdcaf198b8105b64c3a25893c602",
+        "Sources/InnoDISkillExample/SwiftUIBoundary.swift": "d97287e6b5c8b610f9ebe8de5a766ba81f9d364634b38d1634a60f05a7559872",
+        "Tests/InnoDISkillExampleTests/ConsumerTests.swift": "dc677b090e69d008c0983caab8c7cc2220285faa9f3b0159c2e58b55aaca91ab"
+      }
+    }
+  },
+  "packaging": {
+    "plugin_version": "0.1.0-alpha.6",
+    "source_equality": {
+      "innodi": {
+        "files": 14,
+        "result": "passed",
+        "git_tree": "aa58cff138c95a3a5af4949a55a460ca253f0435"
+      },
+      "innonetwork": {
+        "files": 13,
+        "result": "passed",
+        "git_tree": "ff913925f61f60c89031cf9e4e140265793da354"
+      }
+    },
+    "cache_equality": {
+      "codex:innodi": {
+        "files": 14,
+        "result": "passed"
+      },
+      "claude:innodi": {
+        "files": 14,
+        "result": "passed"
+      },
+      "codex:innonetwork": {
+        "files": 13,
+        "result": "passed"
+      },
+      "claude:innonetwork": {
+        "files": 13,
+        "result": "passed"
+      }
+    },
+    "identity": "passed",
+    "portable_schema": "passed",
+    "relative_links": "passed"
+  },
+  "codex": {
+    "version": "codex-cli 0.160.1",
+    "configured_model": "gpt-6-astra",
+    "reasoning": "xhigh",
+    "cases": [
+      {
+        "case": "patch-support-policy-ko",
+        "selection": "implicit",
+        "installed_alpha6_skill_read": true,
+        "status": "passed",
+        "response_sha256": "5066d7e9105f0ca783f4522dda06f1f6dff0f0503b77b1c5422686bd62ad78e0",
+        "support_and_validation_distinguished": true,
+        "downgrade_recommended": false,
+        "claims_unperformed_patch_test": false,
+        "project_files_unchanged": true,
+        "external_lookup_or_build_performed": false
+      },
+      {
+        "case": "implicit-patch-generation-ko",
+        "selection": "implicit",
+        "installed_alpha6_skill_read": true,
+        "status": "passed",
+        "response_sha256": "4ecd163a37de687257674f783ea5be000d042571437712da0a56b88f42e4dbc3",
+        "independent_validation": {
+          "case": "implicit-patch-generation-ko",
+          "status": "passed",
+          "exit_code": 0,
+          "tests": 2,
+          "suites": 1,
+          "strict_concurrency": "complete",
+          "warnings_as_errors": true,
+          "dependencies": {
+            "innodi": {
+              "revision": "ce47cf4b207c3b8810b2a7d7d622a2f8ead3ed96",
+              "version": "7.0.1",
+              "clean": true,
+              "repository": "https://github.com/InnoSquadCorp/InnoDI.git"
+            },
+            "swift-syntax": {
+              "revision": "050f1a346fbbac0ca2cfb15a95274f7bd1cf0ccf",
+              "version": "604.0.0",
+              "clean": true,
+              "repository": "https://github.com/swiftlang/swift-syntax.git"
+            }
+          },
+          "source_sha256": {
+            "Sources/InnoDISkillExample/Services.swift": "ac73634044432f23cdf29c6fe52c6b21b1c56afa8ad0e27d658547b83bfe7f8f",
+            "Tests/InnoDISkillExampleTests/ConsumerTests.swift": "aa5b7a915cec8cf6095d22c8f061657339aaefc97a5a5a853a2cf1122665986b"
+          },
+          "manifest_and_lock_unchanged": true,
+          "manually_edited_after_generation": false,
+          "actual_remote_graph_verified": true
+        }
+      }
+    ]
+  },
+  "claude": {
+    "version": "2.1.285 (Claude Code)",
+    "installed_version": "0.1.0-alpha.6",
+    "registered_skills": [
+      "innosquad:innodi",
+      "innosquad:innonetwork"
+    ],
+    "behavior": "blocked",
+    "retried_on": "2026-10-07",
+    "error": "HTTP 401 OAuth access token is invalid",
+    "model_tokens_used": 0
+  },
+  "limitations": [
+    "Two representative Korean Codex cases, one attempt each; not a full repeated bilingual evaluation.",
+    "Claude AI behavior remains unqualified because authentication failed.",
+    "No SwiftUI device lifecycle, migration execution, combined-library consumer or service validation.",
+    "Earlier DI alpha.1/alpha.2 and Network alpha.3/alpha.4/alpha.5 results are historical, not relabeled as new alpha.6 runs.",
+    "No public plugin publication or automated collection/publication CI."
+  ]
+}
