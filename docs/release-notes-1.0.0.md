@@ -1,6 +1,7 @@
 # InnoSquad Agent Skills 1.0.0
 
-Draft release notes — not published.
+Published on 2026-10-16. The repository and release are public; see
+[publication, content-review and anonymous-delivery evidence](release-verification-1.0.0.json).
 
 Six library-owned skills packaged for Codex and Claude Code, with portable delivery
 for Gemini CLI, Cursor, GitHub Copilot, Grok and text-based assistants.
@@ -27,6 +28,8 @@ Patch-line support is not a claim that every patch, model, device or live servic
 has been tested. Web Markdown is supplied reference context, not a native web
 plugin. Generated code must be validated in the actual consumer project.
 
-Publication must wait for the preparation checklist's source merge, final commit,
-CI and intended-audience conditions. Remove this draft-only publication note only
-after those conditions and the actual release action are complete.
+PR #1 merged at `0c59bbd03541ff1d808e0d7a0efd2d9189e73ece`. PR, merged-main
+and tag CI each passed seven consumers and 83 Swift tests; the tag workflow
+also passed 50 bundle tests and the merged-source packaging gate.
+All thirteen assets matched draft, published and anonymous downloads. The
+annotated tag and immutable builder records were preserved through publication.

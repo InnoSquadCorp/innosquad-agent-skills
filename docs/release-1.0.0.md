@@ -1,136 +1,91 @@
-# 1.0.0 preparation
+# 1.0.0 release
 
-Manifests and the Claude marketplace declare 1.0.0 so the package can be
-reviewed and validated as a unit. Actual publication is recorded in the
-[private v1.0.0 Release](https://github.com/InnoSquadCorp/innosquad-agent-skills/releases/tag/v1.0.0)
-and separate verification evidence. Packaging tools do not create tags, publish
-a GitHub Release, change visibility or submit to directories.
+[v1.0.0](https://github.com/InnoSquadCorp/innosquad-agent-skills/releases/tag/v1.0.0)
+was published on **2026-10-16 at 06:24:46 UTC**. After the content review, this
+repository was made public at 06:28:00 UTC. The
+[verification record](release-verification-1.0.0.json) records actual remote CI,
+tag identity, uploaded/downloaded checksums, publication and anonymous access.
 
-## What is included
+The immutable release source is `0c59bbd03541ff1d808e0d7a0efd2d9189e73ece`,
+the actual merge of [PR #1](https://github.com/InnoSquadCorp/innosquad-agent-skills/pull/1).
+Its annotated tag object is `ed3c6aab28a83ad23bc5ab5d5cec5af3e949af46`.
+Later documentation commits record publication; they do not replace the tag or assets.
 
-- Six independently versioned library skill snapshots. Stream now validates
-  published 6.1.1 with a fresh representative Codex portable-skill evaluation.
-  Flow now uses its canonical published 6.0.2 fixture and updated diagnostics;
-  its supported range remains 6.0.x. Router's source now comes from published
-  7.0.1, with only two upstream reference corrections and its 7.0.0 fixture retained.
-- Codex and Claude native manifests/catalogs; portable installation for Gemini,
-  Cursor, Copilot, Grok and common Agent Skills directories.
-- Gemini 0.24.0 setup guidance and accurate host qualification levels. Copilot's
-  GPT-4.1 evaluation is recorded as failed, not silently promoted to supported.
-- Deterministic native plugin ZIP, per-library Markdown/native skill reference
-  pack, immutable skill-source records and SHA-256 checksums.
-- Stream supports stable 6.1.x and validates published 6.1.1 at `2af03b2`,
-  including remote tag checks and 13 passing exact-release consumer tests.
+## Included scope
 
-## Local preparation
+- Six library-owned skills, independently pinned by source commit, complete Git
+  tree, bytes and executable modes. All six canonical correction PRs were
+  rechecked as merged before tagging.
+- Router source is published 7.0.1, with its two upstream reference corrections.
+  Its original 7.0.0 fixture remains intact; a separate central-owned case verifies
+  exact 7.0.1 with retained original/adjusted inputs and tag identity checks.
+- Flow retains the canonical 6.0.2 fixture and 6.0.x support. Stream verifies
+  published 6.1.1 plus exact Core 6.1.1. Protobuf uses the reviewed reissued 6.1.1
+  release mode and preserves its historical fixture identity.
+- Codex and Claude native catalogs, portable skills and chat reference files,
+  original notices, deterministic archives and SHA-256 checksums.
 
-```bash
-python3 -B scripts/validate_bundle.py
-python3 -B -m unittest discover -s tests -v
-claude plugin validate .
-claude plugin validate .claude-plugin/plugin.json
-python3 -B scripts/build_release.py --candidate --output artifacts/1.0.0-candidate
-```
+## Verified gates
 
-The output contains `innosquad-1.0.0-candidate.zip`, `references/`, `release.json`
-and `SHA256SUMS`. Extract the ZIP and validate its `innosquad/` folder as well.
-The archive contains manifests, catalogs, original skill files/modes, distributable
-scripts, notices and documentation. It excludes repository-private traces, Git
-metadata, tests, temporary build output and arbitrary untracked root files.
-Archive entries have fixed timestamps. Existing output is never overwritten.
+| Gate | Completed evidence |
+| --- | --- |
+| Source corrections | All six actual source PR merge identities and complete skill trees match the lock; Router released source is recorded separately from its 7.0.0 baseline |
+| PR, actual merged-main and tag CI | Each passed the bundle and seven exact Swift consumers, 83 Swift tests per run; the tag bundle also passed 50 regression tests |
+| Apple toolchain | Xcode 27.0, Apple Swift 6.4, macOS 27.0.1, SDK 27; actual pins, active workspace, clean checkouts and explicit builds checked |
+| Package | Tagged CI passed the merged-source gate; its thirteen files were byte-identical to two clean local normal builds; 141 native ZIP members and all six skill trees verified |
+| Draft and published assets | Thirteen names/labels/sizes/API digests and fresh downloaded bytes matched; all twelve manifest checksums passed |
+| Final install | Fresh authenticated and anonymous tag clones installed all six exact trees into isolated projects; existing project settings preserved |
+| Content review | 26 reachable commits, 367 unique blob versions, current PR prose/comments, tag metadata and actual assets including nested ZIPs reviewed; no credentials or nonpublic sensitive material found |
+| Public delivery | Repository/release APIs, release page, all thirteen assets and tagged Codex manifest returned anonymously; credential-free Git clone and isolated install passed |
 
-`release.json` records the inspected source commit and whether the worktree was
-dirty. Candidate mode can package a worktree for review; a dirty candidate must
-not be presented as exact-commit evidence. Rebuild from the clean reviewed commit
-for the final handoff. `SHA256SUMS` covers every output except the checksum list
-itself. No packaging mode calls a remote model, merges, tags, uploads or publishes.
+The [dated source snapshot](release-status-1.0.0.json),
+[Flow/Router follow-up](flow-router-followup-2026-10-10.md) and
+[Router source refresh](router-7.0.1-refresh-2026-10-16.md) remain historical
+evidence. The separate verification record contains the final 2026-10-16 recheck.
 
-## Publication conditions
+## Reproduce the published package
 
-Current upstream status was read on **2026-10-11 KST**; see
-[the recorded snapshot](release-status-1.0.0.json) and
-[Flow/Router follow-up](flow-router-followup-2026-10-10.md). Router's released
-source was refreshed on 2026-10-16; see the [7.0.1 record](router-7.0.1-refresh-2026-10-16.md).
-Recheck at the final commit.
-
-| Condition | Current preparation state | Completion evidence |
-| --- | --- | --- |
-| Canonical source corrections | All six correction PRs merged; Router subsequently advanced to released source `482587b` | Actual merged/released pins and all six canonical directories verified by paths, blob bytes and executable modes; `--require-merged` passes |
-| Bundle integrity | Version 1.0.0; Flow, Stream and Router refreshed from canonical sources | Bundle tests and source-tree equality on final commit; Router source release recorded separately from its unchanged 7.0.0 baseline |
-| Central Swift consumers | Six original exact consumers plus isolated Router 7.0.1 on Xcode 27.0 / Swift 6.4 / macOS 27; Protobuf uses its reviewed reissued release mode | All seven jobs pass at the final commit; [toolchain, resolved pins, original/adjusted inputs and failure artifacts](consumer-ci.md) retained separately from bundle/mock tests |
-| Central PR / CI | PR #1 remains the preparation vehicle; the Flow/Router follow-up updates its source pins without publishing | Final commit pushed, remote SHA equality, required checks passed, reviewed merge |
-| Host claims | Evidence and limitations documented | Preserve dates/models/versions; only promote a blocked or failed host after a successful new evaluation |
-| Stream | Published 6.1.1 `2af03b2`; 13 exact-release consumer tests passed | Canonical PR #14 passed its checks and merged at `7fb61ac`; merge-tree equality verified separately from release-consumer proof |
-| Protobuf | Reissued 6.1.1 tag `ba6ab8d`, tag object `eaea83c…`; historical fixture retained | User confirmed no previous installs and accepts keeping 6.1.1; preserve release-mode checks and historical fixture identity |
-| Audience | Central repository is private | Confirm access for the intended audience; a public launch requires the corresponding explicit visibility/publication action |
-| Final install | Candidate can be installed from an extracted package/local catalog | Clean install from the immutable final commit/tag, all six trees equal to the lock, no stale duplicate plugin entries |
-| Publication | Requires the initial private v1.0.0 tag/Release after all gates pass | Tag points to the reviewed merged commit; uploaded checksums match; fresh remote installation verified |
-
-Authentication-blocked Claude/Gemini/Cursor runs and Copilot's failed GPT-4.1 run
-are limitations, not tests to mark green because files copied successfully.
-The earlier dated native-host evidence remains separate. Grok live model behavior
-and official-directory approval are not part of the confirmed 1.0.0 claims.
-
-## Build the final package after source verification
-
-After verifying the source PRs and refreshing exact merge pins/tree identities,
-commit the final package changes and use a clean worktree:
+Check out `v1.0.0` to reproduce the published inputs. Current main also includes
+post-publication documentation. Use a clean worktree and a new output directory:
 
 ```bash
 python3 -B scripts/validate_bundle.py --require-merged
+python3 -B -m unittest discover -s tests -v
+claude plugin validate .
+claude plugin validate .claude-plugin/plugin.json
 python3 -B scripts/build_release.py --output artifacts/1.0.0
 ```
 
-The normal builder rejects a review-branch source, a non-stable manifest version,
-a dirty/uncommitted worktree or an existing output destination. It produces
-`innosquad-1.0.0.zip` with `package_kind: merged_source_package`.
-**This is a packaging gate, not a live merge/CI/publication verifier.** Both modes
-record `remote_checks: not_run` and `publication_performed: false`. Check upstream
-states and final remote CI separately; never edit a status merely to bypass the gate.
+The normal builder requires recorded merged/released sources, stable aligned
+versions and clean tracked inputs. Candidate mode remains available with
+`--candidate`; dirty candidates are not exact-commit evidence. Existing output
+is never overwritten. Archive members retain original bytes/modes and fixed
+timestamps; Git metadata, raw traces, credentials, caches and build output are excluded.
 
-CI builds a candidate on ordinary changes and applies the merged-source/clean-tree
-packaging gate on version tags, including tag-to-manifest version agreement.
-CI has read-only permissions and never creates a GitHub release.
+**The builder is a packaging gate.** Its immutable `release.json` still records
+`remote_checks: not_run` and `publication_performed: false`. These fields describe
+the builder, which does not merge, tag, upload, publish or call a model.
+Actual remote/publication verification is recorded separately. Read-only CI
+preserved the tag package as `package-v1.0.0-38860122764`; it did not publish it.
 
-## Initial private release procedure
+## Publication and delivery
 
-Keep the existing private repository and audience. Complete current-head CI,
-remove Draft from PR #1, and use a normal allowed merge with the reviewed head
-SHA as the lease. Never use an administrative/protection bypass. Verify the
-actual merged commit and its main-branch CI separately.
+The release was first published privately after PR/main/tag checks. The tag-CI
+package supplied twelve files listed by `SHA256SUMS` plus the manifest itself.
+Asset labels preserve original relative paths. Draft, published and anonymous
+download checks matched every byte; restore `references/` before checking the
+flat downloads as shown in [installation instructions](distribution.md).
 
-Build the final package from that clean merged commit. Create the initial
-annotated `v1.0.0` tag at exactly that commit only after confirming the tag does
-not already exist. Push only that tag, verify its remote tag object and peeled
-commit, and wait for **tag-triggered CI**, including all seven consumers and the
-merged-source packaging gate. The workflow retains the tagged package as a
-`package-v1.0.0-<run-id>` artifact; it does not publish it.
+The complete content review preceded the public visibility change. Only this
+repository's visibility was requested to change; collaborator permissions were
+not edited, credentials were not created and no external directory submission
+was made. Tag and asset identities were checked again after the change.
 
-Use the verified tagged package as the release payload. Its twelve files listed
-in `SHA256SUMS`, plus `SHA256SUMS` itself, become thirteen Release assets. Asset
-filenames are unique; retain each original relative path as the asset label.
-When downloading the flat Release assets, reconstruct `references/` from those
-manifest paths before verifying every checksum. Do not rewrite the builder's
-`release.json`: `remote_checks: not_run` and `publication_performed: false`
-describe the builder. Record actual remote CI, tag and publication verification
-separately.
+## Qualification limits
 
-Create a draft Release with `--verify-tag`, upload the complete payload, download
-it again and check inventory, bytes and checksums. Publish only after this
-verification, then verify the published Release metadata, fresh downloads,
-immutable tag and private visibility again. Record publication evidence in
-`docs/release-verification-1.0.0.json` and update the current README, installation
-instructions and release notes after publication. Do not alter access or submit
-to public directories.
-
-## Release handoff
-
-Use `v1.0.0` only for the reviewed merged commit after the conditions above are
-satisfied. The draft [release notes](release-notes-1.0.0.md) describe the supported
-scope and limitations. The plugin ZIP and reference pack have different purposes;
-include their checksums and provenance with any uploaded assets.
-
-A tag or GitHub release is not an official marketplace-directory listing. A
-private release is not public availability. Update this document, the README and
-installation instructions with the actual tag URL and publication evidence after
-those actions complete. Preserve the evaluation history.
+Consumer resolve/build/test and delivery checks do not promote host-model or
+device qualification. Preserve the dates, models and versions in
+[host support](host-support.md) and evaluation records. Claude/Gemini/Cursor
+authentication limits, Copilot GPT-4.1's failed generation evaluation, Grok's
+missing live-model qualification and device/FairPlay/audio/integration boundaries
+remain. A Git marketplace does not establish official-directory approval.

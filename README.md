@@ -1,9 +1,10 @@
 # InnoSquad Agent Skills
 
 InnoSquad Swift 라이브러리 6개의 스킬을 Codex·Claude Code 플러그인과
-다른 AI 도구용 공통 스킬로 제공합니다. **1.0.0 패키지**의 게시 상태와 설치 자산은
+다른 AI 도구용 공통 스킬로 제공합니다. **v1.0.0을 게시했습니다.** 설치 자산은
 [릴리스 페이지](https://github.com/InnoSquadCorp/innosquad-agent-skills/releases/tag/v1.0.0)에서
-확인하세요. 저장소와 배포 대상은 기존 비공개 범위를 유지합니다.
+확인하세요. 저장소와 릴리스는 공개되어 있으며 비로그인 다운로드와 태그 설치도
+확인했습니다. [게시·공개 검증 기록](docs/release-verification-1.0.0.json)을 참조하세요.
 
 | Skill | Support | Exact consumer baseline |
 | --- | --- | --- |
@@ -38,10 +39,9 @@ InnoSquad Swift 라이브러리 6개의 스킬을 Codex·Claude Code 플러그�
 
 ## Install
 
-기존 접근 권한으로 비공개 저장소를 사용하세요. 개발·리뷰 빌드는
+정식 설치는 [v1.0.0 배포 안내](docs/distribution.md#install-v100)를 따릅니다. 개발·리뷰 빌드는
 [검토 브랜치 설치](docs/distribution.md#review-the-candidate)를 사용합니다.
 마켓플레이스는 두 도구 모두 `innosquad`, 플러그인 ID는 `innosquad@innosquad`입니다.
-정식 태그 설치는 **v1.0.0 게시 후** [배포 안내](docs/distribution.md)를 따릅니다.
 
 설치 후 새 세션에서 Codex는 `$innosquad:innorouter`, Claude Code는
 `/innosquad:innorouter`로 명시 호출할 수 있습니다. 관련 자연어 요청에 따른
@@ -85,8 +85,8 @@ python3 -B scripts/build_release.py --candidate --output artifacts/1.0.0-candida
 ```
 
 후보 패키지는 플러그인 ZIP, 채팅 참고 자료, 출처 정보, SHA-256 목록을 포함합니다.
-이 명령은 배포하지 않습니다. 병합·CI·공개 설정 등 남은 조건과 정식 패키지 생성
-절차는 [1.0.0 준비 문서](docs/release-1.0.0.md)에 정리했습니다.
+이 명령은 배포하지 않습니다. 실제 릴리스는 병합 커밋 `0c59bbd`에서 생성됐습니다.
+[1.0.0 배포 기록](docs/release-1.0.0.md)에 CI·태그·체크섬과 설치 검증을 정리했습니다.
 변경 내역은 [CHANGELOG](CHANGELOG.md)를 참조하세요.
 
 PR의 [Swift 소비자 CI](docs/consumer-ci.md)는 명시한 Xcode 27.0·Swift 6.4·macOS 27

@@ -1,9 +1,10 @@
 # Changelog
 
-## 1.0.0 — unreleased
+## 1.0.0 — 2026-10-16
 
-First stable-version packaging candidate for the six library-owned Inno skills.
-No v1.0.0 tag or release has been published by this preparation work.
+First stable release of the six library-owned Inno skills. The annotated
+v1.0.0 tag and thirteen verified assets are published; the repository was made
+public after the content review and anonymous delivery checks.
 
 - Align portable, Codex, Claude and Claude marketplace versions at 1.0.0.
 - Sync the Router skill from released 7.0.1 at `482587b`; preserve upstream 7.0.0 fixtures and add a central-owned isolated exact-7.0.1 consumer case with original/adjusted input evidence.
@@ -16,8 +17,9 @@ No v1.0.0 tag or release has been published by this preparation work.
 - Add deterministic plugin/reference packaging, provenance and SHA-256 checksums. Candidate mode is explicit; normal packaging rejects unmerged sources and uncommitted inputs.
 - Record dated non-Grok host evaluation separately from reused alpha.12 evidence. Refresh Stream to the published 6.1.1 tag and verify its exact-release consumer and tag identity before/after validation.
 
-Source merges, final immutable-commit CI, audience/visibility, and release publication
-are tracked in [the preparation checklist](docs/release-1.0.0.md).
+Source merges, PR/main/tag CI (83 Swift tests each), 50 bundle regression tests,
+release checksums and public delivery are recorded in
+[the verification evidence](docs/release-verification-1.0.0.json).
 
 ## 0.1.0-alpha.14
 

@@ -7,6 +7,10 @@ check without duplicating the seven PR consumer jobs. These checks resolve remot
 dependencies, compile and test the isolated fixtures, then run an explicit
 strict-concurrency build. They do not evaluate an AI host or publish a package.
 
+For v1.0.0, [PR, merged-main and tag CI](release-verification-1.0.0.json) each
+passed all seven cases and 83 Swift tests. The separate publication record
+preserves exact dependency evidence, package checksums and public delivery checks.
+
 ## Runner and prerequisites
 
 The hosted runner label is `xcode-27`, with

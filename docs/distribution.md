@@ -6,8 +6,9 @@ Both catalogs are `innosquad`; the plugin ID is `innosquad@innosquad`. Relative
 and notices. Sources: [OpenAI packaging](https://developers.openai.com/plugins/build/plugins)
 and [Claude marketplaces](https://code.claude.com/docs/en/plugin-marketplaces).
 
-The repository is currently private. Review-branch access is not public
-publication; a Git marketplace is separate from an official-directory listing.
+The repository and [v1.0.0 Release](https://github.com/InnoSquadCorp/innosquad-agent-skills/releases/tag/v1.0.0)
+are public. Anonymous access to the release, all thirteen assets and the immutable
+tag was verified. A Git marketplace is separate from an official-directory listing.
 For Grok CLI, Grok web/app/API, Gemini CLI, Cursor and Copilot, use the additional
 [host delivery paths](host-support.md), sharing the original library skill folders.
 
@@ -28,13 +29,14 @@ claude plugin install innosquad@innosquad --scope user
 
 Record the fetched commit. Codex can fetch an immutable Git source directly with
 `codex plugin marketplace add InnoSquadCorp/innosquad-agent-skills --ref COMMIT_SHA`.
-For release installation, use the immutable tag procedure below only once that
-tag exists. Start a fresh host session after installation/update.
+For release installation, use the immutable v1.0.0 tag procedure below.
+Start a fresh host session after installation/update.
 
-## Install v1.0.0 after publication
+## Install v1.0.0
 
-Use this procedure only after the reviewed [v1.0.0 Release](https://github.com/InnoSquadCorp/innosquad-agent-skills/releases/tag/v1.0.0)
-is published and its immutable tag/commit and checksums are verified:
+The published tag points to `0c59bbd03541ff1d808e0d7a0efd2d9189e73ece`.
+The [verification record](release-verification-1.0.0.json) contains its annotated
+tag object, CI, source trees and all asset hashes:
 
 ```bash
 git clone --branch v1.0.0 --single-branch https://github.com/InnoSquadCorp/innosquad-agent-skills.git innosquad-agent-skills-1.0.0
@@ -51,6 +53,22 @@ Compare the fetched commit to the release's recorded commit. An extracted native
 plugin ZIP can also be validated/installed from its `innosquad/` directory. It
 contains both marketplace catalogs; `references/innosquad-skills.zip` instead
 contains standalone skills and is not the full plugin.
+
+Release downloads are flat. In a fresh download directory, restore the manifest
+reference paths before checking its twelve entries:
+
+```bash
+gh release download v1.0.0 --repo InnoSquadCorp/innosquad-agent-skills --dir innosquad-download
+cd innosquad-download
+mkdir references
+mv START_HERE.md catalog.json innodi.md innoflow.md innonetwork.md \
+  innonetwork-protobuf.md innonetwork-stream.md innorouter.md \
+  innosquad-skills.zip sha256.json references/
+shasum -a 256 -c SHA256SUMS
+```
+
+`SHA256SUMS` itself has SHA-256
+`ecba3188ac11d9cbffc0c3e2bc37a01b75635442cab6e5f92a6cfee979bc7ef2`.
 
 ## Move from the local pilot
 
@@ -101,17 +119,20 @@ and `--allowedTools` for needed read/build/test commands. Restrict requested
 writes to the isolated Sources/Tests. Do not use blanket permission bypass or
 alter authentication. Registration, actual selection and generation are separate.
 
-## Publication handoff
+## Published release and evidence
 
-Use the [1.0.0 preparation checklist](release-1.0.0.md) and draft
-[release notes](release-notes-1.0.0.md). All six canonical correction PRs are
+See the [1.0.0 release record](release-1.0.0.md),
+[release notes](release-notes-1.0.0.md) and [verification evidence](release-verification-1.0.0.json).
+All six canonical correction PRs are
 merged, as recorded in the [source status snapshot](release-status-1.0.0.json)
 and current `sources.lock.json`. Router's skill source has subsequently advanced
 to the immutable published 7.0.1 commit, with its 7.0.0 baseline preserved.
-The exact source pins agree. Complete the central PR and initial private
-release procedure separately. Recheck upstream status, source-tree
-equality and final central CI before packaging. `--require-merged` checks
-recorded statuses, not live remote CI. Candidate packaging remains available:
+The exact source pins agree. PR #1 merged at `0c59bbd`; PR, merged-main and
+tag CI each passed seven consumers and 83 Swift tests. The initial release was
+published privately, then made public after inspecting the complete reachable
+history, PR and assets. All thirteen anonymous downloads and a fresh anonymous
+tag install matched. `--require-merged` checks recorded statuses, not live remote
+CI. Candidate packaging remains available:
 
 ```bash
 python3 -B scripts/build_release.py --candidate --output artifacts/1.0.0-candidate

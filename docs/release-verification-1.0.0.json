@@ -1,0 +1,489 @@
+{
+  "schema_version": 1,
+  "checked_at": "2026-10-16T06:31:27.011851+00:00",
+  "repository": "InnoSquadCorp/innosquad-agent-skills",
+  "repository_id": 1405787269,
+  "version": "1.0.0",
+  "tag": "v1.0.0",
+  "tag_kind": "annotated",
+  "tag_object": "ed3c6aab28a83ad23bc5ab5d5cec5af3e949af46",
+  "release_source_commit": "0c59bbd03541ff1d808e0d7a0efd2d9189e73ece",
+  "release_source_tree": "d85842a8d013847ce58fd1073fafae18cc2a7224",
+  "publication": {
+    "status": "verified",
+    "performed": true,
+    "release_id": 414619356,
+    "url": "https://github.com/InnoSquadCorp/innosquad-agent-skills/releases/tag/v1.0.0",
+    "published_at": "2026-10-16T06:24:46Z",
+    "draft": false,
+    "prerelease": false,
+    "visibility_at_publication": "private",
+    "draft_download_assets_verified": 13,
+    "published_download_assets_verified": 13
+  },
+  "visibility": {
+    "current": "public",
+    "changed_at": "2026-10-16T06:28:00.847576+00:00",
+    "published_release_verified_before_change": true,
+    "only_repository_visibility_setting_changed": true,
+    "collaborator_permissions_changed": false,
+    "credentials_created": false,
+    "external_directory_submission": false
+  },
+  "ci": {
+    "pr": {
+      "run_id": 38856888001,
+      "url": "https://github.com/InnoSquadCorp/innosquad-agent-skills/actions/runs/38856888001",
+      "head_sha": "c7ab5deb70abe75d194ee5e8f8381cf7e3c0ee57",
+      "executor_sha": "5e216544729a221b76efb978656e09e8f0c10911",
+      "status": "passed",
+      "jobs_passed": 8,
+      "consumer_cases": 7,
+      "swift_tests": 83
+    },
+    "merged_main": {
+      "run_id": 38859598169,
+      "url": "https://github.com/InnoSquadCorp/innosquad-agent-skills/actions/runs/38859598169",
+      "head_sha": "0c59bbd03541ff1d808e0d7a0efd2d9189e73ece",
+      "executor_sha": "0c59bbd03541ff1d808e0d7a0efd2d9189e73ece",
+      "status": "passed",
+      "jobs_passed": 8,
+      "consumer_cases": 7,
+      "swift_tests": 83
+    },
+    "tag": {
+      "run_id": 38860122764,
+      "url": "https://github.com/InnoSquadCorp/innosquad-agent-skills/actions/runs/38860122764",
+      "head_sha": "0c59bbd03541ff1d808e0d7a0efd2d9189e73ece",
+      "executor_sha": "0c59bbd03541ff1d808e0d7a0efd2d9189e73ece",
+      "status": "passed",
+      "jobs_passed": 8,
+      "consumer_cases": 7,
+      "swift_tests": 83,
+      "bundle_regression_tests": 50,
+      "bundle_log_sha256": "e5cb217e4ab4dec99b7c963b4d4076aad2aa5645a22fbeac0d32c3dbec9ff4cf",
+      "merged_source_package_gate": "passed",
+      "package_artifact": {
+        "id": 12028213154,
+        "name": "package-v1.0.0-38860122764"
+      }
+    }
+  },
+  "swift_consumer_toolchain": {
+    "xcode": "Xcode 27.0\nBuild version 27A266a",
+    "swift": "Apple Swift version 6.4 (swiftlang-6.4.0.34.1 clang-2100.3.34.1)\nTarget: arm64-apple-macosx27.0.0",
+    "macos": "27.0.1",
+    "sdk": "27.0"
+  },
+  "consumer_results": {
+    "innodi": {
+      "tests": 10,
+      "dependencies": {
+        "innodi": {
+          "repository": "https://github.com/InnoSquadCorp/InnoDI.git",
+          "version": "7.0.0",
+          "revision": "4783eee7f674f99a337768c107b7a5f640810c2a"
+        },
+        "swift-syntax": {
+          "repository": "https://github.com/swiftlang/swift-syntax.git",
+          "version": "604.0.0",
+          "revision": "050f1a346fbbac0ca2cfb15a95274f7bd1cf0ccf"
+        }
+      },
+      "clean_checkouts_and_active_workspace_verified": true,
+      "explicit_build_passed": true
+    },
+    "innoflow": {
+      "tests": 11,
+      "dependencies": {
+        "innoflow": {
+          "repository": "https://github.com/InnoSquadCorp/InnoFlow.git",
+          "version": "6.0.2",
+          "revision": "1176de1e4783b638c03a9334f43cc49378957148"
+        },
+        "swift-syntax": {
+          "repository": "https://github.com/swiftlang/swift-syntax.git",
+          "version": "604.0.0",
+          "revision": "050f1a346fbbac0ca2cfb15a95274f7bd1cf0ccf"
+        }
+      },
+      "clean_checkouts_and_active_workspace_verified": true,
+      "explicit_build_passed": true
+    },
+    "innonetwork": {
+      "tests": 13,
+      "dependencies": {
+        "innonetwork": {
+          "repository": "https://github.com/InnoSquadCorp/InnoNetwork.git",
+          "version": "6.1.0",
+          "revision": "79ff9f535a0a15ad8b52ce49cb5a4b1ea1dfec16"
+        },
+        "swift-asn1": {
+          "repository": "https://github.com/apple/swift-asn1.git",
+          "version": "1.7.3",
+          "revision": "3b6410f7dee09eb33cdd26260c5fd47fda19b0e2"
+        },
+        "swift-crypto": {
+          "repository": "https://github.com/apple/swift-crypto",
+          "version": "5.0.0",
+          "revision": "a9d1d5ab8951ada40cafff8c8e2b551dfde4f390"
+        },
+        "swift-http-types": {
+          "repository": "https://github.com/apple/swift-http-types",
+          "version": "1.8.0",
+          "revision": "bff4b6903cdc99dda49649dd52f46c11cfd3ed50"
+        },
+        "swift-openapi-runtime": {
+          "repository": "https://github.com/apple/swift-openapi-runtime",
+          "version": "1.13.0",
+          "revision": "50ad7976f18fec6c09466d2aebf7be3dc9476cfb"
+        },
+        "swift-syntax": {
+          "repository": "https://github.com/swiftlang/swift-syntax.git",
+          "version": "604.0.0",
+          "revision": "050f1a346fbbac0ca2cfb15a95274f7bd1cf0ccf"
+        }
+      },
+      "clean_checkouts_and_active_workspace_verified": true,
+      "explicit_build_passed": true
+    },
+    "innonetwork-protobuf": {
+      "tests": 14,
+      "dependencies": {
+        "innonetwork": {
+          "repository": "https://github.com/InnoSquadCorp/InnoNetwork.git",
+          "version": "6.1.1",
+          "revision": "44e4ca28c50c03f817231a077c0f3bdfdbc859c8"
+        },
+        "innonetwork-protobuf": {
+          "repository": "https://github.com/InnoSquadCorp/InnoNetwork-Protobuf.git",
+          "version": "6.1.1",
+          "revision": "ba6ab8d6112d51efa69d92ac6739464bfc775aed"
+        },
+        "swift-asn1": {
+          "repository": "https://github.com/apple/swift-asn1.git",
+          "version": "1.7.3",
+          "revision": "3b6410f7dee09eb33cdd26260c5fd47fda19b0e2"
+        },
+        "swift-crypto": {
+          "repository": "https://github.com/apple/swift-crypto",
+          "version": "5.0.0",
+          "revision": "a9d1d5ab8951ada40cafff8c8e2b551dfde4f390"
+        },
+        "swift-http-types": {
+          "repository": "https://github.com/apple/swift-http-types",
+          "version": "1.8.0",
+          "revision": "bff4b6903cdc99dda49649dd52f46c11cfd3ed50"
+        },
+        "swift-openapi-runtime": {
+          "repository": "https://github.com/apple/swift-openapi-runtime",
+          "version": "1.13.0",
+          "revision": "50ad7976f18fec6c09466d2aebf7be3dc9476cfb"
+        },
+        "swift-protobuf": {
+          "repository": "https://github.com/apple/swift-protobuf.git",
+          "version": "1.38.1",
+          "revision": "55d7a1cc5666b85c13464aea1c4b4a90feccb4c8"
+        },
+        "swift-syntax": {
+          "repository": "https://github.com/swiftlang/swift-syntax.git",
+          "version": "604.0.0",
+          "revision": "050f1a346fbbac0ca2cfb15a95274f7bd1cf0ccf"
+        }
+      },
+      "clean_checkouts_and_active_workspace_verified": true,
+      "explicit_build_passed": true
+    },
+    "innonetwork-stream": {
+      "tests": 13,
+      "dependencies": {
+        "innonetwork": {
+          "repository": "https://github.com/InnoSquadCorp/InnoNetwork.git",
+          "version": "6.1.1",
+          "revision": "44e4ca28c50c03f817231a077c0f3bdfdbc859c8"
+        },
+        "innonetwork-stream": {
+          "repository": "https://github.com/InnoSquadCorp/InnoNetwork-Stream.git",
+          "version": "6.1.1",
+          "revision": "2af03b24cfc8f11442a3b9ba2fd8adcfe58d8116"
+        },
+        "swift-asn1": {
+          "repository": "https://github.com/apple/swift-asn1.git",
+          "version": "1.7.3",
+          "revision": "3b6410f7dee09eb33cdd26260c5fd47fda19b0e2"
+        },
+        "swift-crypto": {
+          "repository": "https://github.com/apple/swift-crypto",
+          "version": "5.0.0",
+          "revision": "a9d1d5ab8951ada40cafff8c8e2b551dfde4f390"
+        },
+        "swift-http-types": {
+          "repository": "https://github.com/apple/swift-http-types",
+          "version": "1.8.0",
+          "revision": "bff4b6903cdc99dda49649dd52f46c11cfd3ed50"
+        },
+        "swift-openapi-runtime": {
+          "repository": "https://github.com/apple/swift-openapi-runtime",
+          "version": "1.13.0",
+          "revision": "50ad7976f18fec6c09466d2aebf7be3dc9476cfb"
+        },
+        "swift-syntax": {
+          "repository": "https://github.com/swiftlang/swift-syntax.git",
+          "version": "604.0.0",
+          "revision": "050f1a346fbbac0ca2cfb15a95274f7bd1cf0ccf"
+        }
+      },
+      "clean_checkouts_and_active_workspace_verified": true,
+      "explicit_build_passed": true
+    },
+    "innorouter": {
+      "tests": 11,
+      "dependencies": {
+        "innorouter": {
+          "repository": "https://github.com/InnoSquadCorp/InnoRouter.git",
+          "version": "7.0.0",
+          "revision": "33b0da7639105cfa8e6f5acffa3badb91b5e0254"
+        },
+        "swift-syntax": {
+          "repository": "https://github.com/swiftlang/swift-syntax.git",
+          "version": "604.0.0",
+          "revision": "050f1a346fbbac0ca2cfb15a95274f7bd1cf0ccf"
+        }
+      },
+      "clean_checkouts_and_active_workspace_verified": true,
+      "explicit_build_passed": true
+    },
+    "innorouter-7.0.1": {
+      "tests": 11,
+      "dependencies": {
+        "innorouter": {
+          "repository": "https://github.com/InnoSquadCorp/InnoRouter.git",
+          "version": "7.0.1",
+          "revision": "482587bcac8347857fd521ff38f169c010f48b83"
+        },
+        "swift-syntax": {
+          "repository": "https://github.com/swiftlang/swift-syntax.git",
+          "version": "604.0.0",
+          "revision": "050f1a346fbbac0ca2cfb15a95274f7bd1cf0ccf"
+        }
+      },
+      "clean_checkouts_and_active_workspace_verified": true,
+      "explicit_build_passed": true
+    }
+  },
+  "upstream_sources": {
+    "innodi": {
+      "source_revision": "74a57b83664e431b45aa56f53286adeac86ccfb2",
+      "source_tree": "358bab55a293c1ec5d456c42a911a86fcbc90c03",
+      "correction_pr": "https://github.com/InnoSquadCorp/InnoDI/pull/59",
+      "correction_merge": "74a57b83664e431b45aa56f53286adeac86ccfb2",
+      "correction_merged_at": "2026-10-10T13:37:47Z"
+    },
+    "innonetwork": {
+      "source_revision": "d5213fb375b4e45a9f789116e326aebb7fa22ff4",
+      "source_tree": "62d335ebee98f7a60ba77c45c5b84e157253ff85",
+      "correction_pr": "https://github.com/InnoSquadCorp/InnoNetwork/pull/153",
+      "correction_merge": "d5213fb375b4e45a9f789116e326aebb7fa22ff4",
+      "correction_merged_at": "2026-10-09T23:59:13Z"
+    },
+    "innoflow": {
+      "source_revision": "6b7c632500526cd87ab76e1d845d1b082327703e",
+      "source_tree": "491a78f01d6e6540182d6ad8e2ee7ff0a43f9e6d",
+      "correction_pr": "https://github.com/InnoSquadCorp/InnoFlow/pull/63",
+      "correction_merge": "6b7c632500526cd87ab76e1d845d1b082327703e",
+      "correction_merged_at": "2026-10-10T18:17:52Z"
+    },
+    "innorouter": {
+      "source_revision": "482587bcac8347857fd521ff38f169c010f48b83",
+      "source_tree": "645baccc66df3d8e7989787e875f7063939b6444",
+      "correction_pr": "https://github.com/InnoSquadCorp/InnoRouter/pull/70",
+      "correction_merge": "333ba033987a368ebbcbc91ab50ee5721699830e",
+      "correction_merged_at": "2026-10-10T19:17:32Z",
+      "source_release": {
+        "url": "https://github.com/InnoSquadCorp/InnoRouter/releases/tag/7.0.1",
+        "published_at": "2026-10-16T05:10:20Z",
+        "tag_kind": "lightweight",
+        "revision": "482587bcac8347857fd521ff38f169c010f48b83"
+      }
+    },
+    "innonetwork-protobuf": {
+      "source_revision": "06e091d79f93fd36bcccf04863ac994f0d51ebc8",
+      "source_tree": "0227141a34dd3bbc8da5b4918dd63632ffe1402a",
+      "correction_pr": "https://github.com/InnoSquadCorp/InnoNetwork-Protobuf/pull/9",
+      "correction_merge": "06e091d79f93fd36bcccf04863ac994f0d51ebc8",
+      "correction_merged_at": "2026-10-09T11:19:42Z"
+    },
+    "innonetwork-stream": {
+      "source_revision": "7fb61ac2843c5742368cd4e640588b4c61b476c0",
+      "source_tree": "5ca11c0593e46c67b22903a734577aeb8be88835",
+      "correction_pr": "https://github.com/InnoSquadCorp/InnoNetwork-Stream/pull/14",
+      "correction_merge": "7fb61ac2843c5742368cd4e640588b4c61b476c0",
+      "correction_merged_at": "2026-10-10T09:22:33Z"
+    }
+  },
+  "package": {
+    "kind": "merged_source_package",
+    "native_archive_members": 141,
+    "source_skill_trees": {
+      "innodi": "358bab55a293c1ec5d456c42a911a86fcbc90c03",
+      "innonetwork": "62d335ebee98f7a60ba77c45c5b84e157253ff85",
+      "innoflow": "491a78f01d6e6540182d6ad8e2ee7ff0a43f9e6d",
+      "innorouter": "645baccc66df3d8e7989787e875f7063939b6444",
+      "innonetwork-protobuf": "0227141a34dd3bbc8da5b4918dd63632ffe1402a",
+      "innonetwork-stream": "5ca11c0593e46c67b22903a734577aeb8be88835"
+    },
+    "checksum_entries": 12,
+    "release_assets": 13,
+    "sha256sums_sha256": "ecba3188ac11d9cbffc0c3e2bc37a01b75635442cab6e5f92a6cfee979bc7ef2",
+    "deterministic_verification": "Two clean local normal builds and the tagged CI package were byte-identical across all thirteen files.",
+    "immutable_builder_record": {
+      "remote_checks": "not_run",
+      "publication_performed": false
+    },
+    "files": {
+      "SHA256SUMS": {
+        "name": "SHA256SUMS",
+        "asset_id": 646371471,
+        "label": "SHA256SUMS",
+        "bytes": 1092,
+        "sha256": "ecba3188ac11d9cbffc0c3e2bc37a01b75635442cab6e5f92a6cfee979bc7ef2",
+        "download_url": "https://github.com/InnoSquadCorp/innosquad-agent-skills/releases/download/v1.0.0/SHA256SUMS"
+      },
+      "innosquad-1.0.0.zip": {
+        "name": "innosquad-1.0.0.zip",
+        "asset_id": 646371469,
+        "label": "innosquad-1.0.0.zip",
+        "bytes": 271297,
+        "sha256": "f4d106222fb8029f929a7e8120762bbf680e4b8845a3984782232642f472c6ca",
+        "download_url": "https://github.com/InnoSquadCorp/innosquad-agent-skills/releases/download/v1.0.0/innosquad-1.0.0.zip"
+      },
+      "references/START_HERE.md": {
+        "name": "START_HERE.md",
+        "asset_id": 646371476,
+        "label": "references/START_HERE.md",
+        "bytes": 3592,
+        "sha256": "3d472ba32c54eb49ff569800213777d610d0c4998335c28404f04c544b115c73",
+        "download_url": "https://github.com/InnoSquadCorp/innosquad-agent-skills/releases/download/v1.0.0/START_HERE.md"
+      },
+      "references/catalog.json": {
+        "name": "catalog.json",
+        "asset_id": 646371473,
+        "label": "references/catalog.json",
+        "bytes": 7916,
+        "sha256": "9883de64302207dc19d129a5e56e30ee6f4e0ced563336ee3fafeb5e5784a7c0",
+        "download_url": "https://github.com/InnoSquadCorp/innosquad-agent-skills/releases/download/v1.0.0/catalog.json"
+      },
+      "references/innodi.md": {
+        "name": "innodi.md",
+        "asset_id": 646371477,
+        "label": "references/innodi.md",
+        "bytes": 43080,
+        "sha256": "a5bbed8b4bfed2fed1a4762ef3469883ec45898e41ee2bdff901889ece8a193d",
+        "download_url": "https://github.com/InnoSquadCorp/innosquad-agent-skills/releases/download/v1.0.0/innodi.md"
+      },
+      "references/innoflow.md": {
+        "name": "innoflow.md",
+        "asset_id": 646371511,
+        "label": "references/innoflow.md",
+        "bytes": 49146,
+        "sha256": "5830be0c80443c0bb9e9a7b9cdfc074bcbce6ba92a100b73222e1e3cb3177499",
+        "download_url": "https://github.com/InnoSquadCorp/innosquad-agent-skills/releases/download/v1.0.0/innoflow.md"
+      },
+      "references/innonetwork-protobuf.md": {
+        "name": "innonetwork-protobuf.md",
+        "asset_id": 646371520,
+        "label": "references/innonetwork-protobuf.md",
+        "bytes": 61451,
+        "sha256": "bded2780723c9be1e5253ccb13294fa8a5057da24a2be1b8ef71dbba5df21041",
+        "download_url": "https://github.com/InnoSquadCorp/innosquad-agent-skills/releases/download/v1.0.0/innonetwork-protobuf.md"
+      },
+      "references/innonetwork-stream.md": {
+        "name": "innonetwork-stream.md",
+        "asset_id": 646371525,
+        "label": "references/innonetwork-stream.md",
+        "bytes": 53517,
+        "sha256": "977477d4670d2dd79c41563e77d95b8341889b94746aea798425dbffce3d34cf",
+        "download_url": "https://github.com/InnoSquadCorp/innosquad-agent-skills/releases/download/v1.0.0/innonetwork-stream.md"
+      },
+      "references/innonetwork.md": {
+        "name": "innonetwork.md",
+        "asset_id": 646371521,
+        "label": "references/innonetwork.md",
+        "bytes": 48166,
+        "sha256": "27c161bb4fcec535352452e02a2ef92242dbe097a66fee5e29f8350f5bc230ae",
+        "download_url": "https://github.com/InnoSquadCorp/innosquad-agent-skills/releases/download/v1.0.0/innonetwork.md"
+      },
+      "references/innorouter.md": {
+        "name": "innorouter.md",
+        "asset_id": 646371528,
+        "label": "references/innorouter.md",
+        "bytes": 42697,
+        "sha256": "a8ef77a3593c7509d2b0709485ac688b247873797162ad9ad6eae1cf80948f6e",
+        "download_url": "https://github.com/InnoSquadCorp/innosquad-agent-skills/releases/download/v1.0.0/innorouter.md"
+      },
+      "references/innosquad-skills.zip": {
+        "name": "innosquad-skills.zip",
+        "asset_id": 646371561,
+        "label": "references/innosquad-skills.zip",
+        "bytes": 126727,
+        "sha256": "aa23e17b709dcf6925032d56f9d688dfbcd4f8bf8bb4724623d0b56089e4b363",
+        "download_url": "https://github.com/InnoSquadCorp/innosquad-agent-skills/releases/download/v1.0.0/innosquad-skills.zip"
+      },
+      "references/sha256.json": {
+        "name": "sha256.json",
+        "asset_id": 646371558,
+        "label": "references/sha256.json",
+        "bytes": 805,
+        "sha256": "2498623e27ba854633174aa88cdff3d43da6721663113d5fb3dfd0fe03071f45",
+        "download_url": "https://github.com/InnoSquadCorp/innosquad-agent-skills/releases/download/v1.0.0/sha256.json"
+      },
+      "release.json": {
+        "name": "release.json",
+        "asset_id": 646371563,
+        "label": "release.json",
+        "bytes": 5452,
+        "sha256": "5a4114762f9353c7ff7ae258fe5e9e1eb7825c7bf42163f21a020debfe382c8e",
+        "download_url": "https://github.com/InnoSquadCorp/innosquad-agent-skills/releases/download/v1.0.0/release.json"
+      }
+    }
+  },
+  "public_content_review": {
+    "status": "clean",
+    "checked_at": "2026-10-16T06:26:49.046256+00:00",
+    "reachable_commits": 26,
+    "unique_git_blobs": 367,
+    "reviewed_items_including_nested_archives": 606,
+    "pull_requests": 1,
+    "conversation_comments": 1,
+    "inline_comments": 0,
+    "published_assets": 13,
+    "credential_findings": 0,
+    "manual_context_matches": 13,
+    "context_disposition": "All matches were the InnoDI local container role enum symbol in examples/references and their packaged copies.",
+    "scope": "Tracked content, every reachable blob version and commit metadata, annotated tag message, PR prose/comments, published release metadata/body and all actual downloaded assets including nested ZIP members.",
+    "review_limit": "Local pattern checks supplemented by manual content inspection; no external secret-scanning or credential-validation service was used."
+  },
+  "anonymous_verification": {
+    "status": "passed",
+    "authentication_sent": false,
+    "repository_api": "HTTP 200 / public",
+    "release_api": "HTTP 200 / published stable",
+    "release_page": "HTTP 200",
+    "tag_object_and_commit": "matched",
+    "asset_downloads_with_exact_hashes": 13,
+    "tagged_codex_manifest": "HTTP 200 / exact bytes",
+    "fresh_git_clone": "passed with credential helpers, auth headers and prompts disabled",
+    "fresh_portable_install_skill_trees": {
+      "innodi": "358bab55a293c1ec5d456c42a911a86fcbc90c03",
+      "innonetwork": "62d335ebee98f7a60ba77c45c5b84e157253ff85",
+      "innoflow": "491a78f01d6e6540182d6ad8e2ee7ff0a43f9e6d",
+      "innorouter": "645baccc66df3d8e7989787e875f7063939b6444",
+      "innonetwork-protobuf": "0227141a34dd3bbc8da5b4918dd63632ffe1402a",
+      "innonetwork-stream": "5ca11c0593e46c67b22903a734577aeb8be88835"
+    },
+    "global_host_configuration_changed": false
+  },
+  "host_model_validation": "not_run_for_this_release",
+  "host_and_device_boundaries": "Existing dated host/model, authentication, device, FairPlay, audio and integration limitations remain in docs/host-support.md and the evaluation records.",
+  "documentation_note": "This verification record was added after publication. The v1.0.0 tag, its source commit, all Release assets and the builder truth fields remain immutable."
+}
